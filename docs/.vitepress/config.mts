@@ -1,60 +1,31 @@
 import { defineConfig } from "vitepress";
+import { nav } from "../settings/nav.mts";
+import { sidebar } from "../settings/sidebar.mts";
+import { socialLink } from "../settings/socialLinks.mts";
+import { search } from "../settings/search.mts";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Alikaid",
+  title: "Alkaid",
   description: "A VitePress Site",
   base: "/Alikaid/",
   head: [["link", { rel: "icon", href: "/Alikaid/logo.png" }]],
+  lastUpdated: true,
+
   themeConfig: {
     logo: "/logo.png",
-
     outlineTitle: "目录",
     outline: [2, 6],
-    // sidebar: false,
-    // aside: "left",
-
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" }
-    ],
-
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" }
-        ]
-      }
-    ],
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" }
-    ],
-
-    search: {
-      provider: "local",
-      options: {
-        translations: {
-          button: {
-            buttonText: "搜索文档",
-            buttonAriaLabel: "搜索文档"
-          },
-          modal: {
-            noResultsText: "无法找到相关结果",
-            resetButtonTitle: "清楚查询条件",
-            footer: {
-              selectText: "选择",
-              navigateText: "切换"
-            }
-          }
-        }
-      }
+    docFooter: {
+      prev: "上一篇",
+      next: "下一篇"
     },
 
-    footer: {
-      copyright: "Copyright © 2024 Albert Su Starter"
-    }
+    nav: nav,
+
+    sidebar: sidebar,
+
+    socialLinks: socialLink as any,
+
+    search: search as any
   }
 });
