@@ -11,7 +11,10 @@ export const nav = [
 
   {
     text: ".NET微服务",
-    items: [{ text: "ORM", link: "/net/orm/EFCore.md" }]
+    items: [
+      { text: "ORM", link: "/net/orm/EFCore.md" },
+      { text: "任务调度", link: "/net/scheduling/QuartZ.md" }
+    ]
   },
 
   {

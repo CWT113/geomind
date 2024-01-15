@@ -34,6 +34,11 @@ export const sidebar = {
       text: "ORM",
       collapsed: false,
       items: [{ text: "EFCore", link: "/net/orm/EFCore.md" }]
+    },
+    {
+      text: "任务调度",
+      collapsed: false,
+      items: [{ text: "QuartZ", link: "/net/scheduling/QuartZ.md" }]
     }
   ]
 };
