@@ -15,6 +15,11 @@ export const nav = [
   },
 
   {
+    text: "数据库",
+    link: "/sql/mysql/基本SQL语句.md"
+  },
+
+  {
     text: ".NET微服务",
     items: [
       { text: "ORM", link: "/net/orm/EFCore.md" },

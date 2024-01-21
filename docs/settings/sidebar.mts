@@ -58,6 +58,26 @@ export const sidebar = {
       ]
     }
   ],
+  "/sql/": [
+    {
+      text: "MySQL",
+      collapsed: false,
+      items: [
+        { text: "基本SQL语句", link: "/sql/mysql/基本SQL语句.md" },
+        {
+          text: "函数/约束/多表查询/事务",
+          link: "/sql/mysql/函数约束多表查询事务.md"
+        },
+        {
+          text: "存储引擎/InnoDB引擎",
+          link: "/sql/mysql/存储引擎InnoDB引擎.md"
+        },
+        { text: "索引/SQL优化", link: "/sql/mysql/索引SQL优化.md" },
+        { text: "视图/存储过程", link: "/sql/mysql/视图存储过程.md" },
+        { text: "锁", link: "/sql/mysql/锁.md" }
+      ]
+    }
+  ],
   // .NET
   "/net/": [
     {
