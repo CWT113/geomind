@@ -10,6 +10,11 @@ export const nav = [
   },
 
   {
+    text: "C#",
+    link: "/csharp/basicCsharp/面向过程.md"
+  },
+
+  {
     text: ".NET微服务",
     items: [
       { text: "ORM", link: "/net/orm/EFCore.md" },

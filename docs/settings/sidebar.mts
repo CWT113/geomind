@@ -28,6 +28,36 @@ export const sidebar = {
       ]
     }
   ],
+  // C#
+  "/csharp/": [
+    {
+      text: "C#",
+      collapsed: false,
+      items: [
+        { text: "面向过程", link: "/csharp/basicCsharp/面向过程.md" },
+        { text: "面向对象", link: "/csharp/basicCsharp/面向对象.md" },
+        { text: "面向对象高级", link: "/csharp/basicCsharp/面向对象高级.md" }
+      ]
+    },
+    {
+      text: "C#技巧",
+      collapsed: false,
+      items: [
+        { text: "雪花Id", link: "/csharp/skillCsharp/雪花ID.md" },
+        { text: "字典", link: "/csharp/skillCsharp/字典的CURD.md" },
+        { text: "元组", link: "/csharp/skillCsharp/元组.md" },
+        { text: "模式匹配", link: "/csharp/skillCsharp/模式匹配.md" },
+        {
+          text: "检查null语法糖",
+          link: "/csharp/skillCsharp/检查null语法糖.md"
+        },
+        {
+          text: "序列化与反序列化",
+          link: "/csharp/skillCsharp/序列化与反序列化.md"
+        }
+      ]
+    }
+  ],
   // .NET
   "/net/": [
     {
