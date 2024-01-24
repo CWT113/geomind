@@ -26,6 +26,15 @@ export const sidebar = {
           link: "/fontend/node/Postman全局配置token.md"
         }
       ]
+    },
+    {
+      text: "工具集",
+      collapsed: false,
+      items: [
+        { text: "alasql", link: "/fontend/utils/alasql.md" },
+        { text: "Pubsub-JS", link: "/fontend/utils/Pubsub-JS.md" },
+        { text: "Websocket", link: "/fontend/utils/WebSocket.md" }
+      ]
     }
   ],
   // C#
@@ -76,9 +85,14 @@ export const sidebar = {
         { text: "视图/存储过程", link: "/sql/mysql/视图存储过程.md" },
         { text: "锁", link: "/sql/mysql/锁.md" }
       ]
+    },
+    {
+      text: "SQLite",
+      collapsed: false,
+      items: [{ text: "SQLite", link: "/sql/sqlite/SQLite.md" }]
     }
   ],
-  // .NET
+  // .NET微服务
   "/net/": [
     {
       text: "ORM",
