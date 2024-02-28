@@ -12,8 +12,8 @@ export const sidebar = {
       text: "Vue",
       collapsed: false,
       items: [
-        { text: "Markdown Examples", link: "/markdown-examples" },
-        { text: "Runtime API Examples", link: "/api-examples" }
+        // { text: "Markdown Examples", link: "/markdown-examples" },
+        // { text: "Runtime API Examples", link: "/api-examples" }
       ]
     },
     {
@@ -67,6 +67,7 @@ export const sidebar = {
       ]
     }
   ],
+  // sql
   "/sql/": [
     {
       text: "MySQL",
@@ -90,6 +91,11 @@ export const sidebar = {
       text: "SQLite",
       collapsed: false,
       items: [{ text: "SQLite", link: "/sql/sqlite/SQLite.md" }]
+    },
+    {
+      text: "Postgresql",
+      collapsed: false,
+      items: [{ text: "权限与表分区", link: "/sql/postgres/权限与表分区.md" }]
     }
   ],
   // .NET微服务
@@ -103,6 +109,22 @@ export const sidebar = {
       text: "任务调度",
       collapsed: false,
       items: [{ text: "QuartZ", link: "/net/scheduling/QuartZ.md" }]
+    },
+    {
+      text: "Redis",
+      collapsed: false,
+      items: [{ text: "CSRedis", link: "/net/redis/CSRedis.md" }]
+    }
+  ],
+  // gis
+  "/gis/": [
+    {
+      text: "Maplibre",
+      collapsed: false,
+      items: [
+        { text: "快速入门", link: "/gis/maplibre/maplibre.md" },
+        { text: "layer", link: "/gis/maplibre/layer.md" }
+      ]
     }
   ]
 };

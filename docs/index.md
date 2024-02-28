@@ -14,17 +14,23 @@ hero:
       text: 前端
       link: /fontend/typescript/TypeScript.md
     - theme: alt
+      text: C#
+      link: /csharp/basicCsharp/面向过程.md
+    - theme: alt
+      text: 数据库
+      link: /sql/mysql/基本SQL语句.md
+    - theme: alt
       text: .NET微服务
       link: /net/orm/EFCore.md
     - theme: alt
       text: GIS
-      link:
+      link: /gis/maplibre/maplibre.md
     - theme: alt
       text: 我的随笔
       link: /essays/QingDao.md
-    - theme: alt
-      text: 相关链接
-      link:
+    # - theme: alt
+    #   text: 相关链接
+    #   link:
 
 features:
   - title: Feature A
