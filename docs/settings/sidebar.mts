@@ -119,6 +119,14 @@ export const sidebar = {
   // gis
   "/gis/": [
     {
+      text: "Mapbox",
+      collapsed: false,
+      items: [
+        { text: "快速入门", link: "/gis/mapbox/01-快速入门.md" },
+        { text: "layer", link: "/gis/mapbox/02-style.md" }
+      ]
+    },
+    {
       text: "Maplibre",
       collapsed: false,
       items: [
