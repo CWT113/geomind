@@ -5,7 +5,7 @@
 版本号（必填，且值必须为 8 ）。
 
 ```js
-version: 8
+version: 8;
 ```
 
 ### name
@@ -13,7 +13,7 @@ version: 8
 名称（可选，用于给 style 取名）。
 
 ```js
-name: "mapbox-demo"
+name: "mapbox-demo";
 ```
 
 ### sprite
@@ -21,7 +21,7 @@ name: "mapbox-demo"
 雪碧图（可选，用来指定获取雪碧图及其元数据的 URL）。
 
 ```js
-sprite: "mapbox://sprites/mapbox/streets-v8"
+sprite: "mapbox://sprites/mapbox/streets-v8";
 ```
 
 ### glyphs
@@ -51,7 +51,7 @@ metadata: {
 地图的默认中心点（可选，`[经度, 纬度]`）
 
 ```js
-center: [110.17541,36.05639]
+center: [110.17541, 36.05639];
 ```
 
 ### zoom
@@ -59,7 +59,7 @@ center: [110.17541,36.05639]
 地图的默认缩放等级（可选，值越大，越靠近地表。mapbox 采用无极缩放，范围一般为 0 ~ 24）
 
 ```js
-zoom: 12
+zoom: 12;
 ```
 
 ### bearing
@@ -67,7 +67,7 @@ zoom: 12
 地图默认的方位角（可选，默认值为 0）。
 
 ```js
-bearing: 0
+bearing: 0;
 ```
 
 ### pitch
@@ -75,7 +75,7 @@ bearing: 0
 地图的默认倾斜角度（可选，默认值为 0，范围为 0 ~ 60）。
 
 ```js
-pitch: 0
+pitch: 0;
 ```
 
 ### light
@@ -98,7 +98,8 @@ light: {
 sources 是以 对象{} 的形式存在，其属性名就是数据的来源，这样根据数据源的名称可快速的获取数据源的信息。
 
 ```js
-sources: {}
+sources: {
+}
 ```
 
 每个数据源 source 都有一个 [`type` 属性](https://docs.mapbox.com/style-spec/reference/sources/)，用于指定该数据源的类型，共分为一下几种：
@@ -110,48 +111,40 @@ sources: {}
 - image：图片
 - video：视频
 
-
-
 #### vector
 
 详细了解矢量图块的优势及工作原理，请参阅 [矢量图块](https://docs.mapbox.com/data/tilesets/guides/vector-tiles-introduction/) 文档。对于 mapbox 托管的矢量切片，url 需使用 `mapbox://username.tilesetid` 的形式。
 
 ```js
-map.addSource('terrain', {
-  type: 'vector',
-  url: 'mapbox://mapbox.mapbox-terrain-v2'
+map.addSource("terrain", {
+  type: "vector",
+  url: "mapbox://mapbox.mapbox-terrain-v2"
 });
 ```
-
-
 
 #### raster
 
 可用于绘制栅格地图，例如卫星影像等。
 
 ```js
-map.addSource('openstreetmap', {
-  type: 'raster',
-  tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+map.addSource("openstreetmap", {
+  type: "raster",
+  tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
   tileSize: 256,
-  attribution:'© copyright mapbox'
+  attribution: "© copyright mapbox"
 });
 ```
-
-
 
 #### raster-dem
 
 Raster-DEM 是 [`RasterTileSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#rastertilesource) 的特例，它包含高程数据，并引用 Mapbox `Terrain-DEM()`，这是唯一受支持的栅格 DEM 源。
 
 ```js
-map.addSource('dem', {
-  type: 'raster-dem',
-  url: 'mapbox://mapbox.mapbox-terrain-dem-v1'
+map.addSource("dem", {
+  type: "raster-dem",
+  url: "mapbox://mapbox.mapbox-terrain-dem-v1"
 });
 ```
-
-
 
 #### geojson
 
@@ -159,39 +152,37 @@ GeoJSON 源是一个或多个地理要素的集合，这些集合可以是点、
 
 ```js
 // url
-map.addSource('floorplan', {
-    'type': 'geojson',
-    'data': 'https://maplibre.org/maplibre-gl-js/docs/assets/indoor-3d-map.geojson'
+map.addSource("floorplan", {
+  type: "geojson",
+  data: "https://maplibre.org/maplibre-gl-js/docs/assets/indoor-3d-map.geojson"
 });
 
 // geojson
-map.addSource('maine', {
-    'type': 'geojson',
-    'data': {
-        'type': 'Feature',
-        'geometry': {
-            'type': 'Polygon',
-            'coordinates': [
-                [
-                    [-66.96466, 44.8097],
-                    [-68.03252, 44.3252],
-                ]
-            ]
-        }
+map.addSource("maine", {
+  type: "geojson",
+  data: {
+    type: "Feature",
+    geometry: {
+      type: "Polygon",
+      coordinates: [
+        [
+          [-66.96466, 44.8097],
+          [-68.03252, 44.3252]
+        ]
+      ]
     }
+  }
 });
 ```
-
-
 
 #### image
 
 图像源 [`ImageSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#imagesource) 是您与地理坐标一起提供的图像。将数组中的地理坐标指定为成对，以便地图知道将图像放置在世界的哪个位置。数组中的每个坐标对表示按顺时针顺序列出的图像角：左上角、右上角、右下角、左下角。
 
 ```js
-map.addSource('radar', {
-  type: 'image',
-  url: '/mapbox-gl-js/assets/radar.gif',
+map.addSource("radar", {
+  type: "image",
+  url: "/mapbox-gl-js/assets/radar.gif",
   coordinates: [
     [-80.425, 46.437],
     [-71.516, 46.437],
@@ -201,16 +192,14 @@ map.addSource('radar', {
 });
 ```
 
-------
-
-
+---
 
 ### layers
 
 图层集合（必填，包含一系列图层 layer，这些图层指定了如何渲染数据源提供的数据）。
 
 ```js
-layers: []
+layers: [];
 ```
 
 每个图层 layer 都有一个 id （具有唯一性）和 type 属性，其中 type 属性指定了其具体的渲染类型：
@@ -224,8 +213,6 @@ layers: []
 - hillshade：坡面阴影
 - fill-extrusion：三维填充
 - background：背景
-
-
 
 #### fill
 
@@ -251,7 +238,7 @@ fill [样式图层 ](https://docs.mapbox.com/style-spec/reference/layers/#fill)�
     "fill-opacity": 1,              // 填充的不透明度(0~1)
     "fill-pattern": "",             // 填充用的图案(填写在雪碧图中的图标名称，为了图案能无缝填充，图标的宽高需要是2的倍数)
     "fill-color": "#fff",           // 填充颜色(设置了fill-pattern，则该属性无效)
-    "fill-outline-color": "#fff",   // 描边的颜色(默认和fill-color一致，如果设置了fill-pattern，则该属性无效。使用该属										 性时，需设置fill-antialias为true)
+    "fill-outline-color": "#fff",   // 描边的颜色(默认和fill-color一致，如果设置了fill-pattern，则该属性无效。使用该属性时，需设置fill-antialias为true)
     "fill-translate": [0, 0],       // 填充的平移
     "fill-translate-anchor": "map"  // 平移的锚点，即相对的参考物(可选值:map/viewport)
   },
@@ -260,8 +247,6 @@ fill [样式图层 ](https://docs.mapbox.com/style-spec/reference/layers/#fill)�
   }
 }
 ```
-
-
 
 #### line
 
@@ -305,8 +290,6 @@ line [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#line)�
 
 ```
 
-
-
 #### circle
 
 circle [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#circle)可在地图上渲染一个或多个填充圆。
@@ -343,8 +326,6 @@ circle [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#circl
   }
 }
 ```
-
-
 
 #### symbol
 
@@ -387,14 +368,15 @@ symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbo
     "icon-size": 1,
     "icon-padding": 2, 				// 图标的外边距
     "icon-offset": [0, 0],
-    "icon-anchor": "center", 		// 图标与锚点的位置关系(可选值:center/left/right/top/bottom/top-left/top-										   right/bottom-left/bottom-right)
-    "icon-rotation": 0,
+    "icon-anchor": "center", 		// 图标与锚点的位置关系(可选值:center/left/right/top/bottom/top-left/top-right/bottom-left/bottom-right)
+    "icon-rotate": 40,
+    "icon-overlap": "always", // 图标会始终叠加显示，即使有重叠的部分
     "icon-allow-overlap": false, 	// 是否允许图标重叠
     "icon-ignore-placement": false, // 是否忽略图标位置，当值为 true 时，其他符号即使与此图标触碰也会显示
     "icon-optional": false, 		// 图标是否可不显示，当值为true时，如果图标与文本标签碰撞，则显示文本标签
     "icon-text-fit": "none", 		// 图标与文本的大小适应关系(可选值:none/width/height/both)
     "icon-text-fit-padding": [0, 0, 0, 0], 	// 图标与文本的内边距
-    "icon-keep-upright": false, 			// 当 icon-rotation-alignment 为 map，且 symbol-placement 为 line 												或者 line-center 时，设置为 true 的话，可以避免图标上下颠倒
+    "icon-keep-upright": false, 			// 当 icon-rotation-alignment 为 map，且 symbol-placement 为 line 或者 line-center 时，设置为 true 的话，可以避免图标上下颠倒
     "icon-rotation-alignment": "auto", 		// 地图旋转时图标的对齐方式(可选:map/viewport/auto)
     "icon-pitch-alignment": "auto" 			// 地图倾斜时图标的对齐方式
   }
@@ -441,23 +423,22 @@ symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbo
     "text-line-height": 1.2,
     "text-letter-spacing": 0, 			// 文本的字符间距
     "text-justify": "center", 			// 文本的水平对齐方式(可选值:auto/left/center/right)
-    "text-anchor": "center", 			// 文本与锚点的位置关系(可选值:center/left/right/top/bottom/top-left/top-										   right/bottom-left/bottom-right)
+    "text-anchor": "center", 			// 文本与锚点的位置关系(可选值:center/left/right/top/bottom/top-left/top-right/bottom-left/bottom-right)
     "text-variable-anchor": "center",
     "text-max-angle": 45, 				// 当symbol-placement为line或line-center时，文本相邻字符的最大夹角
     "text-rotate": 0,
     "text-padding": 2, 					// 文本外边距
-    "text-keep-upright": false, 		// 当 icon-rotation-alignment 为 map，且 symbol-placement 为 line 或者 										   line-center 时，设置为 true 的话，可以避免文本上下颠倒
+    "text-keep-upright": false, 		// 当 icon-rotation-alignment 为 map，且 symbol-placement 为 line 或者 line-center 时，设置为 true 的话，可以避免文本上下颠倒
     "text-transform": "none", 			// 文本大小写转换(可选值:none/uppercase/lowercase)
     "text-offset": [0, 0],
     "text-radial-offset": 0, 			// 文本的经向偏移量，优先级比 text-offset 高
+    "text-overlap": "always",     // 文字会始终叠加显示，即使有重叠的部分
     "text-allow-overlap": false, 		// 是否允许文本重叠
     "text-ignore-placement": false, 	// 是否忽略文本位置，当为true时，其他符号即使与此文本触碰也会显示
     "text-optional": false 				// 文本是否不可显示，当为true时，如果文本与图标碰撞，则显示图标
   }
 }
 ```
-
-
 
 #### raster
 
@@ -492,8 +473,6 @@ raster [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#raste
   }
 }
 ```
-
-
 
 #### heatmap
 
@@ -536,8 +515,6 @@ heatmap [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#heat
 }
 ```
 
-
-
 #### hillshade
 
 Hillshade [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#hillshade)用于在客户端渲染数字高程模型 （DEM） 数据。
@@ -569,8 +546,6 @@ Hillshade [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#hi
   }
 }
 ```
-
-
 
 #### fill-extrusion
 
@@ -607,8 +582,6 @@ fill-extrusion [样式图层](https://docs.mapbox.com/style-spec/reference/layer
   }
 }
 ```
-
-
 
 #### background
 
