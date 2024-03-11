@@ -133,6 +133,10 @@ export const sidebar = {
         { text: "快速入门", link: "/gis/maplibre/maplibre.md" },
         { text: "layer", link: "/gis/maplibre/layer.md" }
       ]
+    },
+    {
+      text: "瓦片地图url",
+      link: "/gis/mapbox/瓦片地图url.md"
     }
   ]
 };
