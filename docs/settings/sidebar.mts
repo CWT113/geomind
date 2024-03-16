@@ -9,6 +9,16 @@ export const sidebar = {
       link: "/fontend/typescript/TypeScript.md"
     },
     {
+      text: "Javascript",
+      collapsed: false,
+      items: [
+        {
+          text: "方法",
+          link: "/fontend/javascript/javascript.md"
+        }
+      ]
+    },
+    {
       text: "Vue",
       collapsed: false,
       items: [
@@ -123,7 +133,8 @@ export const sidebar = {
       collapsed: false,
       items: [
         { text: "快速入门", link: "/gis/mapbox/01-快速入门.md" },
-        { text: "layer", link: "/gis/mapbox/02-style.md" }
+        { text: "Style", link: "/gis/mapbox/02-style.md" },
+        { text: "MapboxDraw", link: "/gis/mapbox/03-MapboxDraw.md" }
       ]
     },
     {
@@ -131,7 +142,7 @@ export const sidebar = {
       collapsed: false,
       items: [
         { text: "快速入门", link: "/gis/maplibre/maplibre.md" },
-        { text: "layer", link: "/gis/maplibre/layer.md" }
+        { text: "layer的方法", link: "/gis/maplibre/layer.md" }
       ]
     },
     {
