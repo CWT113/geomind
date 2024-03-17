@@ -13,7 +13,7 @@ export const sidebar = {
       collapsed: false,
       items: [
         {
-          text: "方法",
+          text: "JS常用方法",
           link: "/fontend/javascript/javascript.md"
         }
       ]
@@ -43,7 +43,8 @@ export const sidebar = {
       items: [
         { text: "alasql", link: "/fontend/utils/alasql.md" },
         { text: "Pubsub-JS", link: "/fontend/utils/Pubsub-JS.md" },
-        { text: "Websocket", link: "/fontend/utils/WebSocket.md" }
+        { text: "Websocket", link: "/fontend/utils/WebSocket.md" },
+        { text: "文字转语音", link: "/fontend/utils/文字转语音.md" }
       ]
     }
   ],
@@ -133,16 +134,17 @@ export const sidebar = {
       collapsed: false,
       items: [
         { text: "快速入门", link: "/gis/mapbox/01-快速入门.md" },
-        { text: "Style", link: "/gis/mapbox/02-style.md" },
-        { text: "MapboxDraw", link: "/gis/mapbox/03-MapboxDraw.md" }
+        { text: "MapboxDraw", link: "/gis/mapbox/MapboxDraw.md" }
       ]
     },
     {
       text: "Maplibre",
       collapsed: false,
       items: [
-        { text: "快速入门", link: "/gis/maplibre/maplibre.md" },
-        { text: "layer的方法", link: "/gis/maplibre/layer.md" }
+        { text: "快速入门", link: "/gis/maplibre/01-maplibre.md" },
+        { text: "地图Style", link: "/gis/maplibre/02-style.md" },
+        { text: "Map方法", link: "/gis/maplibre/03-Map方法.md" },
+        { text: "Map事件", link: "/gis/maplibre/04-Map事件.md" }
       ]
     },
     {
