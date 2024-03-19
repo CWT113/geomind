@@ -74,6 +74,62 @@ array.forEach(item => {
 
 
 
+## 遍历
+
+### for..in..
+
+- 遍历数组，返回元素的 index
+
+- 遍历对象，返回元素的 key
+
+  ```js
+  const array = [10, 20, 30, 40, 50];
+  
+  for (const index in array) {
+      console.log(index); 			// 0 1 2 3 4
+      console.log(arr[index]);		// 10 20 30 40 50
+  }
+  ```
+
+  ```js
+  const obj = { name: "tom", age: 20 };
+  
+  for (const key in obj) {
+      console.log(key);				// name age
+      console.log(obj[key]);			// tom 20
+  }
+  ```
+
+
+
+### for..of..
+
+- 遍历数组，返回元素的 值
+
+- 不能遍历对象！！
+
+  ```js
+  const array = [10, 20, 30, 40, 50];
+  
+  for (const value of array) {
+      console.log(value);				// 10 20 30 40 50
+  }
+  ```
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
