@@ -22,7 +22,7 @@ export const sidebar = {
       text: "Vue",
       collapsed: false,
       items: [
-        // { text: "Markdown Examples", link: "/markdown-examples" },
+        { text: "vue3", link: "/fontend/vue3/vue3.md" }
         // { text: "Runtime API Examples", link: "/api-examples" }
       ]
     },
