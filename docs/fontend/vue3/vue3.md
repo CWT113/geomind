@@ -37,7 +37,163 @@
    });
    ```
 
-   
+
+------
+
+## defineModel
+
+>参考文章：https://juejin.cn/post/7338262742816981044#heading-2
+
+`definedModel()` 宏 返回的是一个 `ref`，它可以正常使用 `.value` 被访问和修改，它最重要的作用是在**父组件和子组件之间实现双向绑定**。
+
+- 子组件的 `.value` 和父组件的 `v-model` 的值同步；
+- 当子组件的值变化了，会立马触发父组件绑定的值一起更新；
+
+### 1. 默认 v-model
+
+- 父组件：
+
+  ```vue
+  <template>
+    <h5>{{ count }}</h5>
+    <HelloWorld v-model="count" />
+  </template>
+  
+  <script setup lang="ts">
+  import { ref } from "vue";
+  import HelloWorld from "./components/HelloWorld.vue";
+  
+  const count = ref<Number>(2000);
+  </script>
+  ```
+
+- 子组件：
+
+  ```vue
+  <template>
+    <input type="text" v-model="model" />
+  </template>
+  
+  <script setup lang="ts">
+  const model = defineModel<Number>();
+  console.log(modle.value);    // 2000
+  </script>
+  ```
+
+  
+
+### 2. 具名 v-model
+
+- 父组件：
+
+  ```vue
+  <template>
+    <h5>{{ count }}</h5>
+    <HelloWorld v-model:count="count" />
+  </template>
+  
+  <script setup lang="ts">
+  import { ref } from "vue";
+  import HelloWorld from "./components/HelloWorld.vue";
+  
+  const count = ref<Number>(2000);
+  </script>
+  ```
+
+- 子组件：
+
+  ```vue
+  <template>
+    <input type="text" v-model="model" />
+  </template>
+  
+  <script setup lang="ts">
+  const model = defineModel<Number>("count");
+  console.log(model.value);
+  </script>
+  ```
+
+  
+
+### 3. 同时绑定多个 v-model
+
+- 父组件：
+
+  ```vue
+  <template>
+    <h5>{{ count }}</h5>
+    <HelloWorld v-model:count="count" v-model:number="number" />
+    <h5>{{ number }}</h5>
+    <HelloWorld v-model:count="count" v-model:number="number" />
+  </template>
+  
+  <script setup lang="ts">
+  import { ref } from "vue";
+  import HelloWorld from "./components/HelloWorld.vue";
+  
+  const count = ref<Number>(2000);
+  const number = ref<String>("hello");
+  </script>
+  ```
+
+- 子组件：
+
+  ```vue
+  <template>
+    <input type="text" v-model="model" />
+    <input type="text" v-model="model2" />
+  </template>
+  
+  <script setup lang="ts">
+  const model = defineModel<Number>("count");
+  console.log(model.value);
+  
+  const model2 = defineModel<String>("number");
+  console.log(model2.value);
+  </script>
+  ```
+
+  
+
+### 4. props 选项
+
+- 父组件：
+
+  ```vue
+  <template>
+    <h5>{{ visible }}</h5>
+    <HelloWorld v-model:visible="visible" />
+  </template>
+  
+  <script setup lang="ts">
+  import { ref } from "vue";
+  import HelloWorld from "./components/HelloWorld.vue";
+  
+  const visible = ref<String>("1");
+  </script>
+  ```
+
+- 子组件：
+
+  ```vue
+  <template>
+    <input type="text" v-model="model" />
+  </template>
+  
+  <script setup lang="ts">
+  const model = defineModel("visible", {
+    type: String,
+    required: true,
+    default: "1",
+    // 校验值，传入的值必须是字符类型 0 或 1
+    validator: (value: string) => ["0", "1"].includes(value)
+  });
+  </script>
+  ```
+
+  
+
+------
 
 ## 子调用父的方法
 
@@ -106,6 +262,42 @@
   ```
 
 
+
+### 3. defineModel 传递
+
+defineModel 宏的主要用途是实现表单类元素的双向数据绑定，但是它也可以用来向子组件传递 属性或方法。
+
+- 父组件：
+
+  ```vue
+  <template>
+    <HelloWorld v-model="handleClick" />
+  </template>
+  
+  <script setup lang="ts">
+  import HelloWorld from "./components/HelloWorld.vue";
+  
+  const handleClick = (data: number) => console.log(data);
+  </script>
+  ```
+
+- 子组件：
+
+  ```vue
+  <template>
+    <h5>{{ model }}</h5>
+  </template>
+  
+  <script setup lang="ts">
+  // defineModel() 的返回值实际是一个 ref 对象，因此需要 .value，但总觉得有点儿奇怪，ref 能当函数调用???
+  const model: any = defineModel();
+  model.value(200);
+  </script>
+  ```
+
+
+
+------
 
 ## 父调用子的方法
 

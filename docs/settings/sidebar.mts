@@ -6,7 +6,17 @@ export const sidebar = {
   "/fontend/": [
     {
       text: "TypeScript",
-      link: "/fontend/typescript/TypeScript.md"
+      collapsed: false,
+      items: [
+        {
+          text: "TypeScript基础",
+          link: "/fontend/typescript/TypeScript.md"
+        },
+        {
+          text: "TypeScript技巧",
+          link: "/fontend/typescript/TypeScript技巧.md"
+        }
+      ]
     },
     {
       text: "Javascript",

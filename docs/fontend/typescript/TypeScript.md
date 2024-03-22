@@ -25,25 +25,17 @@ TS 中的常用基础类型细分为两类：
   ```TypeScript
   // :number 就是类型注解
   let age: number = 20
-
-  age = 30 // 允许此操作
-
-  age = '小明' // 直接报错
-  ```
+  age = 30  		 // 允许此操作
+  age = '小明' 		// 直接报错
 
 ### 2. 原始类型
 
-```TypeScript
-let age: number = 20            // 数字型
-
-let str: string = '小明'        // 字符串型
-
-let isTrue: boolean = false     // 布尔型
-
+```typescript
+let age: number = 20
+let str: string = '小明'
+let isTrue: boolean = false
 let a: null = null
-
 let b: undefined = undefined
-
 let s: symbol = Symbol()
 ```
 
@@ -54,10 +46,6 @@ let s: symbol = Symbol()
 let arr1: number[] = [1, 3, 5]
 
 let arr2: Array<string> = ['a', 'b', 'c']
-```
-
-```TypeScript
-// 如果想声明一个数组，既包括 数字 又包括 字符串，该如何定义呢？
 
 // 联合类型
 let arr3: (number | string)[] = [1, 3, 5, 'a', 'b']
@@ -74,9 +62,9 @@ let arr3: (number | string)[] = [1, 3, 5, 'a', 'b']
   ```TypeScript
   // 类型别名
   type CustomArray = (number | string)[]
-
+  
   let arr: CustomArray = [1, 3, 5, 'a', 'b']
-
+  
   let arr1: CustomArray = [2, 4, 6, 'aa', 'bb']
   ```
 
@@ -173,7 +161,7 @@ let person: {
     age: number
     sayHi(): void
   }
-
+  
   // 使用接口
   let person: IPerson = {
     name: '小明',
@@ -209,7 +197,7 @@ let person: {
   interface Point2D { x: number, y: number }
   // Point3D 继承了 Point2D 的属性，并添加了自己的新属性 z
   interface Point3D extends Point2D { z: number }
-
+  
   let point:Point3D = {
     x: 1,
     y: 1,
@@ -239,16 +227,13 @@ let person: {
 
 ```TypeScript
 // 初始化变量，并声明值时，可以省略类型注解
-// 原本写法：
 // let age: number = 20
 let age = 20
 
 // 当函数的返回值由参数可以直接推论时，可以省略类型注解
-// 原本写法：
 // function add(num1: number, num2: number): number {
 //   return num1 + num2  // 数字+数字肯定等于数字类型
 // }
-
 function add(num1: number, num2: number) {
   return num1 + num2
 }
@@ -266,7 +251,7 @@ function add(num1: number, num2: number) {
   function changeDirect(direct: 'up' | 'down' | 'left' | 'right') {
     console.log(direct)
   }
-
+  
   // 传递的参数，只能是定义的 4 个字面量类型
   changeDirect('left')
   ```
@@ -307,7 +292,7 @@ function add(num1: number, num2: number) {
     Left, // Left: 12;
     Right // Right: 13
   }
-
+  
   // 为每一个枚举成员都设置初始值
   enum Direction {
     Up = 2,
@@ -349,6 +334,8 @@ let a
 function add(num1, num2) {}
 ```
 
+
+
 ## TS 中的高级类型
 
 ### 1. `class`类
@@ -385,13 +372,13 @@ function add(num1, num2) {}
   class Person {
     age: number
     gender: string
-
+  
     constructor(age: number, gender: string) {
       this.age = age
       this.gender = gender
     }
   }
-
+  
   const p = new Person(20, '男')
   ```
 
@@ -552,14 +539,14 @@ d.__run__() // ❌子类的实例方法不能调用
   interface Person {
     name: string
   }
-
+  
   interface Concat {
     phone: string
   }
-
+  
   // 交叉类型
   type PersonDetail = Person & Concat
-
+  
   let obj: PersonDetail = {
     name: '小明',
     phone: '123456'
@@ -577,7 +564,7 @@ d.__run__() // ❌子类的实例方法不能调用
   interface A {
     fn: (value: string) => {}
   }
-
+  
   interface B extends A { // 注意：此时的 B 会报错（不能将string类型分配给number）
     fn: (value: number) => {}
   }
@@ -588,13 +575,13 @@ d.__run__() // ❌子类的实例方法不能调用
   interface A {
     fn: (value: string) => {}
   }
-
+  
   interface B {
     fn: (value: number) => {}
   }
-
+  
   type C = A & B
-
+  
   // 可以简单理解为: value 既可以是 string 类型，也可以是 number 类型
   let obj: C = {
     fn(value: string | number) {
@@ -614,11 +601,11 @@ d.__run__() // ❌子类的实例方法不能调用
   function id<Type>(value: Type): Type {
     return value
   }
-
+  
   // 调用泛型函数
   // 1 以 number 类型调用泛型
   const num = id<number>(10)
-
+  
   // 2 以 string 类型调用泛型
   const str = id<string>('aa')
   ```
@@ -655,7 +642,7 @@ d.__run__() // ❌子类的实例方法不能调用
 
    ```TypeScript
    interface ILength { length: number }
-
+   
    // extends: 不是继承的意思，而是满足！
    // 代表含义：Type 类型必须满足 ILength 指定的要求。
    function id<Type extends ILength>(value: Type): Type {
@@ -675,7 +662,7 @@ d.__run__() // ❌子类的实例方法不能调用
   function getProp<Type, key extends keyof Type>(obj: Type, key: key) {
     return obj[key]
   }
-
+  
   // 类型变量 key 受 Type 约束，即 key 只能是 Type 所有键中的任意一个，或者只能访问对象中存在的属性
   getProp({ name: '小明', age: 18 }, 'name')
   getProp({ name: '小明', age: 18 }, 'age')
@@ -690,7 +677,7 @@ d.__run__() // ❌子类的实例方法不能调用
     id: (value: Type) => Type
     ids: () => Type[]
   }
-
+  
   let obj: IdFunc<number> = {
     id: (value) => value, // id方法的参数和返回值都是 number 类型
     ids: () => [1, 2, 3] // ids 方法无参数，返回值是 数值型的数组
@@ -706,7 +693,7 @@ d.__run__() // ❌子类的实例方法不能调用
     defaultValue: NumType
     add: (x: NumType, y: NumType) => NumType
   }
-
+  
   // 实例化的时候，明确指定实例的 类型
   const myNum = new GenericNumber<number>()
   myNum.defaultValue = 10
@@ -725,12 +712,12 @@ d.__run__() // ❌子类的实例方法不能调用
     id: number
     hobby: string[]
   }
-
+  
   type partialProps = Partial<Props>
-
+  
   // 把 Props 接口中定义的属性变为可选
   let p: partialProps = {}
-
+  
   let p1: partialProps = {
     id: 1,
     hobby: ['吃饭', '睡觉']
@@ -741,58 +728,61 @@ d.__run__() // ❌子类的实例方法不能调用
 
 - `Readonly<Type>`用来构造一个类型，将 Type 的所有属性都设置为 readondy（只读）。
 
-```TypeScript
-interface Props {
-  id: number
-  hobby: string[]
-}
-
-// 把 Props 接口中定义的属性变为只读
-type partialProps = Readonly<Props>
-
-let p: partialProps = {
-  id: 1,
-  hobby: ['吃饭', '睡觉']
-}
-
-p.id = 2 // ❌无法为“id”赋值，因为它是只读属性
-```
+  ```typescript
+  interface Props {
+    id: number
+    hobby: string[]
+  }
+  
+  // 把 Props 接口中定义的属性变为只读
+  type partialProps = Readonly<Props>
+  
+  let p: partialProps = {
+    id: 1,
+    hobby: ['吃饭', '睡觉']
+  }
+  
+  p.id = 2 // ❌无法为“id”赋值，因为它是只读属性
 
 #### 6.3 `Pink<Type>`
 
 - `Pink<Type>`可以从 Type 中选择一组属性来构造新的类型。
 
-```TypeScript
-interface Props {
-  id: number
-  title: string
-  hobby: string[]
-}
+  ```typescript
+  interface Props {
+    id: number
+    title: string
+    hobby: string[]
+  }
+  
+  // PickProps 就有了 Props 中 id、title 两个属性
+  type PickProps = Pick<Props, 'id' | 'title'>
+  ```
 
-// PickProps 就有了 Props 中 id、title 两个属性
-type PickProps = Pick<Props, 'id' | 'title'>
-```
+  
 
 #### 6.4 `Record<keys, Type>`
 
 - `Record<keys, Type>`构造一个对象类型，属性键为 keys，属性类型为 Type。
 
-```TypeScript
-type RecordObj = Record<'a' | 'b' | 'c', string[]>
+  ```typescript
+  type RecordObj = Record<'a' | 'b' | 'c', string[]>
+  
+  // 上面代码等价于：
+  /* type RecordObj = {
+    a: string[]
+    b: string[]
+    c: string[]
+  } */
+  
+  let obj: RecordObj = {
+    a: ['a'],
+    b: ['b'],
+    c: ['c']
+  }
+  ```
 
-// 上面代码等价于：
-/* type RecordObj = {
-  a: string[]
-  b: string[]
-  c: string[]
-} */
-
-let obj: RecordObj = {
-  a: ['a'],
-  b: ['b'],
-  c: ['c']
-}
-```
+  
 
 ### 7. 索引签名类型
 
@@ -818,7 +808,7 @@ let obj: RecordObj = {
   interface array<Type> {
     [index: number]: Type
   }
-
+  
   let arr: array<number> = [1, 2, 3]
   let arr1: array<string> = ['1', '2', '3']
   ```
@@ -833,10 +823,10 @@ let obj: RecordObj = {
 
   ```TypeScript
   type PropKeys = 'x' | 'y' | 'z'
-
+  
   // 如果 PropKeys 的属性值很多时，下面的方法就显得乏力！
   type Type1 = { x: number; y: number; z: number }
-
+  
   // 无论 PropKeys 的属性值有多少个，都会自动生成
   type Type2 = { [key in PropKeys]: number }
   ```
@@ -847,7 +837,7 @@ let obj: RecordObj = {
 
   ```TypeScript
   type Props = { a: string; b: number; c: boolean }
-
+  
   // 首先，先执行 keyof Props，获取到对象类型 Props 中所有键的联合类型，即 'a' | 'b' | 'c'
   // 然后，key in... 表示 key 可以是 Props 中所有的键名称中的任意一个
   type newProps = { [key in keyof Props]: number }
@@ -861,7 +851,7 @@ let obj: RecordObj = {
 
   ```TypeScript
   type Props = { a: number; b: string; c: boolean }
-
+  
   type newProps = Props['a'] // number
   ```
 
@@ -877,120 +867,3 @@ type newProps = Props['a' | 'b'] // number | string
 type newProps1 = Props[keyof Props] // number | string | boolean
 ```
 
-## TS 的类型声明文件
-
-### 1. TS 中的两种声明文件
-
-- 在 TS 中，有两种声明文件：
-
-  - `.ts`文件
-
-  - `.d.ts`文件
-
-- 区别：
-
-      |`.ts`文件|`.d.ts`文件|
-
-  |-|-|
-  |代码实现文件|类型声明文件|
-  |既包含类型信息，又包含可执行代码|只包含类型信息|
-  |可以被编译为 `.js` 文件，然后执行代码|不会生成`.js`文件，仅用于提供类型信息|
-
-### 2. 为已有 JS 文件提供类型声明
-
-- `declare`关键字：用于类型声明，为其他地方已存在的变量声明类型，而不是创建一个新的变量。
-
-  - 对于`type`、`interface`等这些明确就是 TS 类型的（只能在 TS 中使用的），可以省略 `declare`关键字；
-
-  - 对于`let`、`function`等具有双重含义（在 JS、TS 中都能使用），应该使用 `declare`关键字，明确指定此处用于类型声明。
-
-- JS 文件：
-
-  ```JavaScript
-  let count = 10
-  let songName = '痴心绝对'
-  let position = {
-    x: 0,
-    y: 0
-  }
-
-  function add(x, y) {
-    return x + y
-  }
-
-  function changeDirection(direction) {
-    console.log(direction)
-  }
-
-  const formatPoint = point => {
-    console.log('当前坐标：', point)
-  }
-
-  export { count, songName, position, add, changeDirection, formatPoint }
-  ```
-
-- TS 文件：
-
-  ```TypeScript
-  // 为已有类型声明类型，需要借助 declare 关键字
-  declare let count: number
-  declare let songName: string
-  interface Point {
-    x: number
-    y: number
-  }
-  declare let position: Point
-
-  declare function add(x: number, y: number): number
-
-  declare function changeDirection(
-    direction: 'up' | 'down' | 'left' | 'right'
-  ): void
-
-  type FormatPoint = (point: Point) => void
-  declare const formatPoint: FormatPoint
-
-  export { count, songName, position, add, changeDirection, formatPoint }
-  ```
-
-### 3. tsconfig.json 配置项介绍
-
-```TypeScript
-{
-  // 编译选项
-  "compilerOptions": {
-    // 生成代码的语言版本
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    // 指定要包含在编译中的 library
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    // 允许 TS 编译器编译 JS 文件
-    "allowJs": false,
-    // 跳过声明文件的类型检查
-    "skipLibCheck": true,
-    // ES 模块互操作，屏蔽 ESModule 与 CommonJS 之间的差异
-    "esModuleInterop": false,
-    // 允许通过 import x from 'y'的形式导入，即使模块没有显式指定 default 导出
-    "allowSyntheticDefaultImports": true,
-    // 开启严格模式
-    "strict": true,
-    // 对文件名称强制区分大小写
-    "forceConsistentCasingInFileNames": true,
-    // 生成代码的模块化标准
-    "module": "ESNext",
-    // 模块解析(查找)策略
-    "moduleResolution": "Node",
-    // 允许导入扩展名为 .json 的文件
-    "resolveJsonModule": true,
-    // 是否将没有 import/export 的文件视为旧脚本文件
-    "isolatedModules": true,
-    // 编译时不生成任何文件，不使用 TS 编译器，而是用 babel 来编译
-    "noEmit": true,
-    // 指定将 JSX 编译成什么形式
-    "jsx": "react-jsx"
-  },
-  // 指定允许 TS 处理的目录
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
-```
