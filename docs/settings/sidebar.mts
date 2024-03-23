@@ -24,7 +24,7 @@ export const sidebar = {
       items: [
         {
           text: "JS常用方法",
-          link: "/fontend/javascript/javascript.md"
+          link: "/fontend/javascript/Javascript.md"
         }
       ]
     },

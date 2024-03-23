@@ -34,15 +34,15 @@ export const nav = [
       { text: "Mapbox", link: "/gis/mapbox/01-快速入门.md" },
       { text: "Maplibre", link: "/gis/maplibre/maplibre.md" }
     ]
-  },
-
-  {
-    text: "随笔",
-    items: [
-      { text: "青岛看海之旅", link: "/essays/QingDao.md" },
-      { text: "杭州水乡印象", link: "/essays/HangZhou.md" }
-    ]
   }
+
+  // {
+  //   text: "随笔",
+  //   items: [
+  //     { text: "青岛看海之旅", link: "/essays/QingDao.md" },
+  //     { text: "杭州水乡印象", link: "/essays/HangZhou.md" }
+  //   ]
+  // }
 
   // {
   //   text: "相关链接",
