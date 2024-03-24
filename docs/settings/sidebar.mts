@@ -144,22 +144,24 @@ export const sidebar = {
       collapsed: false,
       items: [
         { text: "快速入门", link: "/gis/mapbox/01-快速入门.md" },
-        { text: "MapboxDraw", link: "/gis/mapbox/MapboxDraw.md" }
+        { text: "Style 样式", link: "/gis/mapbox/02-Style样式.md" },
+        { text: "Map 方法", link: "/gis/mapbox/03-Map方法.md" },
+        { text: "Map 事件", link: "/gis/mapbox/04-Map事件.md" },
+        { text: "表达式", link: "/gis/mapbox/05-表达式.md" },
+        { text: "练习案例", link: "/gis/mapbox/06-练习案例.md" }
       ]
     },
     {
       text: "Maplibre",
-      collapsed: false,
-      items: [
-        { text: "快速入门", link: "/gis/maplibre/01-maplibre.md" },
-        { text: "地图Style", link: "/gis/maplibre/02-style.md" },
-        { text: "Map方法", link: "/gis/maplibre/03-Map方法.md" },
-        { text: "Map事件", link: "/gis/maplibre/04-Map事件.md" }
-      ]
+      items: [{ text: "快速入门", link: "/gis/maplibre/01-maplibre.md" }]
     },
     {
-      text: "瓦片地图url",
-      link: "/gis/mapbox/瓦片地图url.md"
+      text: "Mapbox插件",
+      items: [{ text: "MapboxDraw", link: "/gis/mapbox/MapboxDraw.md" }]
+    },
+    {
+      text: "其他",
+      items: [{ text: "瓦片地图url", link: "/gis/mapbox/瓦片地图url.md" }]
     }
   ]
 };

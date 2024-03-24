@@ -30,10 +30,7 @@ export const nav = [
 
   {
     text: "GIS",
-    items: [
-      { text: "Mapbox", link: "/gis/mapbox/01-快速入门.md" },
-      { text: "Maplibre", link: "/gis/maplibre/maplibre.md" }
-    ]
+    items: [{ text: "Mapbox", link: "/gis/mapbox/01-快速入门.md" }]
   }
 
   // {
