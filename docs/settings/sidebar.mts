@@ -52,6 +52,7 @@ export const sidebar = {
       collapsed: false,
       items: [
         { text: "alasql", link: "/fontend/utils/alasql.md" },
+        { text: "LZ-String", link: "/fontend/utils/LZ-String.md" },
         { text: "Pubsub-JS", link: "/fontend/utils/Pubsub-JS.md" },
         { text: "Websocket", link: "/fontend/utils/WebSocket.md" },
         { text: "文字转语音", link: "/fontend/utils/文字转语音.md" }
