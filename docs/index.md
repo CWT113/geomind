@@ -25,18 +25,22 @@ hero:
     - theme: alt
       text: GIS
       link: /gis/maplibre/maplibre.md
-    - theme: alt
-      text: 我的随笔
-      link: /essays/QingDao.md
+    # - theme: alt
+    #   text: 我的随笔
+    #   link: /essays/QingDao.md
     # - theme: alt
     #   text: 相关链接
     #   link:
 
 features:
-  - title: Feature A
+  - icon: 🤹
+    title: Feature A
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
+    # link: /fontend/typescript/TypeScript.md
+  - icon: 🎨
+    title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - icon: 🚀
+    title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
