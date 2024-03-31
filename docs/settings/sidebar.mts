@@ -32,8 +32,10 @@ export const sidebar = {
       text: "Vue",
       collapsed: false,
       items: [
-        { text: "vue3", link: "/fontend/vue3/vue3.md" }
-        // { text: "Runtime API Examples", link: "/api-examples" }
+        { text: "vue3", link: "/fontend/vue3/vue3.md" },
+        { text: "JSX 语法", link: "/fontend/vue3/JSX语法.md" },
+        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" },
+        { text: "ref 家族", link: "/fontend/vue3/ref函数.md" }
       ]
     },
     {
