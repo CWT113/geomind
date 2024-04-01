@@ -249,7 +249,8 @@ fill [样式图层 ](https://docs.mapbox.com/style-spec/reference/layers/#fill)�
     "fill-color": "#fff",           // 填充颜色(设置了fill-pattern，则该属性无效)
     "fill-outline-color": "#fff",   // 描边的颜色(默认和fill-color一致，如果设置了fill-pattern，则该属性无效。使                                        用该属性时，需设置fill-antialias为true)
     "fill-translate": [0, 0],       // 填充的平移
-    "fill-translate-anchor": "map"  // 平移的锚点，即相对的参考物(可选值:map/viewport)
+    "fill-translate-anchor": "map", // 平移的锚点，即相对的参考物(可选值:map/viewport)
+    'fill-opacity-transition': { duration: 500 }  // 填充透明的过渡效果(官网有示例)
   },
   "layout": {
     "visibility": "visible"
