@@ -2,7 +2,7 @@
 
 ## ref
 
-在 Vue 3 中，`ref` 是一个用于创建响应式数据的函数。它的基本用法是通过 `ref`函数创建一个包装对象，该对象具有 `.value` 属性，任何对 `.value` 的修改都会触发响应式更新。
+在 Vue3 中，`ref` 是一个用于**创建响应式数据**的函数，该对象具有 `.value` 属性，任何对 `.value` 的修改都会触发响应式更新。
 
 ```Vue
 <template>
@@ -10,35 +10,35 @@
   <button @click="changeName">按钮</button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 
-const name = ref("tom");
+const name = ref<string>("tom");
 
-function changeName() {
-  name.value = "job.mis.wang";
-}
+const changeName = () => name.value = "job";
 </script>
 ```
 
+
+
 ## toRef
 
-`toRef` 用于创建一个指向源对象某个属性的 ref 对象。这个函数可以用于将**对象的某个属性转换为响应式数据**，方便在组件中使用。
+`toRef` 用于将普通对象的某**一个属性**转换为响应式数据。
 
 ::: tip
 
-1. 从响应式对象中解构出来的值，会失去响应式，此时可以使用 toRef 函数再将其变为响应式。
-2. 通过 `toRef` 创建的 ref 对象是一个独立的响应式对象，**修改它的值不会影响原始对象**，反之亦然。
-   :::
+1. 从响应式对象中解构出来的值，会失去响应式，此时可以使用 `toRef` 函数再将其变为响应式。
+2. 通过 `toRef` 创建的 ref 对象是一个独立的响应式对象，**修改它的值不会影响原始对象**。
+
+:::
 
 ```Vue
 <template>
-  <h2>{{ name }}</h2>
-  <h2>{{ age }}</h2>
+  <h2>{{ newName }} -- {{ newAge }}</h2>
   <button @click="changeName">按钮</button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { toRef, reactive } from "vue";
 
 const person = reactive({
@@ -46,38 +46,39 @@ const person = reactive({
   age: 30
 });
 
-// 注意：从响应式对象中解构的值，会失去响应式！
-let { name1, age1 } = person;
+// 从响应式对象中解构的值，会失去响应式！
+let { name, age } = person;
 
-let name = toRef(person, "name");
-let age = toRef(person, "age");
+// 把 name 和 age 重新转换为 ref 对象
+const newName = toRef(name);
+const newAge = toRef(age);
 
-function changeName() {
-  name.value = "job.mis.wang";
-  age.value++;
-}
+const changeName = () => {
+  newName.value = "job";
+  newAge.value++;
+};
 </script>
 ```
 
+
+
 ## toRefs
 
-上面的 toRef 示例中，我们可以学习到 toRef 每次只能对对象的某一个属性进行响应式的转换，要想直接将一个对象转换为响应式该怎么办呢？
-
-`toRefs` 用于将**响应式对象的所有属性转换为 `ref`对象**。这个函数通常用于在 `setup` 函数中处理传入的 props 对象，以便在模板中能够更方便地访问和修改这些属性。
+上面的 toRef 每次只能把对象的某一个属性进行响应式的转换，而 `toRefs` 用于将 响应式对象的**所有属性**转换为 `ref`对象。
 
 ::: tip
 
-1. 通过 `toRefs` 转换得到的 ref 对象与原始对象的属性之间是**双向绑定**的，因此修改任一方都会影响另一方。
-   :::
+1. 通过 `toRefs` 转换得到的 ref 对象与原始对象的属性之间是 **双向绑定** 的，修改任一方都会影响另一方。
+
+:::
 
 ```Vue
 <template>
-  <h2>{{ name }}</h2>
-  <h2>{{ age }}</h2>
+  <h2>{{ name }} -- {{ age }}</h2>
   <button @click="changeName">按钮</button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { toRefs, reactive } from "vue";
 
 const person = reactive({
@@ -85,30 +86,24 @@ const person = reactive({
   age: 30
 });
 
-// 把整个对象变为响应式，此时可以使用解构的语法
-let { name, age } = toRefs(person);
+// 把整个对象的所有属性，都变为响应式属性
+const { name, age } = toRefs(person);
 
-function changeName() {
-  name.value = "job.mis.wang";
+const changeName = () => {
+  name.value = "job";
   age.value++;
-}
+};
 </script>
 ```
 
+
+
 ## isRef
 
-在 Vue3 中提供了一个 `isRef` 的辅助函数，用于检查一个值是否为 ref 对象。当确定一个值是否已经被包装成响应式对象时，可以使用。
-
-如果值是 ref 对象，则返回 `true`；否则，返回 `false`。
+ `isRef` 用于检查一个值是否为 ref 对象。如果值是 ref 对象，则返回 `true`，否则，返回 `false`。
 
 ```Vue
-<template>
-  <h2>{{ name }}</h2>
-  <h2>{{ age }}</h2>
-  <button @click="changeName">按钮</button>
-</template>
-
-<script setup>
+<script setup lang="ts">
 import { isRef, toRefs, reactive } from "vue";
 
 const person = reactive({
@@ -116,50 +111,39 @@ const person = reactive({
   age: 30
 });
 
-let { name, age } = toRefs(person);
+const { name, age } = toRefs(person);
 
-function changeName() {
-  console.log(isRef(name));  // true
-  console.log(isRef(age));   // true
+console.log(isRef(name));         // true
+console.log(isRef(age));          // true
 
-  console.log(isRef(person.name)); // false
-}
+console.log(isRef(person.name));  // false
 </script>
 ```
 
+
+
 ## unref
 
-在 Vue3 中提供了一个 `unref` 的辅助函数，用于获取 ref 对象的原始值。通常，在模板中使用 ref 对象时，Vue3 会自动解包，但在某些情况下，你可能需要显式地获取 ref 对象的原始值。
+ `unref` 用于获取 ref 对象的原始值。其实，`unRef` 就是一个语法糖：
 
-其实，unRef 就是一个语法糖：
-
-```JavaScript
-val = isRef(name) ? name.value : name;
+```js
+const val = isRef(name) ? name.value : name;
 ```
 
 下面示例演示 `unref` 的使用方法：
 
 ```Vue
-<template>
-  <h2>{{ name }}</h2>
-  <button @click="changeName">按钮</button>
-</template>
-
-<script setup>
+<script setup lang="ts">
 import { unref, ref } from "vue";
 
 const name = ref("tom");
 
-function changeName() {
-  // vue3 自动解包
-  console.log(name.value);
-
-  // unref 获取原始值
-  let name1 = unref(name);
-  console.log(name1);
-}
+const newName = unref(name);
+console.log(newName); 			// tom
 </script>
 ```
+
+
 
 ## shallowRef
 
@@ -167,81 +151,56 @@ function changeName() {
 
 ```Vue
 <template>
-  <h2>{{ name.a.b.c }}</h2>
-  <h2>{{ age.a.b.c }}</h2>
+  <h2>{{ age.a.b }}</h2>
   <button @click="changeName">按钮</button>
 </template>
 
-<script setup>
-import { ref, shallowRef } from "vue";
-
-const name = ref({
-  a: {
-    b: {
-      c: "tom"
-    }
-  }
-});
+<script setup lang="ts">
+import { shallowRef } from "vue";
 
 const age = shallowRef({
   a: {
-    b: {
-      c: 666
-    }
+    b: 100
   }
 });
 
-function changeName() {
-  name.value.a.b.c = "job.mis.wang";
-  age.value.a.b.c++; // 第一次的时候会触发更新，后续断开响应式
-}
+const changeName = () => age.value.a.b++; // 没有效果
 </script>
 ```
+
+
 
 ## triggerRef
 
-它可以让浅层的 `ref` ，即 `shallowRef` 深层属性发生改变的时候强制触发更改，比如上面的 age 属性，当为它加入 `triggerRef`之后，就可以一直是响应式了。
+它可以让 `shallowRef` 的深层属性强制触发更改，比如上面的 age 属性，当为它加入 `triggerRef`之后，就可以一直是响应式了。
 
 ```Vue
 <template>
-  <h2>{{ name.a.b.c }}</h2>
-  <h2>{{ age.a.b.c }}</h2>
+  <h2>{{ age.a.b }}</h2>
   <button @click="changeName">按钮</button>
 </template>
 
 <script setup>
-import { ref, shallowRef, triggerRef } from "vue";
-
-const name = ref({
-  a: {
-    b: {
-      c: "tom"
-    }
-  }
-});
+import { shallowRef, triggerRef } from "vue";
 
 const age = shallowRef({
   a: {
-    b: {
-      c: 666
-    }
+    b: 100
   }
 });
 
 function changeName() {
-  name.value.a.b.c = "job.mis.wang";
-
-  age.value.a.b.c++;
-  triggerRef(age); // 强制让 age 属性变为响应式，强制触发更新
+  triggerRef(age);
+  age.value.a.b++;    // 触发响应式
 }
 </script>
 ```
 
+
+
 ## customRef
 
-`customRef` 是 Vue3 提供的一个函数，用于创建自定义的 ref 对象。通过 `customRef`，你可以定义自己的获取器和设置器来实现对 ref 对象的完全自定义控制。
-
-感觉 ref 底层就是使用 customRef 实现的。🤣🤣
+`customRef` 用于创建自定义的 ref 对象。通过 `customRef`，你可以定义自己的 getter 和 setter 来实现对 ref 对象的完全自定义控制。
 
 ```Vue
 <template>
@@ -249,28 +208,27 @@ function changeName() {
   <button @click="changeName">按钮</button>
 </template>
 
-<script setup>
-import { ref, customRef } from "vue";
+<script setup lang="ts">
+import { customRef } from "vue";
 
 const name = customRef((track, trigger) => {
   let value = "tom";
 
   return {
     get() {
-      track(); 				// 依赖追踪
+      track(); 		// 依赖追踪
       return value;
     },
     set(newValue) {
-      trigger(); 			// 触发更新
+      trigger(); 	// 触发更新
       value = newValue;
     }
   };
 });
 
-function changeName() {
-  console.log(name.value); // tom
-
-  name.value = "job.mis.wang";
-}
+const changeName = () => {
+  name.value = "job";         // 触发 get
+  console.log(name.value);    // 触发 set
+};
 </script>
 ```
