@@ -82,6 +82,20 @@ interface Props1 extends Pick<Props, "name" | "age"> {
 
 
 
+## 忽略类型检测
+
+单行忽略（添加到指定行）
+
+```ts
+// @ts-ignore
+```
+
+文件忽略（添加到文件的首行）
+
+```ts
+// @ts-nocheck
+```
+
 
 
 
