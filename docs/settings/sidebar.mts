@@ -162,7 +162,8 @@ export const sidebar = {
       text: "Mapbox插件",
       items: [
         { text: "MapboxDraw", link: "/gis/mapbox/MapboxDraw.md" },
-        { text: "Threebox", link: "/gis/mapbox/ThreeBox.md" }
+        { text: "Threebox", link: "/gis/mapbox/ThreeBox.md" },
+        { text: "Antv L7 Map", link: "/gis/mapbox/Antv L7.md" }
       ]
     },
     {

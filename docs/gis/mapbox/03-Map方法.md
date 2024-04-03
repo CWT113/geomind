@@ -1,52 +1,153 @@
 # Map方法
 
-## 改变图层层级
+## layers
 
-在 Maplibre GL JS 中，您可以使用 `moveLayer` 方法来调整图层的层级关系。
+### getLayer
 
-其语法如下：
+获取指定 id 的图层
 
 ```js
-map.moveLayer('currentLayerId', 'beforeId');
+const layer = map.getLayer('custom-layer');
 ```
 
-这表示将 `currentLayerId` 移动到 `beforeId` 的上方。
+### addLayer
 
-
-
-1. 有两个图层分别为 `layer1` 和 `layer2`，将 `layer2` 移动到 `layer1` 的上方：
-
-   ```js
-   map.moveLayer('layer2', 'layer1');
-   ```
-
-2. 将 layer2 移动到所有图层的最底部：
-
-   ```js
-   map.moveLayer('layer1', null);
-   ```
-
-3. 将 layer2 移动到所有图层的最顶部：
-
-   ```js
-   map.moveLayer('layer2', undefined);
-   ```
-
-   
-
-## 设置图层显隐
-
-地图图层的 layout 中，默认存在属性 `visibility: "visible"` 表示图层处于显示状态，在地图 load 加载时，可以使用下面的方法控制其显示或隐藏：
+[添加图层](https://docs.mapbox.com/mapbox-gl-js/api/map/#instance-members-layers)
 
 ```js
-// 获取 layerName 图层的 visibility 属性
-const visibility = map.getLayoutProperty(layerName, "visibility");
+map.on("load", () => {
+    map.addLayer(layerOptions, beforeId?);
+});
+```
 
-if (visibility === "visible") {
-    map.setLayoutProperty(layerName, "visibility", "none");
-} else {
-    map.setLayoutProperty(layerName, "visibility", "visible");
-}
+### removeLayer
+
+移除图层
+
+```js
+if (map.getLayer("custom-layer")) map.removeLayer("custom-layer");
+```
+
+### moveLayer
+
+调整图层的层级关系
+
+```js
+// 将 custom-layer 移动到 beforeId 的上方。
+map.moveLayer('custom-layer', 'beforeId');
+```
+
+::: info
+
+下面的两个方法没有效果，不知道是否真实存在：
+
+```js
+// 将 custom-layer 移动到所有图层的最底部
+map.moveLayer('custom-layer', null);
+
+// 将 custom-layer 移动到所有图层的最顶部
+map.moveLayer('custom-layer', undefined);
+```
+
+:::
+
+### getFilter
+
+获取图层的过滤信息
+
+```js
+const filter = map.getFilter('custom-layer');
+```
+
+### setFilter
+
+设置图层的过滤信息
+
+```js
+map.setFilter('custom-layer', ['>=', ['get', 'available-spots'], 5]);
+```
+
+### getPaintProperty
+
+获取图层 paint 属性
+
+```js
+const paintProperty = map.getPaintProperty('custom-layer', 'fill-color');
+```
+
+### setPaintProperty
+
+设置图层 paint 属性
+
+```js
+if (paintProperty) 
+    map.setPaintProperty('custom-layer', 'fill-color', '#faafee');
+```
+
+### getLayoutProperty
+
+获取图层 layout 属性
+
+```js
+const visibility = map.getLayoutProperty("custom-layer", "visibility");
+```
+
+### setLayoutProperty
+
+设置图层 layout 属性
+
+```js
+if (visibility === "visible")
+    map.setLayoutProperty("custom-layer", "visibility", "visible");
+```
+
+
+
+## 加载 image
+
+### loadImage
+
+```js
+// 添加在线图标
+map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/cat.png', (error, image) => {
+    if (error) throw error;
+    if (!map.hasImage('cat')) map.addImage('cat', image);
+});
+
+// 添加本地图标（最好把图片放在 public 目录下）
+map.loadImage('/model/airport.png', (error, image) => {
+    if (error) throw error;
+    if (!map.hasImage('airport')) map.addImage('airport', image);
+});
+```
+
+示例：[添加 icon 到地图](https://docs.mapbox.com/mapbox-gl-js/example/add-image/) 
+
+
+
+## flyTo 和 jumpTo
+
+从某地视角变成另外一个地方的视角，`flyTo` 带有动画，`jumpTo` 没有动画。
+
+```js
+map.flyTo({
+    center: [0, 0],
+    zoom: 9,
+    speed: 0.2,
+    curve: 1,
+    easing(t) {
+        return t;
+    }
+}); 
+```
+
+```js
+map.jumpTo({
+    center: [0, 0],
+    zoom: 8,
+    pitch: 45,
+    bearing: 90
+});
 ```
 
 
@@ -110,58 +211,3 @@ map.zoomOut({ offset: [80, 60] });
 ```
 
 
-
-## center
-
-地图的地理中心。
-
-```js
-// 获取地图的地理中心，返回值格式为 {lng: 0, lat: 0}
-const center = map.getCenter();
-// 设置地图的地理中心，作用等同于 jumpTo({center: center})
-map.setCenter([-74, 38]);
-```
-
-
-
-## flyTo & jumpTo
-
-从某地视角变成另外一个地方的视角，`flyTo` 带有动画，`jumpTo` 没有动画。
-
-```js
-map.flyTo({
-    center: [0, 0],
-    zoom: 9,
-    speed: 0.2,
-    curve: 1,
-    easing(t) {
-        return t;
-    }
-}); 
-
-map.jumpTo({
-    center: [0, 0],
-    zoom: 8,
-    pitch: 45,
-    bearing: 90
-});
-```
-
-
-
-## bounds
-
-地图范围，就是将地图控制在一个矩形框内，由两个坐标点控制（左下，右上）。
-
-```js
-const bounds = new maplibregl.LngLatBounds(
-    [118.61229390547766, 37.42688730469044],
-    [118.93002792860182, 37.58613927790206]
-);
-// 设置
-map.setMaxBounds(bounds);
-// 获取
-const maxBounds = map.getMaxBounds();
-// 获取当前范围
-const bounds = map.getBounds();
-```

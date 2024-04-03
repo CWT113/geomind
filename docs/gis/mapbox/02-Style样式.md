@@ -28,7 +28,7 @@ sprite: "mapbox://sprites/mapbox/streets-v8";
 
 字形符号（可选，用来指定加载以 PBF 格式设置的 有向距离场 字形的 URL 模板）。
 
-<p style="color: #e63e31">注意：当 layer 使用了 `text-filed` 属性时，glyphs 必填。</p>
+<span style="color: #e63e31">注意：当 layer 使用了 `text-filed` 属性时，glyphs 必填。</span>
 
 ```js
 glyphs: "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
@@ -84,10 +84,10 @@ pitch: 0;
 
 ```js
 light: {
-    "anchor": "viewport", // 锚点，指定作用的目标（可选，可选值 map、viewport，默认值为 viewport）
-    "position": [1.15,210,30], // 位置（可选，默认值为 [1.15,210,30]）
-    "color": "white", // 颜色（可选，默认值为 #ffffff）
-    "intensity": 0.5 // 强度（可选，取值范围为 0 ~ 1，默认值为 0.5）
+    "anchor": "viewport", 		 // 锚点，指定作用的目标（可选，可选值 map、viewport，默认值为 viewport）
+    "position": [1.15,210,30],   // 位置（可选，默认值为 [1.15,210,30]）
+    "color": "white",            // 颜色（可选，默认值为 #ffffff）
+    "intensity": 0.5             // 强度（可选，取值范围为 0 ~ 1，默认值为 0.5）
 }
 ```
 
@@ -98,8 +98,7 @@ light: {
 sources 是以 对象{} 的形式存在，其属性名就是数据的来源，这样根据数据源的名称可快速的获取数据源的信息。
 
 ```js
-sources: {
-}
+sources: {}
 ```
 
 每个数据源 source 都有一个 [`type` 属性](https://docs.mapbox.com/style-spec/reference/sources/)，用于指定该数据源的类型，共分为一下几种：
@@ -111,22 +110,49 @@ sources: {
 - image：图片
 - video：视频
 
+<br />
+
 #### vector
 
 详细了解矢量图块的优势及工作原理，请参阅 [矢量图块](https://docs.mapbox.com/data/tilesets/guides/vector-tiles-introduction/) 文档。对于 mapbox 托管的矢量切片，url 需使用 `mapbox://username.tilesetid` 的形式。
 
 ```js
+// url
 map.addSource("terrain", {
   type: "vector",
   url: "mapbox://mapbox.mapbox-terrain-v2"
 });
+
+// tiles 数组
+map.addSource('sourceId', {
+    type: 'vector',
+    tiles: ['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt'],
+    minzoom: 6,
+    maxzoom: 14
+});
+
+// 运行时设置 url
+map.getSource('sourceId').setUrl("mapbox://mapbox.mapbox-streets-v8");
+
+// 运行时设置 tiles
+map.getSource('some id').setTiles(['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt']);
 ```
+
+
 
 #### raster
 
 可用于绘制栅格地图，例如卫星影像等。
 
 ```js
+// url
+map.addSource('sourceId', {
+    type: 'raster',
+    url: 'mapbox://mapbox.satellite',
+    tileSize: 256
+});
+
+// tiles 数组
 map.addSource("openstreetmap", {
   type: "raster",
   tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
@@ -135,9 +161,11 @@ map.addSource("openstreetmap", {
 });
 ```
 
+
+
 #### raster-dem
 
-Raster-DEM 是 [`RasterTileSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#rastertilesource) 的特例，它包含高程数据，并引用 Mapbox `Terrain-DEM()`，这是唯一受支持的栅格 DEM 源。
+raster-dem 是 [`RasterTileSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#rastertilesource) 的特例，它包含高程数据，并引用 Mapbox `Terrain-DEM()`，这是唯一受支持的栅格 DEM 源。
 
 ```js
 map.addSource("dem", {
@@ -146,9 +174,11 @@ map.addSource("dem", {
 });
 ```
 
+
+
 #### geojson
 
-GeoJSON 源是一个或多个地理要素的集合，这些集合可以是点、线、面。数据必须通过属性提供，其值可以是 url 或 geojson 数据。
+geojson 源是一个或多个地理要素的集合，这些集合可以是点、线、面。数据必须通过属性提供，其值可以是 url 或 geojson 数据。
 
 ```js
 // url
@@ -159,25 +189,26 @@ map.addSource("floorplan", {
 
 // geojson
 map.addSource("maine", {
-  type: "geojson",
-  data: {
-    type: "Feature",
-    geometry: {
-      type: "Polygon",
-      coordinates: [
-        [
-          [-66.96466, 44.8097],
-          [-68.03252, 44.3252]
-        ]
-      ]
+    type: "geojson",
+    data: {
+        type: "Feature",
+        properties: {},
+        geometry: {
+            type: "LineString",
+            coordinates: [
+                [115.8233, 35.8098],
+                [120.0564, 37.7521]
+            ]
+        }
     }
-  }
 });
 ```
 
+
+
 #### image
 
-图像源 [`ImageSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#imagesource) 是您与地理坐标一起提供的图像。将数组中的地理坐标指定为成对，以便地图知道将图像放置在世界的哪个位置。数组中的每个坐标对表示按顺时针顺序列出的图像角：左上角、右上角、右下角、左下角。
+图像源 [`ImageSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#imagesource) 可以向地图添加图片。数组中的每个坐标对表示按顺时针排列：左上角、右上角、右下角、左下角。
 
 ```js
 map.addSource("radar", {
@@ -192,7 +223,43 @@ map.addSource("radar", {
 });
 ```
 
+
+
+#### video
+
+包含视频的数据源。
+
+```js
+map.addSource('sourceId', {
+    type: 'video',
+    url: [
+        'https://www.mapbox.com/blog/assets/baltimore-smoke.mp4',
+        'https://www.mapbox.com/blog/assets/baltimore-smoke.webm'
+    ],
+    coordinates: [
+        [-76.54, 39.18],
+        [-76.52, 39.18],
+        [-76.52, 39.17],
+        [-76.54, 39.17]
+    ]
+});
+
+// 更新 videoSource
+const mySource = map.getSource('sourceId');
+mySource.setCoordinates([
+    [-76.54335737228394, 39.18579907229748],
+    [-76.52803659439087, 39.1838364847587],
+    [-76.5295386314392, 39.17683392507606],
+    [-76.54520273208618, 39.17876344106642]
+]);
+
+// 移除 videoSource
+map.removeSource('sourceId');
+```
+
 ---
+
+<br />
 
 ### layers
 
@@ -214,14 +281,16 @@ layers: [];
 - fill-extrusion：三维填充
 - background：背景
 
+::: tip
 
+注意：在 layer 中，`layout` 属性和 `paint` 属性有一个很重要的区别：
 
->注意：在 layer 中，`layout` 属性和 `paint` 属性有一个很重要的区别：
->
->1. `paint` 属性，只要缩放级别发生变化，都会重新计算 `paint` 属性，即使是小数变化，比如在 4.1 - 4.6 之间。
->2. `layout` 属性只在整数缩放级别时计算，在 4.1 - 4.6 之间不会发生变化，只有在高于 5 或小于 4 时计算。
+1. `paint` 属性，只要缩放级别发生变化，都会重新计算 `paint` 属性，即使是小数变化，比如在 4.1 - 4.6 之间；
+2. `layout` 属性只在整数缩放级别时计算，在 4.1 - 4.6 之间不会发生变化，只有在高于 5 或小于 4 时计算；
 
+:::
 
+<br />
 
 #### fill
 

@@ -112,3 +112,12 @@ map.on("click", layerName, e => {
     console.log(e);
 })
 ```
+
+为多个图层添加同一个事件回调：
+
+```js
+map.on('click', ['layerName1', 'layerName2'], (e) => {
+	console.log(e);
+});
+```
+
