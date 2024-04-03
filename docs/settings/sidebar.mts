@@ -2,7 +2,6 @@
  * 侧边栏配置
  */
 export const sidebar = {
-  // 前端
   "/fontend/": [
     {
       text: "TypeScript",
@@ -10,11 +9,11 @@ export const sidebar = {
       items: [
         {
           text: "TypeScript基础",
-          link: "/fontend/typescript/TypeScript.md"
+          link: "/fontend/typescript/01-TypeScript.md"
         },
         {
           text: "TypeScript技巧",
-          link: "/fontend/typescript/TypeScript技巧.md"
+          link: "/fontend/typescript/02-TypeScript技巧.md"
         }
       ]
     },
@@ -24,7 +23,7 @@ export const sidebar = {
       items: [
         {
           text: "JS常用方法",
-          link: "/fontend/javascript/Javascript.md"
+          link: "/fontend/javascript/01-Javascript.md"
         }
       ]
     },
@@ -32,10 +31,10 @@ export const sidebar = {
       text: "Vue",
       collapsed: false,
       items: [
-        { text: "vue3", link: "/fontend/vue3/vue3.md" },
-        { text: "JSX 语法", link: "/fontend/vue3/JSX语法.md" },
-        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" },
-        { text: "ref 家族", link: "/fontend/vue3/ref函数.md" }
+        { text: "vue3", link: "/fontend/vue3/01-vue3.md" },
+        { text: "ref 家族", link: "/fontend/vue3/02-ref函数.md" },
+        { text: "JSX 语法", link: "/fontend/vue3/03-JSX语法.md" },
+        { text: "h 函数", link: "/fontend/vue3/04-h渲染函数.md" }
       ]
     },
     {
@@ -53,15 +52,15 @@ export const sidebar = {
       text: "工具集",
       collapsed: false,
       items: [
-        { text: "alasql", link: "/fontend/utils/alasql.md" },
-        { text: "LZ-String", link: "/fontend/utils/LZ-String.md" },
-        { text: "Pubsub-JS", link: "/fontend/utils/Pubsub-JS.md" },
-        { text: "Websocket", link: "/fontend/utils/WebSocket.md" },
-        { text: "文字转语音", link: "/fontend/utils/文字转语音.md" }
+        { text: "alasql", link: "/fontend/utils/01-alasql.md" },
+        { text: "LZ-String", link: "/fontend/utils/02-LZ-String.md" },
+        { text: "Pubsub-JS", link: "/fontend/utils/03-Pubsub-JS.md" },
+        { text: "Websocket", link: "/fontend/utils/04-WebSocket.md" },
+        { text: "文字转语音", link: "/fontend/utils/05-文字转语音.md" }
       ]
     }
   ],
-  // C#
+
   "/csharp/": [
     {
       text: "C#",
@@ -91,7 +90,7 @@ export const sidebar = {
       ]
     }
   ],
-  // sql
+
   "/sql/": [
     {
       text: "MySQL",
@@ -122,7 +121,7 @@ export const sidebar = {
       items: [{ text: "权限与表分区", link: "/sql/postgres/权限与表分区.md" }]
     }
   ],
-  // .NET微服务
+
   "/net/": [
     {
       text: "ORM",
@@ -140,8 +139,8 @@ export const sidebar = {
       items: [{ text: "CSRedis", link: "/net/redis/CSRedis.md" }]
     }
   ],
-  // gis
-  "/gis/": [
+
+  "/gis/mapbox/": [
     {
       text: "Mapbox",
       collapsed: false,
@@ -156,7 +155,7 @@ export const sidebar = {
     },
     {
       text: "Maplibre",
-      items: [{ text: "快速入门", link: "/gis/maplibre/01-maplibre.md" }]
+      items: [{ text: "快速入门", link: "/gis/mapbox/01-maplibre.md" }]
     },
     {
       text: "Mapbox插件",
@@ -169,6 +168,14 @@ export const sidebar = {
     {
       text: "其他",
       items: [{ text: "瓦片地图url", link: "/gis/mapbox/瓦片地图url.md" }]
+    }
+  ],
+
+  "/gis/cesium/": [
+    {
+      text: "Cesium",
+      collapsed: false,
+      items: [{ text: "cesium", link: "/gis/cesium/01-cesium.md" }]
     }
   ]
 };

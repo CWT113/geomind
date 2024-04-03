@@ -6,7 +6,7 @@ export const nav = [
 
   {
     text: "前端",
-    link: "/fontend/typescript/TypeScript.md"
+    link: "/fontend/typescript/01-TypeScript.md"
   },
 
   {
@@ -30,7 +30,10 @@ export const nav = [
 
   {
     text: "GIS",
-    items: [{ text: "Mapbox", link: "/gis/mapbox/01-快速入门.md" }]
+    items: [
+      { text: "Mapbox", link: "/gis/mapbox/01-快速入门.md" },
+      { text: "Cesium", link: "/gis/cesium/01-cesium.md" }
+    ]
   }
 
   // {
