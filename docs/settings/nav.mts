@@ -32,7 +32,8 @@ export const nav = [
     text: "GIS",
     items: [
       { text: "Mapbox", link: "/gis/mapbox/01-快速入门.md" },
-      { text: "Cesium", link: "/gis/cesium/01-cesium.md" }
+      { text: "Cesium", link: "/gis/cesium/01-cesium.md" },
+      { text: "Leaflet", link: "/gis/leaflet/01-leaflet.md" },
     ]
   }
 

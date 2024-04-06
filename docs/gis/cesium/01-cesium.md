@@ -1,8 +1,8 @@
 # 快速入门
 
-> Cesium API 文档：http://cesium.xin/cesium/cn/Documentation1.62/index.html
+> Cesium API 英文文档：https://cesium.com/learn/cesiumjs/ref-doc/index.html
 >
-> Cesium 中文文档：http://cesium.coinidea.com/guide/
+> Cesium 中文社区：http://cesium.coinidea.com/guide/
 >
 > Cesium 官网：https://ion.cesium.com/tokens?page=1
 
@@ -16,7 +16,7 @@
 
 ```shell
 pnpm install cesium
-pnpm i cesium vite-plugin-cesium
+pnpm install vite-plugin-cesium
 ```
 
 在 vite.config.ts 中，注册 vite-plugin-cesium 插件：
@@ -47,6 +47,9 @@ import * as Cesium from "cesium";
 <script setup lang="ts">
 import { onMounted } from "vue";
 import * as Cesium from "cesium";
+// import "cesium/Build/Cesium/Widgets/widgets.css";
+    
+Cesium.Ion.defaultAccessToken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3OGM4MGQ0MS1jZmY0LTQ4YzctYjUzOS1hNWFjZDE3N2EwYTAiLCJpZCI6MTE2MzEzLCJpYXQiOjE3MTIzNzA5MDl9.nnflgZl7_uVVXmVVaZulVOPPOcczeQOwc8oanzXdDKA";
 
 onMounted(() => {
   const viewer = new Cesium.Viewer("cesiumContainer", {

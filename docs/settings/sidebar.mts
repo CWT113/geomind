@@ -45,6 +45,10 @@ export const sidebar = {
         {
           text: "postman配置token",
           link: "/fontend/node/Postman全局配置token.md"
+        },
+        {
+          text: "nvm",
+          link: "/fontend/node/nvm.md"
         }
       ]
     },
@@ -56,7 +60,8 @@ export const sidebar = {
         { text: "LZ-String", link: "/fontend/utils/02-LZ-String.md" },
         { text: "Pubsub-JS", link: "/fontend/utils/03-Pubsub-JS.md" },
         { text: "Websocket", link: "/fontend/utils/04-WebSocket.md" },
-        { text: "文字转语音", link: "/fontend/utils/05-文字转语音.md" }
+        { text: "文字转语音", link: "/fontend/utils/05-文字转语音.md" },
+        { text: "西瓜视频播放器", link: "/fontend/utils/06-西瓜视频播放器.md" }
       ]
     }
   ],
@@ -180,6 +185,19 @@ export const sidebar = {
         { text: "坐标系", link: "/gis/cesium/02-坐标系.md" },
         { text: "相机视角", link: "/gis/cesium/03-相机视角.md" },
         { text: "Entity实体", link: "/gis/cesium/04-Entity实体.md" }
+      ]
+    }
+  ],
+
+  "/gis/leaflet/": [
+    {
+      text: "Leaflet",
+      collapsed: false,
+      items: [
+        {
+          text: "快速入门",
+          link: "/gis/leaflet/01-leaflet.md"
+        }
       ]
     }
   ]

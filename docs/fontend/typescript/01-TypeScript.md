@@ -23,10 +23,9 @@ TS 中的常用基础类型细分为两类：
 - 作用：为变量添加类型约束，即约定了什么类型，就只能给变量赋值该类型的值，否则报错。
 
   ```TypeScript
-  // :number 就是类型注解
   let age: number = 20
-  age = 30  		 // 允许此操作
-  age = '小明' 		// 直接报错
+  age = 30  	   // 允许此操作
+  age = '小明'   // 直接报错
 
 ### 2. 原始类型
 
@@ -44,7 +43,6 @@ let s: symbol = Symbol()
 ```TypeScript
 // 两种书写方式
 let arr1: number[] = [1, 3, 5]
-
 let arr2: Array<string> = ['a', 'b', 'c']
 
 // 联合类型
@@ -64,7 +62,6 @@ let arr3: (number | string)[] = [1, 3, 5, 'a', 'b']
   type CustomArray = (number | string)[]
   
   let arr: CustomArray = [1, 3, 5, 'a', 'b']
-  
   let arr1: CustomArray = [2, 4, 6, 'aa', 'bb']
   ```
 
@@ -136,12 +133,7 @@ let person: { name: string; age: number; sayHi(): void } = {
 }
 
 // 方式二
-let person: {
-  name: string
-  age: number
-  // sayHi(): void
-  sayHi: () => void  // 方法也可以使用箭头函数
-} = {
+let person: { name: string; age: number; sayHi: () => void } = {
   name: '小明',
   age: 20,
   sayHi() {}
@@ -170,7 +162,7 @@ let person: {
   }
   ```
 
-**类型别名（type）和接口（interface）的对比：**
+::: tip **类型别名（type）和接口（interface）的对比：**
 
 - 相同点：都可以为对象指定类型；
 
@@ -179,6 +171,8 @@ let person: {
   - 接口：只能为对象指定类型；
 
   - 类型别名：不仅可以为对象指定类型，实际上可以为任意类型指定别名。
+
+:::
 
 ### 8. 接口继承
 
@@ -267,16 +261,11 @@ function add(num1: number, num2: number) {
   ```TypeScript
   // 定义枚举
   enum Direction { Up, Down, Left, Right }
-
+  
   function changeDirection(direction: Direction) {}
-
   // 使用枚举（ . 的方式）
   changeDirection(Direction.Left)
   ```
-
-- 注意：
-
-  - 枚举的使用方式：使用 `枚举名称.枚举属性`的方式。
 
 #### 12.1 数字枚举
 
@@ -366,38 +355,33 @@ function add(num1, num2) {}
 
 #### 1.1 class 类的构造函数
 
-- 注意：构造函数不需要返回值！
-
-  ```TypeScript
-  class Person {
-    age: number
-    gender: string
-  
-    constructor(age: number, gender: string) {
-      this.age = age
-      this.gender = gender
-    }
+```TypeScript
+class Person {
+  private age: number;
+  private gender: string;
+  constructor(age: number, gender: string) {
+    this.age = age;
+    this.gender = gender;
   }
-  
-  const p = new Person(20, '男')
-  ```
+}
+
+const p = new Person(20, '男')
+```
 
 #### 1.2 class 类的实例方法
 
 ```TypeScript
 class Point {
-  x = 1
-  y = 2
+  private x = 1;
+  private y = 2;
 
-  // x,y同时放大10倍
   scale(n: number) {
-    this.x *= n
-    this.y *= n
+    this.x *= n;
+    this.y *= n;
   }
 }
 
 const p = new Point()
-
 p.scale(10)
 ```
 
@@ -414,18 +398,19 @@ p.scale(10)
 ```TypeScript
 class Animal {
   move() {
-    console.log('走两步')
+    console.log("走两步");
   }
 }
 
 class Dog extends Animal {
-  name = '二哈'
+  name = "二哈";
   bark() {
-    console.log('旺旺！')
+    console.log("旺旺！");
   }
 }
 
-const d = new Dog()
+const d = new Dog();
+d.move();
 ```
 
 `implements`：
@@ -436,10 +421,9 @@ itnterface Singable {
   sing(): void
 }
 
-// Son 类实现接口 Father 意味着，Person类中必须提供 Singable 接口中指定的所有方法和属性。
+// 子类实现父类接口意味着，Person 子类中必须定义 Singable 父类中所有的方法和属性
 class Person implements Singable {
   name: '小明'
-
   sing() {
     console.log('爱是不是不开口才珍贵~')
   }
@@ -454,9 +438,9 @@ class Person implements Singable {
 
   - `public`：共有的
 
-  - `protected`：受保护的
+  - `protected`：受保护的（自己或子类内部可以调用，外部实例不能调用）
 
-  - `private`：私有的
+  - `private`：私有的（只在当前类内部可以调用，其他一律不能调用）
 
 `public`：
 
@@ -473,60 +457,49 @@ class Animal {
 
 ```TypeScript
 class Animal {
-  // move 方法是受保护的
   protected move() {
     console.log('走一走')
   }
   run() {
-    this.move() // 父类的其他方法中，可以调用
-    console.log('跑一跑')
+    this.move()  // 父类的其他方法中，可以调用
   }
 }
-
 const a = new Animal()
-a.move() // ❌父类实例方法不能调用！
+// a.move() 	 // 父类实例方法不能调用
 
 class Dog extends Animal {
   eat() {
-    this.move() // 子类的其他方法中，可以调用
-    console.log('吃饭')
+    this.move()  // 子类的其他方法中，可以调用
   }
 }
-
 const d = new Dog()
-d.move() // ❌子类实例方法不能调用！
+// d.move()      // 类实例方法不能调用
 ```
 
 `pritive`：
 
 ```TypeScript
 class Animal {
-  // __run__方法是私有的
-  private __run__() {
+  private run() {
     console.log('哈喽啊')
   }
   protected move() {
-    this.__run__() // 父类受保护的方法中可以调用
-    console.log('走一走')
+    this.run() 			// 父类受保护的方法中可以调用
   }
   run() {
-    this.__run__() // 父类普通方法中可以调用
-    console.log('跑一跑')
+    this.run() 			// 父类普通方法中可以调用
   }
 }
-
 const a = new Animal()
-a.__run__() // ❌父类的实例方法不能调用
+// a.run() 		       // 父类的实例方法不能调用
 
 class Dog extends Animal {
   eat() {
-    a.__run__() // ❌子类的普通方法中不能调用
-    console.log('吃饭')
+    a.run()            // 子类的普通方法中不能调用
   }
 }
-
 const d = new Dog()
-d.__run__() // ❌子类的实例方法不能调用
+// d.run()             // 子类的实例方法不能调用
 ```
 
 ### 2. 交叉类型
@@ -539,7 +512,6 @@ d.__run__() // ❌子类的实例方法不能调用
   interface Person {
     name: string
   }
-  
   interface Concat {
     phone: string
   }
@@ -575,14 +547,13 @@ d.__run__() // ❌子类的实例方法不能调用
   interface A {
     fn: (value: string) => {}
   }
-  
   interface B {
     fn: (value: number) => {}
   }
   
   type C = A & B
   
-  // 可以简单理解为: value 既可以是 string 类型，也可以是 number 类型
+  // value 既可以是 string 类型，也可以是 number 类型
   let obj: C = {
     fn(value: string | number) {
       return ''
@@ -603,10 +574,7 @@ d.__run__() // ❌子类的实例方法不能调用
   }
   
   // 调用泛型函数
-  // 1 以 number 类型调用泛型
   const num = id<number>(10)
-  
-  // 2 以 string 类型调用泛型
   const str = id<string>('aa')
   ```
 
@@ -616,7 +584,7 @@ d.__run__() // ❌子类的实例方法不能调用
 
   ```TypeScript
   function id<Type>(value: Type): Type {
-    // ❌注意：此时的 length 就会报错！因为不确定 Type 到底是什么类型，如 number 没有length 属性
+    // 此时的 length 就会报错！因为不确定 Type 到底是什么类型，如 number 没有length 属性
     value.length
     return value
   }
@@ -680,7 +648,7 @@ d.__run__() // ❌子类的实例方法不能调用
   
   let obj: IdFunc<number> = {
     id: (value) => value, // id方法的参数和返回值都是 number 类型
-    ids: () => [1, 2, 3] // ids 方法无参数，返回值是 数值型的数组
+    ids: () => [1, 2, 3]  // ids 方法无参数，返回值是 数值型的数组
   }
   ```
 
@@ -705,7 +673,7 @@ d.__run__() // ❌子类的实例方法不能调用
 
 #### 6.1 `Partial<Type>`
 
-- `Partial<Type>`用来构造一个类型，将 Type 的所有属性设置为 可选。
+- `Partial<Type>`用来构造一个类型，将 Type 的所有属性设置为 **可选**。
 
   ```TypeScript
   interface Props {
@@ -713,11 +681,10 @@ d.__run__() // ❌子类的实例方法不能调用
     hobby: string[]
   }
   
+  // 把 Props 接口中定义的属性全部变为可选
   type partialProps = Partial<Props>
   
-  // 把 Props 接口中定义的属性变为可选
   let p: partialProps = {}
-  
   let p1: partialProps = {
     id: 1,
     hobby: ['吃饭', '睡觉']
@@ -726,7 +693,7 @@ d.__run__() // ❌子类的实例方法不能调用
 
 #### 6.2 `Readonly<Type>`
 
-- `Readonly<Type>`用来构造一个类型，将 Type 的所有属性都设置为 readondy（只读）。
+- `Readonly<Type>`用来构造一个类型，将 Type 的所有属性都设置为 **只读**。
 
   ```typescript
   interface Props {
@@ -741,8 +708,7 @@ d.__run__() // ❌子类的实例方法不能调用
     id: 1,
     hobby: ['吃饭', '睡觉']
   }
-  
-  p.id = 2 // ❌无法为“id”赋值，因为它是只读属性
+  p.id = 2 // 无法为“id”赋值，因为它是只读属性
 
 #### 6.3 `Pink<Type>`
 
@@ -824,7 +790,7 @@ d.__run__() // ❌子类的实例方法不能调用
   ```TypeScript
   type PropKeys = 'x' | 'y' | 'z'
   
-  // 如果 PropKeys 的属性值很多时，下面的方法就显得乏力！
+  // 如果 PropKeys 的属性值很多时，下面的方法就显得乏力
   type Type1 = { x: number; y: number; z: number }
   
   // 无论 PropKeys 的属性值有多少个，都会自动生成
@@ -838,32 +804,23 @@ d.__run__() // ❌子类的实例方法不能调用
   ```TypeScript
   type Props = { a: string; b: number; c: boolean }
   
-  // 首先，先执行 keyof Props，获取到对象类型 Props 中所有键的联合类型，即 'a' | 'b' | 'c'
-  // 然后，key in... 表示 key 可以是 Props 中所有的键名称中的任意一个
-  type newProps = { [key in keyof Props]: number }
+  // keyof Props 获取到对象类型 Props 中所有键的联合类型，即 'a' | 'b' | 'c'
+  // key in 表示 key 可以是 Props 中所有的键名称中的任意一个
+  // Props[key] 表示获取每个键对应的类型
+  type newProps = { [key in keyof Props]: Props[key] }
   ```
 
 #### 8.2 索引查询类型
 
 - 语法格式：`T[p]`，在 TS 中叫做索引查询类型。
 
-- 作用：用来查询属性的类型。
-
   ```TypeScript
-  type Props = { a: number; b: string; c: boolean }
+  type Props = { a: number; b: string; c: boolean };
   
-  type newProps = Props['a'] // number
+  type newProps = Props["a"];          // number
+  
+  type newProps1 = Props["a" | "b"];   // number | string
+  
+  // 查询全部
+  type newProps2 = Props[keyof Props]; // number | string | boolean
   ```
-
-#### 8.3 索引查询多个类型
-
-```TypeScript
-type Props = { a: number; b: string; c: boolean }
-
-// 查询某几个
-type newProps = Props['a' | 'b'] // number | string
-
-// 查询所有
-type newProps1 = Props[keyof Props] // number | string | boolean
-```
-
