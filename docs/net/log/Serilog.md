@@ -22,6 +22,7 @@ Serilog 支持多个日志级别，包括以下级别（按照严重程度从高
 ## 安装
 
 ```bash
+# 核心包
 dotnet add package Serilog
 # 输出到控制台
 dotnet add package Serilog.Sinks.Console
@@ -150,15 +151,15 @@ Log.CloseAndFlush();
 
 `WriteTo.File()` 的参数：
 
-| 名称                     | 描述                                                         |
-| :----------------------- | ------------------------------------------------------------ |
-| path                     | 日志的输出路径                                               |
-| rollingInterval          | RollingInterval.Day，表示按天生成日志                        |
-| fileSizeLimitBytes       | 单个文件的限制大小，单位字节，不配置默认为 1GB（null：不限制大小，1024：文件大于1024时，不再存储日志） |
-| rollOnFileSizeLimit      | 是否开启滚动日志文件，true时，当日志大于限制大小时，会生成新文件存储，生成类似：log.txt log_001.txt log_002.txt |
-| retainedFileCountLimit   | 保留文件数量，不配置只保留 31 天的日志                       |
+|           名称           | 描述                                                         |
+| :----------------------: | ------------------------------------------------------------ |
+|           path           | 日志的输出路径                                               |
+|     rollingInterval      | RollingInterval.Day，表示按天生成日志                        |
+|    fileSizeLimitBytes    | 单个文件的限制大小，单位字节，不配置默认为 1GB（null：不限制大小，1024：文件大于1024时，不再存储日志） |
+|   rollOnFileSizeLimit    | 是否开启滚动日志文件，true时，当日志大于限制大小时，会生成新文件存储，生成类似：log.txt log_001.txt log_002.txt |
+|  retainedFileCountLimit  | 保留文件数量，不配置只保留 31 天的日志                       |
 | restrictedToMinimumLevel | 最低输出的日志级别                                           |
-| outputTemplate           | 输出日志的格式模板                                           |
+|      outputTemplate      | 输出日志的格式模板                                           |
 
 
 
@@ -243,3 +244,159 @@ Log.Fatal("Fatal");
 
 Log.CloseAndFlush();
 ```
+
+
+
+#### 按文件输出
+
+```C# {7,9}
+using Serilog;
+using Serilog.Filters;
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Verbose()
+    .WriteTo.Console()
+    .WriteTo.Logger(d => d.Filter.ByIncludingOnly(Matching.FromSource<Weather>())) // Weather 文件
+    .WriteTo.File($"log\\weather-.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.Logger(d => d.Filter.ByIncludingOnly(Matching.FromSource<Book>())) // Book 文件
+    .WriteTo.File($"log\\book-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+Log.Verbose("Verbose");
+Log.Debug("Debug");
+Log.Information("Information");
+Log.Warning("Warning");
+Log.Error("Error");
+Log.Fatal("Fatal");
+
+Log.CloseAndFlush();
+```
+
+
+
+## WebAPI 使用
+
+### 安装
+
+```shell
+# WebAPI 核心包
+Install-Package Serilog.AspNetCore
+# 日志格式化包
+Install-Package Serilog.Formatting.Compact
+```
+
+
+
+### 配置
+
+1. 在项目的 `appSetting.json` 中，配置 Serilog 的参数：
+
+   ```json
+   {
+       "IsUseSerilogOnStartup": "true",
+       "Serilog": {
+         "MinimumLevel": {
+           "Default": "Information",
+           "Override": {
+             "Microsoft.AspNetCore.Mvc": "Warning",
+             "Microsoft.AspNetCore.Routing": "Warning",
+             "Microsoft.AspNetCore.Hosting": "Warning"
+           }
+         },
+         "WriteTo": [
+           {
+             "Name": "Console",
+             "Args": {
+               "outputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss}] [{Level:u3}] {Message:lj}{NewLine}{Exception}"
+             }
+           },
+           {
+             "Name": "File",
+             "Args": {
+               "path": "bin\\Debug\\net8.0\\logs\\log-.txt",
+               "rollingInterval": "Day",
+               "rollOnFileSizeLimit": true,
+               //"formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+               "outputTemplate": "[{Timestamp:yyyy-MM-dd HH:mm:ss}] [{Level:u3}] {Message:lj}{NewLine}{Exception}"
+             }
+           }
+         ]
+       }
+   }
+   ```
+
+2. 新建 `SerilogConfiguration.cs` 文件，用于读取配置初始化 Serilog ：
+
+   ```C#
+   public static class SerilogConfiguration
+   {
+       /// <summary>
+       /// 添加 Serilog 配置
+       /// </summary>
+       /// <param name="services"> builder.Services </param>
+       /// <param name="configuration"> builder.Configuration </param>
+       public static void AddSerilogConfiguration(this IServiceCollection services, IConfiguration configuration)
+       {
+           services.AddSerilog((services, lc) => lc
+                   .ReadFrom.Configuration(configuration)
+                   .ReadFrom.Services(services));
+       }
+   
+       /// <summary>
+       /// 初始化项目时打印日志
+       /// </summary>
+       /// <param name="services"> builder.Services </param>
+       /// <param name="message">初始化项目时的日志内容</param>
+       public static void UseSerilogConfiguration(this IServiceCollection services, string message)
+       {
+           Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+               .WriteTo.Console(outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss}] [{Level:u3}] {Message:lj}{NewLine}{Exception}")
+               .WriteTo.File("bin\\Debug\\net8.0\\logs\\log-.txt", rollingInterval: RollingInterval.Day, outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss}] [{Level:u3}] {Message:lj}{NewLine}{Exception}")
+               .CreateBootstrapLogger();
+   
+           Log.Information(message);
+       }
+   }
+   ```
+
+3. 在 Program.cs 中添加 Serilog 的配置，注册 Serilog 的中间件：
+
+   ```C#
+   // 项目启动时，打印日志
+   var isUseSerilogOnStartup = builder.Configuration.GetSection("IsUseSerilogOnStartup").Value == "true";
+   if (isUseSerilogOnStartup) builder.Services.UseSerilogConfiguration("项目启动！");
+   
+   // 注册 Serilog 配置
+   builder.Services.AddSerilogConfiguration(builder.Configuration);
+   
+   // ...
+   
+   // 注册 Serilog 中间件
+   app.UseSerilogRequestLogging();
+   ```
+
+   
+
+### 使用
+
+在 TestController.cs 中，进行测试：
+
+```C#
+[HttpGet]
+[Route("GetInt")]
+public void GetInt()
+{
+    try
+    {
+        List<int> list = [1, 2, 3];
+        Console.WriteLine(list[555]);
+    }
+    catch (Exception ex)
+    {
+        Log.Error(ex.Message);
+    }
+}
+```
+
+此时，查看控制台和日志文件，可以看到正常输出了 Error 日志。

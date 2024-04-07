@@ -21,11 +21,7 @@ export const nav = [
 
   {
     text: ".NET微服务",
-    items: [
-      { text: "ORM", link: "/net/orm/EFCore.md" },
-      { text: "任务调度", link: "/net/scheduling/QuartZ.md" },
-      { text: "Redis", link: "/net/redis/CSRedis.md" }
-    ]
+    link: "/net/orm/EFCore.md"
   },
 
   {
