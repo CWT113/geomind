@@ -77,6 +77,11 @@ export const sidebar = {
       ]
     },
     {
+      text: "ASP.NET Core",
+      collapsed: false,
+      items: [{ text: "基本使用", link: "/csharp/aspnetcore/ASP Net Core.md" }]
+    },
+    {
       text: "C#技巧",
       collapsed: false,
       items: [
@@ -145,6 +150,11 @@ export const sidebar = {
       text: "缓存",
       collapsed: false,
       items: [{ text: "CSRedis", link: "/net/redis/CSRedis.md" }]
+    },
+    {
+      text: "日志",
+      collapsed: false,
+      items: [{ text: "Serilog", link: "/net/log/Serilog.md" }]
     }
   ],
 
