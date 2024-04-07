@@ -197,7 +197,8 @@ export const sidebar = {
         { text: "快速入门", link: "/gis/cesium/01-cesium.md" },
         { text: "坐标系", link: "/gis/cesium/02-坐标系.md" },
         { text: "相机视角", link: "/gis/cesium/03-相机视角.md" },
-        { text: "Entity实体", link: "/gis/cesium/04-Entity实体.md" }
+        { text: "Entity实体", link: "/gis/cesium/04-Entity实体.md" },
+        { text: "CallBackProperty", link: "/gis/cesium/05-CallBackProperty.md" }
       ]
     }
   ],
