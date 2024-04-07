@@ -131,7 +131,10 @@ export const sidebar = {
     {
       text: "ORM",
       collapsed: false,
-      items: [{ text: "EFCore", link: "/net/orm/EFCore.md" }]
+      items: [
+        { text: "EFCore", link: "/net/orm/EFCore.md" },
+        { text: "FreeSQL", link: "/net/orm/FreeSQL.md" }
+      ]
     },
     {
       text: "任务调度",
@@ -139,7 +142,7 @@ export const sidebar = {
       items: [{ text: "QuartZ", link: "/net/scheduling/QuartZ.md" }]
     },
     {
-      text: "Redis",
+      text: "缓存",
       collapsed: false,
       items: [{ text: "CSRedis", link: "/net/redis/CSRedis.md" }]
     }
