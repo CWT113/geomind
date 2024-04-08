@@ -96,6 +96,10 @@ export const sidebar = {
         {
           text: "序列化与反序列化",
           link: "/csharp/skillCsharp/序列化与反序列化.md"
+        },
+        {
+          text: "线程安全类",
+          link: "/csharp/skillCsharp/线程安全类.md"
         }
       ]
     }
@@ -198,7 +202,11 @@ export const sidebar = {
         { text: "坐标系", link: "/gis/cesium/02-坐标系.md" },
         { text: "相机视角", link: "/gis/cesium/03-相机视角.md" },
         { text: "Entity实体", link: "/gis/cesium/04-Entity实体.md" },
-        { text: "CallBackProperty", link: "/gis/cesium/05-CallBackProperty.md" }
+        {
+          text: "CallBackProperty",
+          link: "/gis/cesium/05-CallBackProperty.md"
+        },
+        { text: "加载三维数据", link: "/gis/cesium/06-加载三维数据.md" }
       ]
     }
   ],
