@@ -159,6 +159,13 @@ export const sidebar = {
       text: "日志",
       collapsed: false,
       items: [{ text: "Serilog", link: "/net/log/Serilog.md" }]
+    },
+    {
+      text: "依赖注入",
+      collapsed: false,
+      items: [
+        { text: "依赖注入", link: "/net/DependencyInjection/依赖注入.md" }
+      ]
     }
   ],
 
