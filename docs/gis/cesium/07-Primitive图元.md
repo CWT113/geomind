@@ -8,6 +8,180 @@ Primitive 是由 Geometry 和 Appearance 组合来构造几何图形的，想对
 
 
 
+## 点
+
+Primitive 可以使用 [PointPrimitive](https://cesium.com/learn/cesiumjs/ref-doc/PointPrimitive.html) 和 [PointPrimitiveCollection](https://cesium.com/learn/cesiumjs/ref-doc/PointPrimitiveCollection.html#PointPrimitiveCollection) 两个 API 组合创建点要素。
+
+- 方式一
+
+  ```js
+  // 使用 PointPrimitive 创建点
+  const point = new Cesium.PointPrimitive();
+  point.show = true;
+  point.id = "point1";
+  point.color = new Cesium.Color(1.0, 1.0, 1.0, 0.5);
+  point.position = Cesium.Cartesian3.fromDegrees(102, 38, 0);
+  point.pixelSize = 20;
+  point.outlineColor = Cesium.Color.RED;
+  point.outlineWidth = 1;
+  
+  // 创建 PointPrimitiveCollection 点集合，并将点添加到集合中
+  const pointPrimitives = new Cesium.PointPrimitiveCollection();
+  pointPrimitives.add(point);	// 可以 add 多次，添加多个点
+  viewer.scene.primitives.add(pointPrimitives);
+  ```
+
+- 方式二
+
+  ```js
+  const points = viewer.scene.primitives.add(
+      // 创建PointPrimitiveCollection，返回点集合对象
+      new Cesium.PointPrimitiveCollection()
+  );
+  
+  // add 可以调用多次，向点集合添加多个点
+  const p = points.add({
+      id: "point",
+      show: true,
+      position: Cesium.Cartesian3.fromDegrees(102, 38.5, 0),
+      // 点的像素大小
+      pixelSize: 20, 
+      color: new Cesium.Color(1.0, 1.0, 1.0, 0.5),
+      outlineWidth: 1,
+      // 按相机视角的距离设置近缩放或远缩放
+      scaleByDistance: new Cesium.NearFarScalar(1.5e2, 15, 8.0e6, 0.0) 
+  });
+  p.outlineColor = Cesium.Color.RED;
+  ```
+
+  
+
+## 线
+
+- 使用 [SimplePolylineGeometry](https://cesium.com/learn/cesiumjs/ref-doc/SimplePolylineGeometry.html) 创建线要素：
+
+  ```js
+  const polyline = new Cesium.GeometryInstance({
+      id: "polylineInstance",
+      geometry: new Cesium.SimplePolylineGeometry({
+          positions: Cesium.Cartesian3.fromDegreesArray([
+              99.83021344164428, 33.53064699203965, 113.79735610936098, 40.18256338933031
+          ])
+          // colors: [Cesium.Color.GREEN] // 这里也可以控制线的颜色,和属性中配置二选一即可
+      }),
+      attributes: {
+          color: Cesium.ColorGeometryInstanceAttribute.fromColor(
+              new Cesium.Color(64, 1, 1, 1.0)
+          ),
+          // 控制是否显示
+          show: new Cesium.ShowGeometryInstanceAttribute(true)
+      }
+  });
+  
+  viewer.scene.primitives.add(new Cesium.Primitive({
+      geometryInstances: polyline,
+      appearance: new Cesium.PerInstanceColorAppearance({
+          flat: true // 着色器使用平面着色，不考虑光照
+      })
+  }));
+  ```
+
+- 使用 [GroundPolylineGeometry](https://cesium.com/learn/cesiumjs/ref-doc/GroundPolylineGeometry.html?classFilter=Polyline) 和 [GroundPolylinePrimitive](https://cesium.com/learn/cesiumjs/ref-doc/GroundPolylinePrimitive.html?classFilter=GroundPolylinePrimitive#GroundPolylinePrimitive) 创建线要素：
+
+  ```js {22,26}
+  const instance = new Cesium.GeometryInstance({
+      id: "polyline",
+      geometry: new Cesium.GroundPolylineGeometry({
+          positions: Cesium.Cartesian3.fromDegreesArray([
+              99.83021344164428, 33.53064699203965, 113.79735610936098,
+              40.18256338933031
+          ]),
+          width: 4
+      }),
+      attributes: {
+          color: Cesium.ColorGeometryInstanceAttribute.fromColor(
+              Cesium.Color.fromCssColorString("green").withAlpha(0.7)
+          ),
+          show: new Cesium.ShowGeometryInstanceAttribute(true)
+      }
+  });
+  
+  viewer.scene.groundPrimitives.add(
+      new Cesium.GroundPolylinePrimitive({
+          geometryInstances: instance,
+          // 为线设置材质
+          appearance: new Cesium.PolylineMaterialAppearance({
+              material: Cesium.Material.fromType("Checkerboard")
+          }),
+          // 为线设置颜色, 搭配上面的 attributes
+          appearance: new Cesium.PolylineColorAppearance()
+      })
+  );
+  ```
+
+- 使用 [PolylineGeometry](https://cesium.com/learn/cesiumjs/ref-doc/PolylineGeometry.html?classFilter=PolylineGeometry) 创建线要素：
+
+  ```js
+  const geometryInstance = new Cesium.GeometryInstance({
+      geometry: new Cesium.PolylineGeometry({
+          positions: Cesium.Cartesian3.fromDegreesArray([
+              99.83021344164428, 33.53064699203965, 113.79735610936098,
+              40.18256338933031
+          ]),
+          width: 5
+          // colors: [Cesium.Color.GREEN] // 和下面颜色属性二选一即可
+      }),
+      attributes: {
+          color: Cesium.ColorGeometryInstanceAttribute.fromColor(
+              Cesium.Color.fromCssColorString("green").withAlpha(0.7)
+          )
+      }
+  });
+  
+  viewer.scene.primitives.add(
+      new Cesium.Primitive({
+          geometryInstances: geometryInstance,
+          appearance: new Cesium.PolylineColorAppearance({
+              translucent: false
+          })
+      })
+  );
+  ```
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 多边形
 
 先创建一个[多边形](https://cesium.com/learn/cesiumjs/ref-doc/PolygonGeometry.html)，然后再使用 [Primitive](https://cesium.com/learn/cesiumjs/ref-doc/Primitive.html?classFilter=Primitive) 进行加载。
