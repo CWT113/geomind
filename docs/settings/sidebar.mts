@@ -213,7 +213,8 @@ export const sidebar = {
           text: "CallBackProperty",
           link: "/gis/cesium/05-CallBackProperty.md"
         },
-        { text: "加载三维数据", link: "/gis/cesium/06-加载三维数据.md" }
+        { text: "加载三维数据", link: "/gis/cesium/06-加载三维数据.md" },
+        { text: "Primitive", link: "/gis/cesium/07-Primitive图元.md" }
       ]
     }
   ],
