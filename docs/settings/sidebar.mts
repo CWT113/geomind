@@ -140,15 +140,15 @@ export const sidebar = {
     {
       text: "ORM",
       collapsed: false,
-      items: [
-        { text: "EFCore", link: "/net/orm/EFCore.md" },
-        { text: "FreeSQL", link: "/net/orm/FreeSQL.md" }
-      ]
+      items: [{ text: "EFCore", link: "/net/orm/EFCore.md" }]
     },
     {
       text: "任务调度",
       collapsed: false,
-      items: [{ text: "QuartZ", link: "/net/scheduling/QuartZ.md" }]
+      items: [
+        { text: "QuartZ", link: "/net/scheduling/QuartZ.md" },
+        { text: "Hangfire", link: "/net/scheduling/Hangfire.md" }
+      ]
     },
     {
       text: "缓存",
