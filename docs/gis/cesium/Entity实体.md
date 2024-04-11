@@ -10,7 +10,7 @@ cesium 中空间数据可视化 API 共分为 2 部分：
 > 1.  https://blog.csdn.net/appleshowc/article/details/123479194
 > 2.  https://juejin.cn/post/6974592888420171790
 
-## [点实体](http://cesium.xin/cesium/cn/Documentation1.62/PointGraphics.html)
+## [点](http://cesium.xin/cesium/cn/Documentation1.62/PointGraphics.html)
 
 创建点实体的方法有两种：
 
@@ -43,7 +43,7 @@ cesium 中空间数据可视化 API 共分为 2 部分：
 
   ```js
   const position = Cesium.Cartesian3.fromDegrees(102.7362, 38.0249, 0);
-
+  
   const point = viewer.entities.add({
     // id 必须唯一
     id: "point",
@@ -58,7 +58,9 @@ cesium 中空间数据可视化 API 共分为 2 部分：
 
 ![Point](./images/Point.png)
 
-## [线实体](http://cesium.xin/cesium/cn/Documentation1.62/PolylineGraphics.html)
+
+
+## [线](http://cesium.xin/cesium/cn/Documentation1.62/PolylineGraphics.html)
 
 ```js
 const polyline = viewer.entities.add({
@@ -66,10 +68,11 @@ const polyline = viewer.entities.add({
     positions: Cesium.Cartesian3.fromDegreesArray([
       102.73523, 38.02712, 102.73625, 38.02405
     ]),
-    // 材质
-    material: Cesium.Color.RED.withAlpha(0.5),
-    // 线宽
-    width: 5
+    width: 10,
+    material: new Cesium.PolylineGlowMaterialProperty({
+      color: Cesium.Color.DEEPSKYBLUE.withAlpha(0.7),
+      glowPower: 0.25 // 高亮发光
+    })
   }
 });
 
@@ -77,6 +80,32 @@ viewer.zoomTo(polyline);
 ```
 
 ![Point](./images/polyline.png)
+
+
+
+## [平面](https://cesium.com/learn/cesiumjs/ref-doc/Plane.html?classFilter=plane)
+
+```js
+const entity = viewer.entities.add({
+  position: Cesium.Cartesian3.fromDegrees(116.39, 38.9, 0.0),
+  plane: {
+    // UNIT_Z 表示垂直于 Z 轴，UNIT_X 表示垂直与 X 轴
+    plane: new Cesium.Plane(Cesium.Cartesian3.UNIT_Z, 0.0),
+    dimensions: new Cesium.Cartesian2(400, 300),
+    // material: Cesium.Color.RED.withAlpha(0.5),
+    // 设置平面材质为图片
+    material: "/desk.jpg",
+    outline: true,
+    outlineColor: Cesium.Color.BLACK
+  }
+});
+// 将视角绑定到图形
+viewer.trackedEntity = entity;
+```
+![Point](./images/plane.png)
+
+
+
 
 ## [多边形](http://cesium.xin/cesium/cn/Documentation1.62/PolygonGraphics.html)
 
@@ -92,11 +121,11 @@ const polygon = viewer.entities.add({
       // 层次结构数组
       holes: []
     },
-    fill: false, // 面是否填充
-    material: Cesium.Color.YELLOW, // 填充材质
-    extrudedHeight: 100000, // 多边形(柱体)的拉伸高度(0: 平面几何)
-    height: 100000, // 多边形距离地面的高度(0: 贴地)
-    outline: true, // 是否显示轮廓
+    fill: false, 					// 面是否填充
+    material: Cesium.Color.YELLOW,  // 填充材质
+    extrudedHeight: 100000, 		// 多边形(柱体)的拉伸高度(0: 平面几何)
+    height: 100000, 				// 多边形距离地面的高度(0: 贴地)
+    outline: true, 					// 是否显示轮廓
     outlineColor: Cesium.Color.WHITE
   }
 });
@@ -105,6 +134,8 @@ viewer.zoomTo(polygon);
 ```
 
 ![Point](./images/polygon.png)
+
+
 
 ## [立方体](https://cesium.com/learn/cesiumjs/ref-doc/BoxGraphics.html?classFilter=BoxGraphics)
 
@@ -131,22 +162,24 @@ viewer.zoomTo(box);
 
 ![Point](./images/box.png)
 
+
+
 ## 椭圆
 
 ```js
 const ellipse = viewer.entities.add({
   position: Cesium.Cartesian3.fromDegrees(102.7362, 38.0249, 0),
   ellipse: {
-    semiMajorAxis: 100, // 长半轴
-    semiMinorAxis: 50, // 短半轴
-    fill: true, // 是否填充(默认为true)
-    extrudedHeight: 100, // 填充柱体高度
-    material: Cesium.Color.YELLOW, // 材质
-    rotation: Math.PI / 2, // 旋转角度(正北，逆时针旋转)
-    height: 20, // 距离地面的高度
-    outline: true, // 轮廓线
+    semiMajorAxis: 100, 			  // 长半轴
+    semiMinorAxis: 50, 				  // 短半轴
+    fill: true, 					  // 是否填充(默认为true)
+    extrudedHeight: 100, 			  // 填充柱体高度
+    material: Cesium.Color.YELLOW, 	  // 材质
+    rotation: Math.PI / 2, 			  // 旋转角度(正北，逆时针旋转)
+    height: 20, 					  // 距离地面的高度
+    outline: true, 					  // 轮廓线
     outlineColor: Cesium.Color.WHITE, // 轮廓线颜色
-    numberOfVerticalLines: 128 // 轮廓线垂直数量
+    numberOfVerticalLines: 128 		  // 轮廓线垂直数量
   }
 });
 
@@ -154,6 +187,8 @@ viewer.zoomTo(ellipse);
 ```
 
 ![Point](./images/ellipse.png)
+
+
 
 ## 矩形
 
@@ -170,9 +205,9 @@ const rectangle = viewer.entities.add({
     ),
     fill: true,
     material: Cesium.Color.RED.withAlpha(0.5),
-    height: 10, // 距离地面的高度
-    rotation: Math.PI / 2, // 旋转角度(正北, 顺时针旋转)
-    extrudedHeight: 200, // 拉伸高度
+    height: 10, 			// 距离地面的高度
+    rotation: Math.PI / 2, 	// 旋转角度(正北, 顺时针旋转)
+    extrudedHeight: 200, 	// 拉伸高度
     outline: true,
     outlineColor: Cesium.Color.WHITE
   }
@@ -183,6 +218,8 @@ viewer.zoomTo(rectangle);
 
 ![Point](./images/rectangle.png)
 
+
+
 ## 文本标签
 
 ```js
@@ -190,15 +227,15 @@ const label = viewer.entities.add({
   position: Cesium.Cartesian3.fromDegrees(102.7362, 38.0249, 0),
   label: {
     text: "point\nof\ninterest",
-    font: "20px sans-serif",
+    font: "50px Helvetica",
     scale: 1,
     fillColor: Cesium.Color.WHITE,
     outlineColor: Cesium.Color.BLACK,
-    showBackground: false, // 是否显示背景颜色
+    showBackground: false, 								// 是否显示背景颜色
     backgroundColor: new Cesium.Color(112, 86, 151),
-    backgroundPadding: new Cesium.Cartesian2(50, 50), // 背景 padding
-    horizontalOrigin: Cesium.HorizontalOrigin.CENTER, // 水平居中(left/center/right)
-    verticalOrigin: Cesium.VerticalOrigin.CENTER // 垂直居中(center/bottom/baseline/top)
+    backgroundPadding: new Cesium.Cartesian2(50, 50), 	// 背景 padding
+    horizontalOrigin: Cesium.HorizontalOrigin.CENTER, 	// 水平居中(left/center/right)
+    verticalOrigin: Cesium.VerticalOrigin.CENTER 		// 垂直居中(center/bottom/baseline/top)
   }
 });
 
@@ -206,6 +243,30 @@ viewer.zoomTo(label);
 ```
 
 ![Point](./images/label.png)
+
+
+
+## 动态设置属性
+
+```js {15}
+var entity = viewer.entities.add({
+  id: "BlueModel",
+  position: Cesium.Cartesian3.fromDegrees(116.39, 38.9, 0.0),
+  polygon: {
+    hierarchy: Cesium.Cartesian3.fromDegreesArray([
+      116.39, 39.91, 116.39, 39.915, 116.395, 39.91
+    ]),
+    material: Cesium.Color.PURPLE,
+    extrudedHeight: 10
+  }
+});
+
+// 将摄像机视口快速绑定到模型位置
+viewer.trackedEntity = entity;
+viewer.entities.getById("BlueModel").polygon.material = Cesium.Color.RED;
+```
+
+
 
 ## 删除实体
 
