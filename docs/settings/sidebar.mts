@@ -205,16 +205,16 @@ export const sidebar = {
       text: "Cesium",
       collapsed: false,
       items: [
-        { text: "快速入门", link: "/gis/cesium/01-cesium.md" },
-        { text: "坐标系", link: "/gis/cesium/02-坐标系.md" },
-        { text: "相机视角", link: "/gis/cesium/03-相机视角.md" },
-        { text: "Entity实体", link: "/gis/cesium/04-Entity实体.md" },
+        { text: "快速入门", link: "/gis/cesium/快速入门.md" },
+        { text: "坐标系", link: "/gis/cesium/坐标系.md" },
+        { text: "相机视角", link: "/gis/cesium/相机视角.md" },
+        { text: "Entity实体", link: "/gis/cesium/Entity实体.md" },
+        { text: "Primitive图元", link: "/gis/cesium/Primitive图元.md" },
         {
           text: "CallBackProperty",
-          link: "/gis/cesium/05-CallBackProperty.md"
+          link: "/gis/cesium/CallBackProperty.md"
         },
-        { text: "加载三维数据", link: "/gis/cesium/06-加载三维数据.md" },
-        { text: "Primitive", link: "/gis/cesium/07-Primitive图元.md" }
+        { text: "加载三维数据", link: "/gis/cesium/加载三维数据.md" }
       ]
     }
   ],
