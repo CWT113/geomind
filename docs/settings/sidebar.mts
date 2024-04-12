@@ -9,11 +9,11 @@ export const sidebar = {
       items: [
         {
           text: "TypeScript基础",
-          link: "/fontend/typescript/01-TypeScript.md"
+          link: "/fontend/typescript/TypeScript.md"
         },
         {
           text: "TypeScript技巧",
-          link: "/fontend/typescript/02-TypeScript技巧.md"
+          link: "/fontend/typescript/TypeScript技巧.md"
         }
       ]
     },
@@ -23,7 +23,7 @@ export const sidebar = {
       items: [
         {
           text: "JS常用方法",
-          link: "/fontend/javascript/01-Javascript.md"
+          link: "/fontend/javascript/Javascript.md"
         }
       ]
     },
@@ -31,10 +31,10 @@ export const sidebar = {
       text: "Vue",
       collapsed: false,
       items: [
-        { text: "vue3", link: "/fontend/vue3/01-vue3.md" },
-        { text: "ref 家族", link: "/fontend/vue3/02-ref函数.md" },
-        { text: "JSX 语法", link: "/fontend/vue3/03-JSX语法.md" },
-        { text: "h 函数", link: "/fontend/vue3/04-h渲染函数.md" }
+        { text: "vue3", link: "/fontend/vue3/vue3.md" },
+        { text: "ref", link: "/fontend/vue3/ref函数.md" },
+        { text: "JSX 语法", link: "/fontend/vue3/JSX语法.md" },
+        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" }
       ]
     },
     {
@@ -56,12 +56,12 @@ export const sidebar = {
       text: "工具集",
       collapsed: false,
       items: [
-        { text: "alasql", link: "/fontend/utils/01-alasql.md" },
-        { text: "LZ-String", link: "/fontend/utils/02-LZ-String.md" },
-        { text: "Pubsub-JS", link: "/fontend/utils/03-Pubsub-JS.md" },
-        { text: "Websocket", link: "/fontend/utils/04-WebSocket.md" },
-        { text: "文字转语音", link: "/fontend/utils/05-文字转语音.md" },
-        { text: "西瓜视频播放器", link: "/fontend/utils/06-西瓜视频播放器.md" }
+        { text: "alasql", link: "/fontend/utils/alasql.md" },
+        { text: "LZ-String", link: "/fontend/utils/LZ-String.md" },
+        { text: "Pubsub-JS", link: "/fontend/utils/Pubsub-JS.md" },
+        { text: "Websocket", link: "/fontend/utils/WebSocket.md" },
+        { text: "文字转语音", link: "/fontend/utils/文字转语音.md" },
+        { text: "西瓜视频播放器", link: "/fontend/utils/西瓜视频播放器.md" }
       ]
     }
   ],
@@ -176,17 +176,17 @@ export const sidebar = {
       text: "Mapbox",
       collapsed: false,
       items: [
-        { text: "快速入门", link: "/gis/mapbox/01-快速入门.md" },
-        { text: "Style 样式", link: "/gis/mapbox/02-Style样式.md" },
-        { text: "Map 方法", link: "/gis/mapbox/03-Map方法.md" },
-        { text: "Map 事件", link: "/gis/mapbox/04-Map事件.md" },
-        { text: "表达式", link: "/gis/mapbox/05-表达式.md" },
-        { text: "练习案例", link: "/gis/mapbox/06-练习案例.md" }
+        { text: "快速入门", link: "/gis/mapbox/快速入门.md" },
+        { text: "Style 样式", link: "/gis/mapbox/Style样式.md" },
+        { text: "Map 方法", link: "/gis/mapbox/Map方法.md" },
+        { text: "Map 事件", link: "/gis/mapbox/Map事件.md" },
+        { text: "表达式", link: "/gis/mapbox/表达式.md" },
+        { text: "练习案例", link: "/gis/mapbox/练习案例.md" }
       ]
     },
     {
       text: "Maplibre",
-      items: [{ text: "快速入门", link: "/gis/mapbox/01-maplibre.md" }]
+      items: [{ text: "快速入门", link: "/gis/mapbox/maplibre.md" }]
     },
     {
       text: "Mapbox插件",
@@ -228,7 +228,7 @@ export const sidebar = {
       items: [
         {
           text: "快速入门",
-          link: "/gis/leaflet/01-leaflet.md"
+          link: "/gis/leaflet/leaflet.md"
         }
       ]
     }

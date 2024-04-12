@@ -152,7 +152,7 @@ public class MyJob : IJob
 
 使用 Quartz 时，无论是 job 任务中，还是 trigger 触发器中，都可以使用 `UsingJobData()` 进行参数传递。
 
-```C# {3,4,6,10}
+```C# {4,5,7,12}
 // 使用 job 传递参数
 var sendEmailJob = JobBuilder.Create<SendEmailJob>()
     .WithIdentity("sendEmailJob", "group")
