@@ -139,12 +139,10 @@ export const sidebar = {
   "/net/": [
     {
       text: "ORM",
-      collapsed: false,
       items: [{ text: "EFCore", link: "/net/orm/EFCore.md" }]
     },
     {
       text: "任务调度",
-      collapsed: false,
       items: [
         { text: "QuartZ", link: "/net/scheduling/QuartZ.md" },
         { text: "Hangfire", link: "/net/scheduling/Hangfire.md" }
@@ -152,17 +150,21 @@ export const sidebar = {
     },
     {
       text: "缓存",
-      collapsed: false,
-      items: [{ text: "CSRedis", link: "/net/redis/CSRedis.md" }]
+      items: [
+        { text: "Redis", link: "/net/redis/Redis.md" },
+        { text: "CSRedis", link: "/net/redis/CSRedis.md" }
+      ]
     },
     {
       text: "日志",
-      collapsed: false,
-      items: [{ text: "Serilog", link: "/net/log/Serilog.md" }]
+      items: [
+        { text: "Serilog", link: "/net/log/Serilog.md" },
+        { text: "Nlog", link: "/net/log/Nlog.md" },
+        { text: "Log4Net", link: "/net/log/Log4Net.md" }
+      ]
     },
     {
       text: "依赖注入",
-      collapsed: false,
       items: [
         { text: "依赖注入", link: "/net/DependencyInjection/依赖注入.md" }
       ]

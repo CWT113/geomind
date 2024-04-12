@@ -10,6 +10,11 @@ export default defineConfig({
   base: "/Alikaid/",
   head: [["link", { rel: "icon", href: "/Alikaid/logo.png" }]],
   lastUpdated: true,
+  markdown: {
+    image: {
+      lazyLoading: true
+    }
+  },
 
   themeConfig: {
     logo: "/logo.png",
