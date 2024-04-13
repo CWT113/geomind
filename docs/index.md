@@ -24,7 +24,7 @@ hero:
       link: /net/orm/EFCore.md
     - theme: alt
       text: GIS
-      link: /gis/maplibre/maplibre.md
+      link: /gis/mapbox/快速入门.md
     # - theme: alt
     #   text: 我的随笔
     #   link: /essays/QingDao.md
