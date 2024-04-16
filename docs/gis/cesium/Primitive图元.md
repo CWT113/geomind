@@ -8,6 +8,12 @@ Primitive 是由 Geometry 和 Appearance 组合来构造几何图形的，想对
 
 
 
+Primitive 支持的几何类：
+![Point](./images/primitiveConnection.png)
+
+
+
+
 ## 点
 
 Primitive 可以使用 [PointPrimitive](https://cesium.com/learn/cesiumjs/ref-doc/PointPrimitive.html) 和 [PointPrimitiveCollection](https://cesium.com/learn/cesiumjs/ref-doc/PointPrimitiveCollection.html#PointPrimitiveCollection) 两个 API 组合创建点要素。

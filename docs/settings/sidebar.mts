@@ -218,6 +218,7 @@ export const sidebar = {
         },
         { text: "加载三维数据", link: "/gis/cesium/加载三维数据.md" },
         { text: "鼠标事件", link: "/gis/cesium/鼠标事件.md" },
+        { text: "粒子系统", link: "/gis/cesium/粒子系统.md" }
       ]
     }
   ],
