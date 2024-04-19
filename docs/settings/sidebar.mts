@@ -210,13 +210,32 @@ export const sidebar = {
         { text: "快速入门", link: "/gis/cesium/快速入门.md" },
         { text: "坐标系", link: "/gis/cesium/坐标系.md" },
         { text: "相机视角", link: "/gis/cesium/相机视角.md" },
-        { text: "Entity实体", link: "/gis/cesium/Entity实体.md" },
-        { text: "Primitive图元", link: "/gis/cesium/Primitive图元.md" },
+        {
+          text: "Entity 实体",
+          link: "/gis/cesium/Entity实体.md",
+          items: [
+            { text: "Entity 聚合", link: "/gis/cesium/Entity 聚合.md" },
+            { text: "Entity 管理", link: "/gis/cesium/Entity 管理.md" },
+            { text: "Entity 拾取", link: "/gis/cesium/Entity 拾取.md" },
+            { text: "Entity 固定", link: "/gis/cesium/Entity 固定.md" }
+          ]
+        },
+        { text: "Primitive 图元", link: "/gis/cesium/Primitive图元.md" },
+        {
+          text: "加载三维数据",
+          link: "/gis/cesium/加载三维数据.md",
+          items: [
+            { text: "影像数据", link: "/gis/cesium/影像地图.md" },
+            { text: "地形数据", link: "/gis/cesium/地形数据.md" },
+            { text: "矢量数据", link: "/gis/cesium/矢量数据.md" },
+            { text: "三维模型", link: "/gis/cesium/三维模型.md" },
+            { text: "三维瓦片", link: "/gis/cesium/三维瓦片.md" }
+          ]
+        },
         {
           text: "CallBackProperty",
           link: "/gis/cesium/CallBackProperty.md"
         },
-        { text: "加载三维数据", link: "/gis/cesium/加载三维数据.md" },
         { text: "鼠标事件", link: "/gis/cesium/鼠标事件.md" },
         { text: "粒子系统", link: "/gis/cesium/粒子系统.md" }
       ]
