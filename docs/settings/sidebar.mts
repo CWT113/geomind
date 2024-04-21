@@ -68,8 +68,7 @@ export const sidebar = {
 
   "/csharp/": [
     {
-      text: "C#",
-      collapsed: false,
+      text: "C# 基础",
       items: [
         { text: "面向过程", link: "/csharp/basicCsharp/面向过程.md" },
         { text: "面向对象", link: "/csharp/basicCsharp/面向对象.md" },
@@ -77,15 +76,8 @@ export const sidebar = {
       ]
     },
     {
-      text: "ASP.NET Core",
-      collapsed: false,
-      items: [{ text: "基本使用", link: "/csharp/aspnetcore/ASP Net Core.md" }]
-    },
-    {
-      text: "C#技巧",
-      collapsed: false,
+      text: "C# 技巧",
       items: [
-        { text: "雪花Id", link: "/csharp/skillCsharp/雪花ID.md" },
         { text: "字典", link: "/csharp/skillCsharp/字典的CURD.md" },
         { text: "元组", link: "/csharp/skillCsharp/元组.md" },
         { text: "模式匹配", link: "/csharp/skillCsharp/模式匹配.md" },
@@ -102,13 +94,19 @@ export const sidebar = {
           link: "/csharp/skillCsharp/线程安全类.md"
         }
       ]
+    },
+    {
+      text: "ASP.NET Core",
+      items: [
+        { text: "基本使用", link: "/csharp/aspnetcore/ASP Net Core.md" },
+        { text: "配置雪花Id", link: "/csharp/skillCsharp/雪花ID.md" }
+      ]
     }
   ],
 
   "/sql/": [
     {
       text: "MySQL",
-      collapsed: false,
       items: [
         { text: "基本SQL语句", link: "/sql/mysql/基本SQL语句.md" },
         {
@@ -126,12 +124,10 @@ export const sidebar = {
     },
     {
       text: "SQLite",
-      collapsed: false,
       items: [{ text: "SQLite", link: "/sql/sqlite/SQLite.md" }]
     },
     {
       text: "Postgresql",
-      collapsed: false,
       items: [{ text: "权限与表分区", link: "/sql/postgres/权限与表分区.md" }]
     }
   ],
@@ -174,7 +170,6 @@ export const sidebar = {
   "/gis/mapbox/": [
     {
       text: "Mapbox",
-      collapsed: false,
       items: [
         { text: "快速入门", link: "/gis/mapbox/快速入门.md" },
         { text: "Style 样式", link: "/gis/mapbox/Style样式.md" },
@@ -205,7 +200,6 @@ export const sidebar = {
   "/gis/cesium/": [
     {
       text: "Cesium",
-      collapsed: false,
       items: [
         { text: "快速入门", link: "/gis/cesium/快速入门.md" },
         { text: "坐标系", link: "/gis/cesium/坐标系.md" },
@@ -214,10 +208,8 @@ export const sidebar = {
           text: "Entity 实体",
           link: "/gis/cesium/Entity实体.md",
           items: [
-            { text: "Entity 聚合", link: "/gis/cesium/Entity 聚合.md" },
             { text: "Entity 管理", link: "/gis/cesium/Entity 管理.md" },
-            { text: "Entity 拾取", link: "/gis/cesium/Entity 拾取.md" },
-            { text: "Entity 固定", link: "/gis/cesium/Entity 固定.md" }
+            { text: "Entity 拾取", link: "/gis/cesium/Entity 拾取.md" }
           ]
         },
         { text: "Primitive 图元", link: "/gis/cesium/Primitive图元.md" },
@@ -245,7 +237,6 @@ export const sidebar = {
   "/gis/leaflet/": [
     {
       text: "Leaflet",
-      collapsed: false,
       items: [
         {
           text: "快速入门",
