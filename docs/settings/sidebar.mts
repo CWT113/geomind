@@ -128,7 +128,10 @@ export const sidebar = {
     },
     {
       text: "Postgresql",
-      items: [{ text: "权限与表分区", link: "/sql/postgres/权限与表分区.md" }]
+      items: [
+        { text: "基本使用", link: "/sql/postgres/基本使用.md" },
+        { text: "分区表", link: "/sql/postgres/分区表.md" }
+      ]
     }
   ],
 

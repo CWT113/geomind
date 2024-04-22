@@ -8,7 +8,7 @@ Primitive 是由 Geometry 和 Appearance 组合来构造几何图形的，想对
 
 
 
-Primitive 支持的几何类：
+Primitive 支持的几何类都是以 Geometry 结尾的，如下图：
 ![Point](./images/primitiveConnection.png)
 
 
@@ -71,8 +71,7 @@ Primitive 可以使用 [PointPrimitive](https://cesium.com/learn/cesiumjs/ref-do
       id: "polylineInstance",
       geometry: new Cesium.SimplePolylineGeometry({
           positions: Cesium.Cartesian3.fromDegreesArray([
-              99.83021344164428, 33.53064699203965, 113.79735610936098,
-              40.18256338933031
+              99.83021344164428, 33.53064699203965, 113.79735610936098, 40.18256338933031
           ])
           // colors: [Cesium.Color.GREEN] // 这里也可以控制线的颜色,和属性中配置二选一即可
       }),
@@ -94,16 +93,15 @@ Primitive 可以使用 [PointPrimitive](https://cesium.com/learn/cesiumjs/ref-do
       })
   );
   ```
-
+  
 - 使用 [GroundPolylineGeometry](https://cesium.com/learn/cesiumjs/ref-doc/GroundPolylineGeometry.html?classFilter=Polyline) 和 [GroundPolylinePrimitive](https://cesium.com/learn/cesiumjs/ref-doc/GroundPolylinePrimitive.html?classFilter=GroundPolylinePrimitive#GroundPolylinePrimitive) 创建线要素：
 
-  ```js {22,26}
+  ```js {22,25}
   const instance = new Cesium.GeometryInstance({
       id: "polyline",
       geometry: new Cesium.GroundPolylineGeometry({
           positions: Cesium.Cartesian3.fromDegreesArray([
-              99.83021344164428, 33.53064699203965, 113.79735610936098,
-              40.18256338933031
+              99.83021344164428, 33.53064699203965, 113.79735610936098, 40.18256338933031
           ]),
           width: 4
       }),
@@ -123,11 +121,11 @@ Primitive 可以使用 [PointPrimitive](https://cesium.com/learn/cesiumjs/ref-do
               material: Cesium.Material.fromType("Checkerboard")
           }),
           // 为线设置颜色, 搭配上面的 attributes
-          appearance: new Cesium.PolylineColorAppearance()
+          // appearance: new Cesium.PolylineColorAppearance()
       })
   );
   ```
-
+  
 - 使用 [PolylineGeometry](https://cesium.com/learn/cesiumjs/ref-doc/PolylineGeometry.html?classFilter=PolylineGeometry) 创建线要素：
 
   ```js
@@ -240,7 +238,7 @@ viewer.scene.primitives.add(
 
 ```js
 const instance = new Cesium.GeometryInstance({
-  id: "polygon",
+  id: "ellipse",
   geometry: new Cesium.EllipseGeometry({
     ellipsoid: Cesium.Ellipsoid.WGS84, 			// 椭圆位于椭圆体上
     center: Cesium.Cartesian3.fromDegrees(
@@ -278,7 +276,7 @@ viewer.scene.primitives.add(
 
 ```js
 const instance = new Cesium.GeometryInstance({
-  id: "polygon",
+  id: "circle",
   geometry: new Cesium.CircleGeometry({
     ellipsoid: Cesium.Ellipsoid.WGS84,
     center: Cesium.Cartesian3.fromDegrees(
@@ -506,6 +504,3 @@ viewer.scene.primitives.add(
   })
 );
 ```
-
-
-
