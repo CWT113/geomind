@@ -237,14 +237,12 @@ export const sidebar = {
     }
   ],
 
-  "/gis/leaflet/": [
+  "/gis/openlayers/": [
     {
-      text: "Leaflet",
+      text: "OpenLayers",
       items: [
-        {
-          text: "快速入门",
-          link: "/gis/leaflet/leaflet.md"
-        }
+        { text: "快速入门", link: "/gis/openlayers/快速入门.md" },
+        { text: "地图图层", link: "/gis/openlayers/地图图层.md" }
       ]
     }
   ]
