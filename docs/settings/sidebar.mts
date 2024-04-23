@@ -242,7 +242,10 @@ export const sidebar = {
       text: "OpenLayers",
       items: [
         { text: "快速入门", link: "/gis/openlayers/快速入门.md" },
-        { text: "地图图层", link: "/gis/openlayers/地图图层.md" }
+        { text: "地图操作", link: "/gis/openlayers/地图操作.md" },
+        { text: "影像地图", link: "/gis/openlayers/影像地图.md" },
+        { text: "矢量地图", link: "/gis/openlayers/矢量地图.md" },
+        { text: "地图控件", link: "/gis/openlayers/地图控件.md" }
       ]
     }
   ]
