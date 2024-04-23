@@ -1,6 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+title: "Alkaid"
 
 hero:
   name: "Alkaid"
@@ -8,11 +9,12 @@ hero:
   tagline: 欢迎来到 退后 的个人博客
   image:
     src: /background.png
-    alt: background image
+    alt: Alkaid
   actions:
     - theme: brand
       text: 前端
       link: /fontend/typescript/TypeScript.md
+      target: _blank
     - theme: alt
       text: C#
       link: /csharp/basicCsharp/面向过程.md
@@ -36,7 +38,8 @@ features:
   - icon: 🤹
     title: Feature A
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    # link: /fontend/typescript/TypeScript.md
+    link: /fontend/typescript/TypeScript.md
+    linkText: "TypeScript"
   - icon: 🎨
     title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
