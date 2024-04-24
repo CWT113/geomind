@@ -148,6 +148,10 @@ export const sidebar = {
       ]
     },
     {
+      text: "MQ",
+      items: [{ text: "ActiveMQ", link: "/net/mq/ActiveMQ.md" }]
+    },
+    {
       text: "缓存",
       items: [
         { text: "Redis", link: "/net/redis/Redis.md" },
