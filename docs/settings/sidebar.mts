@@ -34,7 +34,7 @@ export const sidebar = {
         { text: "vue3", link: "/fontend/vue3/vue3.md" },
         { text: "ref", link: "/fontend/vue3/ref函数.md" },
         { text: "JSX 语法", link: "/fontend/vue3/JSX语法.md" },
-        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" }
+        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" },
       ]
     },
     {
@@ -60,6 +60,7 @@ export const sidebar = {
         { text: "LZ-String", link: "/fontend/utils/LZ-String.md" },
         { text: "Pubsub-JS", link: "/fontend/utils/Pubsub-JS.md" },
         { text: "Websocket", link: "/fontend/utils/WebSocket.md" },
+        { text: "localForAge", link: "/fontend/utils/localForAge.md" },
         { text: "文字转语音", link: "/fontend/utils/文字转语音.md" },
         { text: "西瓜视频播放器", link: "/fontend/utils/西瓜视频播放器.md" }
       ]
