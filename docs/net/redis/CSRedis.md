@@ -37,111 +37,97 @@ Install-Package CSRedisCore
 >标准连接字符串：127.0.0.1:6379,password=123,defaultDatabase=13,poolsize=50,ssl=false,writeBuffer=10240,prefix=key前辍
 
 ```c#
-string config = "127.0.0.1:6379,defaultDatabase=2,poolsize=50,ssl=false,writeBuffer=10240";
+string connectionString = "127.0.0.1:6379,defaultDatabase=0,poolsize=50,ssl=false,writeBuffer=10240";
 
-RedisServerHelper.Init(config);
-```
-
-新建 `RedisServerHelper.cs` 文件，封装初始化 redis 的方法：
-
-```c#
-// 这样写的好处是可以创建多个 RedisHelper 对象
-public abstract class RedisServerHelper : RedisHelper<RedisServerHelper>
-{
-    public static void Init(string config)
-    {
-        if (!string.IsNullOrWhiteSpace(config))
-        {
-            RedisHelper.Initialization(new CSRedis.CSRedisClient(null, config));
-        }
-    }
-}
-
-public abstract class RedisServerHelper1 : RedisHelper<RedisServerHelper1> {}
+// 初始化 redis 服务
+RedisHelper.Initialization(new CSRedis.CSRedisClient(null, connectionString));
 ```
 
 
 
-#### string 类型
+### 数据类型
+
+#### String
 
 字符串类型的 value 可以存储多种格式的数据，如 字符串、整数、浮点数、json、jpg、甚至是视频文件。
 
 ```C#
-// 设置元素
-RedisHelper.Set("name", "Tom");
-RedisHelper.Set("age", 15);
+public record Person(string Name, int Age, DateTime DateTime);
+
+Person? person = new("sunny", 200, DateTime.Now);
+```
+
+```C#
+// 存储元素
+bool isSuccess = await RedisHelper.SetAsync("person", person);
 
 // 获取元素
-RedisHelper.Get("name");
+Person? data = await RedisHelper.GetAsync<Person>("person");
 
 // 删除元素
-RedisHelper.Del("name");
-
-// 在指定 key 的 value 的末尾追加字符串
-RedisHelper.Append("age", 66666);
-
-// 获取指定范围的字符
-RedisHelper.GetRange("name", 0, 2);
-
-// 用新字符串覆盖原索引位置的字符
-RedisHelper.SetRange("name", 1, "H");
+long res = await RedisHelper.DelAsync("person");
 ```
 
 
 
-#### list 类型
+#### List
 
 列表可以有序的存储多个字符串（允许重复），列表是通过链表实现的，用它添加新元素速度较快。
 
-```C#
-// 从右侧推入元素
-RedisHelper.RPush("list", "tom1", "tom2", "tom3");
-// 从右侧弹出一个元素
-RedisHelper.RPop("list");
-// 从左侧推入元素
-RedisHelper.LPush("list", "sunny");
-// 从左侧弹出一个元素
-RedisHelper.LPop("list");
+:::tip 注意
 
-// 遍历列表元素(start: 0, end: -1可返回所有元素)
-var res = RedisHelper.LRange("list", 0, -1);
-foreach (var item in res)
+`RPushAsync` 是右侧推入，`RPopAsync` 则取最后一个元素，而 `LPushAsync` 是左侧推入，`LPopAsync` 则取第一个元素。
+
+:::
+
+```C#
+for (int i = 0; i < 100; i++)
 {
-    Console.WriteLine(item);
+    Person? person = new($"sunny-{i}", i, DateTime.Now);
+
+    //从右侧推入元素（升序）
+    long count1 = await RedisHelper.RPushAsync("List_Person1", person);
+    //从左侧推入元素（倒序）
+    long count2 = await RedisHelper.LPushAsync("List_Person2", person);
 }
 
-// 按索引值获取元素(当索引值大于列表长度时，返回空值，不会报错)
-RedisHelper.LIndex("list", 1);
+//从右侧弹出一个元素（最后一个元素）
+Person? data1 = await RedisHelper.RPopAsync<Person>("List_Person1");
+//从左侧弹出一个元素（第一个元素）
+Person? data2 = await RedisHelper.LPopAsync<Person>("List_Person1");
+
+//获取列表所有元素
+string[]? allDatas = await RedisHelper.LRangeAsync("List_Person1", 0, -1);
+foreach (string item in allDatas)
+{
+    Person? person = JsonConvert.DeserializeObject<Person>(item);
+}
 ```
 
 
 
-#### set 集合
+#### Set
 
 集合以无序的方式存储的元素，在集合中的每个元素的 value 都不可重复。
 
 ```C#
-// 插入元素(实际只插入了 item1、item2)
-RedisHelper.SAdd("set", "item1", "item1", "item3");
-RedisHelper.SAdd("user", ["tom", "job", "acm"]);
+// 插入元素(Set会去重)
+string[] collection = ["A", "A", "B", "B", "C", "C"];
+long count = await RedisHelper.SAddAsync("Person_Set", collection);
 
 // 获取元素
-var res = RedisHelper.SMembers("set");
-foreach (var item in res)
-{
-    Console.WriteLine(item);
-}
+string[]? res = await RedisHelper.SMembersAsync("Person_Set");
 
 // 判断元素是否存在
-RedisHelper.SIsMember("set", "item1");
+bool isExist = await RedisHelper.SIsMemberAsync("Person_Set", "A");
 
 // 删除元素
-RedisHelper.SRem("set", "item3");
+long count = await RedisHelper.SRemAsync("Person_Set", "C");
 ```
 
 
 
-#### hashMap 散列表
+#### HashMap 散列表
 
 `hashMap` 可以使用散列将多个键值对存储在一个 redis 的键上，从而达到一系列相关数据存放在一起的目的。
 
