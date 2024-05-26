@@ -7,7 +7,7 @@ export const nav = [
   {
     text: "前端",
     items: [
-      { text: "JavaScript", link: "/fontend/javascript/javascript.md" },
+      { text: "JavaScript", link: "/fontend/javascript/Javascript.md" },
       { text: "Vue", link: "/fontend/vue3/vue3.md" }
     ]
   },
