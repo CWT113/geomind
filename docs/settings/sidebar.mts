@@ -7,8 +7,16 @@ export const sidebar = {
       text: "Javascript",
       items: [
         {
-          text: "Javascript技巧",
+          text: "Javascript 技巧",
           link: "/fontend/javascript/Javascript.md"
+        },
+        {
+          text: "垃圾回收机制",
+          link: "/fontend/javascript/垃圾回收机制.md"
+        },
+        {
+          text: "WeakMap和Map",
+          link: "/fontend/javascript/WeakMap和Map.md"
         }
       ]
     },
@@ -49,17 +57,17 @@ export const sidebar = {
           link: "/fontend/vue3/typescript/TypeScript.md"
         },
         {
-          text: "TypeScript技巧",
+          text: "小技巧",
           link: "/fontend/vue3/typescript/TypeScript技巧.md"
         }
       ]
     },
     {
-      text: "Vue",
+      text: "Vue3",
       items: [
-        { text: "vue3", link: "/fontend/vue3/vue3.md" },
-        { text: "ref", link: "/fontend/vue3/ref函数.md" },
-        { text: "JSX 语法", link: "/fontend/vue3/JSX语法.md" },
+        { text: "基本使用", link: "/fontend/vue3/vue3.md" },
+        { text: "ref 全家桶", link: "/fontend/vue3/ref函数.md" },
+        { text: "jsx 语法", link: "/fontend/vue3/JSX语法.md" },
         { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" }
       ]
     }
