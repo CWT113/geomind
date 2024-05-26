@@ -6,7 +6,10 @@ export const nav = [
 
   {
     text: "前端",
-    link: "/fontend/typescript/TypeScript.md"
+    items: [
+      { text: "JavaScript", link: "/fontend/javascript/javascript.md" },
+      { text: "Vue", link: "/fontend/vue3/vue3.md" }
+    ]
   },
 
   {
@@ -48,4 +51,4 @@ export const nav = [
   //     { text: "Runtime API Examples", link: "/api-examples" }
   //   ]
   // }
-];
+]

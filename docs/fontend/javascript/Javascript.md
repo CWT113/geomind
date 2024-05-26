@@ -1,10 +1,6 @@
 # Javascript
 
-## 对象
-
-### 合并对象
-
-1. `Object.assign()` 方法
+## 合并对象
 
 ::: tip 注意
 
@@ -24,36 +20,13 @@
    ```js
    const obj1 = { a: 1, b: { c: 2 } };
    
-   // 把 obj1 浅拷贝一份
+   // 浅拷贝
    const obj2 = Object.assign({}, obj1);
    obj2.b.c = 4;
    
    console.log(obj2); // { a: 1, b: { c: 4 } }
    console.log(obj1); // { a: 1, b: { c: 4 } }
    ```
-
-2. lodash 库的 `_.assign()` 方法：
-
-```js
-const obj1 = { a: 1, b: "str", c: true };
-const obj2 = { c: false, d: 6 };
-
-_.assign(obj1, obj2);	// { a: 1, b: "str", c: false, d: 6 }
-```
-
-
-
-
-## 浅拷贝
-
-1. lodash 库的 `_.clone()` 方法：
-
-```js
-var objects = [{ 'a': 1 }, { 'b': 2 }];
- 
-var shallow = _.clone(objects);
-console.log(shallow[0] === objects[0]);  // true
-```
 
 
 
@@ -68,15 +41,6 @@ console.log(shallow[0] === objects[0]);  // true
    obj4.b.c = 5;
    console.log(obj1);				// { a: 1, b: { c: 2 }, d: [ 1, 2 ] }
    console.log(obj4);				// { a: 1, b: { c: 5 }, d: [ 1, 2 ] }
-   ```
-
-2. lodash 库的 `_.cloneDeep()` 方法：
-
-   ```js
-   var objects = [{ 'a': 1 }, { 'b': 2 }];
-    
-   var deep = _.cloneDeep(objects);
-   console.log(deep[0] === objects[0]);  // false
    ```
 
 3. 手写深拷贝：
@@ -101,7 +65,7 @@ console.log(shallow[0] === objects[0]);  // true
 
    
 
-## map 替换 if..else..
+## if else优化
 
 ::: code-group
 
@@ -145,47 +109,43 @@ array.forEach(item => {
 
 
 
-## for..in.. 和 for..of..
+## for..in..
 
-1. `for..in..`
+遍历数组，返回 index 索引，遍历对象，返回元素的 key 。
 
-- 遍历数组，返回元素的 index
+```js
+const array = [10, 20, 30, 40, 50];
 
-- 遍历对象，返回元素的 key
+for (const index in array) {
+    console.log(index); 			// 0 1 2 3 4
+    console.log(arr[index]);		// 10 20 30 40 50
+}
+```
 
-  ```js
-  const array = [10, 20, 30, 40, 50];
-  
-  for (const index in array) {
-      console.log(index); 			// 0 1 2 3 4
-      console.log(arr[index]);		// 10 20 30 40 50
-  }
-  ```
+```js
+const obj = { name: "tom", age: 20 };
 
-  ```js
-  const obj = { name: "tom", age: 20 };
-  
-  for (const key in obj) {
-      console.log(key);				// name age
-      console.log(obj[key]);			// tom 20
-  }
-  ```
+for (const key in obj) {
+    console.log(key);				// name age
+    console.log(obj[key]);			// tom 20
+}
+```
 
-2. `for..of..`
 
-- 遍历数组，返回元素的 值
 
-- <span style="color: #e63e31">**不能遍历对象哦！**</span>
+## for..of..
 
-  ```js
-  const array = [10, 20, 30, 40, 50];
-  
-  for (const value of array) {
-      console.log(value);				// 10 20 30 40 50
-  }
-  ```
+遍历数组，直接返回元素的值，<span style="color: #e63e31">不能用来遍历对象</span>。
 
-  
+```js
+const array = [10, 20, 30, 40, 50];
+
+for (const value of array) {
+    console.log(value);				// 10 20 30 40 50
+}
+```
+
+
 
 ## promise
 
@@ -292,8 +252,6 @@ Map 的特点：
    const size = map.size;
    ```
 
-   
-
 2. 遍历 `Map`：
 
    ```js
@@ -327,36 +285,4 @@ Map 的特点：
      console.log(key, value);
    }
    ```
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

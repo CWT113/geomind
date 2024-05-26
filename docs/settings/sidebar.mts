@@ -2,44 +2,18 @@
  * 侧边栏配置
  */
 export const sidebar = {
-  "/fontend/": [
-    {
-      text: "TypeScript",
-      collapsed: false,
-      items: [
-        {
-          text: "TypeScript基础",
-          link: "/fontend/typescript/TypeScript.md"
-        },
-        {
-          text: "TypeScript技巧",
-          link: "/fontend/typescript/TypeScript技巧.md"
-        }
-      ]
-    },
+  "/fontend": [
     {
       text: "Javascript",
-      collapsed: false,
       items: [
         {
-          text: "JS常用方法",
+          text: "Javascript技巧",
           link: "/fontend/javascript/Javascript.md"
         }
       ]
     },
     {
-      text: "Vue",
-      collapsed: false,
-      items: [
-        { text: "vue3", link: "/fontend/vue3/vue3.md" },
-        { text: "ref", link: "/fontend/vue3/ref函数.md" },
-        { text: "JSX 语法", link: "/fontend/vue3/JSX语法.md" },
-        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" },
-      ]
-    },
-    {
       text: "Node.js",
-      collapsed: false,
       items: [
         { text: "包管理工具", link: "/fontend/node/包管理工具.md" },
         {
@@ -54,7 +28,6 @@ export const sidebar = {
     },
     {
       text: "工具集",
-      collapsed: false,
       items: [
         { text: "alasql", link: "/fontend/utils/alasql.md" },
         { text: "LZ-String", link: "/fontend/utils/LZ-String.md" },
@@ -63,6 +36,31 @@ export const sidebar = {
         { text: "localForAge", link: "/fontend/utils/localForAge.md" },
         { text: "文字转语音", link: "/fontend/utils/文字转语音.md" },
         { text: "西瓜视频播放器", link: "/fontend/utils/西瓜视频播放器.md" }
+      ]
+    }
+  ],
+
+  "/fontend/vue3": [
+    {
+      text: "TypeScript",
+      items: [
+        {
+          text: "TypeScript",
+          link: "/fontend/vue3/typescript/TypeScript.md"
+        },
+        {
+          text: "TypeScript技巧",
+          link: "/fontend/vue3/typescript/TypeScript技巧.md"
+        }
+      ]
+    },
+    {
+      text: "Vue",
+      items: [
+        { text: "vue3", link: "/fontend/vue3/vue3.md" },
+        { text: "ref", link: "/fontend/vue3/ref函数.md" },
+        { text: "JSX 语法", link: "/fontend/vue3/JSX语法.md" },
+        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" }
       ]
     }
   ],
@@ -169,9 +167,7 @@ export const sidebar = {
     },
     {
       text: "依赖注入",
-      items: [
-        { text: "依赖注入", link: "/net/DependencyInjection/依赖注入.md" }
-      ]
+      items: [{ text: "依赖注入", link: "/net/DependencyInjection/依赖注入.md" }]
     }
   ],
 
@@ -254,4 +250,4 @@ export const sidebar = {
       ]
     }
   ]
-};
+}
