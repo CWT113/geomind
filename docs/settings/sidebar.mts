@@ -113,9 +113,17 @@ export const sidebar = {
   ],
 
   "/net/microservice/": [
+    { text: "微服务概念", link: "/net/microservice/微服务概念.md" },
     {
       text: "ORM",
       items: [{ text: "EFCore", link: "/net/microservice/orm/EFCore.md" }]
+    },
+    {
+      text: "对象映射",
+      items: [
+        { text: "AutoMapper", link: "/net/microservice/mapper/AutoMapper.md" },
+        { text: "Mapster", link: "/net/microservice/mapper/Mapster.md" }
+      ]
     },
     {
       text: "任务调度",
@@ -126,7 +134,14 @@ export const sidebar = {
     },
     {
       text: "MQ",
-      items: [{ text: "ActiveMQ", link: "/net/microservice/mq/ActiveMQ.md" }]
+      items: [
+        { text: "ActiveMQ", link: "/net/microservice/mq/ActiveMQ.md" },
+        { text: "RabbitMQ", link: "/net/microservice/mq/RabbitMQ.md" }
+      ]
+    },
+    {
+      text: "注册发现",
+      items: [{ text: "consul", link: "/net/microservice/consul/Consul和nacos.md" }]
     },
     {
       text: "缓存",
@@ -146,7 +161,17 @@ export const sidebar = {
     {
       text: "依赖注入",
       items: [{ text: "依赖注入", link: "/net/microservice/DependencyInjection/依赖注入.md" }]
+    },
+    {
+      text: "熔断降级",
+      items: [{ text: "Polly", link: "/net/microservice/polly/Polly.md" }]
     }
+  ],
+
+  "/net/linux": [
+    { text: "软件安装", link: "/net/linux/软件安装.md" },
+    { text: "Linux命令", link: "/net/linux/Linux命令.md" },
+    { text: "Linux系统", link: "/net/linux/Linux系统.md" }
   ],
 
   "/gis/mapbox/": [
