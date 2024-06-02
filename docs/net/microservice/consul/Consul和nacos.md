@@ -72,7 +72,7 @@ consul 下载地址：[https://developer.hashicorp.com/consul/downloads](https:/
 consul.exe agent -dev
 ```
 
-1. 浏览器输入 [http://localhost:8500](http://localhost:8500) 出现 consulweb 界面就表示成功了。
+1. 浏览器输入：http://localhost:8500，出现 consulweb 界面就表示成功了。
 
 
 
@@ -99,7 +99,7 @@ consul version
 consul agent -dev
 ```
 
-4. 浏览器输入 [http://localhost:8500](http://localhost:8500) 出现 consulweb 界面就表示成功了。
+4. 浏览器输入：http://localhost:8500， 出现 consulweb 界面就表示成功了。
 
 
 
@@ -400,7 +400,7 @@ public IActionResult HealthCheck()
 
 注意：下载好的 nacos，需要放在路径中没有 数字 的文件夹下！！
 
-3. 安装完成后，浏览器打开 [http://localhost:8848/nacos](http://localhost:8848/nacos) （默认账户和密码均为：nacos）即可打开 nacos 的客户端。
+3. 安装完成后，浏览器打开 ：http://localhost:8848/nacos（默认账户和密码均为：nacos）即可打开 nacos 的客户端。
 
 
 

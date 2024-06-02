@@ -287,5 +287,5 @@ using (var channel = connection.CreateModel())
 }
 ```
 
-5. 登录 RabbitMQ 的客户端，[http://localhost:15672/](http://localhost:15672/)，在队列当中就能看到当前项目创建的队列 "product" ，切 生产者 在不断发送消息，消费者在不断接收消息。
+5. 登录 RabbitMQ 的客户端：http://localhost:15672/，在队列当中就能看到当前项目创建的队列 "product" ，切 生产者 在不断发送消息，消费者在不断接收消息。
 
