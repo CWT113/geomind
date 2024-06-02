@@ -257,5 +257,9 @@ export const sidebar = {
         { text: "地图控件", link: "/gis/openlayers/地图控件.md" }
       ]
     }
+  ],
+
+  "/java/basic/": [
+    { text: "Java基础", items: [{ text: "基础语法", link: "/java/basic/java基础.md" }] }
   ]
 }

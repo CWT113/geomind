@@ -28,6 +28,11 @@ export const nav = [
   },
 
   {
+    text: "Java",
+    items: [{ text: "基础语法", link: "/java/basic/java基础.md" }]
+  },
+
+  {
     text: "GIS",
     items: [
       { text: "Mapbox", link: "/gis/mapbox/快速入门.md" },
@@ -35,20 +40,4 @@ export const nav = [
       { text: "OpenLayers", link: "/gis/openlayers/快速入门.md" }
     ]
   }
-
-  // {
-  //   text: "随笔",
-  //   items: [
-  //     { text: "青岛看海之旅", link: "/essays/QingDao.md" },
-  //     { text: "杭州水乡印象", link: "/essays/HangZhou.md" }
-  //   ]
-  // }
-
-  // {
-  //   text: "相关链接",
-  //   items: [
-  //     { text: "Markdown Examples", link: "/markdown-examples" },
-  //     { text: "Runtime API Examples", link: "/api-examples" }
-  //   ]
-  // }
 ]
