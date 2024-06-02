@@ -1,4 +1,4 @@
-# h 渲染函数
+# h 函数
 
 在 Vue3 中，`h()` 是 hyperscript 的简称，用于创建虚拟 DOM 节点的函数，它是 createApp 函数返回的应用实例上的一个方法。
 

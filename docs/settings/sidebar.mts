@@ -2,111 +2,49 @@
  * 侧边栏配置
  */
 export const sidebar = {
-  "/fontend": [
+  "/javascript/": [
     {
       text: "Javascript",
       items: [
-        {
-          text: "Javascript 技巧",
-          link: "/fontend/javascript/Javascript.md"
-        },
-        {
-          text: "垃圾回收机制",
-          link: "/fontend/javascript/垃圾回收机制.md"
-        },
-        {
-          text: "WeakMap和Map",
-          link: "/fontend/javascript/WeakMap和Map.md"
-        }
+        { text: "Javascript", link: "/javascript/Javascript.md" },
+        { text: "垃圾回收机制", link: "/javascript/垃圾回收机制.md" },
+        { text: "WeakMap和Map", link: "/javascript/WeakMap和Map.md" }
       ]
     },
     {
       text: "Node.js",
       items: [
-        { text: "包管理工具", link: "/fontend/node/包管理工具.md" },
-        {
-          text: "postman配置token",
-          link: "/fontend/node/Postman全局配置token.md"
-        },
-        {
-          text: "nvm",
-          link: "/fontend/node/nvm.md"
-        }
-      ]
-    },
-    {
-      text: "工具集",
-      items: [
-        { text: "alasql", link: "/fontend/utils/alasql.md" },
-        { text: "LZ-String", link: "/fontend/utils/LZ-String.md" },
-        { text: "Pubsub-JS", link: "/fontend/utils/Pubsub-JS.md" },
-        { text: "Websocket", link: "/fontend/utils/WebSocket.md" },
-        { text: "localForAge", link: "/fontend/utils/localForAge.md" },
-        { text: "文字转语音", link: "/fontend/utils/文字转语音.md" },
-        { text: "西瓜视频播放器", link: "/fontend/utils/西瓜视频播放器.md" }
+        { text: "包管理工具", link: "/javascript/node/包管理工具.md" },
+        { text: "postman配置token", link: "/javascript/node/Postman全局配置token.md" },
+        { text: "nvm", link: "/javascript/node/nvm.md" }
       ]
     }
   ],
 
-  "/fontend/vue3": [
+  "/vue3/": [
     {
       text: "TypeScript",
-      items: [
-        {
-          text: "TypeScript",
-          link: "/fontend/vue3/typescript/TypeScript.md"
-        },
-        {
-          text: "小技巧",
-          link: "/fontend/vue3/typescript/TypeScript技巧.md"
-        }
-      ]
+      items: [{ text: "TypeScript", link: "/vue3/typescript/TypeScript.md" }]
     },
     {
       text: "Vue3",
       items: [
-        { text: "基本使用", link: "/fontend/vue3/vue3.md" },
-        { text: "ref 全家桶", link: "/fontend/vue3/ref函数.md" },
-        { text: "jsx 语法", link: "/fontend/vue3/JSX语法.md" },
-        { text: "h 函数", link: "/fontend/vue3/h渲染函数.md" }
-      ]
-    }
-  ],
-
-  "/csharp/": [
-    {
-      text: "C# 基础",
-      items: [
-        { text: "面向过程", link: "/csharp/basicCsharp/面向过程.md" },
-        { text: "面向对象", link: "/csharp/basicCsharp/面向对象.md" },
-        { text: "面向对象高级", link: "/csharp/basicCsharp/面向对象高级.md" }
+        { text: "基本使用", link: "/vue3/vue3.md" },
+        { text: "h 函数", link: "/vue3/h渲染函数.md" },
+        { text: "jsx 语法", link: "/vue3/JSX语法.md" },
+        { text: "ref 全家桶", link: "/vue3/ref函数.md" }
       ]
     },
     {
-      text: "C# 技巧",
+      text: "第三方工具集",
       items: [
-        { text: "字典", link: "/csharp/skillCsharp/字典的CURD.md" },
-        { text: "元组", link: "/csharp/skillCsharp/元组.md" },
-        { text: "模式匹配", link: "/csharp/skillCsharp/模式匹配.md" },
-        {
-          text: "检查null语法糖",
-          link: "/csharp/skillCsharp/检查null语法糖.md"
-        },
-        {
-          text: "序列化与反序列化",
-          link: "/csharp/skillCsharp/序列化与反序列化.md"
-        },
-        {
-          text: "线程安全类",
-          link: "/csharp/skillCsharp/线程安全类.md"
-        }
-      ]
-    },
-    {
-      text: "ASP.NET Core",
-      items: [
-        { text: "基本使用", link: "/csharp/aspnetcore/ASP Net Core.md" },
-        { text: "配置雪花Id", link: "/csharp/skillCsharp/雪花ID.md" }
+        { text: "alasql", link: "/vue3/utils/alasql.md" },
+        { text: "LZ-String", link: "/vue3/utils/LZ-String.md" },
+        { text: "Pubsub-JS", link: "/vue3/utils/Pubsub-JS.md" },
+        { text: "Websocket", link: "/vue3/utils/WebSocket.md" },
+        { text: "localForAge", link: "/vue3/utils/localForAge.md" },
+        { text: "文字转语音", link: "/vue3/utils/文字转语音.md" },
+        { text: "西瓜视频播放器", link: "/vue3/utils/西瓜视频播放器.md" }
       ]
     }
   ],
@@ -142,40 +80,72 @@ export const sidebar = {
     }
   ],
 
-  "/net/": [
+  "/net/csharp/": [
+    {
+      text: "C# 基础",
+      items: [
+        { text: "面向过程", link: "/net/csharp/basicCsharp/面向过程.md" },
+        { text: "面向对象", link: "/net/csharp/basicCsharp/面向对象.md" },
+        { text: "面向对象高级", link: "/net/csharp/basicCsharp/面向对象高级.md" }
+      ]
+    },
+    {
+      text: "C# 扩展",
+      items: [
+        { text: "字典", link: "/net/csharp/skillCsharp/字典的CURD.md" },
+        { text: "元组", link: "/net/csharp/skillCsharp/元组.md" },
+        { text: "模式匹配", link: "/net/csharp/skillCsharp/模式匹配.md" },
+        { text: "检查null语法糖", link: "/net/csharp/skillCsharp/检查null语法糖.md" },
+        { text: "序列化与反序列化", link: "/net/csharp/skillCsharp/序列化与反序列化.md" },
+        { text: "线程安全类", link: "/net/csharp/skillCsharp/线程安全类.md" }
+      ]
+    }
+  ],
+
+  "/net/aspnetcore/": [
+    {
+      text: "ASP.NET Core",
+      items: [
+        { text: "基本使用", link: "/net/aspnetcore/ASP.Net Core.md" },
+        { text: "雪花 Id", link: "/net/aspnetcore/雪花ID.md" }
+      ]
+    }
+  ],
+
+  "/net/microservice/": [
     {
       text: "ORM",
-      items: [{ text: "EFCore", link: "/net/orm/EFCore.md" }]
+      items: [{ text: "EFCore", link: "/net/microservice/orm/EFCore.md" }]
     },
     {
       text: "任务调度",
       items: [
-        { text: "QuartZ", link: "/net/scheduling/QuartZ.md" },
-        { text: "Hangfire", link: "/net/scheduling/Hangfire.md" }
+        { text: "QuartZ", link: "/net/microservice/scheduling/QuartZ.md" },
+        { text: "Hangfire", link: "/net/microservice/scheduling/Hangfire.md" }
       ]
     },
     {
       text: "MQ",
-      items: [{ text: "ActiveMQ", link: "/net/mq/ActiveMQ.md" }]
+      items: [{ text: "ActiveMQ", link: "/net/microservice/mq/ActiveMQ.md" }]
     },
     {
       text: "缓存",
       items: [
-        { text: "Redis", link: "/net/redis/Redis.md" },
-        { text: "CSRedis", link: "/net/redis/CSRedis.md" }
+        { text: "Redis", link: "/net/microservice/redis/Redis.md" },
+        { text: "CSRedis", link: "/net/microservice/redis/CSRedis.md" }
       ]
     },
     {
       text: "日志",
       items: [
-        { text: "Serilog", link: "/net/log/Serilog.md" },
-        { text: "Nlog", link: "/net/log/Nlog.md" },
-        { text: "Log4Net", link: "/net/log/Log4Net.md" }
+        { text: "Serilog", link: "/net/microservice/log/Serilog.md" },
+        { text: "Nlog", link: "/net/microservice/log/Nlog.md" },
+        { text: "Log4Net", link: "/net/microservice/log/Log4Net.md" }
       ]
     },
     {
       text: "依赖注入",
-      items: [{ text: "依赖注入", link: "/net/DependencyInjection/依赖注入.md" }]
+      items: [{ text: "依赖注入", link: "/net/microservice/DependencyInjection/依赖注入.md" }]
     }
   ],
 
@@ -243,6 +213,13 @@ export const sidebar = {
         { text: "鼠标事件", link: "/gis/cesium/鼠标事件.md" },
         { text: "粒子系统", link: "/gis/cesium/粒子系统.md" }
       ]
+    }
+  ],
+
+  "/gis/leaflet/": [
+    {
+      text: "Leaflet",
+      items: [{ text: "快速入门", link: "/gis/leaflet/leaflet.md" }]
     }
   ],
 

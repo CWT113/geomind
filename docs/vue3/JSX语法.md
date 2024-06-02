@@ -1,4 +1,4 @@
-# JSX语法
+# JSX 语法
 
 >vue 官网：https://cn.vuejs.org/guide/extras/render-function.html#jsx-tsx
 

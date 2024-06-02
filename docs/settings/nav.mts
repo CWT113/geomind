@@ -4,27 +4,19 @@
 export const nav = [
   { text: "首页", link: "/" },
 
+  { text: "JavaScript", link: "/javascript/Javascript.md" },
+
+  { text: "Vue3", link: "/vue3/vue3.md" },
+
+  { text: "数据库", link: "/sql/mysql/基本SQL语句.md" },
+
   {
-    text: "前端",
+    text: ".NET",
     items: [
-      { text: "JavaScript", link: "/fontend/javascript/Javascript.md" },
-      { text: "Vue", link: "/fontend/vue3/vue3.md" }
+      { text: "C# 基础", link: "/net/csharp/basicCsharp/面向对象.md" },
+      { text: "ASP.NET Core", link: "/net/aspnetcore/ASP.Net Core.md" },
+      { text: ".NET 微服务", link: "/net/microservice/orm/EFCore.md" }
     ]
-  },
-
-  {
-    text: "C#",
-    link: "/csharp/basicCsharp/面向过程.md"
-  },
-
-  {
-    text: "数据库",
-    link: "/sql/mysql/基本SQL语句.md"
-  },
-
-  {
-    text: ".NET微服务",
-    link: "/net/orm/EFCore.md"
   },
 
   {
@@ -37,6 +29,7 @@ export const nav = [
     items: [
       { text: "Mapbox", link: "/gis/mapbox/快速入门.md" },
       { text: "Cesium", link: "/gis/cesium/快速入门.md" },
+      { text: "Leaflet", link: "/gis/leaflet/leaflet.md" },
       { text: "OpenLayers", link: "/gis/openlayers/快速入门.md" }
     ]
   }
