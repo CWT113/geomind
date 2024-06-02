@@ -171,7 +171,8 @@ export const sidebar = {
   "/net/linux": [
     { text: "软件安装", link: "/net/linux/软件安装.md" },
     { text: "Linux命令", link: "/net/linux/Linux命令.md" },
-    { text: "Linux系统", link: "/net/linux/Linux系统.md" }
+    { text: "Linux系统", link: "/net/linux/Linux系统.md" },
+    { text: "bat脚本", link: "/net/linux/bat脚本.md" }
   ],
 
   "/gis/mapbox/": [
