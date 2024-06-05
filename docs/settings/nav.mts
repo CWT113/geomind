@@ -31,7 +31,8 @@ export const nav = [
       { text: "Mapbox", link: "/gis/mapbox/快速入门.md" },
       { text: "Cesium", link: "/gis/cesium/快速入门.md" },
       { text: "Leaflet", link: "/gis/leaflet/leaflet.md" },
-      { text: "OpenLayers", link: "/gis/openlayers/快速入门.md" }
+      { text: "OpenLayers", link: "/gis/openlayers/快速入门.md" },
+      { text: "GeoServer", link: "/gis/geoserver/index.md" }
     ]
   }
 ]

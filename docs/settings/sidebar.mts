@@ -97,7 +97,8 @@ export const sidebar = {
         { text: "模式匹配", link: "/net/csharp/skillCsharp/模式匹配.md" },
         { text: "检查null语法糖", link: "/net/csharp/skillCsharp/检查null语法糖.md" },
         { text: "序列化与反序列化", link: "/net/csharp/skillCsharp/序列化与反序列化.md" },
-        { text: "线程安全类", link: "/net/csharp/skillCsharp/线程安全类.md" }
+        { text: "线程安全类", link: "/net/csharp/skillCsharp/线程安全类.md" },
+        { text: "迪卡斯杰拉算法", link: "/net/csharp/skillCsharp/迪卡斯杰拉算法.md" }
       ]
     }
   ],
@@ -259,6 +260,13 @@ export const sidebar = {
         { text: "矢量地图", link: "/gis/openlayers/矢量地图.md" },
         { text: "地图控件", link: "/gis/openlayers/地图控件.md" }
       ]
+    }
+  ],
+
+  "/gis/geoserver/": [
+    {
+      text: "GeoServer",
+      items: [{ text: "快速入门", link: "/gis/geoserver/index.md" }]
     }
   ],
 
