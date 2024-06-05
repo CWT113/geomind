@@ -1,14 +1,14 @@
-import { defineConfig } from "vitepress";
-import { nav } from "../settings/nav.mts";
-import { sidebar } from "../settings/sidebar.mts";
-import { socialLink } from "../settings/socialLinks.mts";
-import { search } from "../settings/search.mts";
+import { defineConfig } from "vitepress"
+import { nav } from "../settings/nav.mts"
+import { sidebar } from "../settings/sidebar.mts"
+import { socialLink } from "../settings/socialLinks.mts"
+import { search } from "../settings/search.mts"
 
 export default defineConfig({
-  title: "Alkaid",
-  description: "A VitePress Site",
+  title: "Butterfly",
+  description: "Salvation lies within.",
   base: "/Alikaid/",
-  head: [["link", { rel: "icon", href: "/Alikaid/logo.png" }]],
+  head: [["link", { rel: "icon", href: "/Alikaid/butterfly-logo.png" }]],
   lastUpdated: true,
   markdown: {
     image: {
@@ -17,7 +17,7 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: "/logo.png",
+    logo: "/badminton-logo.png",
     outlineTitle: "目录",
     outline: [2, 6],
     docFooter: {
@@ -33,4 +33,4 @@ export default defineConfig({
 
     search: search as any
   }
-});
+})

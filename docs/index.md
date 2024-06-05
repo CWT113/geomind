@@ -1,32 +1,32 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-title: "Alkaid"
+title: "Butterfly"
 
 hero:
-  name: "Alkaid"
-  text: "一颗蓝白色的主序星"
-  tagline: 欢迎来到 退后 的个人博客
+  name: "Butterfly"
+  text: "Salvation lies within."
+  tagline: “救赎之道，就在其中。”
   image:
     src: /background.png
-    alt: Alkaid
+    alt: Butterfly
   actions:
-    - theme: brand
-      text: 前端
-      link: /fontend/typescript/TypeScript.md
-      target: _blank
-    - theme: alt
-      text: C#
-      link: /csharp/basicCsharp/面向过程.md
-    - theme: alt
-      text: 数据库
-      link: /sql/mysql/基本SQL语句.md
-    - theme: alt
-      text: .NET微服务
-      link: /net/orm/EFCore.md
-    - theme: alt
-      text: GIS
-      link: /gis/mapbox/快速入门.md
+    # - theme: brand
+    #   text: 前端
+    #   link: /fontend/typescript/TypeScript.md
+    #   target: _blank
+    # - theme: alt
+    #   text: C#
+    #   link: /csharp/basicCsharp/面向过程.md
+    # - theme: alt
+    #   text: 数据库
+    #   link: /sql/mysql/基本SQL语句.md
+    # - theme: alt
+    #   text: .NET微服务
+    #   link: /net/orm/EFCore.md
+    # - theme: alt
+    #   text: GIS
+    #   link: /gis/mapbox/快速入门.md
     # - theme: alt
     #   text: 我的随笔
     #   link: /essays/QingDao.md
