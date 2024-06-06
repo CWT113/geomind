@@ -263,6 +263,19 @@ export const sidebar = {
     }
   ],
 
+  "/gis/three/": [
+    {
+      text: "Three.js",
+      items: [
+        { text: "快速入门", link: "/gis/three/基础入门.md" },
+        { text: "场景", link: "/gis/three/场景.md" },
+        { text: "物体", link: "/gis/three/物体.md" },
+        { text: "轨道控制器", link: "/gis/three/轨道控制器.md" },
+        { text: "lil-gui", link: "/gis/three/lil-gui.md" }
+      ]
+    }
+  ],
+
   "/gis/geoserver/": [
     {
       text: "GeoServer",
