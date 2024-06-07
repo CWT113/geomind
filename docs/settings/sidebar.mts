@@ -98,6 +98,7 @@ export const sidebar = {
         { text: "检查null语法糖", link: "/net/csharp/skillCsharp/检查null语法糖.md" },
         { text: "序列化与反序列化", link: "/net/csharp/skillCsharp/序列化与反序列化.md" },
         { text: "线程安全类", link: "/net/csharp/skillCsharp/线程安全类.md" },
+        { text: "HashTable", link: "/net/csharp/skillCsharp/HashTable.md" },
         { text: "迪卡斯杰拉算法", link: "/net/csharp/skillCsharp/迪卡斯杰拉算法.md" }
       ]
     }
