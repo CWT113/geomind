@@ -1,6 +1,6 @@
 # Javascript
 
-## 合并对象
+## Object.assign()
 
 ::: tip 注意
 
@@ -173,48 +173,3 @@ const [users1, infos1] = await Promise.allSettled([getUsers(), getInfos()]);
 
 console.log(users1); // { status: 'fulfilled', value: [ '123' ] }
 ```
-
-
-
-## Set
-
-Set 相当于是集合的数据结构，即 值与值，不允许存在重复的值。
-
-1. 基本使用：
-
-   ```js
-   const set = new Set();
-   
-   set.add(1);
-   set.add(2);
-   
-   set.delete(1);
-   
-   set.clear();
-   
-   const res = set.has(1);
-   ```
-
-2. 遍历 `Set`：
-
-   ```js
-   // forEach
-   set2.forEach(value => console.log(value));
-   
-   // for..of..
-   for (const value of set2) {
-     console.log(value);
-   }
-   
-   // iterator 迭代器
-   const iterator1 = set3.values();
-   for (const value of iterator1) {
-     console.log(value);
-   }
-   
-   // entries 键值对
-   const iterator2 = set2.entries();
-   for (const entry of iterator2) {
-     console.log(entry);
-   }
-   ```

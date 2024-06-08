@@ -9,6 +9,7 @@ table {
 
 .vp-doc table {
   display: inline-table !important;
+  margin: 0 !important;
 }
 
 .custom-block.tip .custom-block-title {

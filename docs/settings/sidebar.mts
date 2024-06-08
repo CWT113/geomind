@@ -8,7 +8,8 @@ export const sidebar = {
       items: [
         { text: "Javascript", link: "/javascript/Javascript.md" },
         { text: "垃圾回收机制", link: "/javascript/垃圾回收机制.md" },
-        { text: "WeakMap和Map", link: "/javascript/WeakMap和Map.md" }
+        { text: "WeakMap和Map", link: "/javascript/WeakMap和Map.md" },
+        { text: "WeakSet和Set", link: "/javascript/WeakSet和Set.md" }
       ]
     },
     {
@@ -282,9 +283,9 @@ export const sidebar = {
       text: "GeoServer",
       items: [{ text: "快速入门", link: "/gis/geoserver/index.md" }]
     }
-  ],
-
-  "/java/basic/": [
-    { text: "Java基础", items: [{ text: "基础语法", link: "/java/basic/java基础.md" }] }
   ]
+
+  // "/java/basic/": [
+  //   { text: "Java基础", items: [{ text: "基础语法", link: "/java/basic/java基础.md" }] }
+  // ]
 }

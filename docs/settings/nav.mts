@@ -14,16 +14,16 @@ export const nav = [
     text: ".NET",
     items: [
       { text: "C# 基础", link: "/net/csharp/basicCsharp/面向对象.md" },
-      { text: "ASP.NET Core", link: "/net/aspnetcore/ASP.Net Core.md" },
+      { text: ".NET Core", link: "/net/aspnetcore/ASP.Net Core.md" },
       { text: ".NET 微服务", link: "/net/microservice/orm/EFCore.md" },
       { text: "Linux", link: "/net/linux/软件安装.md" }
     ]
   },
 
-  {
-    text: "Java",
-    items: [{ text: "基础语法", link: "/java/basic/java基础.md" }]
-  },
+  // {
+  //   text: "Java",
+  //   items: [{ text: "基础语法", link: "/java/basic/java基础.md" }]
+  // },
 
   {
     text: "GIS",
