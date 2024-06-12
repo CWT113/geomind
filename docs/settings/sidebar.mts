@@ -7,6 +7,7 @@ export const sidebar = {
       text: "Javascript",
       items: [
         { text: "Javascript", link: "/javascript/Javascript.md" },
+        { text: "数组", link: "/javascript/数组.md" },
         { text: "垃圾回收机制", link: "/javascript/垃圾回收机制.md" },
         { text: "WeakMap和Map", link: "/javascript/WeakMap和Map.md" },
         { text: "WeakSet和Set", link: "/javascript/WeakSet和Set.md" }
