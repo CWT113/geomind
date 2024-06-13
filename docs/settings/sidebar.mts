@@ -276,7 +276,9 @@ export const sidebar = {
         { text: "轨道控制器", link: "/gis/three/轨道控制器.md" },
         { text: "lil-gui", link: "/gis/three/lil-gui.md" },
         { text: "物体材质", link: "/gis/three/物体材质.md" },
-        { text: "gltf加载器", link: "/gis/three/gltf加载器.md" }
+        { text: "gltf加载器", link: "/gis/three/gltf加载器.md" },
+        { text: "包围盒与世界矩阵转换", link: "/gis/three/包围盒与世界矩阵转换.md" },
+        { text: "边缘集合体和线框几何体", link: "/gis/three/边缘集合体和线框几何体.md" }
       ]
     }
   ],
