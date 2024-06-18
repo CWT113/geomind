@@ -34,7 +34,8 @@ export const sidebar = {
         { text: "基本使用", link: "/vue3/vue3.md" },
         { text: "h 函数", link: "/vue3/h渲染函数.md" },
         { text: "jsx 语法", link: "/vue3/JSX语法.md" },
-        { text: "ref 全家桶", link: "/vue3/ref函数.md" }
+        { text: "ref 全家桶", link: "/vue3/ref函数.md" },
+        { text: "路由传参", link: "/vue3/路由传参.md" },
       ]
     },
     {
