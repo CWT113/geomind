@@ -111,7 +111,8 @@ export const sidebar = {
     {
       text: "ASP.NET Core",
       items: [
-        { text: "基本使用", link: "/net/aspnetcore/ASP.Net Core.md" },
+        { text: "基本使用", link: "/net/aspnetcore/基本使用.md" },
+        { text: "LINQ查询", link: "/net/aspnetcore/LINQ查询.md" },
         { text: "雪花 Id", link: "/net/aspnetcore/雪花ID.md" }
       ]
     }
