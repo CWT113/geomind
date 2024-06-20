@@ -16,6 +16,7 @@ export const sidebar = {
     {
       text: "Node.js",
       items: [
+        { text: "Git", link: "/javascript/node/git.md" },
         { text: "包管理工具", link: "/javascript/node/包管理工具.md" },
         { text: "postman配置token", link: "/javascript/node/Postman全局配置token.md" },
         { text: "nvm", link: "/javascript/node/nvm.md" }
