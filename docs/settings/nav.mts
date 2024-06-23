@@ -20,10 +20,10 @@ export const nav = [
     ]
   },
 
-  // {
-  //   text: "Java",
-  //   items: [{ text: "基础语法", link: "/java/basic/java基础.md" }]
-  // },
+  {
+    text: "Java",
+    items: [{ text: "基础语法", link: "/java/basic/java基础.md" }]
+  },
 
   {
     text: "GIS",

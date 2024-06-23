@@ -18,7 +18,10 @@ export const sidebar = {
       items: [
         { text: "Git", link: "/javascript/node/git.md" },
         { text: "包管理工具", link: "/javascript/node/包管理工具.md" },
-        { text: "postman配置token", link: "/javascript/node/Postman全局配置token.md" },
+        {
+          text: "postman配置token",
+          link: "/javascript/node/Postman全局配置token.md"
+        },
         { text: "nvm", link: "/javascript/node/nvm.md" }
       ]
     }
@@ -90,7 +93,10 @@ export const sidebar = {
       items: [
         { text: "面向过程", link: "/net/csharp/basicCsharp/面向过程.md" },
         { text: "面向对象", link: "/net/csharp/basicCsharp/面向对象.md" },
-        { text: "面向对象高级", link: "/net/csharp/basicCsharp/面向对象高级.md" }
+        {
+          text: "面向对象高级",
+          link: "/net/csharp/basicCsharp/面向对象高级.md"
+        }
       ]
     },
     {
@@ -99,11 +105,20 @@ export const sidebar = {
         { text: "字典", link: "/net/csharp/skillCsharp/字典的CURD.md" },
         { text: "元组", link: "/net/csharp/skillCsharp/元组.md" },
         { text: "模式匹配", link: "/net/csharp/skillCsharp/模式匹配.md" },
-        { text: "检查null语法糖", link: "/net/csharp/skillCsharp/检查null语法糖.md" },
-        { text: "序列化与反序列化", link: "/net/csharp/skillCsharp/序列化与反序列化.md" },
+        {
+          text: "检查null语法糖",
+          link: "/net/csharp/skillCsharp/检查null语法糖.md"
+        },
+        {
+          text: "序列化与反序列化",
+          link: "/net/csharp/skillCsharp/序列化与反序列化.md"
+        },
         { text: "线程安全类", link: "/net/csharp/skillCsharp/线程安全类.md" },
         { text: "HashTable", link: "/net/csharp/skillCsharp/HashTable.md" },
-        { text: "迪卡斯杰拉算法", link: "/net/csharp/skillCsharp/迪卡斯杰拉算法.md" }
+        {
+          text: "迪卡斯杰拉算法",
+          link: "/net/csharp/skillCsharp/迪卡斯杰拉算法.md"
+        }
       ]
     }
   ],
@@ -148,7 +163,9 @@ export const sidebar = {
     },
     {
       text: "注册发现",
-      items: [{ text: "consul", link: "/net/microservice/consul/Consul和nacos.md" }]
+      items: [
+        { text: "consul", link: "/net/microservice/consul/Consul和nacos.md" }
+      ]
     },
     {
       text: "缓存",
@@ -167,7 +184,12 @@ export const sidebar = {
     },
     {
       text: "依赖注入",
-      items: [{ text: "依赖注入", link: "/net/microservice/DependencyInjection/依赖注入.md" }]
+      items: [
+        {
+          text: "依赖注入",
+          link: "/net/microservice/DependencyInjection/依赖注入.md"
+        }
+      ]
     },
     {
       text: "熔断降级",
@@ -280,8 +302,14 @@ export const sidebar = {
         { text: "lil-gui", link: "/gis/three/lil-gui.md" },
         { text: "物体材质", link: "/gis/three/物体材质.md" },
         { text: "gltf加载器", link: "/gis/three/gltf加载器.md" },
-        { text: "包围盒与世界矩阵", link: "/gis/three/包围盒与世界矩阵转换.md" },
-        { text: "边缘集合体与线框几何体", link: "/gis/three/边缘集合体和线框几何体.md" },
+        {
+          text: "包围盒与世界矩阵",
+          link: "/gis/three/包围盒与世界矩阵转换.md"
+        },
+        {
+          text: "边缘集合体与线框几何体",
+          link: "/gis/three/边缘集合体和线框几何体.md"
+        },
         { text: "灯光与阴影", link: "/gis/three/灯光与阴影.md" }
       ]
     }
@@ -295,12 +323,18 @@ export const sidebar = {
         { text: "坐标系", link: "/gis/geoserver/坐标系.md" },
         { text: "OGC服务", link: "/gis/geoserver/OGC服务.md" },
         { text: "发布shp数据", link: "/gis/geoserver/发布shp数据.md" },
-        { text: "发布tif数据", link: "/gis/geoserver/发布tif数据.md" }
+        { text: "发布tif数据", link: "/gis/geoserver/发布tif数据.md" },
+        { text: "Layer Group", link: "/gis/geoserver/Layer Group.md" },
+        { text: "SLD样式", link: "/gis/geoserver/SLD样式.md" },
+        { text: "数据请求", link: "/gis/geoserver/数据请求.md" }
       ]
     }
-  ]
+  ],
 
-  // "/java/basic/": [
-  //   { text: "Java基础", items: [{ text: "基础语法", link: "/java/basic/java基础.md" }] }
-  // ]
+  "/java/basic/": [
+    {
+      text: "Java基础",
+      items: [{ text: "基础语法", link: "/java/basic/java基础.md" }]
+    }
+  ]
 }
