@@ -91,8 +91,8 @@ export const sidebar = {
     {
       text: "C# 基础",
       items: [
-        { text: "面向过程", link: "/net/csharp/basicCsharp/面向过程.md" },
-        { text: "面向对象", link: "/net/csharp/basicCsharp/面向对象.md" },
+        { text: "方法与数组", link: "/net/csharp/basicCsharp/方法与数组.md" },
+        { text: "class类", link: "/net/csharp/basicCsharp/class类.md" },
         {
           text: "面向对象高级",
           link: "/net/csharp/basicCsharp/面向对象高级.md"

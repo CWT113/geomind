@@ -1,10 +1,8 @@
-# 面向对象
+# class 类
 
-## 类与对象
+## 基础使用
 
-概念：类的定义是以关键字 **class** 开始，后跟类的名称。类的主体，包含在一对花括号内。
-
-定义类：
+类的定义是以关键字 **class** 开始，后跟类的名称。类的主体，包含在一对花括号内。
 
 ```C#
 class Monster
@@ -31,18 +29,19 @@ Monster monster = new Monster();
 monster.height = 500;
 monster.name = "陈伟霆";
 
-//打印类内属性值名称
+// 获取参数
 Console.WriteLine(monster.height);
 Console.WriteLine(monster.name);
-
-//调用类内的方法
+// 调用方法
 monster.Shout();
 monster.Sing();
 ```
 
+
+
 ### this 指向
 
-在 class 内部，this 指向的就是**类本身**。
+在 class 内部，this 指向的就是 **类本身**。
 
 ```C#
 class Student
@@ -52,7 +51,7 @@ class Student
 
   public void introduce(string name)
   {
-    Console.WriteLine(this.name + "年龄是" + this.age);//this指向的类本身 Student
+    Console.WriteLine(this.name + "年龄是" + this.age);
   }
 }
 
@@ -60,24 +59,30 @@ Student s = new Student();
 s.name = "王一博";
 s.age = 25;
 
-s.introduce("陈伟霆"); //输出: 王一博年龄是25
+s.introduce("陈伟霆"); // 王一博年龄是25
 ```
+
+
 
 ### 对象访问权限
 
 权限：用于规定类内部的 属性/方法，能够被特定区域访问的规则。
 
+::: tip
+
 权限修饰符：
 
-- **private（default）**：只允许**类内**方法访问、修改；
+- **private**：只允许类内方法访问、修改；
 
-- protected：只允许此类和派生类可访问、修改；
+- **protected**：只允许此类和派生类可访问、修改；
 
-- internal：当前程序集可访问、修改；
+- **internal**：当前程序集可访问、修改；
 
-- protected internal：当前程序集或派生类中可访问、修改；
+- **protected internal**：当前程序集或派生类中可访问、修改；
 
-- **public**：任何方法都可以对其进行访问、修改
+- **public**：任何方法都可以对其进行访问、修改；
+
+:::
 
 > 需求：声明一个学生类，在初始化时确定学生 Id 和 Name，实例化对象可以访问二者，但是无法修改！
 
@@ -93,40 +98,34 @@ class Student
     this.Name = name;
   }
 
-  //提供两个方法，供外界访问Id、Name的值
-  public int GetId()
-  {
-    return Id;
-  }
-  public string GetName()
-  {
-    return Name;
-  }
+  public int GetId() => this.Id;
+    
+  public string GetName() => this.Name;
 }
 ```
 
 ```C#
 Student s = new Student(1001, "王一博");
-//访问学生Id和Name
+// 访问 Id 和 Name
 int studentId = s.GetId();
 string studentName = s.GetName();
-
-Console.WriteLine(studentId);
-Console.WriteLine(studentName);
 ```
+
+
 
 ### 字段与属性
 
-字段（Field）：在类内定义的变量，用于确定数据在内存中的存储。
+字段 是在类内定义的变量，用于确定数据在内存中的存储。
 
-属性（Property）：提供对字段的访问器
+属性 是提供对字段的访问器。
 
 ```C#
 class Student
 {
-  //字段
+  // 字段
   private string name = "";
-  //属性
+
+  // 属性
   public string Name
   {
     get { return name; }
@@ -135,8 +134,13 @@ class Student
 }
 ```
 
+::: warning 注意
+
+属性必须写 get方法，但可以不写 set方法。
+
+:::
+
 ```C#
-//注意：属性必须写get方法，但可以不写set方法
 class Student
 {
   public string Name { get; set; }
@@ -145,13 +149,13 @@ class Student
 
 ```C#
 Student s = new Student();
-//调用set方法
-s.Name = "王一博";
-//调用get方法
-Console.WriteLine(s.Name);
+s.Name = "王一博"; // set
+Console.WriteLine(s.Name); // get
 ```
 
-**属性的用处一：进行校验**
+
+
+**属性用处一：进行校验**
 
 ```C#
 class StudentScore
@@ -174,7 +178,9 @@ class StudentScore
 }
 ```
 
-**属性的用处二：格式化数据**
+
+
+**属性用处二：格式化数据**
 
 ```C#
 class Clock
@@ -195,81 +201,46 @@ class Clock
 }
 ```
 
----
 
-**属性的简写方式：**
-
-注意：可以省略 set 方法，但是不可以省略 get 方法！
-
-```C#
-class Student
-{
-  public string Name { get; set; }
-}
-```
-
-省略了 set 方法之后，我们想设置 属性 的值，怎么办呢？可以使用 **属性的构造方法**！
-
-> 示例：用户的 Id，只在初始化时设置，后续只能查看不能修改？
-
-```C#
-class User
-{
-    public int Id { get; }
-
-    //通过构造方法设置 Id 的值，只可以在初始化的时候设置，后续无法更改
-    public User(int id) => Id = id;
-}
-```
-
-```C#
-User u = new User(1001);
-Console.WriteLine(u.Id);
-```
 
 ## static 修饰符
 
-概念：`static` 含义为静态，可以修饰**成员变量**，也可以修饰**成员方法**。
+概念：`static` 含义为静态，可以修饰 **成员变量**，也可以修饰 **成员方法**。
 
-规则：
+::: tip
 
-1. 使用方法：类名.变量名 / 类名.方法名
+1. 静态方法内部，只能访问静态成员变量，不能访问普通成员变量
 
-2. 随着类加载而加载，优先于对象生成
+2. 普通方法内部，可以访问静态成员变量，也可以访问普通成员变量
 
-3. 静态方法内部，只能访问静态成员变量，不能访问普通成员变量
-
-4. 普通方法内部，可以访问静态成员变量，也可以访问普通成员变量
-
-示例：
+:::
 
 ```C#
 class Student
 {
+  // 静态成员变量
   public static int count = 0;
+  // 普通属性
+  public int Id { get; set; }
+    
+  public Student() => count++;
 
-  //注意：静态方法内部，只能访问静态成员变量，不能访问普通成员变量
+  // 静态方法内部，只可静态成员变量，不能访问普通成员变量
   public static void ShowInfo()
   {
     Console.WriteLine("ShowInfo" + count);
   }
-  //注意：普通方法内部，可以访问静态成员变量，也可以访问普通成员变量
+    
+  // 普通方法内部，可以访问静态成员变量，也可以访问普通成员变量
   public void Test()
   {
     Console.WriteLine("Test" + count);
     Console.WriteLine("Test" + Id);
   }
-
-  //声明一个普通成员变量 id
-  public int Id { get; set; }
-
-  //每初始化一个Student对象，count就++
-  public Student() => count++;
 }
 ```
 
 ```C#
-//实例化 3 个学生的对象
 Student s0 = new Student();
 s0.Id = 1001;
 s0.Test();
@@ -278,46 +249,41 @@ Student s1 = new Student();
 s1.Id = 1002;
 s1.Test();
 
-Student s2 = new Student();
-s2.Id = 1003;
-s2.Test();
-
-//通过类名调用静态方法
 Student.ShowInfo();
-//通过类名调用静态成员变量
 Console.WriteLine(Student.count);
 ```
 
-**static 静态变量内存原理：**
+::: tip 静态变量内存示意图
 
 ![image.png](./image/image.png)
 
+:::
+
+
+
 ### 静态构造方法
 
-静态构造方法：在类被定义的时候，就会立即执行，都不需要 new 关键字实例化类
+静态构造方法是 在类被定义的时候，就会立即执行，都不需要 new 关键字实例化类
 
 ```C#
 class Student
 {
-  //声明静态变量
   public static int count = 0;
 
-  //静态构造方法
+  // 静态构造方法
   static Student() => count = 100;
 }
 ```
 
-静态构造方法规则：
 
-- 定义：**不允许加入访问修饰符**
-
-- 执行：**类加载的时候自动执行**
-
-- 覆盖：覆盖变量定义初始化的值
-
-- 禁止：**其不可访问非静态成员**
 
 ### 静态类
+
+::: warning 注意
+
+静态构造方法只允许加入静态成员变量，并且不允许 new 生成实例对象。
+
+:::
 
 ```C#
 static class Person
@@ -328,68 +294,45 @@ static class Person
 
     public static void show() { }
 
-    //注意：静态类的静态构造方法不能添加修饰符
+    // 静态类的静态构造方法不能添加修饰符
     static Person() { }
 }
 ```
 
-静态类规则：
 
-- 定义：static class 名字
-
-- 成员：
-
-  - 只允许加入**静态成员变量**
-
-  - 只允许加入**静态成员方法**
-
-- **不允许使用 new 生成实例**
 
 ### 工具类
 
-使用场景：不用通过 new 进行实例化，直接通过 `类名.属性名` 调用。
+工具类 可以不用通过 new 进行实例化，直接通过 `类名.属性名` 调用。
 
 ```C#
 static class ArrayTool
 {
-    //求最大值
     static public int GetMax(int[] arr) => arr.Max();
 
-    //求最小值
     static public int GetMin(int[] arr) => arr.Min();
 
-    //求平均值
     static public int GetAverage(int[] arr)
     {
         int sum = 0;
-        foreach (var i in arr)
-        {
-            sum += i;
-        }
+        foreach (var i in arr) sum += i;
         return sum / arr.Length;
     }
 }
 ```
 
-```C#
-int[] arr = { -5, 0, 5, 90 };
-Console.WriteLine("最大值为：" + ArrayTool.GetMax(arr));
-Console.WriteLine("最小值为：" + ArrayTool.GetMin(arr));
-Console.WriteLine("平均值为：" + ArrayTool.GetAverage(arr));
-```
+
 
 ### 单例类
 
-概念：单例类就是指 **一个类在全局只能实例化一次**。
+单例类就是指 **一个类在全局只能实例化一次**。
 
 ```C#
 class Map
 {
   private static Map instance = new Map();
-  public static Map GetInstance()
-  {
-    return instance;
-  }
+  public static Map GetInstance() => instance
+
   public int Width { get; set; }
   public int Height { get; set; }
 
@@ -409,57 +352,51 @@ Map.GetInstance().Height = 200;
 Map.GetInstance().SayInfo();
 ```
 
+
+
 ## 继承
 
-概念：用于描述两个类（Class）之间的父子关系，**子类可以直接使用父类中的非私有成员**。
+用于描述两个类（Class）之间的父子关系，**子类可以直接使用父类中的非私有成员**。
 
-父类：
+::: code-group
 
-```C#
+```C# [父类]
 class Pet
 {
-  //继承字段
   public string name;
   public int age;
-  //继承方法
-  public void Eat()
-  {
-    Console.WriteLine("我要吃饭了!");
-  }
+
+  public void Eat() => Console.WriteLine("我要吃饭了!");
 }
 ```
 
-子类继承父类：
-
-```C#
+```C# [子类]
 class Cat : Pet
 {
-    public void Speak()
-    {
-        Console.WriteLine("喵喵~~");
-    }
+    public void Speak() => Console.WriteLine("喵喵~~");
 }
-```
 
-```C#
 class Dog : Pet
 {
-    public void Speak()
-    {
-        Console.WriteLine("汪汪~~");
-    }
+    public void Speak() => Console.WriteLine("汪汪~~");
 }
 ```
 
-### 继承成员访问规则
+:::
 
-规则：
+
+
+### 继承对象访问父类
+
+::: tip 规则
 
 1. 子类 和 父类拥有同名字段时，**子类会优先使用自己的同名字段**；
 
 2. 如果子类刻意命名与父类同名的字段，子类可以**使用 new 关键字显示隐藏父类同名字段**；
 
 3. 子类中可以通过 **base 关键字访问父类中的同名字段**；
+
+:::
 
 ```C#
 class Father
@@ -469,23 +406,20 @@ class Father
 
 class Son : Father
 {
-    //1、正常继承
+    // 正常继承
     public int age = 10;
-
-    //2、new 关键字刻意隐藏父类同名字段
+    // new关键字刻意隐藏父类同名字段
     new public int age = 10;
-
-    //3、访问父类中的同名字段
-    public void SayFatherAge()
-    {
-        Console.WriteLine(base.age);
-    }
+    // 访问父类中的同名字段
+    public void SayFatherAge() => Console.WriteLine(base.age);
 }
 ```
 
-### 继承方法访问规则
 
-规则：
+
+### 继承方法访问父类
+
+::: tip 规则
 
 1. 子类 和 父类拥有同名方法时，子类会**优先使用自己的方法**；
 
@@ -495,38 +429,30 @@ class Son : Father
 
 4. 子类中方法与父类方法**不构成重载，子类不会隐藏父类方法**；
 
+:::
+
 ```C#
 class Father
 {
-    public void Test()
-    {
-        Console.WriteLine("Father");
-    }
+    public void Test() => Console.WriteLine("Father");
 }
 
 class Son : Father
 {
-    //1、正常继承方法
-    public void Test()
-    {
-        Console.WriteLine("Son");
-    }
-    //2、new 关键字刻意隐藏父类同名方法
-    new public void Test()
-    {
-        Console.WriteLine("Son");
-    }
-    //3、访问父类中的同名方法
-    public void ShowFatherTest()
-    {
-        base.Test();
-    }
+    // 正常继承
+    public void Test() => Console.WriteLine("Son");
+    // new关键字刻意隐藏父类同名方法
+    new public void Test() => Console.WriteLine("Son");
+    // 访问父类中的同名方法
+    public void ShowFatherTest() => base.Test();
 }
 ```
 
+
+
 ### 继承成员访问权限
 
-| **权限修饰符** | **类内** | **子类** | **类外** |
+| 权限修饰符 | 类内 | 子类 | 类外 |
 | -------------- | -------- | -------- | -------- |
 | private        | ✔️       | ❌       | ❌       |
 | protected      | ✔️       | ✔️       | ❌       |
@@ -537,21 +463,20 @@ class Son : Father
 ```C#
 class Father
 {
-    protected int age = 100;//使用protected关键字
+    protected int age = 100;
 }
 
-class Son:Father
+class Son : Father
 {
-    public void Test()
-    {
-        Console.WriteLine(age);
-    }
+    public void Test() => Console.WriteLine(age);
 }
 ```
 
+
+
 ### 多层继承
 
-注意：在 多层继承 中，子类仍以其父类作为参考，当 子类 和 父类中有同名字段时，优先使用自己！
+在 多层继承 中，子类仍以其父类作为参考，当 子类 和 父类中有同名字段时，优先使用自己！
 
 ```C#
 class Animal
@@ -559,23 +484,18 @@ class Animal
     protected string name = "王一博";
 }
 
-class Pet:Animal
+class Pet : Animal
 {
-    protected int age;
-    public void PetTest()
-    {
-        Console.WriteLine(name);//访问父类中的 name
-    }
+    public void PetTest() =>  Console.WriteLine(name); // 访问父类中的name
 }
 
-class Dog:Pet
+class Dog : Pet
 {
-    public void DogTest()
-    {
-        Console.WriteLine(name);//访问父类中的 name
-    }
+    public void DogTest() => Console.WriteLine(name); // 访问父类中的name
 }
 ```
+
+
 
 ### 继承中构造方法的使用
 
