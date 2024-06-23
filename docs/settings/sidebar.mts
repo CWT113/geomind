@@ -293,7 +293,9 @@ export const sidebar = {
       items: [
         { text: "快速入门", link: "/gis/geoserver/环境安装.md" },
         { text: "坐标系", link: "/gis/geoserver/坐标系.md" },
-        { text: "OGC服务", link: "/gis/geoserver/OGC服务.md" }
+        { text: "OGC服务", link: "/gis/geoserver/OGC服务.md" },
+        { text: "发布shp数据", link: "/gis/geoserver/发布shp数据.md" },
+        { text: "发布tif数据", link: "/gis/geoserver/发布tif数据.md" }
       ]
     }
   ]
