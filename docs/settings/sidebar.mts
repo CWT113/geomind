@@ -334,7 +334,7 @@ export const sidebar = {
   "/java/basic/": [
     {
       text: "Java基础",
-      items: [{ text: "基础语法", link: "/java/basic/java基础.md" }]
+      items: [{ text: "数组", link: "/java/basic/数组.md" }]
     }
   ]
 }
