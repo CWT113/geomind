@@ -339,7 +339,7 @@ export const sidebar = {
         { text: "数组", link: "/java/basic/数组.md" },
         {
           text: "面向对象（基础）",
-          link: "/java/basic/docs/面向对象(基础).md"
+          link: "/java/basic/面向对象(基础).md"
         }
       ]
     }
