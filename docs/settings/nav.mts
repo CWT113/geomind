@@ -22,7 +22,7 @@ export const nav = [
 
   {
     text: "Java",
-    items: [{ text: "Java基础", link: "/java/basic/数组.md" }]
+    items: [{ text: "Java基础", link: "/java/basic/数据类型.md" }]
   },
 
   {

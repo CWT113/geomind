@@ -336,8 +336,12 @@ export const sidebar = {
       text: "Java基础",
       items: [
         { text: "数据类型", link: "/java/basic/数据类型.md" },
-        { text: "数组", link: "/java/basic/数组.md" }
+        { text: "数组", link: "/java/basic/数组.md" },
+        {
+          text: "面向对象（基础）",
+          link: "/java/basic/docs/面向对象(基础).md"
+        }
       ]
     }
   ]
-};
+}
