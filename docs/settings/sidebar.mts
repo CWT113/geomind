@@ -22,7 +22,8 @@ export const sidebar = {
           text: "postman配置token",
           link: "/javascript/node/Postman全局配置token.md"
         },
-        { text: "nvm", link: "/javascript/node/nvm.md" }
+        { text: "nvm", link: "/javascript/node/nvm.md" },
+        { text: "Typora", link: "/javascript/node/Typora.md" }
       ]
     }
   ],
@@ -344,4 +345,4 @@ export const sidebar = {
       ]
     }
   ]
-}
+};
