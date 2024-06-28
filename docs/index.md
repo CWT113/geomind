@@ -36,14 +36,38 @@ hero:
 
 features:
   - icon: 🤹
-    title: Feature A
+    title: JavaScript
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    link: /fontend/typescript/TypeScript.md
-    linkText: "TypeScript"
+    link: /javascript/Javascript.md
+    linkText: "JavaScript"
+
   - icon: 🎨
-    title: Feature B
+    title: Vue3
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    link: /vue3/vue3.md
+    linkText: "Vue3"
+
   - icon: 🚀
-    title: Feature C
+    title: SQL
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    link: /sql/mysql/基本SQL语句.md
+    linkText: "MySQL"
+
+  - icon: ⚡️
+    title: .NET
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    link: /net/csharp/basicCsharp/方法与数组.md
+    linkText: "NET"
+
+  - icon: 🤖
+    title: Java
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    link: /java/basic/数据类型.md
+    linkText: "Java"
+
+  - icon: 🗺️
+    title: GIS
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    link: /gis/mapbox/快速入门.md
+    linkText: "Mapbox"
 ---

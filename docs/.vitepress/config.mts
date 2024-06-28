@@ -10,6 +10,7 @@ export default defineConfig({
   base: "/Alikaid/",
   head: [["link", { rel: "icon", href: "/Alikaid/butterfly-logo.png" }]],
   lastUpdated: true,
+  ignoreDeadLinks: true,
   markdown: {
     image: {
       lazyLoading: true
@@ -31,6 +32,16 @@ export default defineConfig({
 
     socialLinks: socialLink as any,
 
-    search: search as any
+    search: search as any,
+
+    footer: {
+      message: "Released under the MIT License.",
+      copyright: "Copyright © 2024-present Yibo wang"
+    },
+
+    editLink: {
+      pattern: "https://github.com",
+      text: "Edit this page on GitHub"
+    },
   }
 })
