@@ -1,6 +1,9 @@
-<!-- .vitepress/theme/Layout.vue -->
+<template>
+  <DefaultTheme.Layout />
+</template>
 
 <script setup lang="ts">
+// @ts-nocheck
 import { useData } from "vitepress"
 import DefaultTheme from "vitepress/theme"
 import { nextTick, provide } from "vue"
@@ -41,11 +44,7 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
 })
 </script>
 
-<template>
-  <DefaultTheme.Layout />
-</template>
-
-<style>
+<!-- <style>
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -63,10 +62,10 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
 }
 
 .VPSwitchAppearance {
-  width: 22px !important;
+  width: 21px !important;
 }
 
 .VPSwitchAppearance .check {
   transform: none !important;
 }
-</style>
+</style> -->

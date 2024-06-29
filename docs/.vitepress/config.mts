@@ -12,9 +12,14 @@ export default defineConfig({
   lastUpdated: true,
   ignoreDeadLinks: true,
   markdown: {
+    theme: {
+      light: "solarized-light",
+      dark: "vitesse-dark"
+    },
     image: {
       lazyLoading: true
-    }
+    },
+    lineNumbers: true
   },
 
   themeConfig: {
@@ -42,6 +47,6 @@ export default defineConfig({
     editLink: {
       pattern: "https://github.com",
       text: "Edit this page on GitHub"
-    },
+    }
   }
 })
