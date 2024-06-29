@@ -13,7 +13,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
   markdown: {
     theme: {
-      light: "solarized-light",
+      light: "github-light",
       dark: "vitesse-dark"
     },
     image: {
