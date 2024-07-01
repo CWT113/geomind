@@ -37,13 +37,13 @@ hero:
 features:
   - icon: 🤹
     title: JavaScript
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: “想只有困难，做才有答案”
     link: /javascript/Javascript.md
     linkText: "JavaScript"
 
   - icon: 🎨
     title: Vue3
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: “小事就像救命稻草一样抓着，有天一看，嚯，他抱着的已经是苍天大树！”
     link: /vue3/vue3.md
     linkText: "Vue3"
 
@@ -55,13 +55,13 @@ features:
 
   - icon: ⚡️
     title: .NET
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: “频频回头的人，注定走不了远路”
     link: /net/csharp/basicCsharp/方法与数组.md
     linkText: "NET"
 
   - icon: 🤖
     title: Java
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: “无数个 Moment 拼起来就是 Forever”
     link: /java/basic/数据类型.md
     linkText: "Java"
 

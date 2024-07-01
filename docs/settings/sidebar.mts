@@ -339,14 +339,14 @@ export const sidebar = {
         { text: "数据类型", link: "/java/basic/数据类型.md" },
         { text: "数组", link: "/java/basic/数组.md" },
         {
-          text: "面向对象（基础）",
+          text: "面向对象",
           items: [
             { text: "继承", link: "/java/basic/继承.md" },
             { text: "封装", link: "/java/basic/封装.md" },
             { text: "多态", link: "/java/basic/多态.md" },
             { text: "重写和重载", link: "/java/basic/重写和重载.md" }
           ],
-          link: "/java/basic/面向对象(基础).md"
+          link: "/java/basic/面向对象.md"
         }
       ]
     }
