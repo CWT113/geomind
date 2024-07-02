@@ -39,6 +39,53 @@
 
 
 
+## defineOptions<Badge type="tip" text="3.3+" />
+
+`defineOptions` 宏可以用来直接在 `<script setup>` 中声明 组件选项，而不必使用单独的 `script` 块：
+
+:::code-group
+
+```vue [传统方式]
+<script>
+  export default {
+    name: "MyComponent"
+  }
+</script>
+
+<script lang="ts" setup></script>
+```
+
+```vue [setup函数写法]
+<script>
+	import { defineComponent, defineOptions, ref } from 'vue'
+
+  export default defineComponent({
+    name: "MyComponent",
+    setup() {
+      defineOptions({
+        name: "MyComponent"
+      })
+    }
+  })
+</script>
+```
+
+```vue [setup语法糖写法]
+<script lang="ts" setup>
+	defineOptions({
+    name: "MyComponent",
+    inheritAttrs: false,
+    customOptions: {
+      /* ... */
+    }
+  })
+</script>
+```
+
+:::
+
+
+
 ## defineModel
 
 >参考文章：https://juejin.cn/post/7338262742816981044#heading-2
