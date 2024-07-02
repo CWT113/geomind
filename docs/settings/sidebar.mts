@@ -344,7 +344,13 @@ export const sidebar = {
             { text: "继承", link: "/java/basic/继承.md" },
             { text: "封装", link: "/java/basic/封装.md" },
             { text: "多态", link: "/java/basic/多态.md" },
-            { text: "重写和重载", link: "/java/basic/重写和重载.md" }
+            { text: "抽象类", link: "/java/basic/抽象类.md" },
+            { text: "接口", link: "/java/basic/接口.md" },
+            { text: "重写和重载", link: "/java/basic/重写和重载.md" },
+            {
+              text: "静态字段和静态方法",
+              link: "/java/basic/静态字段和静态方法.md"
+            }
           ],
           link: "/java/basic/面向对象.md"
         }
