@@ -10,7 +10,7 @@ hero:
   image:
     src: /background.png
     alt: Butterfly
-  actions:
+  actions: 
     # - theme: brand
     #   text: 前端
     #   link: /fontend/typescript/TypeScript.md
