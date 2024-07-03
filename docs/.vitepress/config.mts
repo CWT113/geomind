@@ -1,8 +1,8 @@
-import { defineConfig } from "vitepress"
-import { nav } from "../settings/nav.mts"
-import { sidebar } from "../settings/sidebar.mts"
-import { socialLink } from "../settings/socialLinks.mts"
-import { search } from "../settings/search.mts"
+import { defineConfig } from "vitepress";
+import { nav } from "../settings/nav.mts";
+import { sidebar } from "../settings/sidebar.mts";
+import { socialLink } from "../settings/socialLinks.mts";
+import { search } from "../settings/search.mts";
 
 export default defineConfig({
   title: "Butterfly",
@@ -30,6 +30,7 @@ export default defineConfig({
       prev: "上一篇",
       next: "下一篇"
     },
+    returnToTopLabel: "返回顶部",
 
     nav: nav,
 
@@ -49,4 +50,4 @@ export default defineConfig({
       text: "Edit this page on GitHub"
     }
   }
-})
+});
