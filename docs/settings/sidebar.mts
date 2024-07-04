@@ -335,11 +335,13 @@ export const sidebar = {
   "/java/basic/": [
     {
       text: "Java基础",
+      collapsed: true,
       items: [
         { text: "数据类型", link: "/java/basic/数据类型.md" },
         { text: "数组", link: "/java/basic/数组.md" },
         {
           text: "面向对象",
+          link: "/java/basic/面向对象.md",
           items: [
             { text: "继承", link: "/java/basic/继承.md" },
             { text: "封装", link: "/java/basic/封装.md" },
@@ -351,10 +353,14 @@ export const sidebar = {
               text: "静态字段和静态方法",
               link: "/java/basic/静态字段和静态方法.md"
             }
-          ],
-          link: "/java/basic/面向对象.md"
+          ]
         }
       ]
+    },
+    {
+      text: "Java核心类",
+      collapsed: true,
+      items: [{ text: "String", link: "/java/basic/String.md" }]
     }
   ]
-}
+};
