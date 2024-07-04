@@ -354,13 +354,18 @@ export const sidebar = {
               link: "/java/basic/静态字段和静态方法.md"
             }
           ]
-        }
+        },
+        { text: "枚举", link: "/java/basic/枚举.md" }
       ]
     },
     {
       text: "Java核心类",
-      collapsed: true,
-      items: [{ text: "String", link: "/java/basic/String.md" }]
+      collapsed: false,
+      items: [
+        { text: "String", link: "/java/basic/String.md" },
+        { text: "StringBuilder", link: "/java/basic/StringBuilder.md" },
+        { text: "StringJoiner", link: "/java/basic/StringJoiner.md" }
+      ]
     }
   ]
-};
+}
