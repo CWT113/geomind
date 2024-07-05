@@ -4,10 +4,6 @@
 
 Linux没有盘符的概念，只有一个**根目录 /** ，所有的文件都以它开头，路径之间的层级关系，使用 **/** 来表示。
 
-<img src="./image/image.png" alt="image.png" style="zoom: 50%;" />
-
-
-
 <img src="./image/image 1.png" alt="image.png" style="zoom:50%;" />
 
 
