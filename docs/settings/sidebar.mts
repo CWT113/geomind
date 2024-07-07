@@ -374,5 +374,9 @@ export const sidebar = {
       collapsed: false,
       items: [{ text: "", link: "" }]
     }
+  ],
+
+  '/c/': [
+    { text: "C语言基础", link: "/c/基础入门.md" }
   ]
 }

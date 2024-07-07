@@ -26,6 +26,13 @@ export const nav = [
   },
 
   {
+    text: "C语言",
+    items: [
+      { text: "C语言基础", link: "/c/基础入门.md" }
+    ]
+  },
+
+  {
     text: "GIS",
     items: [
       { text: "Mapbox", link: "/gis/mapbox/快速入门.md" },
