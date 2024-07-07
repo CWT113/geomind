@@ -372,11 +372,12 @@ export const sidebar = {
     {
       text: "异常处理",
       collapsed: false,
-      items: [{ text: "捕获异常", link: "/java/basic/捕获异常.md" }]
+      items: [
+        { text: "异常简介", link: "/java/basic/异常简介.md" },
+        { text: "异常捕获", link: "/java/basic/异常捕获.md" },
+      ]
     }
   ],
 
-  '/c/': [
-    { text: "C语言基础", link: "/c/基础入门.md" }
-  ]
+  "/c/": [{ text: "C语言基础", link: "/c/基础入门.md" }]
 }
