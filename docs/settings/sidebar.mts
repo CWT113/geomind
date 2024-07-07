@@ -364,8 +364,15 @@ export const sidebar = {
       items: [
         { text: "String", link: "/java/basic/String.md" },
         { text: "StringBuilder", link: "/java/basic/StringBuilder.md" },
-        { text: "StringJoiner", link: "/java/basic/StringJoiner.md" }
+        { text: "StringJoiner", link: "/java/basic/StringJoiner.md" },
+        { text: "record", link: "/java/basic/record.md" },
+        { text: "常用工具类", link: "/java/basic/常用工具类.md" }
       ]
+    },
+    {
+      text: "异常处理",
+      collapsed: false,
+      items: [{ text: "", link: "" }]
     }
   ]
 }

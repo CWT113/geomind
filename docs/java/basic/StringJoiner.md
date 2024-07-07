@@ -4,7 +4,7 @@
 
 很多时候，我们可能会遇到下面的场景：
 
-```java {10}
+```java
 String[] names = {"Tom", "Sunny", "WangYiBo"};
 
 StringBuilder sb = new StringBuilder();
@@ -18,8 +18,6 @@ sb.delete(sb.length() - 2, sb.length());
 
 System.out.println(sb);
 ```
-
-
 
 ## StringJoiner
 
@@ -39,8 +37,6 @@ System.out.println(sj); // Tom，Sunny，WangYiBo
 ```java
 StringJoiner sj = new StringJoiner("，", "Hello ", "!"); // Hello Tom，Sunny，WangYiBo!
 ```
-
-
 
 ## String.join()
 

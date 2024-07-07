@@ -16,13 +16,11 @@ System.out.println(s);
 
 这样下来，绝大部分字符串都是临时对象，不仅浪费内存，还影响 GC 效率。
 
-
-
 ## StringBuilder
 
 为了能高效的拼接字符串，java 标准库中提供了 `StringBuilder` ，它是一个**可变对象**，可以**预分配缓冲区**，不会创建新的临时对象。
 
-```java {3,4,6}
+```java
 StringBuilder sb = new StringBuilder();
 for (int i = 0; i < 30; i++) {
     sb.append(",");
@@ -32,13 +30,11 @@ String s = sb.toString();
 System.out.println(s);
 ```
 
->早期版本存在 `StringBuffer` 类，是`StringBuilder` 的线程安全版本，但是现在没必要使用它了。
-
-
+> 早期版本存在 `StringBuffer` 类，是`StringBuilder` 的线程安全版本，但是现在没必要使用它了。
 
 `StringBuilder` 还可以进行链式调用：
 
-```java {2-5}
+```java
 StringBuilder sb = new StringBuilder();
 sb.append("Mr ")
     .append("Tom")
@@ -48,8 +44,6 @@ String s = sb.toString();
 System.out.println(s); // Hello, Mr Tom!
 ```
 
-
-
 ## 链式调用
 
 `StringBuilder` 可以链式调用的关键是，定义的 `append()` 方法会返回 `this`。
@@ -58,7 +52,7 @@ System.out.println(s); // Hello, Mr Tom!
 
 :::code-group
 
-```java [StringBuilder]
+```java
 class StringBuilder1 {
     private StringBuilder sb;
 
@@ -83,7 +77,7 @@ class StringBuilder1 {
 }
 ```
 
-```java [main]
+```java
 StringBuilder1 sb = new StringBuilder1();
 var s = sb.append("wang")
     .append("yibo")
