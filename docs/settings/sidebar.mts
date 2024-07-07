@@ -372,7 +372,7 @@ export const sidebar = {
     {
       text: "异常处理",
       collapsed: false,
-      items: [{ text: "", link: "" }]
+      items: [{ text: "捕获异常", link: "/java/basic/捕获异常.md" }]
     }
   ],
 
