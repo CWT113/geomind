@@ -375,6 +375,7 @@ export const sidebar = {
       items: [
         { text: "异常简介", link: "/java/basic/异常简介.md" },
         { text: "异常捕获", link: "/java/basic/异常捕获.md" },
+        { text: "日志系统", link: "/java/basic/日志系统.md" },
       ]
     }
   ],
