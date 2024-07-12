@@ -110,7 +110,7 @@ ls -l /etc/yum.conf
 ln -s /etc/yum.conf /home
 -- 查看 /etc/yum 文件夹
 ls -l /etc/yum
--- 将 /etc/yum 软链接到 home 目录
+-- 将 /etc/yum 软链接到 home 目录 
 ln -s /etc/yum /home
 ```
 
