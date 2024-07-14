@@ -201,7 +201,7 @@ export const sidebar = {
   "/net/linux": [
     { text: "软件安装", link: "/net/linux/软件安装.md" },
     { text: "Linux命令", link: "/net/linux/Linux命令.md" },
-    { text: "Linux系统", link: "/net/linux/Linux系统.md" },
+    { text: "系统命令", link: "/net/linux/系统命令.md" },
     { text: "bat脚本", link: "/net/linux/bat脚本.md" }
   ],
 
@@ -375,7 +375,7 @@ export const sidebar = {
       items: [
         { text: "异常简介", link: "/java/basic/异常简介.md" },
         { text: "异常捕获", link: "/java/basic/异常捕获.md" },
-        { text: "日志系统", link: "/java/basic/日志系统.md" },
+        { text: "日志系统", link: "/java/basic/日志系统.md" }
       ]
     }
   ],

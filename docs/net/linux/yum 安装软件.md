@@ -1,6 +1,6 @@
+# 系统命令
 
-
-### yum 安装软件
+### 安装软件 yum
 
 作用：rpm 包软件管理器，可以在 linux 命令行中自动化安装并配置 linux 软件，并自动解决依赖问题。
 
@@ -26,17 +26,15 @@ yum [-y] [install | remove | search] 软件名称
 ```shell
 # 搜索 wget 软件
 yum search wget
-
 # 安装 wget 软件
 yum -y install wget
-
 # 卸载 wget 软件
 yum -y remove wget
 ```
 
 
 
-### systemctl 管理系统服务
+### 管理系统服务 systemctl
 
 linux 系统很多软件（内置或第三方）均支持使用 `systemctl` 命令控制，例如启动、停止、开机自启等。能够被  `systemctl` 管理的软件，一般称之为 服务。
 
@@ -88,7 +86,7 @@ systemctl enable firewalld
 
 
 
-### ln 软链接
+### 软链接 ln
 
 作用：将文件、文件夹链接到其他位置，类似于 windows 的快捷方式。
 
@@ -112,7 +110,7 @@ ln -s /etc/yum /home
 
 
 
-### date 查看时区
+### 查看时区 date
 
 作用：查看系统时间。
 
@@ -161,7 +159,7 @@ date -d "+1hour +30minute"
 
 
 
-### 时区修改
+### 修改时区/时间校准
 
 通过上面的 `date` 命令查看的日期是不准确的，因为 linux 系统默认的时区是非中国的东八区。
 
@@ -194,7 +192,7 @@ ntpdate -u ntp.aliyun.com
 
 
 
-### ifconfig 查看ip地址
+### 查看ip地址 ifconfig
 
 每台联网的电脑都会有一个地址，用于和其他计算机进行通讯。
 
@@ -211,7 +209,7 @@ ifconfig
 
 
 
-### hostnamectl 修改主机名
+### 修改主机名 hostnamectl
 
 ```shell
 # 查看主机名
