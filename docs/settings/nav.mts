@@ -15,7 +15,7 @@ export const nav = [
     items: [
       { text: "C# 基础", link: "/net/csharp/basicCsharp/方法与数组.md" },
       { text: ".NET Core", link: "/net/aspnetcore/基本使用.md" },
-      { text: ".NET 微服务", link: "/net/microservice/orm/EFCore.md" },
+      { text: ".NET 微服务", link: "/net/microservice/微服务概念.md" },
       { text: "Linux", link: "/net/linux/软件安装.md" }
     ]
   },
@@ -27,9 +27,7 @@ export const nav = [
 
   {
     text: "C语言",
-    items: [
-      { text: "C语言基础", link: "/c/基础入门.md" }
-    ]
+    items: [{ text: "C语言基础", link: "/c/基础入门.md" }]
   },
 
   {
@@ -43,4 +41,4 @@ export const nav = [
       { text: "GeoServer", link: "/gis/geoserver/环境安装.md" }
     ]
   }
-]
+];

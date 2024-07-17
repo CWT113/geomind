@@ -138,7 +138,7 @@ export const sidebar = {
   "/net/microservice/": [
     { text: "微服务概念", link: "/net/microservice/微服务概念.md" },
     {
-      text: "ORM",
+      text: "ORM框架",
       collapsed: true,
       items: [{ text: "EFCore", link: "/net/microservice/orm/EFCore.md" }]
     },
@@ -211,7 +211,7 @@ export const sidebar = {
       items: [
         {
           text: "浏览器不支持WebGL",
-          link: "/net/microservice/publish/解决服务器不支持WebGL.md"
+          link: "/net/microservice/systemPublish/解决服务器不支持WebGL.md"
         }
       ]
     }
