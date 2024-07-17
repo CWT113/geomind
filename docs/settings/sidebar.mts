@@ -139,10 +139,12 @@ export const sidebar = {
     { text: "微服务概念", link: "/net/microservice/微服务概念.md" },
     {
       text: "ORM",
+      collapsed: true,
       items: [{ text: "EFCore", link: "/net/microservice/orm/EFCore.md" }]
     },
     {
       text: "对象映射",
+      collapsed: true,
       items: [
         { text: "AutoMapper", link: "/net/microservice/mapper/AutoMapper.md" },
         { text: "Mapster", link: "/net/microservice/mapper/Mapster.md" }
@@ -150,6 +152,7 @@ export const sidebar = {
     },
     {
       text: "任务调度",
+      collapsed: true,
       items: [
         { text: "QuartZ", link: "/net/microservice/scheduling/QuartZ.md" },
         { text: "Hangfire", link: "/net/microservice/scheduling/Hangfire.md" }
@@ -157,6 +160,7 @@ export const sidebar = {
     },
     {
       text: "MQ",
+      collapsed: true,
       items: [
         { text: "ActiveMQ", link: "/net/microservice/mq/ActiveMQ.md" },
         { text: "RabbitMQ", link: "/net/microservice/mq/RabbitMQ.md" }
@@ -164,12 +168,14 @@ export const sidebar = {
     },
     {
       text: "注册发现",
+      collapsed: true,
       items: [
         { text: "consul", link: "/net/microservice/consul/Consul和nacos.md" }
       ]
     },
     {
       text: "缓存",
+      collapsed: true,
       items: [
         { text: "Redis", link: "/net/microservice/redis/Redis.md" },
         { text: "CSRedis", link: "/net/microservice/redis/CSRedis.md" }
@@ -177,6 +183,7 @@ export const sidebar = {
     },
     {
       text: "日志",
+      collapsed: true,
       items: [
         { text: "Serilog", link: "/net/microservice/log/Serilog.md" },
         { text: "Nlog", link: "/net/microservice/log/Nlog.md" },
@@ -185,6 +192,7 @@ export const sidebar = {
     },
     {
       text: "依赖注入",
+      collapsed: true,
       items: [
         {
           text: "依赖注入",
@@ -194,7 +202,18 @@ export const sidebar = {
     },
     {
       text: "熔断降级",
+      collapsed: true,
       items: [{ text: "Polly", link: "/net/microservice/polly/Polly.md" }]
+    },
+    {
+      text: "发布部署",
+      collapsed: true,
+      items: [
+        {
+          text: "浏览器不支持WebGL",
+          link: "/net/microservice/publish/解决服务器不支持WebGL.md"
+        }
+      ]
     }
   ],
 
@@ -381,4 +400,4 @@ export const sidebar = {
   ],
 
   "/c/": [{ text: "C语言基础", link: "/c/基础入门.md" }]
-}
+};
