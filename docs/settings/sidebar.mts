@@ -218,9 +218,10 @@ export const sidebar = {
   ],
 
   "/net/linux": [
-    { text: "软件安装", link: "/net/linux/软件安装.md" },
-    { text: "Linux命令", link: "/net/linux/Linux命令.md" },
+    { text: "常用命令", link: "/net/linux/常用命令.md" },
     { text: "系统命令", link: "/net/linux/系统命令.md" },
+    { text: "用户和权限", link: "/net/linux/用户和权限.md" },
+    { text: "vim", link: "/net/linux/vim.md" },
     { text: "bat脚本", link: "/net/linux/bat脚本.md" }
   ],
 
@@ -400,4 +401,4 @@ export const sidebar = {
   ],
 
   "/c/": [{ text: "C语言基础", link: "/c/基础入门.md" }]
-};
+}
