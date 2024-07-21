@@ -375,7 +375,8 @@ export const sidebar = {
             }
           ]
         },
-        { text: "枚举", link: "/java/basic/枚举.md" }
+        { text: "枚举", link: "/java/basic/枚举.md" },
+        { text: "注解", link: "/java/basic/注解.md" },
       ]
     },
     {
@@ -398,7 +399,7 @@ export const sidebar = {
         { text: "日志系统", link: "/java/basic/日志系统.md" }
       ]
     }
-  ],
+  ]
 
-  "/c/": [{ text: "C语言基础", link: "/c/基础入门.md" }]
+  // "/c/": [{ text: "基础入门", link: "/c/基础入门.md" }]
 }

@@ -25,10 +25,10 @@ export const nav = [
     items: [{ text: "Java基础", link: "/java/basic/数据类型.md" }]
   },
 
-  {
-    text: "C语言",
-    items: [{ text: "C语言基础", link: "/c/基础入门.md" }]
-  },
+  // {
+  //   text: "C语言",
+  //   items: [{ text: "C语言基础", link: "/c/基础入门.md" }]
+  // },
 
   {
     text: "GIS",
