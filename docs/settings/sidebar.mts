@@ -377,6 +377,8 @@ export const sidebar = {
         },
         { text: "枚举", link: "/java/basic/枚举.md" },
         { text: "注解", link: "/java/basic/注解.md" },
+        { text: "单元测试", link: "/java/basic/JUnit单元测试.md" },
+        { text: "包装类", link: "/java/basic/包装类.md" },
       ]
     },
     {
