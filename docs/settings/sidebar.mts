@@ -103,9 +103,11 @@ export const sidebar = {
     {
       text: "C# 扩展",
       items: [
-        { text: "字典", link: "/net/csharp/skillCsharp/字典的CURD.md" },
+        { text: "字典", link: "/net/csharp/skillCsharp/字典.md" },
         { text: "元组", link: "/net/csharp/skillCsharp/元组.md" },
         { text: "模式匹配", link: "/net/csharp/skillCsharp/模式匹配.md" },
+        { text: "线程安全类", link: "/net/csharp/skillCsharp/线程安全类.md" },
+        { text: "HashTable", link: "/net/csharp/skillCsharp/HashTable.md" },
         {
           text: "检查null语法糖",
           link: "/net/csharp/skillCsharp/检查null语法糖.md"
@@ -114,8 +116,6 @@ export const sidebar = {
           text: "序列化与反序列化",
           link: "/net/csharp/skillCsharp/序列化与反序列化.md"
         },
-        { text: "线程安全类", link: "/net/csharp/skillCsharp/线程安全类.md" },
-        { text: "HashTable", link: "/net/csharp/skillCsharp/HashTable.md" },
         {
           text: "迪卡斯杰拉算法",
           link: "/net/csharp/skillCsharp/迪卡斯杰拉算法.md"
@@ -378,7 +378,7 @@ export const sidebar = {
         { text: "枚举", link: "/java/basic/枚举.md" },
         { text: "注解", link: "/java/basic/注解.md" },
         { text: "单元测试", link: "/java/basic/JUnit单元测试.md" },
-        { text: "包装类", link: "/java/basic/包装类.md" },
+        { text: "包装类", link: "/java/basic/包装类.md" }
       ]
     },
     {
