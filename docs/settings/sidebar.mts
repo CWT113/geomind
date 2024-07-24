@@ -128,9 +128,11 @@ export const sidebar = {
     {
       text: "ASP.NET Core",
       items: [
-        { text: "基本使用", link: "/net/aspnetcore/基本使用.md" },
+        { text: "异步编程", link: "/net/aspnetcore/异步编程.md" },
         { text: "LINQ查询", link: "/net/aspnetcore/LINQ查询.md" },
-        { text: "雪花 Id", link: "/net/aspnetcore/雪花ID.md" }
+        { text: "依赖注入", link: "/net/aspnetcore/依赖注入.md" },
+        { text: "雪花Id", link: "/net/aspnetcore/雪花ID.md" },
+        { text: "读取配置文件", link: "/net/aspnetcore/读取配置文件.md" },
       ]
     }
   ],
