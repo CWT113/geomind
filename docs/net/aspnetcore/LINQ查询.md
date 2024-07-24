@@ -1,8 +1,8 @@
-## LINQ
+# LINQ
 
-### 委托
+## 委托
 
-概念：委托 就是 为方法指定类型。
+委托 就是为方法指定类型。
 
 .NET 中为我们提供了自定义的委托类型，分为以下两种：
 
@@ -11,161 +11,105 @@
 - 有返回值委托类型：`Func<>`
 
 ```C#
-// 1、无参无返回值 委托类型
-public static void Add()
+// 无参无返回值的委托类型
+public static void Hello()
 {
-    Console.WriteLine("我不是刘德华");
+    Console.WriteLine("Hello, Tom!");
 }
-Action add = Add;
+Action add = Hello;
 add();
 
-// 2、有参无返回值 委托类型
-public static void Add1(int x, int y)
+// 有参无返回值的委托类型
+public static void Add(int x, int y)
 {
     Console.WriteLine(x + y);
 }
-Action<int, int> add1 = Add1;
-add1(1,2);
+Action<int, int> add1 = Add;
+add1(1, 2);
 ```
 
 ```C#
-// 3、无参有返回值 委托类型
+// 无参有返回值的委托类型
 public static string Multi1()
 {
-    return "刘德华";
+    return 100;
 }
 Func<string> mutil1 = Multi1;
 string res = mutil1();
 
-// 4、有参有返回值（参数类型相同） 委托类型
+// 有参有返回值（参数类型相同）的委托类型
 public static int Multi2(int x, int y)
 {
     return x * y;
 }
 Func<int, int, int> multi2 = Multi2;
-Console.WriteLine(multi2(2, 3));
+multi2(2, 3);
 
-// 5、有参有返回值（参数类型不同） 委托类型
+// 有参有返回值（参数类型不同）的委托类型
 public static string Multi3(int x, string y)
 {
     return x + y;
 }
 Func<int, string, string> mutil3 = Multi3;
-Console.WriteLine(mutil3(1, "哈哈哈"));
+mutil3(1, "哈哈哈");
 ```
 
 
 
-### 匿名委托
+## 匿名委托
 
-概念：就是没有函数名称的委托类型。
+匿名委托 就是没有函数名称的委托类型。
 
 ```C#
-// 1、无参无返回值的 匿名委托类型
+// 无参无返回值的匿名委托
 Action f1 = delegate ()
 {
     Console.WriteLine("我是sunny");
 };
 f1();
 
-// 2、有参无返回值的 匿名委托类型
+// 有参无返回值的匿名委托
 Action<int, string> f2 = delegate (int x, string y)
 {
     Console.WriteLine("{0}, {1}", x, y);
 };
 f2(666, "sunny");
 
-// 3、有参有返回值的 匿名委托类型
+// 有参有返回值的匿名委托
 Func<int, int, int> f3 = delegate (int x, int y)
 {
     return x + y;
 };
-Console.WriteLine(f3(2, 3));
+f3(2, 3);
 ```
 
 
 
-### lambda表达式
+## lambda表达式
 
-概念：Lambda表达式是一种匿名函数，类似于 JavaScript 中的箭头函数。
+Lambda表达式是一种匿名函数，类似于 JavaScript 中的箭头函数。
 
 ```C#
-// 1、lambda表达式简化 匿名委托类型（因为在Func的泛型中定义了数据类型，所以表达式中可以省略数据类型）
+// lambda表达式简化 匿名委托类型（因为在Func的泛型中定义了数据类型，所以表达式中可以省略数据类型）
 Func<int, int, int> f4 = (x, y) => { return x + y; };
-Console.WriteLine(f4(2, 3));
+f4(2, 3)
 
-// 2、只有一行且没有返回值，可以省略 花括号
+// 只有一行且没有返回值，可以省略花括号
 Action f5 = () => Console.WriteLine("我是sunny");
 f5();
 
-// 3、只有一行且有返回值，可以省略 花括号和return
+// 只有一行且有返回值，可以省略花括号和return
 Func<int, int, int> f6 = (x, y) => x + y;
-Console.WriteLine(f6(2, 3));
+f6(2, 3);
 
-// 4、函数只有一个参数时，可以省略参数的 小括号
+// 函数只有一个参数时，可以省略参数的小括号
 Func<int, bool> f7 = i => i > 0;
-Console.WriteLine(f7(3));
+f7(3);
 ```
 
 
 
-### Where
-
-概念：Where方法用来做条件筛选，从集合、数组等对象中获取满足条件的元素。
-
-```C#
-// 从 list 集合中取出大于 10 的元素
-int[] nums = new int[] { 1, 2, 55, 33, 234, 45, 2 };
-
-IEnumerable<int> res = nums.Where(i => i > 10);
-
-// 手写 MyWhere 语句的调用
-// IEnumerable<int> res = MyWhere1(nums, i => i < 10);
-
-foreach (var item in res)
-{
-    Console.WriteLine(item);
-}
-```
-
-> 面试题：手写一个 Where 语句。
-
-::: code-group
-
-```C# [常规]
-static IEnumerable<int> MyWhere(IEnumerable<int> arr, Func<int, bool> fun)
-{
-    List<int> list = new List<int>();
-    foreach (var item in arr)
-    {
-        if (fun(item))
-        {
-            list.Add(item);
-        }
-    }
-    return list;
-}
-```
-
-```C# [简化]
-// MyWhere 需要传递两个参数：`arr` 和 `有返回值的委托函数`，在内部通过循环将满足条件的元素以集合形式返回
-static IEnumerable<int> MyWhere1(IEnumerable<int> arr, Func<int, bool> fun)
-{
-    foreach (var item in arr)
-    {
-        if (fun(item))
-        {
-            yield return item;
-        }
-    }
-}
-```
-
-:::
-
-
-
-### 常用LINQ语句
+## 常用 LINQ
 
 |      LINQ语句       | 作用                                                         |
 | :-----------------: | ------------------------------------------------------------ |

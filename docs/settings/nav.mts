@@ -13,10 +13,10 @@ export const nav = [
   {
     text: ".NET",
     items: [
-      { text: "C# 基础", link: "/net/csharp/basicCsharp/方法与数组.md" },
-      { text: "ASP.NET Core", link: "/net/aspnetcore/异步编程.md" },
-      { text: ".NET 微服务", link: "/net/microservice/微服务概念.md" },
-      { text: "Linux", link: "/net/linux/常用命令.md" }
+      { text: "C# 基础", link: "/NET/CSharp/CSharpBasic/方法与数组.md" },
+      { text: "ASP.NET Core", link: "/NET/AspNetCore/异步编程.md" },
+      { text: ".NET 微服务", link: "/NET/Microservice/微服务概念.md" },
+      { text: "Linux", link: "/NET/Linux/常用命令.md" }
     ]
   },
 
@@ -41,4 +41,4 @@ export const nav = [
       { text: "GeoServer", link: "/gis/geoserver/环境安装.md" }
     ]
   }
-];
+]
