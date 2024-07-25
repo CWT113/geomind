@@ -18,7 +18,7 @@ export default defineConfig({
       dark: "vitesse-dark"
     },
     image: {
-      lazyLoading: false
+      lazyLoading: true
     },
     lineNumbers: true
   },
