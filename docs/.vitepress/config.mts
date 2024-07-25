@@ -1,8 +1,9 @@
-import { defineConfig } from "vitepress";
-import { nav } from "../settings/nav.mts";
-import { sidebar } from "../settings/sidebar.mts";
-import { socialLink } from "../settings/socialLinks.mts";
-import { search } from "../settings/search.mts";
+import { defineConfig } from "vitepress"
+import { nav } from "../settings/nav.mts"
+import { sidebar } from "../settings/sidebar.mts"
+import { socialLink } from "../settings/socialLinks.mts"
+import { search } from "../settings/search.mts"
+import { footer } from "../settings/search.mts"
 
 export default defineConfig({
   title: "Butterfly",
@@ -40,14 +41,11 @@ export default defineConfig({
 
     search: search as any,
 
-    footer: {
-      message: "Released under the MIT License.",
-      copyright: "Copyright © 2024-present Yibo wang"
-    },
+    footer: footer,
 
     editLink: {
       pattern: "https://github.com",
       text: "Edit this page on GitHub"
     }
   }
-});
+})

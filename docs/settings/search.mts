@@ -19,12 +19,12 @@ export const search = {
       }
     }
   }
-};
+}
 
 /**
  * 页脚版权
  */
 export const footer = {
-  // message: "Released under the MIT License.",
-  // copyright: "Copyright © 2024-present Alkaid"
-};
+  message: "Released under the MIT License.",
+  copyright: "Copyright © 2024-present Yibo wang"
+}
