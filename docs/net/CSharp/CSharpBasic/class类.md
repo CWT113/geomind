@@ -255,7 +255,7 @@ Console.WriteLine(Student.count);
 
 ::: tip 静态变量内存示意图
 
-![image.png](./image/image.png)
+![image.png](./image/静态变量内存示意图.png)
 
 :::
 
@@ -648,7 +648,7 @@ static void Main(string[] args)
 
 父类中的虚拟方法必须在子类中 **可见**，不可为 **private**。
 
-![image.png](./image/image1.png)
+![image.png](./image/多态细节.png)
 
 ### 多态细节（二）
 
