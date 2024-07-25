@@ -88,37 +88,37 @@ export const sidebar = {
     }
   ],
 
-  "/net/csharp/": [
+  "/net/CSharp/": [
     {
       text: "C# 基础",
       items: [
-        { text: "方法与数组", link: "/net/csharp/csharpBasic/方法与数组.md" },
-        { text: "class类", link: "/net/csharp/csharpBasic/class类.md" },
+        { text: "方法与数组", link: "/net/CSharp/CSharpBasic/方法与数组.md" },
+        { text: "class类", link: "/net/CSharp/CSharpBasic/class类.md" },
         {
           text: "面向对象高级",
-          link: "/net/csharp/csharpBasic/面向对象高级.md"
+          link: "/net/CSharp/CSharpBasic/面向对象高级.md"
         }
       ]
     },
     {
       text: "C# 扩展",
       items: [
-        { text: "字典", link: "/net/csharp/csharpSkill/字典.md" },
-        { text: "元组", link: "/net/csharp/csharpSkill/元组.md" },
-        { text: "模式匹配", link: "/net/csharp/csharpSkill/模式匹配.md" },
-        { text: "线程安全类", link: "/net/csharp/csharpSkill/线程安全类.md" },
-        { text: "HashTable", link: "/net/csharp/csharpSkill/HashTable.md" },
+        { text: "字典", link: "/net/CSharp/CSharpSkill/字典.md" },
+        { text: "元组", link: "/net/CSharp/CSharpSkill/元组.md" },
+        { text: "模式匹配", link: "/net/CSharp/CSharpSkill/模式匹配.md" },
+        { text: "线程安全类", link: "/net/CSharp/CSharpSkill/线程安全类.md" },
+        { text: "HashTable", link: "/net/CSharp/CSharpSkill/HashTable.md" },
         {
           text: "检查null语法糖",
-          link: "/net/csharp/csharpSkill/检查null语法糖.md"
+          link: "/net/CSharp/CSharpSkill/检查null语法糖.md"
         },
         {
           text: "序列化与反序列化",
-          link: "/net/csharp/csharpSkill/序列化与反序列化.md"
+          link: "/net/CSharp/CSharpSkill/序列化与反序列化.md"
         },
         {
           text: "迪卡斯杰拉算法",
-          link: "/net/csharp/csharpSkill/迪卡斯杰拉算法.md"
+          link: "/net/CSharp/CSharpSkill/迪卡斯杰拉算法.md"
         }
       ]
     }
