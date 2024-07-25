@@ -14,7 +14,7 @@ export const nav = [
     text: ".NET",
     items: [
       { text: "C# 基础", link: "/net/CSharp/CSharpBasic/方法与数组.md" },
-      { text: "ASP.NET Core", link: "/net/AspNetCore/异步编程.md" },
+      { text: "ASP.NET Core", link: "/net/aspnetcore/异步编程.md" },
       { text: ".NET 微服务", link: "/net/Microservice/微服务概念.md" },
       { text: "Linux", link: "/net/Linux/软件安装.md" }
     ]
