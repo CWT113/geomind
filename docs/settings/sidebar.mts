@@ -124,7 +124,7 @@ export const sidebar = {
     }
   ],
 
-  "/net/AspNetCore/": [
+  "/net/aspnetcore/": [
     {
       text: "ASP.net Core",
       items: [
