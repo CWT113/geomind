@@ -88,37 +88,37 @@ export const sidebar = {
     }
   ],
 
-  "/net/CSharp/": [
+  "/net/csharp/": [
     {
       text: "C# 基础",
       items: [
-        { text: "方法与数组", link: "/net/CSharp/CSharpBasic/方法与数组.md" },
-        { text: "class类", link: "/net/CSharp/CSharpBasic/class类.md" },
+        { text: "方法与数组", link: "/net/csharp/csharpBasic/方法与数组.md" },
+        { text: "class类", link: "/net/csharp/csharpBasic/class类.md" },
         {
           text: "面向对象高级",
-          link: "/net/CSharp/CSharpBasic/面向对象高级.md"
+          link: "/net/csharp/csharpBasic/面向对象高级.md"
         }
       ]
     },
     {
       text: "C# 扩展",
       items: [
-        { text: "字典", link: "/net/CSharp/CSharpSkill/字典.md" },
-        { text: "元组", link: "/net/CSharp/CSharpSkill/元组.md" },
-        { text: "模式匹配", link: "/net/CSharp/CSharpSkill/模式匹配.md" },
-        { text: "线程安全类", link: "/net/CSharp/CSharpSkill/线程安全类.md" },
-        { text: "HashTable", link: "/net/CSharp/CSharpSkill/HashTable.md" },
+        { text: "字典", link: "/net/csharp/csharpSkill/字典.md" },
+        { text: "元组", link: "/net/csharp/csharpSkill/元组.md" },
+        { text: "模式匹配", link: "/net/csharp/csharpSkill/模式匹配.md" },
+        { text: "线程安全类", link: "/net/csharp/csharpSkill/线程安全类.md" },
+        { text: "HashTable", link: "/net/csharp/csharpSkill/HashTable.md" },
         {
           text: "检查null语法糖",
-          link: "/net/CSharp/CSharpSkill/检查null语法糖.md"
+          link: "/net/csharp/csharpSkill/检查null语法糖.md"
         },
         {
           text: "序列化与反序列化",
-          link: "/net/CSharp/CSharpSkill/序列化与反序列化.md"
+          link: "/net/csharp/csharpSkill/序列化与反序列化.md"
         },
         {
           text: "迪卡斯杰拉算法",
-          link: "/net/CSharp/CSharpSkill/迪卡斯杰拉算法.md"
+          link: "/net/csharp/csharpSkill/迪卡斯杰拉算法.md"
         }
       ]
     }
@@ -137,94 +137,84 @@ export const sidebar = {
     }
   ],
 
-  "/net/Microservice/": [
-    { text: "微服务概念", link: "/net/Microservice/微服务概念.md" },
+  "/net/microservice/": [
+    { text: "微服务概念", link: "/net/microservice/微服务概念.md" },
     {
       text: "ORM框架",
-      collapsed: true,
-      items: [{ text: "EFCore", link: "/net/Microservice/Orm/EFCore.md" }]
+      items: [{ text: "EFCore", link: "/net/microservice/orm/EFCore.md" }]
     },
     {
       text: "对象映射",
-      collapsed: true,
       items: [
-        { text: "AutoMapper", link: "/net/Microservice/Mapper/AutoMapper.md" },
-        { text: "Mapster", link: "/net/Microservice/Mapper/Mapster.md" }
+        { text: "AutoMapper", link: "/net/microservice/mapper/AutoMapper.md" },
+        { text: "Mapster", link: "/net/microservice/mapper/Mapster.md" }
       ]
     },
     {
       text: "任务调度",
-      collapsed: true,
       items: [
-        { text: "QuartZ", link: "/net/Microservice/Scheduling/QuartZ.md" },
-        { text: "Hangfire", link: "/net/Microservice/Scheduling/Hangfire.md" }
+        { text: "QuartZ", link: "/net/microservice/scheduling/QuartZ.md" },
+        { text: "Hangfire", link: "/net/microservice/scheduling/Hangfire.md" }
       ]
     },
     {
       text: "MQ",
-      collapsed: true,
       items: [
-        { text: "ActiveMQ", link: "/net/Microservice/MQ/ActiveMQ.md" },
-        { text: "RabbitMQ", link: "/net/Microservice/MQ/RabbitMQ.md" }
+        { text: "ActiveMQ", link: "/net/microservice/mq/ActiveMQ.md" },
+        { text: "RabbitMQ", link: "/net/microservice/mq/RabbitMQ.md" }
       ]
     },
     {
       text: "注册发现",
-      collapsed: true,
       items: [
-        { text: "consul", link: "/net/Microservice/Consul/Consul和nacos.md" }
+        { text: "consul", link: "/net/microservice/consul/Consul和nacos.md" }
       ]
     },
     {
       text: "缓存",
-      collapsed: true,
       items: [
-        { text: "Redis", link: "/net/Microservice/Redis/Redis.md" },
-        { text: "CSRedis", link: "/net/Microservice/Redis/CSRedis.md" }
+        { text: "Redis", link: "/net/microservice/redis/Redis.md" },
+        { text: "CSRedis", link: "/net/microservice/redis/CSRedis.md" }
       ]
     },
     {
       text: "日志",
-      collapsed: true,
       items: [
-        { text: "Serilog", link: "/net/Microservice/Log/Serilog.md" },
-        { text: "Nlog", link: "/net/Microservice/Log/Nlog.md" },
-        { text: "Log4Net", link: "/net/Microservice/Log/Log4Net.md" }
+        { text: "Serilog", link: "/net/microservice/log/Serilog.md" },
+        { text: "Nlog", link: "/net/microservice/log/Nlog.md" },
+        { text: "Log4Net", link: "/net/microservice/log/Log4Net.md" }
       ]
     },
     {
       text: "依赖注入",
-      collapsed: true,
       items: [
         {
           text: "依赖注入",
-          link: "/net/Microservice/dependencyInjection/依赖注入.md"
+          link: "/net/microservice/dependencyInjection/依赖注入.md"
         }
       ]
     },
     {
       text: "熔断降级",
-      collapsed: true,
-      items: [{ text: "Polly", link: "/net/Microservice/Polly/Polly.md" }]
+      items: [{ text: "Polly", link: "/net/microservice/polly/Polly.md" }]
     },
     {
       text: "发布部署",
-      collapsed: true,
       items: [
         {
           text: "浏览器不支持WebGL",
-          link: "/net/Microservice/SystemPublish/解决服务器不支持WebGL.md"
+          link: "/net/microservice/systemPublish/解决服务器不支持WebGL.md"
         }
       ]
     }
   ],
 
-  "/net/Linux": [
-    { text: "常用命令", link: "/net/Linux/常用命令.md" },
-    { text: "系统命令", link: "/net/Linux/系统命令.md" },
-    { text: "用户和权限", link: "/net/Linux/用户和权限.md" },
-    { text: "vim", link: "/net/Linux/vim.md" },
-    { text: "bat脚本", link: "/net/Linux/bat脚本.md" }
+  "/net/linux": [
+    { text: "常用命令", link: "/net/linux/常用命令.md" },
+    { text: "系统命令", link: "/net/linux/系统命令.md" },
+    { text: "用户和权限", link: "/net/linux/用户和权限.md" },
+    { text: "vim", link: "/net/linux/vim.md" },
+    { text: "bat脚本", link: "/net/linux/bat脚本.md" }
   ],
 
   "/gis/mapbox/": [
