@@ -10,7 +10,7 @@ hero:
   image:
     src: /background.png
     alt: Butterfly
-  actions: 
+  actions:
     # - theme: brand
     #   text: 前端
     #   link: /fontend/typescript/TypeScript.md
@@ -56,7 +56,7 @@ features:
   - icon: ⚡️
     title: .NET
     details: “频频回头的人，注定走不了远路”
-    link: /net/CSharp/CSharpBasic/方法与数组.md
+    link: /net/csharp/csharpBasic/方法与数组.md
     linkText: "NET"
 
   - icon: 🤖
