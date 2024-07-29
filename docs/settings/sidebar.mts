@@ -161,6 +161,7 @@ export const sidebar = {
       text: "消息传递",
       items: [
         { text: "MediatR", link: "/net/microservice/eventBus/MediatR.md" },
+        { text: "CAP", link: "/net/microservice/eventBus/Cap.md" },
       ]
     },
     {
