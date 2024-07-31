@@ -399,8 +399,18 @@ export const sidebar = {
         { text: "异常捕获", link: "/java/basic/异常捕获.md" },
         { text: "日志系统", link: "/java/basic/日志系统.md" }
       ]
+    },
+    {
+      text: "Java高级",
+      collapsed: false,
+      items: [
+        {
+          text: "多线程",
+          link: "/java/basic/多线程.md"
+        }
+      ]
     }
   ],
 
   "/c/": [{ text: "基础入门", link: "/c/基础入门.md" }]
-};
+}
