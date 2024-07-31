@@ -161,7 +161,7 @@ export const sidebar = {
       text: "消息传递",
       items: [
         { text: "MediatR", link: "/net/microservice/eventBus/MediatR.md" },
-        { text: "CAP", link: "/net/microservice/eventBus/Cap.md" },
+        { text: "CAP", link: "/net/microservice/eventBus/Cap.md" }
       ]
     },
     {
@@ -400,7 +400,7 @@ export const sidebar = {
         { text: "日志系统", link: "/java/basic/日志系统.md" }
       ]
     }
-  ]
+  ],
 
-  // "/c/": [{ text: "基础入门", link: "/c/基础入门.md" }]
-}
+  "/c/": [{ text: "基础入门", link: "/c/基础入门.md" }]
+};
