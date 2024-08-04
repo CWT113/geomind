@@ -4,7 +4,9 @@
 
 
 
-## Join
+## Merging
+
+### Join
 
 `Join()` 方法是基于匹配键将两个序列的元素进行关联，类似于 SQL 中 Join。
 
@@ -43,7 +45,7 @@ public record Order(long OrderId, long CustomerId, string Product);
 
 
 
-## GroupJoin
+### GroupJoin
 
 `GroupJoin()` 方法将两个序列根据指定的键进行分组连接。
 
@@ -86,7 +88,7 @@ public record Order(long OrderId, long CustomerId, string Product);
 
 
 
-## ZIP
+### ZIP
 
 将两个序列按元素位置配对，并生成一个新的序列。
 
@@ -113,9 +115,57 @@ static void JoinEx()
 
 
 
+## Convert
+
+### ToList
+
+`ToList()` 方法用于将一个 `IEnumerable<T>` 的类型转换为 `List<T>`。
+
+```C#
+static void Method()
+{
+    IEnumerable<string> arr = ["apple", "banana", "orange", "garpe"];
+    List<string>? result = arr.ToList();
+}
+```
 
 
 
+### ToArray
+
+`ToArray()` 方法用于将一个 `IEnumerable<T>` 的类型转换为 `Array`。
+
+```C#
+static void Method()
+{
+    var people = new List<Person>
+    {
+        new ("Tom", 20),
+        new ("Amy", 30),
+        new ("Bob", 40),
+        new ("Toy", 50),
+    };
+
+    string[]? names = people.Select(d => d.Name).ToArray();
+    int[]? ages = people.Select(d => d.Age).ToArray();
+}
+```
+
+
+
+### OfType
+
+`OfType<T>()` 方法用于过滤集合中的元素，只返回指定类型的元素。
+
+```C#
+static void Method()
+{
+    ArrayList array = ["apple", "Banana", 3, true];
+
+    List<string>? res1 = array.OfType<string>().ToList(); // "apple", "Banana"
+    List<bool>? res2 = array.OfType<bool>().ToList(); 		// true
+}
+```
 
 
 

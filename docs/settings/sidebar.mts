@@ -217,11 +217,27 @@ export const sidebar = {
   ],
 
   "/net/linux": [
-    { text: "常用命令", link: "/net/linux/常用命令.md" },
-    { text: "系统命令", link: "/net/linux/系统命令.md" },
-    { text: "用户和权限", link: "/net/linux/用户和权限.md" },
-    { text: "vim", link: "/net/linux/vim.md" },
-    { text: "bat脚本", link: "/net/linux/bat脚本.md" }
+    {
+      text: "基础使用",
+      items: [
+        { text: "常用命令", link: "/net/linux/常用命令.md" },
+        { text: "系统命令", link: "/net/linux/系统命令.md" },
+        { text: "用户和权限", link: "/net/linux/用户和权限.md" },
+        { text: "vim", link: "/net/linux/vim.md" }
+      ]
+    },
+    {
+      text: "服务部署",
+      items: [
+        { text: "Redis部署", link: "/net/linux/redis部署.md" },
+        { text: "RabbitMQ部署", link: "/net/linux/rabbitMQ部署.md" },
+        { text: "Consul部署", link: "/net/linux/consul部署.md" },
+      ]
+    },
+    {
+      text: "其他拓展",
+      items: [{ text: "bat脚本", link: "/net/linux/bat脚本.md" }]
+    }
   ],
 
   "/gis/mapbox/": [
