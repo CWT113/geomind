@@ -46,41 +46,43 @@ whereis consul				# consul: /usr/bin/consul /etc/consul.d
 编辑 `/etc/consul.d/consul.hcl`，配置以下内容（默认全部是注释的）：
 
 ```shell
+# 指定运行代理的数据信息中心的名称
 datacenter = "dc1"
 
+# 定义Consul存储其状态和数据的目录
 data_dir = "/opt/consul"
 
+# 指定客户端接口绑定的地址
 client_addr = "0.0.0.0"
 
+# 配置UI界面
 ui_config{
   enabled = true
 }
 
+# 指定该节点是一个服务器节点
 server = true
 
-bind_addr = "[::]"
-bind_addr = "0.0.0.0"
+# 绑定地址，可以是IPv4或IPv6地址
+bind_addr = "[::]"  # 这是一个IPv6地址，表示所有接口
+bind_addr = "0.0.0.0"  # 这是一个IPv4地址，表示所有接口
 
-advertise_addr = "192.168.111.128"
+# 广播地址，用于集群中的其他节点与该节点通信
+advertise_addr = "192.168.111.129"
 
-bootstrap_expect=1
+# 指定集群预期的服务器节点数量，用于引导集群
+bootstrap_expect = 1
 ```
-
-::: danger 注意
-
-这里 consul 配置的时候，直接关闭了防火墙。
-
-```shell
-sudo systemctl disable firewalld
-```
-
-:::
 
 
 
 **第 3 步：**
 
-在 `/etc/systemd/system` 下配置 consul 的服务程序，新建 `consul.server` ，写入以下内容：
+创建 `consul.service` 服务，设置 consul 开机自启。
+
+```shell
+vim /etc/systemd/system/consul.service
+```
 
 ```shell
 [Unit]
@@ -116,8 +118,4 @@ sudo systemctl status consul
 sudo systemctl enable consul
 ```
 
-启动成功后，在 http://192.168.111.128:8500/ui/dc1/overview/server-status 就能看到 consul 控制台啦 🎉🎉🎉！
-
-
-
-## 集群部署
+启动成功后，在 http://192.168.111.129:8500/ui/dc1/overview/server-status 就能看到 consul 控制台啦 🎉🎉🎉！

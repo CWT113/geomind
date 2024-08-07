@@ -8,35 +8,30 @@
 
 **第 1 步：**
 
-安装 `gcc` 编译器：
+安装 `gcc` 编译器，然后下载 redis 最新的 tar 包：
 
 ```shell
 # 安装 `gcc` 编译器
-yum -y install gcc
-```
-
-```shell
+yum install -y gcc-c++
 # 安装 wget 在线下载redis包
 wget http://download.redis.io/releases/redis-7.4.0.tar.gz
+# 查看下载的 redis 包位置
+whereis redis-7.4.0.tar.gz
 ```
 
 >redis 历史版本查看：http://download.redis.io/releases/
-
-默认 redis 的包是安装在` /root` 文件夹下，使用 `cd ~`，然后 `ls` 即可查看到包。
 
 
 
 **第 2 步：**
 
-在 `/usr/` 下新建 myproject 文件夹，存放安装的程序，然后将 redis 压缩包移动到该文件夹下，并解压：
+移动 `redis-7.4.0.tar.gz` 包到 `/usr/` 下，并进行解压：
 
 ```shell
-# 新建文件夹
-mkdir /usr/myproject
 # 移动 redis 包
-mv redis-7.4.0.tar.gz /usr/myproject
+mv redis-7.4.0.tar.gz /usr/redis-7.4.0.tar.gz
 # 解压 redis 包
-tar -zxf redis-7.4.0.tar.gz
+tar -xzf redis-7.4.0.tar.gz
 ```
 
 进入解压后的 redis 文件夹内，使用 `make` 命令编译：
@@ -45,8 +40,6 @@ tar -zxf redis-7.4.0.tar.gz
 cd redis-7.4.0
 # 编译并安装
 make && make install		# 默认安装目录为 /usr/local/bin
-# 切换到默认的安装目录
-cd /usr/local/bin
 ```
 
 
@@ -56,7 +49,7 @@ cd /usr/local/bin
 复制 `redis.conf` 文件到 `/usr/local/bin` 目录下：
 
 ```shell
-cp /usr/myproject/redis-7.4.0/redis.conf /usr/local/bin/redis-7.4.0/
+cp /usr/redis-7.4.0/redis.conf /usr/local/bin/redis-7.4.0/
 ```
 
 修改 `redis.conf` 文件：
@@ -112,7 +105,9 @@ requirepass redis@1234
 修改防火墙，并向外暴漏 6379 端口：
 
 ```shell
+# 向外暴漏 6379 端口
 firewall-cmd --zone=public --add-port=6379/tcp --permanent
+# 重启防火墙
 systemctl restart firewalld
 ```
 
@@ -127,17 +122,17 @@ ip addr			# 192.168.111.128
 
 ```shell
 # 新建 redis 系统服务
-vi /etc/systemd/system/redis.service
+vim /etc/systemd/system/redis.service
 ```
 
-```shell
+```shell {7}
 [Unit]
 Description=redis-server
 After=network.target
  
 [Service]
 Type=forking
-ExecStart= /usr/local/bin/redis-server /usr/local/bin/myredis/redis.conf	# 注意路径替换
+ExecStart= /usr/local/bin/redis-server /usr/local/bin/redis.conf
 PrivateTmp=true
  
 [Install]
@@ -150,11 +145,69 @@ systemctl daemon-reload
 # 启动服务
 sudo systemctl start redis
 # 查看服务状态
-sudo systemctl start redis
+sudo systemctl status redis
 # 设置开机自启
 systemctl enable redis
 ```
 
+::: warning 警告
+
+如果使用 start 命令，启动 redis 时报错，提示启动失败，可以先查看 6379 端口是否已被占用，如果被占用，停止改进程。
+
+解决方案：
+
+```shell
+# 查看 6379 端口是否被占用
+lsof -i:6379
+# 杀死进程
+kill -9 PID
+```
+
+:::
+
 
 
 ## 集群部署
+
+>参考博客：https://blog.csdn.net/qq_39017153/article/details/133899805
+
+[利用chatgpt解决单主机多实例模式Redis主从配置的报错问题：Error condition on socket for SYNC: Connection refused - xycccode - 博客园 (cnblogs.com)](https://www.cnblogs.com/wekenyblog/p/17503696.html)
+
+[# Error condition on socket for SYNC: Connection refused-CSDN博客](https://blog.csdn.net/weixin_68919548/article/details/133024653)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
