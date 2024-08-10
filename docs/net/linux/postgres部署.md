@@ -27,7 +27,7 @@ cd postgresql-16.4.tar.gz
 
 如果在检查系统环境与扫描依赖包时报错：
 
-![image-20240808214951986](E:\Github.Projects\Alikaid\docs\net\linux\assets\image-20240808214951986.png)
+![image-20240808214951986](./assets/postgres报错.png)
 
 解决方案：
 
