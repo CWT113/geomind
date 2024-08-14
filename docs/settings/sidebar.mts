@@ -225,7 +225,7 @@ export const sidebar = {
         { text: "用户和权限", link: "/net/linux/用户和权限.md" },
         { text: "vim", link: "/net/linux/vim.md" },
         { text: "固定IP地址", link: "/net/linux/linux固定IP地址.md" },
-        { text: "yum设置阿里源", link: "/net/linux/yum设置阿里源.md" },
+        { text: "yum设置阿里源", link: "/net/linux/yum设置阿里源.md" }
       ]
     },
     {
@@ -237,7 +237,7 @@ export const sidebar = {
         { text: "Docker部署", link: "/net/linux/docker部署.md" },
         { text: "Consul部署", link: "/net/linux/consul部署.md" },
         { text: "RabbitMQ部署", link: "/net/linux/rabbitMQ部署.md" },
-        { text: "Postgres部署", link: "/net/linux/postgres部署.md" },
+        { text: "Postgres部署", link: "/net/linux/postgres部署.md" }
       ]
     },
     {
@@ -429,6 +429,14 @@ export const sidebar = {
         {
           text: "多线程",
           link: "/java/basic/多线程.md"
+        },
+        {
+          text: "多线程调用",
+          link: "/java/basic/多线程调用.md"
+        },
+        {
+          text: "线程安全",
+          link: "/java/basic/线程安全.md"
         }
       ]
     }
