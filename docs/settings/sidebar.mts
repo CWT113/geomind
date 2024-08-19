@@ -427,8 +427,8 @@ export const sidebar = {
       collapsed: false,
       items: [
         {
-          text: "多线程",
-          link: "/java/basic/多线程.md"
+          text: "多线程基础",
+          link: "/java/basic/多线程基础.md"
         },
         {
           text: "多线程调用",
