@@ -423,7 +423,7 @@ export const sidebar = {
       ]
     },
     {
-      text: "Java高级",
+      text: "多线程",
       collapsed: false,
       items: [
         {
@@ -435,8 +435,20 @@ export const sidebar = {
           link: "/java/basic/多线程调用.md"
         },
         {
-          text: "线程安全",
-          link: "/java/basic/线程安全.md"
+          text: "线程生命周期",
+          link: "/java/basic/线程生命周期.md"
+        },
+        {
+          text: "线程中断",
+          link: "/java/basic/线程中断.md"
+        },
+        {
+          text: "线程守护",
+          link: "/java/basic/线程守护.md"
+        },
+        {
+          text: "线程同步",
+          link: "/java/basic/线程同步.md"
         }
       ]
     }

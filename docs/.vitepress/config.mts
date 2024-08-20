@@ -1,9 +1,9 @@
-import { defineConfig } from "vitepress";
-import { nav } from "../settings/nav.mts";
-import { sidebar } from "../settings/sidebar.mts";
-import { socialLink } from "../settings/socialLinks.mts";
-import { search } from "../settings/search.mts";
-import { footer } from "../settings/search.mts";
+import { defineConfig } from "vitepress"
+import { nav } from "../settings/nav.mts"
+import { sidebar } from "../settings/sidebar.mts"
+import { socialLink } from "../settings/socialLinks.mts"
+import { search } from "../settings/search.mts"
+import { footer } from "../settings/search.mts"
 
 export default defineConfig({
   title: "Butterfly",
@@ -64,4 +64,4 @@ export default defineConfig({
       ]
     }
   }
-});
+})
