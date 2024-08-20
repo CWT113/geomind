@@ -57,7 +57,7 @@ table {
   transition: color 0.25s;
 }
 
-/* VitePress Search */
+/* 搜索栏 */
 .VPLocalSearchBox .result {
   --vp-c-bg-search-result: var(--vp-c-bg);
   background: var(--vp-c-bg-search-result) !important;
@@ -68,10 +68,16 @@ table {
   --vp-c-bg-search-result: var(--vp-c-bg-soft) !important;
 }
 .VPLocalSearchBox .result .excerpt-gradient-top {
-  background: linear-gradient(var(--vp-c-bg-search-result), transparent) !important;
+  background: linear-gradient(
+    var(--vp-c-bg-search-result),
+    transparent
+  ) !important;
 }
 .VPLocalSearchBox .result .excerpt-gradient-bottom {
-  background: linear-gradient(transparent, var(--vp-c-bg-search-result)) !important;
+  background: linear-gradient(
+    transparent,
+    var(--vp-c-bg-search-result)
+  ) !important;
 }
 .VPLocalSearchBox .title-icon {
   display: none;
@@ -85,7 +91,7 @@ table {
   border: 1px solid transparent;
 }
 
-/* dark/light radial transition */
+/* 暗色/亮色主题切换 */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

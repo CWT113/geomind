@@ -1,9 +1,9 @@
-import { defineConfig } from "vitepress"
-import { nav } from "../settings/nav.mts"
-import { sidebar } from "../settings/sidebar.mts"
-import { socialLink } from "../settings/socialLinks.mts"
-import { search } from "../settings/search.mts"
-import { footer } from "../settings/search.mts"
+import { defineConfig } from "vitepress";
+import { nav } from "../settings/nav.mts";
+import { sidebar } from "../settings/sidebar.mts";
+import { socialLink } from "../settings/socialLinks.mts";
+import { search } from "../settings/search.mts";
+import { footer } from "../settings/search.mts";
 
 export default defineConfig({
   title: "Butterfly",
@@ -12,6 +12,7 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: "/Alikaid/butterfly-logo.png" }]],
   lastUpdated: true,
   ignoreDeadLinks: true,
+  lang: "zh-CN",
   markdown: {
     theme: {
       light: "github-light",
@@ -47,5 +48,20 @@ export default defineConfig({
       pattern: "https://github.com",
       text: "Edit this page on GitHub"
     }
+  },
+
+  vite: {
+    optimizeDeps: {
+      exclude: [
+        "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "vitepress"
+      ]
+    },
+    ssr: {
+      noExternal: [
+        // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可
+        "@nolebase/vitepress-plugin-enhanced-readabilities"
+      ]
+    }
   }
-})
+});
