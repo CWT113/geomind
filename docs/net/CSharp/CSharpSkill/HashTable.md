@@ -4,9 +4,9 @@ HashTable 类表示由 **键值对** 构成的集合类。
 
 它具有以下优势：
 
-- 快速查找和插入：`HashTable` 采用哈希表算法，使得查找和插入操作的平均时间复杂的为 O(1)，即使在数据量较大的情况下，性能也可以非常好；
-- 灵活性：`Hashtable`允许存储不同类型的键和值，提供了极大的灵活性；
-- 可以使用 `Hashtable.Synchronized` 方法创建一个线程安全的`Hashtable`，适合多线程环境。
+- **快速查找和插入**：HashTable 采用哈希表算法，使得查找和插入操作的平均时间复杂的为 O(1)，即使在数据量较大的情况下，性能也可以非常好；
+- **灵活性**：Hashtable 允许存储不同类型的键和值，提供了极大的灵活性；
+- **多线程安全**：可以使用 `Hashtable.Synchronized` 方法创建一个线程安全的 Hashtable，适合多线程环境。
 
 
 
@@ -26,9 +26,9 @@ var table = new Hashtable()
     { "3", true },
     { "4", new { Name = "Yibo wang", Age = 20 } }
 };
-
+// 键值对个数
 var count = table.Count;
-
+// 键和值
 var keys = table.Keys;
 var values = table.Values;
 ```
@@ -56,6 +56,11 @@ var res2 = table.ContainsKey("4");
 // 判断哈希表是否存在指定 value
 var res3 = table.ContainsValue(new { Name = "Yibo wang", Age = 20 });
 
+// 移除指定 key
+table.Remove("2");
+// 清空哈希表
+table.Clear();
+
 // 返回用于循环访问 Hashtable 的枚举数
 var enumerator = table.GetEnumerator();
 while (enumerator.MoveNext())
@@ -67,15 +72,9 @@ while (enumerator.MoveNext())
 var syncHashTable = Hashtable.Synchronized(table);
 lock (syncHashTable.SyncRoot)
 {
-    foreach (DictionaryEntry entry in syncHashTable)
-    {
-      Console.WriteLine($"{entry.Key}: {entry.Value}");
-    }
+  foreach (var entry in syncHashTable)
+  {
+    Console.WriteLine($"{entry.Key}: {entry.Value}");
+  }
 }
-
-// 移除指定 key
-table.Remove("2");
-
-// 清空哈希表
-table.Clear();
 ```

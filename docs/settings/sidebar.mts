@@ -103,15 +103,12 @@ export const sidebar = {
     {
       text: "C# 扩展",
       items: [
+        { text: "文件IO操作", link: "/net/CSharp/CSharpSkill/文件IO操作.md" },
+        { text: "HashTable", link: "/net/CSharp/CSharpSkill/HashTable.md" },
+        { text: "线程安全类", link: "/net/CSharp/CSharpSkill/线程安全类.md" },
         { text: "字典", link: "/net/CSharp/CSharpSkill/字典.md" },
         { text: "元组", link: "/net/CSharp/CSharpSkill/元组.md" },
         { text: "模式匹配", link: "/net/CSharp/CSharpSkill/模式匹配.md" },
-        { text: "线程安全类", link: "/net/CSharp/CSharpSkill/线程安全类.md" },
-        { text: "HashTable", link: "/net/CSharp/CSharpSkill/HashTable.md" },
-        {
-          text: "检查null语法糖",
-          link: "/net/CSharp/CSharpSkill/检查null语法糖.md"
-        },
         {
           text: "序列化与反序列化",
           link: "/net/CSharp/CSharpSkill/序列化与反序列化.md"
