@@ -330,6 +330,20 @@ export const sidebar = {
     }
   ],
 
+  "/gis/arcgis-js-api/": [
+    {
+      text: "ArcGIS Javascript API",
+      items: [{ text: "快速入门", link: "/gis/arcgis-js-api/index.md" }]
+    }
+  ],
+
+  "/gis/webgl/": [
+    {
+      text: "WebGL",
+      items: [{ text: "快速入门", link: "/gis/WebGL/index.md" }]
+    }
+  ],
+
   "/gis/three/": [
     {
       text: "Three.js",
