@@ -1,5 +1,7 @@
 # 文件IO操作
 
+>学习视频：https://www.bilibili.com/video/BV1A8411N7uD?p=1
+
 流 是一个字节序列，可用于对后备存储进行 读取 和 写入操作，后备存储可以是多个存储媒介之一，例如磁盘和内存。
 
 ![System.IO](./image/System.IO.png)
@@ -271,30 +273,24 @@ var fileWriter = fileInfo.AppendText();
 
 
 
-## FileStream
-
-
-
-## MemoryStream
-
-
-
-## BufferedStream
-
-
-
 ## Text
 
 ### StreamReader
 
 `StreamReader` 继承自 TextReader，使其以一种特定的编码从字节流中读取字符。
 
-| 方法      | 异步方法       | 作用                                 |
-| --------- | -------------- | ------------------------------------ |
-| ReadLine  | ReadLineAsync  | 每次读取一行数据，读到末尾返回null   |
-| ReadToEnd | ReadToEndAsync | 读取整个文件内容到一个字符串中       |
-| Read      | ReadAsync      | 读取指定数量的字符到缓冲区           |
-| Close     | 无             | 关闭流，读取完数据之后一定记得关闭流 |
+| 方法      | 异步方法       | 作用                               |
+| --------- | -------------- | ---------------------------------- |
+| ReadLine  | ReadLineAsync  | 每次读取一行数据，读到末尾返回null |
+| ReadToEnd | ReadToEndAsync | 读取整个文件内容到一个字符串中     |
+| Read      | ReadAsync      | 读取指定数量的字符到缓冲区         |
+| Close     | 无             | 关闭读取流，一定记得关闭流         |
+
+::: warning 注意
+
+视频、音频 需要使用 字节流 的方式读取，字符流是不能读取的。
+
+:::
 
 ```C#
 string path = @"E:/code/text1.txt";
@@ -322,228 +318,288 @@ stream.Close();
 
 ### StreamWriter
 
-| 方法      | 异步方法       | 作用                                     |
-| --------- | -------------- | ---------------------------------------- |
-| WriteLine | WriteLineAsync | 将字符串写入到流中，并在字符后添加换行符 |
-| Write     | WriteAsync     | 将字符串写入到流中，字符后不添加换行符   |
-|           |                |                                          |
+`StreamWriter` 继承自 TextWriter，它可以把任意类型的数据写入流中。
+
+| 方法      | 异步方法       | 作用                                                     |
+| --------- | -------------- | -------------------------------------------------------- |
+| WriteLine | WriteLineAsync | 写入 任意类型的数据 到流中，并在字符后添加换行符         |
+| Write     | WriteAsync     | 写入 任意类型的数据 到流中，字符后不添加换行符           |
+| Flush     | 无             | 清理当前编写区中的所有缓冲区，使所有缓冲数据写入基础设备 |
+| Dispose   | 无             | 释放 StreamWriter 占用的所有资源，可以使用 using 替代    |
+| Close     | 无             | 关闭写入流，一定记得关闭流                               |
 
 ```C#
 string path = @"E:/code/text1.txt";
-var stream = new StreamWriter(path);
+// true 表示文件存在时，往里追加数据，不会导致数据覆盖
+var stream = new StreamWriter(path, true);
 
-// 将字符串写入文件中，会覆盖旧的文件内容，但不会覆盖 WriteLine 已经写入的内容
-stream.WriteLine("希望就在前方！");
-await stream.WriteLineAsync("希望就在前方！");
-
+await stream.WriteAsync("Good Morning!Good Morning!");
+await stream.WriteLineAsync("Hello，world!Hello，world!");
 stream.Close();
+stream.Dispose();
+```
+
+
+
+## FileStream
+
+`FileStream` 用于对文件系统中的文件（包括视频、音频）进行 读取、写入、打开、关闭，它是以 **字节流** 的方式读取和写入文件，因此它比 `StreamReader` 和 `StreamWriter`类更加强大。
+
+| 方法  | 异步方法   | 作用         |
+| ----- | ---------- | ------------ |
+| Read  | ReadAsync  | 读取文件内容 |
+| Write | WriteAsync | 写入文件内容 |
+
+构造函数：
+
+```C#
+new FileStream(path, FileMode);
+new FileStream(path, FileMode, FileAccess);
+new FileStream(path, FileMode, FileAccess, FileShare);
+new FileStream(path, FileMode, FileAccess, FileShare, int);
+```
+
+::: code-group
+
+```C# [同步读写文件]
+string path = @"E:\code\text1.txt";
+string path1 = @"E:\code2\text_copy.txt";
+
+byte[] buffer = new byte[1024];
+using (var reader = new FileStream(path, FileMode.Open, FileAccess.Read))
+{
+  using (var writer = new FileStream(path1, FileMode.OpenOrCreate, FileAccess.Write))
+  {
+    var count = reader.Read(buffer, 0, buffer.Length);
+    while (count != 0)
+    {
+      writer.Write(buffer, 0, buffer.Length);
+      count = reader.Read(buffer, 0, buffer.Length);
+    }
+  }
+}
+```
+
+```C# [同步读写视频]
+string path3 = @"E:\code\视频.mp4";
+string path4 = @"E:\code2\视频_copy.mp4";
+
+var buffer = new byte[1024 * 1024 * 5];
+using (var reader = new FileStream(path3, FileMode.Open, FileAccess.Read))
+{
+  using (var writer = new FileStream(path4, FileMode.OpenOrCreate, FileAccess.Write))
+  {
+    var count = reader.Read(buffer, 0, buffer.Length);
+    while (count != 0)
+    {
+      writer.Write(buffer, 0, buffer.Length);
+      count = reader.Read(buffer, 0, buffer.Length);
+    }
+  }
+}
+```
+
+```C# [异步读取视频] {9,12}
+var buffer = new byte[1024 * 1024 * 5];
+// 最后参数 true 表示使用异步读取和写入
+using (var reader = new FileStream(path3, FileMode.Open, FileAccess.Read, 
+                                   FileShare.Read, buffer.Length, true))
+{
+    using (var writer = new FileStream(path4, FileMode.OpenOrCreate, FileAccess.Write, 
+                                       FileShare.Write, buffer.Length, true))
+    {
+        var count = await reader.ReadAsync(buffer, 0, buffer.Length);
+        while (count != 0)
+        {
+            await writer.WriteAsync(buffer, 0, buffer.Length);
+            count = await reader.ReadAsync(buffer, 0, buffer.Length);
+        }
+    }
+}
+```
+
+:::
+
+
+
+## MemoryStream
+
+`MemoryStream` 用于创建一个内存流，其后备存储为内存。
+
+内存流数据以 **无符号字节数组** 的形式保存在内存中，系统可以直接访问这些封装的数据，而不必读取磁盘文件。
+
+因此 **读取的效率更高**（这也是和 `FileStream` 最大的区别），并且**内存流可以降低系统对临时缓冲区和临时文件的需要**。
+
+> 在使用中，常用 内存流作为**中转**，与其他流进行数据交换，如 利用 FileStream读取流 把读取的内容写入内存流，然后再把 内存流 中数据写到 FileStream写入流中，完成文件读取和写入。
+
+| 方法    | 异步方法    | 作用                                       |
+| ------- | ----------- | ------------------------------------------ |
+| Write   | WriteAsync  | 将字节数组中的一部分写入到内存流           |
+| Read    | ReadAsync   | 将内存流中的数据读取到 byte 数组中         |
+| ToArray | 无          | 将内存流转换为字节数组                     |
+| WriteTo | 无          | 将当前内存流中的数据，写入到另外的一个流中 |
+| CopyTo  | CopyToAsync | 将当前流中的数据，复制到另外的一个流中     |
+
+::: code-group
+
+```C# [基础示例] {5,12,19}
+byte[] data = Encoding.UTF8.GetBytes("Hello World");
+using (MemoryStream memoryStream = new MemoryStream())
+{
+  // 把字节数组写入到内存流中
+  await memoryStream.WriteAsync(data, 0, data.Length);
+}
+
+var bytes = new byte[15];
+using (MemoryStream memoryStream = new MemoryStream(data))
+{
+  // 将内存流中的数据读取到 byte 数组中
+  await memoryStream.ReadAsync(bytes, 0, bytes.Length);
+}
+string result = Encoding.UTF8.GetString(bytes); // Hello World
+
+using (MemoryStream memoryStream = new MemoryStream(data))
+{
+  // 将内存流转换为字节数组
+  var array = memoryStream.ToArray();
+  string result = Encoding.UTF8.GetString(array); // Hello World
+}
+```
+
+```C# [内存流复制中转] {6,9,13}
+using (MemoryStream memoryStream = new MemoryStream())
+{
+  // 开启读取流，将文件内容复制到内存流中
+  using (FileStream fileStream = new FileStream(path3, FileMode.Open, FileAccess.Read))
+  {
+    await fileStream.CopyToAsync(memoryStream);
+  }
+  // 把流的位置设置到开始位
+  memoryStream.Position = 0;
+	// 开启写入流，将内存流中的内容复制到写入流中
+  using (FileStream fileStream = new FileStream(path4, FileMode.OpenOrCreate, FileAccess.Write))
+  {
+    await memoryStream.CopyToAsync(fileStream);
+  }
+}
+```
+
+```C# [内存流写入中转] {5,10}
+using (MemoryStream memoryStream = new MemoryStream())
+{
+  using (FileStream fileStream = new FileStream(path3, FileMode.Open, FileAccess.Read))
+  {
+    await fileStream.CopyToAsync(memoryStream);
+  }
+
+  using (FileStream fileStream = new FileStream(path4, FileMode.OpenOrCreate, FileAccess.Write))
+  {
+    memoryStream.WriteTo(fileStream);
+  }
+};
+```
+
+:::
+
+
+
+## BufferedStream
+
+`BufferedStream` 是一种将数据读写操作缓存到内存中以提高性能的流类。它在进行频繁的读写操作时，减少对底层设备（如文件、网络）的访问，提高了效率。
+
+使用步骤：
+
+1. 创建底层流：`BufferStream` 通常包装在其他流（如 `FileStream`、`MemoryStream`）之上；
+2. 使用 `BufferStream` 进行读写操作：通过创建的实例对底层流进行数据缓冲读写；
+3. 关闭或释放流：使用完毕后，需要关闭或释放 `BufferedStream` 以及底层流；
+
+| 方法  | 异步方法   | 作用                 |
+| ----- | ---------- | -------------------- |
+| Read  | ReadAsync  | 读取字节数组到流中   |
+| Write | WriteAsync | 读取流中数据写入文件 |
+
+```C# {11,14}
+string path3 = @"E:\code\视频.mp4";
+string path4 = @"E:\code2\视频_copy.mp4";
+
+var buffer = new byte[1024 * 1024 * 5];
+FileStream reader = new FileStream(path3, FileMode.Open, FileAccess.Read);
+FileStream writer = new FileStream(path4, FileMode.OpenOrCreate, FileAccess.Write);
+using (BufferedStream bufferedreader = new BufferedStream(reader))
+{
+  using (BufferedStream bufferedWriter = new BufferedStream(writer))
+  {
+    var count = await bufferedreader.ReadAsync(buffer, 0, buffer.Length);
+    while (count > 0)
+    {
+      await bufferedWriter.WriteAsync(buffer, 0, count);
+      count = await bufferedreader.ReadAsync(buffer, 0, buffer.Length);
+    }
+  }
+}
 ```
 
 
 
 ## Binary
 
+`BinaryReader` 和 `BinaryWriter` 用于以二进制形式读写基本数据类型到流中（如 `FileStream` 或 `MemoryStream`）。
+
 ### BinaryReader
+
+`BinaryReader` 用于从流中读取二进制数据。
+
+```C#
+string path = @"E:\code\text1.txt";
+using (FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate))
+{
+  using (BinaryWriter writer = new BinaryWriter(fileStream))
+  {
+    writer.Write(42);
+    writer.Write(true);
+    writer.Write("Hello World");
+  }
+}
+```
 
 
 
 ### BinaryWriter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+`BinaryWriter` 用于将二进制数据写入流中。
+
+```C#
+string path = @"E:\code\text1.txt";
+using (FileStream fileStream = new FileStream(path, FileMode.Open))
+{
+  using (BinaryReader reader = new BinaryReader(fileStream))
+  {
+    var number = reader.ReadInt32();
+    var boolean = reader.ReadBoolean();
+    var str = reader.ReadString();
+    Console.WriteLine($"Number = {number}, boolean = {boolean}, string = {str}");
+  }
+}
+```
+
+
+
+`BinaryReader` 和 `BinaryWriter` 也可以用来 读取视频文件，并写入新的文件：
+
+```C# {8,11}
+byte[] buffer = new byte[1024 * 1024 * 5];
+FileStream fileReader = new FileStream(path3, FileMode.Open, FileAccess.Read);
+FileStream fileWriter = new FileStream(path4, FileMode.OpenOrCreate, FileAccess.Write);
+using (BinaryReader binaryReader = new BinaryReader(fileReader))
+{
+  using (BinaryWriter binaryWriter = new BinaryWriter(fileWriter))
+  {
+    var count = binaryReader.Read(buffer, 0, buffer.Length);
+    while (count > 0)
+    {
+      binaryWriter.Write(buffer, 0, count);
+      count = binaryReader.Read(buffer, 0, buffer.Length);
+    }
+  }
+}
+```
