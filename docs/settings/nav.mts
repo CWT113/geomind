@@ -38,7 +38,7 @@ export const nav = [
       { text: "Leaflet", link: "/gis/leaflet/leaflet.md" },
       { text: "OpenLayers", link: "/gis/openlayers/快速入门.md" },
       { text: "ArcGIS API", link: "/gis/arcgis-js-api/index.md" },
-      { text: "WebGL", link: "/gis/webgl/index.md" },
+      { text: "WebGL", link: "/gis/webgl/基础入门.md" },
       { text: "Three.js", link: "/gis/three/基础入门.md" },
       { text: "GeoServer", link: "/gis/geoserver/环境安装.md" },
     ]

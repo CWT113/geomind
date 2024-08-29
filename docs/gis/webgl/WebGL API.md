@@ -88,20 +88,20 @@
 
    >WebGLProgram 的作用是将顶点着色器和片元着色器组合在一起，以便 WebGL 渲染管线能够使用这两个着色器来处理顶点和片元的操作。通过创建和链接一个 WebGLPtogram，可以确保顶点着色器和片元着色器能够正确的协同工作，从而完成图形的渲染。
 
-2. `gl.attachShader(program, shader)`：将一个编译好的着色器附加到程序对象。
+2. **`gl.attachShader(program, shader)`**：将一个编译好的着色器附加到程序对象。
 
 |  参数   |        作用         |
 | :-----: | :-----------------: |
 | program | WebProgram 程序对象 |
 | shader  |   编译好的着色器    |
 
-3. `gl.linkProgram(program)`：链接给定的 WebGLProgram，从而完成为程序的片元和顶点着色器准备 GPU 代码的过程，使其成为一个可用于渲染的着色器程序。
+3. **`gl.linkProgram(program)`**：链接给定的 WebGLProgram，从而完成为程序的片元和顶点着色器准备 GPU 代码的过程，使其成为一个可用于渲染的着色器程序。
 
 |  参数   |        作用         |
 | :-----: | :-----------------: |
 | program | WebProgram 程序对象 |
 
-4. `gl.useProgram(program)`：将指定的程序对象设置为当前的渲染状态。
+4. **`gl.useProgram(program)`**：将指定的程序对象设置为当前的渲染状态。
 
 |  参数   |        作用         |
 | :-----: | :-----------------: |
@@ -134,17 +134,84 @@
 
 
 
+## 绘制图元
+
+1. **`gl.drawArrays(mode, first, count)`**：是 WebGL API 中用于绘制图元（如点、线、面）的方法。它从当前绑定的缓冲区中提取顶点数据，根据指定的绘制模式进行渲染。
+
+   - `mode`参数：
+
+   |       类型        |        作用        |
+   | :---------------: | :----------------: |
+   |     gl.POINTS     |       绘制点       |
+   |     gl.LINES      |  绘制不连接的线段  |
+   |   gl.LINE_STRIP   |   绘制连接的线段   |
+   |   gl.LINE_LOOP    |  绘制闭合的线段环  |
+   |   gl.TRIANGLES    | 绘制不连接的三角形 |
+   | gl.TRIANGLE_STRIP |  绘制连接的三角形  |
+   |  gl.TRIANGLE_FAN  |   绘制三角形扇形   |
+
+   - `first`参数：从缓冲区数组中的哪个位置开始读取顶点数据；
+   - `count`参数：要绘制的顶点数量；
 
 
 
+## 创建缓冲区对象
 
+1. **`gl.createBuffer()`**：用于创建一个新的缓冲区对象。
 
+   >缓冲区对象是用于存储顶点数据、颜色数据、纹理坐标等数据的内存区域，这些数据将被传递到 GPU 中以供渲染使用。
 
+2. **`gl.bindBuffer(target, buffer)`**：绑定一个给定的 WebGL缓冲区对象到 指定的目标。
 
+   - target参数：一个常量，指定要绑定的目标。
 
+     |          类型           |                   作用                   |
+     | :---------------------: | :--------------------------------------: |
+     |     gl.ARRAY_BUFFER     | 表示顶点属性缓冲区，如顶点坐标、顶点颜色 |
+     | gl.ELEMENT_ARRAY_BUFFER |   表示元素数组缓冲区，存储顶点索引数据   |
 
+   - buffer参数：一个WebGLBuffer对象，表示要绑定的缓冲区。如果传入 null，则解除对当前目标的绑定。
 
+3. **`gl.bufferData()`**：向缓冲区对象写入数据的方法。
 
+   >它将数据复制到当前绑定的缓冲区中，并且可以指定使用这些数据的模式。
+
+   ```js
+   gl.bufferData(target, srcData, usage);
+   gl.bufferData(target, size, usage);
+   ```
+
+   - target参数：指定绑定缓冲区的目标，常用有 `gl.ARRAY_BUFFER` 和 `gl.ELEMENT_ARRAY_BUFFER`；
+
+   - srcData参数：一个`ArrayBuffer`、`ArrayBufferView`或`null`，包含要写入缓冲区的数据。如果传递 null，则会为缓冲区分配特定大小的内存，而不初始化；
+
+   - usage参数：
+
+     |      类型       |          作用          |
+     | :-------------: | :--------------------: |
+     | gl.STATIC_DRAW  | 数据不会或几乎不会改变 |
+     | gl.DYNAMIC_DRAW |     数据会频繁改变     |
+     | gl.STREAM_DRAW  | 数据每次绘制时都会改变 |
+
+::: details 代码示例
+
+```html
+<script>
+	const vertices = new Float32Array([
+     0.5, 0.5, 
+    -0.5, 0.5, 
+    -0.5, -0.5, 
+     0.5, -0.5
+  ]);
+  
+  // 创建缓冲区并绑定缓冲区
+  const vertexBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+</script>
+```
+
+:::
 
 
 

@@ -341,7 +341,7 @@ export const sidebar = {
     {
       text: "WebGL",
       items: [
-        { text: "快速入门", link: "/gis/webgl/index.md" },
+        { text: "快速入门", link: "/gis/webgl/基础入门.md" },
         { text: "类型化数组", link: "/gis/webgl/类型化数组.md" },
         { text: "着色器", link: "/gis/webgl/着色器.md" },
         { text: "WebGL API", link: "/gis/webgl/WebGL API.md" },
