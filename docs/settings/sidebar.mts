@@ -10,7 +10,8 @@ export const sidebar = {
         { text: "数组", link: "/javascript/数组.md" },
         { text: "垃圾回收机制", link: "/javascript/垃圾回收机制.md" },
         { text: "WeakMap和Map", link: "/javascript/WeakMap和Map.md" },
-        { text: "WeakSet和Set", link: "/javascript/WeakSet和Set.md" }
+        { text: "WeakSet和Set", link: "/javascript/WeakSet和Set.md" },
+        { text: "ResizeObserver", link: "/javascript/ResizeObserver.md" }
       ]
     },
     {
@@ -472,4 +473,4 @@ export const sidebar = {
   ],
 
   "/c/": [{ text: "基础入门", link: "/c/基础入门.md" }]
-}
+};
