@@ -6,6 +6,7 @@ export const sidebar = {
     {
       text: "Javascript",
       items: [
+        { text: "Lodash", link: "/javascript/lodash.md" },
         { text: "Javascript", link: "/javascript/Javascript.md" },
         { text: "数组", link: "/javascript/数组.md" },
         { text: "垃圾回收机制", link: "/javascript/垃圾回收机制.md" },
@@ -473,4 +474,4 @@ export const sidebar = {
   ],
 
   "/c/": [{ text: "基础入门", link: "/c/基础入门.md" }]
-};
+}
