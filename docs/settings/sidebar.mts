@@ -48,6 +48,7 @@ export const sidebar = {
     {
       text: "第三方工具集",
       items: [
+        { text: "dayjs", link: "/vue3/utils/dayjs.md" },
         { text: "alasql", link: "/vue3/utils/alasql.md" },
         { text: "LZ-String", link: "/vue3/utils/LZ-String.md" },
         { text: "Pubsub-JS", link: "/vue3/utils/Pubsub-JS.md" },
@@ -478,4 +479,4 @@ export const sidebar = {
     { text: "变量与进制", link: "/c/变量与进制.md" },
     { text: "数据类型", link: "/c/数据类型.md" }
   ]
-};
+}
