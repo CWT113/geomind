@@ -473,5 +473,9 @@ export const sidebar = {
     }
   ],
 
-  "/c/": [{ text: "基础入门", link: "/c/基础入门.md" }]
-}
+  "/c/": [
+    { text: "基础入门", link: "/c/基础入门.md" },
+    { text: "变量与进制", link: "/c/变量与进制.md" },
+    { text: "数据类型", link: "/c/数据类型.md" }
+  ]
+};
