@@ -72,6 +72,8 @@ function countBy(collection, key) {
 
 ## groupBy
 
+作用：对数组按照指定字段进行分组。
+
 ```js
 const array = [
   { id: 1, name: "John" },
@@ -104,15 +106,56 @@ function groupBy(collection, key) {
 
 
 
+## maxBy & minBy
 
+作用：对数组按照指定字段，获取最大值所在元素并返回。
 
+```js
+const arr = [
+  { id: 1, name: "John", age: 12 },
+  { id: 2, name: "Jane", age: 30 },
+  { id: 3, name: "tom", age: 10 },
+  { id: 4, name: "lili", age: -19 }
+]
+// lodash
+const max = _.maxBy(arr, "age") // { id: 2, name: "Jane", age: 30 }
+const min = _.minBy(arr, "age") // { id: 4, name: "lili", age: -19 }
+```
 
+::: details
 
+::: code-group
 
+```js {6,12} [lodash]
+const max = maxBy(arr, "age") // { id: 2, name: "Jane", age: 30 }
+const min = minBy(arr, "age") // { id: 4, name: "lili", age: -19 }
 
+function maxBy(array, key) {
+  return array.reduce((acc, item) => {
+    return item[key] > (acc[key] || -Infinity) ? item : acc // 特别注意首个元素比较时的初始值
+  }, {})
+}
 
+function minBy(array, key) {
+  return array.reduce((acc, item) => {
+    return item[key] > (acc[key] || Infinity) ? acc : item
+  }, {})
+}
+```
 
+```js {5} [radash]
+const max = maxBy(arr, f => f?.age) // { id: 2, name: "Jane", age: 30 }
 
+function maxBy(array, iteratee) {
+  return array.reduce((acc, item) => {
+    return iteratee(item) > (iteratee(acc) || -Infinity) ? item : acc
+  }, {})
+}
+```
+
+:::
+
+:::
 
 
 
