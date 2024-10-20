@@ -26,9 +26,16 @@
 
 2. 打开 nvm 的安装目录，找到 `setting.txt` 文件，将淘宝的镜像源文件复制进去：
 
+   ```shell
+   # 查看 nvm 安装地址
+   nvm root
    ```
-   node_mirror: https://npm.taobao.org/mirrors/node/
-   npm_mirror: https://npm.taobao.org/mirrors/npm/
+
+   ```shell
+   # 配置 node 镜像
+   node_mirror: https://npmmirror.com/mirrors/node/
+   # 配置 npm 镜像
+   npm_mirror: https://npmmirror.com/mirrors/npm/
    ```
 
 
@@ -51,18 +58,3 @@ node -v
 # 查看 npm 版本
 npm -v
 ```
-
-
-
-## 报错整理
-
-1. 安装新 node 版本时，报 【Could not retrieve https://npm.taobao.org/mirrors/node/latest/SHASUMS256.txt 】
-
-   ```shell
-   # 解决方法: 把 nvm 安装目录下 setting.txt 文件中的淘宝镜像修改为下面地址
-   
-   node_mirror:npm.taobao.org/mirrors/node/
-   npm_mirror:npm.taobao.org/mirrors/npm/
-   ```
-
-   
