@@ -108,6 +108,7 @@ export const sidebar = {
       text: "C# 扩展",
       items: [
         { text: "文件IO操作", link: "/net/CSharp/CSharpSkill/文件IO操作.md" },
+        { text: "文件上传", link: "/net/CSharp/CSharpSkill/文件上传.md" },
         { text: "HashTable", link: "/net/CSharp/CSharpSkill/HashTable.md" },
         { text: "线程安全类", link: "/net/CSharp/CSharpSkill/线程安全类.md" },
         { text: "字典", link: "/net/CSharp/CSharpSkill/字典.md" },
