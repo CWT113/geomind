@@ -191,7 +191,8 @@ export const sidebar = {
       items: [
         { text: "Serilog", link: "/net/microservice/log/Serilog.md" },
         { text: "Nlog", link: "/net/microservice/log/Nlog.md" },
-        { text: "Log4Net", link: "/net/microservice/log/Log4Net.md" }
+        { text: "Log4Net", link: "/net/microservice/log/Log4Net.md" },
+        { text: "ELK", link: "/net/microservice/log/ELK.md" }
       ]
     },
     {
