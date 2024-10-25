@@ -1,6 +1,6 @@
 # nginx部署
 
-**第一步：**
+#### 第 1 步
 
 [官网下载](https://nginx.org/en/download.html) nginx 镜像文件：
 
@@ -8,7 +8,7 @@
 
 
 
-**第 2 步：**
+#### 第 2 步
 
 把 tar 包粘贴到 linux 中，并进行解压：
 
@@ -32,7 +32,7 @@ cd /usr/local/nginx/sbin
 
 
 
-**第 3 步：**
+#### 第 3 步
 
 开放防火墙 80 端口：
 
@@ -47,7 +47,7 @@ sudo firewall-cmd --reload
 
 
 
-**第 4 步：**
+#### 第 4 步
 
 设置开机自启：
 
@@ -78,4 +78,24 @@ systemctl daemon-reload
 systemctl start nginx
 # 设置开机自启
 systemctl enable nginx
+```
+
+
+
+#### nginx 常用命令
+
+```shell
+# 查找 nginx 安装目录
+whereis nginx
+
+# 命令启动 nginx 
+/usr/sbin/nginx
+# 命令启动 nginx，指定配置文件
+/usr/sbin/nginx -c /etc/nginx/nginx.conf
+
+# 修改 nginx 配置后，重新 nginx 加载配置
+/usr/sbin/nginx -s reload
+
+# 停止 nginx
+/usr/sbin/nginx -s stop
 ```
