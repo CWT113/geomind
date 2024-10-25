@@ -1,30 +1,31 @@
-# Nlog
+# NLog
 
 >官网：https://github.com/nlog/nlog/wiki
 >
->nlog.config 类型配置：https://github.com/NLog/NLog/wiki/Getting-started-with-ASP.NET-Core-6
+>config 类型配置：[NLog config文件格式配置文档 🔗](https://github.com/NLog/NLog/wiki/Getting-started-with-ASP.NET-Core-6)
 >
->appSetting.json 类型配置（重点）：https://github.com/NLog/NLog.Extensions.Logging/wiki/NLog-configuration-with-appsettings.json
+>appSetting.json 类型配置（重点）：[NLog json文件格式配置文档 🔗](https://github.com/NLog/NLog.Extensions.Logging/wiki/NLog-configuration-with-appsettings.json)
 
 
 
 ## 日志级别
 
-表中：LogLevel 按严重性由低到高的顺序列出。
+表中，LogLevel 按严重性由低到高的顺序列出。
 
 |LogLevel|级别|方法|说明|
-|-|-|-|-|
-|Trace|0|LogTrace|包含最详细的消息。 这些消息可能包含敏感的应用数据。 这些消息默认情况下处于禁用状态，并且**不应在生产中启用**。|
-|Debug|1|LogDebug|用于调试和开发。 由于量大，请在生产中小心使用。|
-|Information|2|LogInformation|跟踪应用的常规流。 可能具有长期值。|
-|Warning|3|LogWarning|对于异常事件或意外事件。 通常包括不会导致应用失败的错误或情况。|
-|Error|4|LogError|表示无法处理的错误和异常。 这些消息表示当前操作或请求失败，而不是整个应用失败。|
-|Critical|5|LogCritical|需要立即关注的失败。 例如数据丢失、磁盘空间不足。|
-|None|6||指定日志记录类别不应写入消息|
+|:-:|:-:|:-:|:--|
+|Trace|0|LogTrace|包含最详细的消息（可能包含敏感数据，<span style="color:#FF0000;">不应在生产环境中启用</span>。）|
+|Debug|1|LogDebug|用于常规调试和开发（由于量大，请在生产环境中小心使用。）|
+|Information|2|LogInformation|输出正常的消息内容|
+|Warning|3|LogWarning|输出警告级别的消息内容|
+|Error|4|LogError|输出程序运行中无法处理的错误和异常|
+|Critical|5|LogCritical|需要立即注意的错误，例如数据丢失、磁盘空间不足等|
 
 
 
-## 安装
+## 安装与配置
+
+### 安装
 
 安装 Nlog 的包：
 
@@ -34,122 +35,201 @@ Install-Package NLog.Web.AspNetCore
 
 
 
-## 配置
+### 配置
 
 在 `appSetting.json` 中添加 Nlog 相关的配置：
 
+::: warning 注意
+
+`targets` 和 `rules` 中的配置名称需要一致，否则会报错！
+
+:::
+
 ```JSON
-"NLog": {
+{
+  "NLog": {
     "throwConfigExceptions": true,
     "targets": {
       "async": true,
-      // 文件输出
       "logfile": {
         "type": "File",
-        "fileName": "logs/nlog-${shortdate}.log"//文件输出路径，/bin/Debug/.net7
+        "fileName": "logs/nlog-${shortdate}.log"
       },
-      // 控制台输出
       "logconsole": {
         "type": "Console"
       }
     },
-    // 路由规则
     "rules": [
       {
         "logger": "*",
-        "minLevel": "Info", // 控制台输出 Info 以上的信息
-        "writeTo": "logconsole"
+        "writeTo": "logconsole",
+        "minLevel": "Info",
       },
       {
         "logger": "*",
-        "minLevel": "Debug", // 文件输出 Debug 以上的信息
-        "writeTo": "logfile"
+        "writeTo": "logfile",
+        "minLevel": "Info",
       }
     ]
   }
+}
 ```
 
-在 Progrem.cs 中注册 Nlog 日志：
+在 `Progrem.cs` 中注册 NLog 日志：
 
 ```C#
-//注册 Nlog 日志
-NLog.LogManager.Configuration = new NLogLoggingConfiguration(builder.Configuration.GetSection("NLog"));
-//清除默认的日志提供程序
-builder.Logging.ClearProviders();
-//启用 Nlog 作为日志提供程序
-builder.Host.UseNLog(new NLogAspNetCoreOptions() { RemoveLoggerFactoryFilter = false });
-```
+// 读取并设置 NLog 配置
+var nlogConfig = builder.Configuration.GetSection("NLog");
+LogManager.Configuration = new NLogLoggingConfiguration(nlogConfig);
 
-启动项目，可在 `/bin/Debug/.net7` 和 控制台中看到日志信息。
+// 清除默认日志提供程序
+builder.Logging.ClearProviders();
+
+// 启用NLog
+builder.Host
+    .UseNLog(new NLogAspNetCoreOptions()
+    {
+        RemoveLoggerFactoryFilter = false,
+    });
+```
 
 
 
 ### 修改输出形式
 
-上述配置，在控制台中的输出是以 ”|“ 进行分割的，我们还可以切换为 json 形式输出，作如下配置：
+上述 NLog 配置，在控制台和文件中会以 `|` 进行分割输出。
+
+还可以切换为以 `json` 的形式输出，只需作如下配置：
+
+::: details json方式输出到文件
 
 ```JSON
-"logconsole": {
-  "type": "Console",
-  // 在输出形式中添加 layout 配置
-  "layout": {
-    "type": "JsonLayout",
-    "Attributes": [
+{
+  "NLog": {
+    "throwConfigExceptions": true,
+    "targets": {
+      "async": true,
+      "logfile": {
+        "type": "File",
+        "fileName": "logs/nlog-${shortdate}.log",
+        "layout": {
+          "type": "JsonLayout",
+          "Attributes": [
+            {
+              "name": "appname",
+              "layout": "${processname}"
+            },
+            {
+              "name": "timestamp",
+              "layout": "${date:format=yyyy-MM-dd HH\\:mm\\:ss}" // 格式化时间
+            },
+            {
+              "name": "level",
+              "layout": "${level}"
+            },
+            {
+              "name": "logger",
+              "layout": "${logger}"
+            },
+            {
+              "name": "message",
+              "layout": "${message}"
+            },
+            {
+              "name": "exception",
+              "layout": "${exception}"
+            }
+          ]
+        }
+      }
+    },
+    "rules": [
       {
-        "name": "appname", // 项目名称
-        "layout": "${processname}"
-      },
-      {
-        "name": "timestamp", // 时间
-        "layout": "${date:format=o}"
-      },
-      {
-        "name": "level", // 等级
-        "layout": "${level}"
-      },
-      {
-        "name": "logger", // logger
-        "layout": "${logger}"
-      },
-      {
-        "name": "message", // 提示信息：端口监听/日志输出路径
-        "layout": "${message}"
-      },
-      {
-        "name": "exception", // 异常信息
-        "layout": "${exception}"
+        "logger": "*",
+        "writeTo": "logfile",
+        "minLevel": "Info"
       }
     ]
   }
 }
 ```
 
+:::
 
+::: details 控制台带有颜色输出
 
-## 日志输出
-
-在控制器中注入 `ILogger<T>`，其中 T 就是当前 Controller 的名称：
-
-```C#
-private readonly ILogger<NLogController> _logger;
-
-public NLogController(ILogger<NLogController> logger)
+```json
 {
-    _logger = logger;
+  "NLog": {
+    "throwConfigExceptions": true,
+    "targets": {
+      "logconsole": {
+        "type": "LimitingWrapper",
+        "interval": "00:00:01",
+        "messageLimit": 100,
+        "target": {
+          "type": "ColoredConsole",
+          "layout": "${date:format=yyyy-MM-dd HH\\:mm\\:ss}|${level:uppercase=true}|${logger}|${message} ${exception:format=tostring}",
+          "rowHighlightingRules": [
+            {
+              "condition": "level == LogLevel.Error", // Error类型输出呈现红色
+              "foregroundColor": "Red"
+            },
+            {
+              "condition": "level == LogLevel.Info", // Info类型输出呈现白底红字
+              "foregroundColor": "Red",
+              "backgroundColor": "White"
+            }
+          ],
+          // 关键词高亮
+          "wordHighlightingRules": [
+            {
+              "regex": "on|off", // 当出现 on|off 关键字时，呈现绿色
+              "foregroundColor": "DarkGreen"
+            },
+            {
+              "condition": "level == LogLevel.Debug",
+              "text": "[TEST]",
+              "foregroundColor": "Blue"
+            }
+          ]
+        }
+      }
+    },
+    "rules": [
+      {
+        "logger": "*",
+        "writeTo": "logconsole",
+        "minLevel": "Info"
+      }
+    ]
+  }
 }
+
 ```
 
-使用 _logger 输出日志信息：
+:::
+
+
+
+## 使用实例
+
+以天气输出 API 接口为例：
 
 ```C#
-[HttpGet]
-[Route("NlogTest")]
-public void NlogTest()
+[HttpGet(Name = "GetWeatherForecast")]
+public IEnumerable<WeatherForecast> Get()
 {
-    _logger.LogError("Error：无法处理当前操作和请求！");
-    _logger.LogWarning("Warning：异常事件或意外事件！");
-    _logger.LogInformation("Info：跟踪应用的常规流");
-    _logger.LogDebug("Debug：用于调试和开发！");
-    _logger.LogTrace("Trace：包含最详细的消息！");
+    _logger.LogInformation("Info：常规类型的消息输出！");
+    _logger.LogWarning("Warning：警告类型的消息输出！");
+    _logger.LogError("Error：错误类型的消息输出！");
+
+    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+       {
+         Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+         TemperatureC = Random.Shared.Next(-20, 55),
+         Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+       })
+      .ToArray();
 }
 ```
