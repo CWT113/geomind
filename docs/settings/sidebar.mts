@@ -214,6 +214,10 @@ export const sidebar = {
         {
           text: "FluentResults",
           link: "/net/microservice/other/FluentResults.md"
+        },
+        {
+          text: "MinIO安装教程",
+          link: "/net/microservice/other/MinIO安装教程.md"
         }
       ]
     },
