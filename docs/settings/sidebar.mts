@@ -209,6 +209,15 @@ export const sidebar = {
       items: [{ text: "Polly", link: "/net/microservice/polly/Polly.md" }]
     },
     {
+      text: "其他",
+      items: [
+        {
+          text: "FluentResults",
+          link: "/net/microservice/other/FluentResults.md"
+        }
+      ]
+    },
+    {
       text: "发布部署",
       items: [
         {
