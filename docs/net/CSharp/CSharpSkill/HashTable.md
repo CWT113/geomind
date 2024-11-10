@@ -1,16 +1,21 @@
-# HashTable
+# 键值对集合
+
+## HashTable
 
 HashTable 类表示由 **键值对** 构成的集合类。
 
-它具有以下优势：
+::: info 优点
 
-- **快速查找和插入**：HashTable 采用哈希表算法，使得查找和插入操作的平均时间复杂的为 O(1)，即使在数据量较大的情况下，性能也可以非常好；
-- **灵活性**：Hashtable 允许存储不同类型的键和值，提供了极大的灵活性；
-- **多线程安全**：可以使用 `Hashtable.Synchronized` 方法创建一个线程安全的 Hashtable，适合多线程环境。
+1. 快速查找和插入：它采用哈希表算法，使得查找和插入操作的平均时间复杂的为O(1)，即使在数据量较大的情况下，性能也可以非常好；
+2. 灵活性：它允许存储不同类型的键和值，提供了极大的灵活性；
+
+3. 多线程安全：可以使用 `Hashtable.Synchronized` 方法创建一个线程安全的 Hashtable，适合多线程环境；
+
+::: 
 
 
 
-## 属性
+### 常见属性
 
 |  属性  | 作用                 |
 | :----: | -------------------- |
@@ -26,39 +31,32 @@ var table = new Hashtable()
     { "3", true },
     { "4", new { Name = "Yibo wang", Age = 20 } }
 };
-// 键值对个数
+
 var count = table.Count;
-// 键和值
 var keys = table.Keys;
 var values = table.Values;
 ```
 
 
 
-## 方法
+### 常见方法
 
-| 方法                              | 描述                                              |
-| --------------------------------- | ------------------------------------------------- |
-| **Add(key, value)**               | **向哈希表添加键值对**                            |
-| Contains(key)                     | 判断哈希表中是否存在指定 key                      |
-| **ContainsKey(key)**              | **判断哈希表中是否存在指定 key（等价 Contains）** |
-| ContainsValue(value)              | 判断哈希表中是否存在指定 value                    |
-| Remove(object key)                | 从哈希表移除指定 key                              |
-| Clear()                           | 清空哈希表                                        |
-| hashTable.GetEnumerator()         | 返回一个用于循环访问哈希表的枚举数                |
-| Hashtable.Synchronized(hashTable) | 返回一个线程安全的哈希表                          |
+|               方法                | 描述                               |
+| :-------------------------------: | ---------------------------------- |
+|          Add(key, value)          | 向哈希表添加键值对                 |
+| Contains(key) / ContainsKey(key)  | 判断哈希表中是否存在指定 key       |
+|       ContainsValue(value)        | 判断哈希表中是否存在指定 value     |
+|            Remove(key)            | 从哈希表移除指定 key               |
+|              Clear()              | 清空哈希表                         |
+|          GetEnumerator()          | 返回一个用于循环访问哈希表的枚举数 |
+| Hashtable.Synchronized(hashTable) | 返回一个线程安全的哈希表           |
 
 ```C#
-// 判断哈希表是否存在指定 key
+// 判断哈希表是否存在指定key
 var res1 = table.Contains("1");
 var res2 = table.ContainsKey("4");
 
-// 判断哈希表是否存在指定 value
-var res3 = table.ContainsValue(new { Name = "Yibo wang", Age = 20 });
-
-// 移除指定 key
 table.Remove("2");
-// 清空哈希表
 table.Clear();
 
 // 返回用于循环访问 Hashtable 的枚举数
@@ -78,3 +76,59 @@ lock (syncHashTable.SyncRoot)
   }
 }
 ```
+
+
+
+## Lookup
+
+Lookup<TKey, TElement> 是一个集合类型，用于存储键（key）与多个值（TElement）之间的映射关系。
+
+::: info 优点
+
+1. 它通常用于查找具有相同键的多个元素，并且会返回一个键与多个元素关联的集合；
+2. 它会提前将所有的分组数据计算并**缓存**起来，**适合频繁查询分组数据的情况**；
+
+:::
+
+```C# {10}
+List<Person> people =
+[
+  new Person("张三", "一班", 20),
+  new Person("李四", "二班", 25),
+  new Person("王五", "一班", 30),
+  new Person("赵六", "一班", 35),
+];
+
+// 按照班级进行映射
+var lookup = people.ToLookup(p => p.Class);
+foreach (var person in lookup)
+{
+    Console.WriteLine(person.Key);
+    foreach (var item in person)
+    {
+        Console.WriteLine($"{item.Name} - {item.Class} - {item.Age}");
+    }
+}
+```
+
+::: details 和 GroupBy 的区别
+
+GroupBy 是懒加载的，适合只需要按条件进行分组，但是不会频繁查询分组数据的情况。
+
+```C# {2}
+// 按照班级进行分组
+var dictionary = people.GroupBy(d => d.Class);
+foreach (var person in dictionary)
+{
+  Console.WriteLine(person.Key);
+  foreach (var item in person)
+  {
+    Console.WriteLine($"{item.Name} - {item.Class} - {item.Age}");
+  }
+}
+```
+
+:::
+
+
+

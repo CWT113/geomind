@@ -109,11 +109,15 @@ export const sidebar = {
       items: [
         { text: "文件IO操作", link: "/net/CSharp/CSharpSkill/文件IO操作.md" },
         { text: "文件上传", link: "/net/CSharp/CSharpSkill/文件上传.md" },
-        { text: "HashTable", link: "/net/CSharp/CSharpSkill/HashTable.md" },
         { text: "线程安全类", link: "/net/CSharp/CSharpSkill/线程安全类.md" },
-        { text: "字典", link: "/net/CSharp/CSharpSkill/字典.md" },
+        { text: "键值对集合", link: "/net/CSharp/CSharpSkill/HashTable.md" },
+        { text: "字典集合", link: "/net/CSharp/CSharpSkill/字典.md" },
         { text: "元组", link: "/net/CSharp/CSharpSkill/元组.md" },
         { text: "模式匹配", link: "/net/CSharp/CSharpSkill/模式匹配.md" },
+        {
+          text: "关于null的语法糖",
+          link: "/net/CSharp/CSharpSkill/关于null语法糖.md"
+        },
         {
           text: "序列化与反序列化",
           link: "/net/CSharp/CSharpSkill/序列化与反序列化.md"
@@ -494,4 +498,4 @@ export const sidebar = {
     { text: "变量与进制", link: "/c/变量与进制.md" },
     { text: "数据类型", link: "/c/数据类型.md" }
   ]
-}
+};
