@@ -110,7 +110,7 @@ export const sidebar = {
         { text: "文件IO操作", link: "/net/CSharp/CSharpSkill/文件IO操作.md" },
         { text: "文件上传", link: "/net/CSharp/CSharpSkill/文件上传.md" },
         { text: "线程安全类", link: "/net/CSharp/CSharpSkill/线程安全类.md" },
-        { text: "键值对集合", link: "/net/CSharp/CSharpSkill/HashTable.md" },
+        { text: "键值对集合", link: "/net/CSharp/CSharpSkill/键值对集合.md" },
         { text: "字典集合", link: "/net/CSharp/CSharpSkill/字典.md" },
         { text: "元组", link: "/net/CSharp/CSharpSkill/元组.md" },
         { text: "模式匹配", link: "/net/CSharp/CSharpSkill/模式匹配.md" },
