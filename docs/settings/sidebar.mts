@@ -42,7 +42,8 @@ export const sidebar = {
         { text: "h 函数", link: "/vue3/h渲染函数.md" },
         { text: "jsx 语法", link: "/vue3/JSX语法.md" },
         { text: "ref 全家桶", link: "/vue3/ref函数.md" },
-        { text: "路由传参", link: "/vue3/路由传参.md" }
+        { text: "路由传参", link: "/vue3/路由传参.md" },
+        { text: "Ant-Design-Vue", link: "/vue3/Ant-Design-Vue.md" }
       ]
     },
     {
@@ -138,7 +139,8 @@ export const sidebar = {
         { text: "LINQ查询", link: "/net/aspnetcore/LINQ查询.md" },
         { text: "依赖注入", link: "/net/aspnetcore/依赖注入.md" },
         { text: "雪花Id", link: "/net/aspnetcore/雪花ID.md" },
-        { text: "读取配置文件", link: "/net/aspnetcore/读取配置文件.md" }
+        { text: "读取配置文件", link: "/net/aspnetcore/读取配置文件.md" },
+        { text: "Swagger配置", link: "/net/aspnetcore/Swagger.md" }
       ]
     }
   ],
@@ -498,4 +500,4 @@ export const sidebar = {
     { text: "变量与进制", link: "/c/变量与进制.md" },
     { text: "数据类型", link: "/c/数据类型.md" }
   ]
-};
+}
