@@ -49,7 +49,7 @@ features:
 
   - icon: 🚀
     title: SQL
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: “只愿君心似我心，定不负相思意”
     link: /sql/mysql/基本SQL语句.md
     linkText: "MySQL"
 
