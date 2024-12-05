@@ -42,21 +42,23 @@ export const sidebar = {
         { text: "h 函数", link: "/vue3/h渲染函数.md" },
         { text: "jsx 语法", link: "/vue3/JSX语法.md" },
         { text: "ref 全家桶", link: "/vue3/ref函数.md" },
-        { text: "路由传参", link: "/vue3/路由传参.md" },
-        { text: "Ant-Design-Vue", link: "/vue3/Ant-Design-Vue.md" }
+        { text: "路由传参", link: "/vue3/路由传参.md" }
       ]
     },
     {
       text: "第三方工具集",
       items: [
+        { text: "Ant-Design-Vue", link: "/vue3/Ant-Design-Vue.md" },
         { text: "dayjs", link: "/vue3/utils/dayjs.md" },
+        { text: "ECharts", link: "/vue3/utils/ECharts.md" },
         { text: "alasql", link: "/vue3/utils/alasql.md" },
         { text: "LZ-String", link: "/vue3/utils/LZ-String.md" },
         { text: "Pubsub-JS", link: "/vue3/utils/Pubsub-JS.md" },
         { text: "Websocket", link: "/vue3/utils/WebSocket.md" },
         { text: "localForAge", link: "/vue3/utils/localForAge.md" },
         { text: "文字转语音", link: "/vue3/utils/文字转语音.md" },
-        { text: "西瓜视频播放器", link: "/vue3/utils/西瓜视频播放器.md" }
+        { text: "西瓜视频播放器", link: "/vue3/utils/西瓜视频播放器.md" },
+        { text: "vue-esign手写签字", link: "/vue3/utils/vue-esign手写签字.md" }
       ]
     }
   ],
@@ -500,4 +502,4 @@ export const sidebar = {
     { text: "变量与进制", link: "/c/变量与进制.md" },
     { text: "数据类型", link: "/c/数据类型.md" }
   ]
-}
+};
