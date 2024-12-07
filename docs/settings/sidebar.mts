@@ -435,13 +435,13 @@ export const sidebar = {
             { text: "重写和重载", link: "/java/basic/重写和重载.md" },
             {
               text: "静态字段和静态方法",
-              link: "/java/basic/静态字段和静态方法.md"
+              link: "/java/basic/静态字段和方法.md"
             }
           ]
         },
         { text: "枚举", link: "/java/basic/枚举.md" },
         { text: "注解", link: "/java/basic/注解.md" },
-        { text: "单元测试", link: "/java/basic/JUnit单元测试.md" },
+        { text: "单元测试", link: "/java/basic/Junit单元测试.md" },
         { text: "包装类", link: "/java/basic/包装类.md" }
       ]
     },
@@ -502,4 +502,4 @@ export const sidebar = {
     { text: "变量与进制", link: "/c/变量与进制.md" },
     { text: "数据类型", link: "/c/数据类型.md" }
   ]
-};
+}

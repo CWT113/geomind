@@ -128,14 +128,14 @@ record Point(int x, int y) {
 
 ```java {3-5}
 public final class Point extends Record {
-    public Point(int x, int y) {
-        if (x < 0 || y < 0) {
-            throw new IllegalArgumentException();
-        }
-
-        this.x = x;
-        this.y = y;
+  public Point(int x, int y) {
+    if (x < 0 || y < 0) {
+      throw new IllegalArgumentException();
     }
+
+    this.x = x;
+    this.y = y;
+  }
 }
 ```
 
@@ -147,7 +147,6 @@ public final class Point extends Record {
 
 `record` 类中仍然可以添加 静态方法。一种常用的静态方法是 `of()` 方法，如下：
 
-:::code-group
 ```java [Point]
 record Point(int x, int y) {
   static Point of(int x, int y) {
@@ -165,4 +164,3 @@ public static void main(String[] args) {
   System.out.println(point.y()); 	// 30
 }
 ```
-:::
