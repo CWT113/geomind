@@ -436,6 +436,7 @@ export const sidebar = {
         { text: "静态类", link: "/java/basic/静态类.md" },
         { text: "抽象类", link: "/java/basic/抽象类.md" },
         { text: "接口", link: "/java/basic/接口.md" },
+        { text: "内部类", link: "/java/basic/内部类.md" },
         { text: "枚举", link: "/java/basic/枚举.md" },
         { text: "注解", link: "/java/basic/注解.md" },
         { text: "单元测试", link: "/java/basic/Junit单元测试.md" },
