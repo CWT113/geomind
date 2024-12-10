@@ -467,30 +467,12 @@ export const sidebar = {
       text: "多线程",
       collapsed: false,
       items: [
-        {
-          text: "多线程基础",
-          link: "/java/basic/多线程基础.md"
-        },
-        {
-          text: "多线程调用",
-          link: "/java/basic/多线程调用.md"
-        },
-        {
-          text: "线程生命周期",
-          link: "/java/basic/线程生命周期.md"
-        },
-        {
-          text: "线程中断",
-          link: "/java/basic/线程中断.md"
-        },
-        {
-          text: "线程守护",
-          link: "/java/basic/线程守护.md"
-        },
-        {
-          text: "线程同步",
-          link: "/java/basic/线程同步.md"
-        }
+        { text: "进程与线程", link: "/java/basic/多线程基础.md" },
+        { text: "多线程调用", link: "/java/basic/多线程调用.md" },
+        { text: "线程生命周期", link: "/java/basic/线程生命周期.md" },
+        { text: "线程中断", link: "/java/basic/线程中断.md" },
+        { text: "线程守护", link: "/java/basic/线程守护.md" },
+        { text: "线程同步", link: "/java/basic/线程同步.md" }
       ]
     }
   ],
