@@ -471,6 +471,7 @@ export const sidebar = {
         { text: "多线程调用", link: "/java/basic/多线程调用.md" },
         { text: "线程生命周期", link: "/java/basic/线程生命周期.md" },
         { text: "线程同步", link: "/java/basic/线程同步.md" },
+        { text: "线程通信", link: "/java/basic/线程通信.md" },
         { text: "线程中断", link: "/java/basic/线程中断.md" },
         { text: "线程守护", link: "/java/basic/线程守护.md" }
       ]
