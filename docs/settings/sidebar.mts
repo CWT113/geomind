@@ -418,7 +418,7 @@ export const sidebar = {
 
   "/java/basic/": [
     {
-      text: "Java基础",
+      text: "基础知识",
       collapsed: true,
       items: [
         { text: "数据类型", link: "/java/basic/数据类型.md" },
@@ -444,12 +444,18 @@ export const sidebar = {
       ]
     },
     {
-      text: "Java核心类",
+      text: "常用类和核心API",
       collapsed: false,
       items: [
         { text: "String", link: "/java/basic/String.md" },
-        { text: "StringBuilder", link: "/java/basic/StringBuilder.md" },
-        { text: "StringJoiner", link: "/java/basic/StringJoiner.md" },
+        { text: "String处理类", link: "/java/basic/String处理类.md" },
+        {
+          text: "日期时间类",
+          items: [
+            { text: "JDK8之前", link: "/java/basic/JDK8之前.md" },
+            { text: "JDK8之后", link: "/java/basic/JDK8之后.md" }
+          ]
+        },
         { text: "record", link: "/java/basic/record.md" },
         { text: "常用工具类", link: "/java/basic/常用工具类.md" }
       ]
@@ -472,6 +478,7 @@ export const sidebar = {
         { text: "线程生命周期", link: "/java/basic/线程生命周期.md" },
         { text: "线程同步", link: "/java/basic/线程同步.md" },
         { text: "线程通信", link: "/java/basic/线程通信.md" },
+        { text: "线程池", link: "/java/basic/线程池.md" },
         { text: "线程中断", link: "/java/basic/线程中断.md" },
         { text: "线程守护", link: "/java/basic/线程守护.md" }
       ]
