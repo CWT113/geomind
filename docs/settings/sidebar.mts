@@ -447,7 +447,7 @@ export const sidebar = {
       text: "常用类和核心API",
       collapsed: false,
       items: [
-        { text: "String", link: "/java/basic/String.md" },
+        { text: "String类", link: "/java/basic/String.md" },
         { text: "String处理类", link: "/java/basic/String处理类.md" },
         {
           text: "日期时间类",
@@ -456,7 +456,8 @@ export const sidebar = {
             { text: "JDK8之后", link: "/java/basic/JDK8之后.md" }
           ]
         },
-        { text: "record", link: "/java/basic/record.md" },
+        { text: "排序类", link: "/java/basic/排序类.md" },
+        { text: "record类", link: "/java/basic/record.md" },
         { text: "常用工具类", link: "/java/basic/常用工具类.md" }
       ]
     },
