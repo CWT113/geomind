@@ -445,7 +445,7 @@ export const sidebar = {
     },
     {
       text: "常用类和核心API",
-      collapsed: false,
+      collapsed: true,
       items: [
         { text: "String类", link: "/java/basic/String.md" },
         { text: "String处理类", link: "/java/basic/String处理类.md" },
@@ -463,7 +463,7 @@ export const sidebar = {
     },
     {
       text: "异常处理",
-      collapsed: false,
+      collapsed: true,
       items: [
         { text: "异常简介", link: "/java/basic/异常简介.md" },
         { text: "异常捕获", link: "/java/basic/异常捕获.md" },
@@ -472,7 +472,7 @@ export const sidebar = {
     },
     {
       text: "多线程",
-      collapsed: false,
+      collapsed: true,
       items: [
         { text: "进程与线程", link: "/java/basic/多线程基础.md" },
         { text: "多线程调用", link: "/java/basic/多线程调用.md" },
@@ -482,6 +482,14 @@ export const sidebar = {
         { text: "线程池", link: "/java/basic/线程池.md" },
         { text: "线程中断", link: "/java/basic/线程中断.md" },
         { text: "线程守护", link: "/java/basic/线程守护.md" }
+      ]
+    },
+    {
+      text: "集合框架",
+      collapsed: false,
+      items: [
+        { text: "集合简介", link: "/java/basic/集合框架.md" },
+        { text: "Collection", link: "/java/basic/Collection.md" }
       ]
     }
   ],

@@ -25,49 +25,15 @@ export const nav = [
     items: [
       {
         text: "核心知识",
-        items: [
-          { text: "Java基础", link: "/java/basic/数据类型.md" },
-          { text: "JDBC", link: "/java/" },
-          { text: "JavaWeb", link: "/java/" },
-          { text: "JUC", link: "/java/" },
-          { text: "JVM", link: "/java/" },
-        ]
-      },
-      {
-        text: "SSM",
-        items: [
-          { text: "Spring6", link: "/java/" },
-          { text: "SpringMVC", link: "/java/" },
-          { text: "MyBatis", link: "/java/" },
-        ]
-      },
-      {
-        text: "分布式和微服务",
-        items: [
-          { text: "SpringBoot3", link: "/java/" },
-          { text: "SpringCloud", link: "/java/" },
-          { text: "Spring Security", link: "/java/" },
-          { text: "Maven", link: "/java/" },
-          { text: "Redis", link: "/java/" },
-          { text: "消息中间件", link: "/java/" },
-        ]
-      },
-      {
-        text: "运维",
-        items: [
-          { text: "Linux", link: "/java/" },
-          { text: "Docker", link: "/java/" },
-          { text: "Nginx", link: "/java/" },
-          { text: "K8S", link: "/java/" },
-        ]
+        items: [{ text: "Java基础", link: "/java/basic/数据类型.md" }]
       }
     ]
   },
 
-  {
-    text: "C语言",
-    items: [{ text: "C语言基础", link: "/c/基础入门.md" }]
-  },
+  // {
+  //   text: "C语言",
+  //   items: [{ text: "C语言基础", link: "/c/基础入门.md" }]
+  // },
 
   {
     text: "GIS",
