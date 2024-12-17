@@ -1,3 +1,1 @@
 # Collection
-
-List<T>
