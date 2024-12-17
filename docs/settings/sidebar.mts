@@ -485,11 +485,22 @@ export const sidebar = {
       ]
     },
     {
-      text: "集合框架",
+      text: "集合类",
       collapsed: false,
       items: [
         { text: "集合简介", link: "/java/basic/集合框架.md" },
-        { text: "Collection", link: "/java/basic/Collection.md" }
+        {
+          text: "Collection",
+          link: "/java/basic/Collection.md",
+          items: [
+            { text: "List", link: "/java/basic/List.md" },
+            { text: "Set", link: "/java/basic/Set.md" }
+          ]
+        },
+        {
+          text: "Map",
+          link: "/java/basic/Map.md"
+        }
       ]
     }
   ],
