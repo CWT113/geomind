@@ -6,16 +6,16 @@
 
 ## 常用方法
 
-|    方法    | 作用                             |
-| :--------: | :------------------------------- |
-|   add()    | 添加单个元素到集合中             |
-|  addAll()  | 添加 B集合到 A集合中（集合合并） |
-|  clear()   | 清空集合                         |
-|  remove()  | 移除指定元素                     |
-| contains() | 判断集合是否包含指定元素         |
-| isEmpty()  | 判断集合是否为空                 |
-|   size()   | 获取集合元素数量                 |
-| toArray()  | 把集合转换为数组                 |
+|                 方法                 | 作用                             |
+| :----------------------------------: | :------------------------------- |
+|            add(Object o)             | 添加单个元素到集合中             |
+|        addAll(Collection col)        | 添加 B集合到 A集合中（集合合并） |
+|               clear()                | 清空集合                         |
+| remove(Object o) / remove(int index) | 移除指定元素                     |
+|          contains(Object o)          | 判断集合是否包含指定元素         |
+|              isEmpty()               | 判断集合是否为空                 |
+|                size()                | 获取集合元素数量                 |
+|              toArray()               | 把集合转换为数组                 |
 
 ::: code-group
 
@@ -115,7 +115,7 @@ public void junitTest() {
 
 ## 迭代器
 
-迭代器（Iterator）提供了一种顺序访问集合元素的方式，而不需要了解集合的底层实现细节。
+迭代器（Iterator）提供了一种 **顺序访问集合元素** 的方式，而不需要了解集合的底层实现细节。
 
 ```java {10,11,12}
 @Test
@@ -153,7 +153,6 @@ public void junitTest4() {
   while (iterator.hasNext()) {
     String element = iterator.next();
     System.out.println(element);
-
     //如果是集合是偶数个元素，不会报错，奇数个元素时，next()获取不到元素了，就会报错
     String element1 = iterator.next();
     System.out.println(element1);
@@ -218,17 +217,119 @@ public void junitTest5() {
 
 
 
+## 扩展方法
 
+| 方法                           | 作用                                          |
+| ------------------------------ | --------------------------------------------- |
+| addAll(Collection c, T... ele) | 向集合批量添加元素                            |
+| shuffle(List list)             | 将集合中的元素顺序打乱                        |
+| sort(List list)                | 将集合中的元素进行排序（默认使用 ASCII 码值） |
+| sort(List list, Comparator c)  | 将集合中的元素按自定义的排序方式排序          |
 
+```java {4,7}
+@Test
+public void junitTest() {
+  ArrayList<String> list = new ArrayList<>();
+  Collections.addAll(list, "Apple", "Banana", "Orange");
 
+  //打乱排序，每次运行顺序都不一样
+  Collections.shuffle(list);
+}
+```
 
+```java [默认排序] {10}
+@Test
+public void junitTest1() {
+  ArrayList<String> list = new ArrayList<>();
+  list.add("d.低头思故乡");
+  list.add("a.窗前明月光");
+  list.add("c.举头望明月");
+  list.add("b.疑是地上霜");
 
+  //默认使用 ASCII 码排序，如果第一个值相同，则按第二个比较
+  Collections.sort(list);
+}
+```
 
+```java [Comparator匿名排序] {9-15}
+@Test
+public void junitTest2() {
+  ArrayList<Person> people = new ArrayList<>();
+  people.add(new Person("王一博", 23));
+  people.add(new Person("陈伟霆", 34));
+  people.add(new Person("彭于晏", 32));
+  people.add(new Person("Sunny", 18));
 
+  Collections.sort(people, new Comparator<Person>() {
+    @Override
+    public int compare(Person o1, Person o2) {
+      return o1.getAge() - o2.getAge();   //升序
+      //return o2.getAge() - o1.getAge(); //降序
+    }
+  });
 
+  System.out.println(people);
+}
+```
 
+::: code-group
 
+```java [实现Comparable接口] {9}
+@Test
+public void junitTest3() {
+  ArrayList<Student> students = new ArrayList<>();
+  students.add(new Student("王一博", 23));
+  students.add(new Student("陈伟霆", 34));
+  students.add(new Student("彭于晏", 32));
+  students.add(new Student("Sunny", 18));
 
+  Collections.sort(students);
+  System.out.println(students);
+}
+```
 
+```java [Student] {37-40}
+public class Student implements Comparable<Student> {
+  private String name;
+  private Integer age;
 
+  public Student() {
+  }
 
+  public Student(String name, Integer age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  public Integer getAge() {
+    return age;
+  }
+
+  public void setAge(Integer age) {
+    this.age = age;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public String toString() {
+    return "Student{" +
+      "name='" + name + '\'' +
+      ", age=" + age +
+      '}';
+  }
+
+  @Override
+  public int compareTo(Student o) {
+    return this.getAge() - o.getAge();
+  }
+}
+```
+
+:::

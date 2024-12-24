@@ -493,8 +493,8 @@ export const sidebar = {
           text: "Collection",
           link: "/java/basic/Collection.md",
           items: [
-            { text: "List", link: "/java/basic/List.md" },
-            { text: "Set", link: "/java/basic/Set.md" }
+            { text: "List 接口", link: "/java/basic/List.md" },
+            { text: "Set 接口", link: "/java/basic/Set.md" }
           ]
         },
         {
