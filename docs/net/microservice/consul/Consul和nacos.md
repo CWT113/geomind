@@ -364,6 +364,20 @@ public IActionResult HealthCheck()
 
 
 
+### Consul 配置文件导入导出
+
+在 Consul 的安装目录打开 cmd 窗口：
+
+```shell
+# 导出配置
+consul.exe kv export > consul.kv.n.json
+
+# 导入配置
+consul.exe kv import @"C:\Users\18366\Desktop\consul_kv_20241224(1).json"
+```
+
+
+
 ## Nacos
 
 ### 概述
