@@ -18,7 +18,6 @@ export const sidebar = {
     {
       text: "Node.js",
       items: [
-        { text: "Git", link: "/javascript/node/git.md" },
         { text: "包管理工具", link: "/javascript/node/包管理工具.md" },
         {
           text: "postman配置token",
@@ -26,6 +25,13 @@ export const sidebar = {
         },
         { text: "nvm", link: "/javascript/node/nvm.md" },
         { text: "Typora", link: "/javascript/node/Typora.md" }
+      ]
+    },
+    {
+      text: "Git",
+      items: [
+        { text: "分支分类", link: "/javascript/gitDoc/分支分类.md" },
+        { text: "Git代理", link: "/javascript/gitDoc/Git代理.md" }
       ]
     }
   ],
