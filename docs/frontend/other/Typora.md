@@ -1,15 +1,13 @@
-# Typora破解
+# Typora 破解
 
 Typora 版本破解，当前最新版本 1.9.4。
-
-
 
 ##### 第 1 步
 
 找到 Typora 安装目录，找到下面的文件：
 
 ```js
-"...\Typora\resources\page-dist\static\js\LicenseIndex.xxxx.chunk.js"
+"...\Typora\resources\page-dist\static\js\LicenseIndex.xxxx.chunk.js";
 ```
 
 文件内查找下面的内容，并进行替换：
@@ -23,8 +21,6 @@ e.hasActivated="true"=="true"
 ```
 
 替换完成后，即可破解成功！
-
-
 
 ##### 第 2 步
 
@@ -46,8 +42,6 @@ window.onload = function () {
 };
 ```
 
-
-
 ##### 第 3 步
 
 去除 Typora 主界面左下角 ”未激活“ 的提示，找到下面这个文件：
@@ -66,10 +60,8 @@ window.onload = function () {
 "UNREGISTERED":" "
 ```
 
-
-
 ##### 第 4 步
 
 如果在启动时弹窗提示错误，可以点一下图中的 `Learn Data Recovery` ，然后关闭浏览器即可。
 
-![image-20240627181451294](./image/报错.png)
+![image-20240627181451294](./images/报错.png)
