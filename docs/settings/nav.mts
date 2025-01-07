@@ -16,9 +16,9 @@ export const nav = [
   },
 
   {
-    text: "vue",
+    text: "Vue",
     items: [
-      { text: "typescript", link: "/frontend/typescript/TypeScript.md" },
+      { text: "TypeScript", link: "/frontend/typescript/TypeScript.md" },
       {
         text: "vue",
         items: [{ text: "Vue3", link: "/frontend/vue/vue3.md" }]

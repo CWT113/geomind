@@ -21,7 +21,24 @@ export default defineConfig({
     image: {
       lazyLoading: true
     },
-    lineNumbers: true
+    lineNumbers: true,
+    config: async md => {
+      const markdownItContainer = (await import("markdown-it-container"))
+        .default;
+      md.use(markdownItContainer, "success", {
+        render(tokens, idx) {
+          const token = tokens[idx];
+          const info = token.info.trim().slice("success".length).trim(); // 获取 :::success 后面的内容
+
+          if (token.nesting === 1) {
+            const title = info || "SUCCESS";
+            return `<div class="custom-block success"><p class="custom-block-title">${title}</p>\n`;
+          } else {
+            return `</div>\n`;
+          }
+        }
+      });
+    }
   },
 
   themeConfig: {

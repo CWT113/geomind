@@ -8,8 +8,15 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  /* 页面Content背景色 */
+  --vp-c-bg: #eff1f5;
+  /* 侧边栏背景色 */
+  --vp-c-bg-alt: #e6e9ef;
+  /* 代码块背景色 */
+  --vp-code-block-bg: #e6e9ef;
+  /* --vp-code-block-bg: rgb(125 125 125 / 0.04); */
+
   --vp-c-gutter: var(--vp-c-divider);
-  --vp-code-block-bg: rgb(125 125 125 / 0.04);
   --vp-code-tab-divider: var(--vp-c-divider);
   --vp-code-copy-code-bg: rgb(125 125 125 / 0.1);
   --vp-code-copy-code-hover-bg: rgb(125 125 125 / 0.2);
@@ -28,11 +35,25 @@
   --scrollbar-color-hover: #c1c7ce;
   --scrollbar-dark-color: #6e7883;
   --scrollbar-dark-color-hover: #555f6b;
+
+  --vp-custom-block-success-border: #d6e6d8;
+  --vp-custom-block-success-text: rgba(60, 60, 67);
+  --vp-custom-block-success-bg: #d6e6d8;
 }
 
 .dark {
-  --vp-code-block-bg: rgb(0 0 0 / 0.2);
+  /* 页面Content背景色 */
+  --vp-c-bg: #11111b;
+  /* 侧边栏背景色 */
+  --vp-c-bg-alt: #181825;
+  /* 代码块背景色 */
+  --vp-code-block-bg: #181825;
+  /* --vp-code-block-bg: rgb(0 0 0 / 0.2); */
   --vp-c-text-code: #c0cec0;
+
+  --vp-custom-block-success-border: #293231;
+  --vp-custom-block-success-text: rgba(255, 255, 245, 0.86);
+  --vp-custom-block-success-bg: #293231;
 }
 
 /**
