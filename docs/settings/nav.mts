@@ -43,7 +43,7 @@ export const nav = [
   {
     text: "C#",
     items: [
-      { text: "C#基础", link: "/backend/net/CSharp/CSharpBasic/class类.md" },
+      { text: "C#基础", link: "/backend/net/CSharp/CSharpBasic/方法与数组.md" },
       { text: "WebAPI", link: "/backend/net/webapi/雪花ID.md" },
       { text: "微服务模块", link: "/backend/net/microservice/微服务概念.md" }
     ]
