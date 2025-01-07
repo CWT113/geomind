@@ -45,7 +45,10 @@ export const sidebar = {
   "/frontend/node/": [
     {
       text: "工具",
-      items: [{ text: "包管理工具", link: "/frontend/node/包管理工具.md" }]
+      items: [
+        { text: "包管理器", link: "/frontend/node/包管理器.md" },
+        { text: "Monorepo", link: "/frontend/node/Monorepo.md" }
+      ]
     },
     {
       text: "其他",
