@@ -1,6 +1,6 @@
-# style 样式
+# style样式
 
-### version
+## version
 
 版本号（必填，且值必须为 8 ）。
 
@@ -8,7 +8,7 @@
 version: 8;
 ```
 
-### name
+## name
 
 名称（可选，用于给 style 取名）。
 
@@ -16,7 +16,7 @@ version: 8;
 name: "mapbox-demo";
 ```
 
-### sprite
+## sprite
 
 雪碧图（可选，用来指定获取雪碧图及其元数据的 URL）。
 
@@ -24,135 +24,147 @@ name: "mapbox-demo";
 sprite: "mapbox://sprites/mapbox/streets-v8";
 ```
 
-### glyphs
+## glyphs
 
-字形符号（可选，用来指定加载以 PBF 格式设置的 有向距离场 字形的 URL 模板）。
+字形符号（可选，用来指定加载以 PBF 格式设置字形的 URL 模板）。
 
-<span style="color: #e63e31">注意：当 layer 使用了 `text-filed` 属性时，glyphs 必填。</span>
+::: warning 注意
+
+当 layer 使用了 `text-filed` 属性时，glyphs 必填。
+
+:::
 
 ```js
 glyphs: "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
 ```
 
-### metadata
+## metadata
 
 元数据（可选，用于给 style 附加一些任意属性）。
 
 ```js
 metadata: {
-    name: "custom name",
-    anthor: "sunny",
-    createTime: "2024/03/05 20:51:00"
+  name: "custom name",
+  anthor: "sunny",
+  createTime: "2024/03/05 20:51:00"
 }
 ```
 
-### center
+## center
 
-地图的默认中心点（可选，`[经度, 纬度]`）
+地图的默认中心点。
 
 ```js
-center: [110.17541, 36.05639];
+center: [110.17541, 36.05639]; //[经度, 纬度]
 ```
 
-### zoom
+## zoom
 
-地图的默认缩放等级（可选，值越大，越靠近地表。mapbox 采用无极缩放，范围一般为 0 ~ 24）
+地图的默认缩放等级（值越大，越靠近地表。mapbox采用无极缩放，范围一般为0~24）。
 
 ```js
 zoom: 12;
 ```
 
-### bearing
+## bearing
 
-地图默认的方位角（可选，默认值为 0）。
-
-```js
-bearing: 0;
-```
-
-### pitch
-
-地图的默认倾斜角度（可选，默认值为 0，范围为 0 ~ 60）。
+地图默认的方位角（默认值为 0）。
 
 ```js
-pitch: 0;
+bearing: 90;
 ```
 
-### light
+## pitch
+
+地图的默认倾斜角度（默认值为 0，范围为 0~60）。
+
+```js
+pitch: 30;
+```
+
+## light
 
 全局的光源（可选）。
 
 ```js
 light: {
-    "anchor": "viewport", 		 // 锚点，指定作用的目标（可选，可选值 map、viewport，默认值为 viewport）
-    "position": [1.15,210,30],   // 位置（可选，默认值为 [1.15,210,30]）
-    "color": "white",            // 颜色（可选，默认值为 #ffffff）
-    "intensity": 0.5             // 强度（可选，取值范围为 0 ~ 1，默认值为 0.5）
+  "anchor": "viewport", //锚点，指定作用的目标（可选，可选值 map、viewport，默认值为 viewport）
+  "position": [1.15,210,30], //位置（可选，默认值为 [1.15,210,30]）
+  "color": "white",          //颜色（可选，默认值为 #ffffff）
+  "intensity": 0.5           //强度（可选，取值范围为 0 ~ 1，默认值为 0.5）
 }
 ```
 
-### sources
+## sources
 
-数据源集合（必填，用于包含一系列数据源 source，这些数据源提供了在地图上现实的数据）。
+数据源集合（必填，包含一系列数据源 source，这些数据源提供了在地图上现实的数据）。
 
-sources 是以 对象{} 的形式存在，其属性名就是数据的来源，这样根据数据源的名称可快速的获取数据源的信息。
+sources 是以 {} 的形式存在，其属性名就是数据的来源，这样根据数据源的名称可快速的获取数据源的信息。
 
 ```js
 sources: {}
 ```
 
-每个数据源 source 都有一个 [`type` 属性](https://docs.mapbox.com/style-spec/reference/sources/)，用于指定该数据源的类型，共分为一下几种：
+每个数据源 source 都有一个 [`type`属性](https://docs.mapbox.com/style-spec/reference/sources/)，用于指定该数据源的类型，共分为一下几种：
 
-- vector：矢量
-- raster：栅格
-- raster-dem：栅格化的数字高程模型
-- geojson：GeoJSON 数据源
-- image：图片
-- video：视频
+|    类型    |         描述         |
+| :--------: | :------------------: |
+|   vector   |       矢量数据       |
+|   raster   |       栅格数据       |
+| raster-dem | 栅格化的数字高程模型 |
+|  geojson   |    GeoJSON 数据源    |
+|   image    |         图片         |
+|   video    |         视频         |
 
-<br />
+### vector
 
-#### vector
+详细了解矢量图块的优势及工作原理，请参阅 [矢量图块](https://docs.mapbox.com/data/tilesets/guides/vector-tiles-introduction/) 文档。
 
-详细了解矢量图块的优势及工作原理，请参阅 [矢量图块](https://docs.mapbox.com/data/tilesets/guides/vector-tiles-introduction/) 文档。对于 mapbox 托管的矢量切片，url 需使用 `mapbox://username.tilesetid` 的形式。
+对于 mapbox 托管的矢量切片，url 需使用 `mapbox://username.tilesetid` 的形式。
 
 ```js
-// url
+// 初始化时设置url
 map.addSource("terrain", {
   type: "vector",
   url: "mapbox://mapbox.mapbox-terrain-v2"
 });
 
-// tiles 数组
+// 运行时设置url
+map
+  .getSource('sourceId')
+  .setUrl("mapbox://mapbox.mapbox-streets-v8");
+```
+
+```js
+// 初始化时设置tiles数组
 map.addSource('sourceId', {
-    type: 'vector',
-    tiles: ['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt'],
-    minzoom: 6,
-    maxzoom: 14
+  type: 'vector',
+  tiles: ['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt'],
+  minzoom: 6,
+  maxzoom: 14
 });
 
-// 运行时设置 url
-map.getSource('sourceId').setUrl("mapbox://mapbox.mapbox-streets-v8");
-
-// 运行时设置 tiles
-map.getSource('some id').setTiles(['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt']);
+// 运行时设置tiles数组
+map
+  .getSource('someid')
+  .setTiles(['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt']);
 ```
 
 
 
-#### raster
+### raster
 
 可用于绘制栅格地图，例如卫星影像等。
 
 ```js
-// url
+// 初始化时设置url
 map.addSource('sourceId', {
-    type: 'raster',
-    url: 'mapbox://mapbox.satellite',
-    tileSize: 256
+  type: 'raster',
+  url: 'mapbox://mapbox.satellite',
+  tileSize: 256
 });
 
-// tiles 数组
+// 初始化时设置tiles数组
 map.addSource("openstreetmap", {
   type: "raster",
   tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
@@ -163,7 +175,7 @@ map.addSource("openstreetmap", {
 
 
 
-#### raster-dem
+### raster-dem
 
 raster-dem 是 [`RasterTileSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#rastertilesource) 的特例，它包含高程数据，并引用 Mapbox `Terrain-DEM()`，这是唯一受支持的栅格 DEM 源。
 
@@ -176,39 +188,43 @@ map.addSource("dem", {
 
 
 
-#### geojson
+### geojson
 
-geojson 源是一个或多个地理要素的集合，这些集合可以是点、线、面。数据必须通过属性提供，其值可以是 url 或 geojson 数据。
+geojson 源是一个或多个地理要素的集合，这些集合可以是点、线、面。
+
+数据必须通过属性提供，其值可以是 url 或 geojson 数据。
 
 ```js
-// url
+// 初始化时设置geojson的url
 map.addSource("floorplan", {
   type: "geojson",
   data: "https://maplibre.org/maplibre-gl-js/docs/assets/indoor-3d-map.geojson"
 });
 
-// geojson
+// 初始化时设置geojson元数据
 map.addSource("maine", {
-    type: "geojson",
-    data: {
-        type: "Feature",
-        properties: {},
-        geometry: {
-            type: "LineString",
-            coordinates: [
-                [115.8233, 35.8098],
-                [120.0564, 37.7521]
-            ]
-        }
+  type: "geojson",
+  data: {
+    type: "Feature",
+    properties: {},
+    geometry: {
+      type: "LineString",
+      coordinates: [
+        [115.8233, 35.8098],
+        [120.0564, 37.7521]
+      ]
     }
+  }
 });
 ```
 
 
 
-#### image
+### image
 
-图像源 [`ImageSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#imagesource) 可以向地图添加图片。数组中的每个坐标对表示按顺时针排列：左上角、右上角、右下角、左下角。
+图像源 [`ImageSource`](https://docs.mapbox.com/mapbox-gl-js/api/sources/#imagesource) 可以向地图添加图片。
+
+数组中的每个坐标对表示按顺时针排列：左上角、右上角、右下角、左下角。
 
 ```js
 map.addSource("radar", {
@@ -225,43 +241,41 @@ map.addSource("radar", {
 
 
 
-#### video
+### video
 
 包含视频的数据源。
 
 ```js
 map.addSource('sourceId', {
-    type: 'video',
-    url: [
-        'https://www.mapbox.com/blog/assets/baltimore-smoke.mp4',
-        'https://www.mapbox.com/blog/assets/baltimore-smoke.webm'
-    ],
-    coordinates: [
-        [-76.54, 39.18],
-        [-76.52, 39.18],
-        [-76.52, 39.17],
-        [-76.54, 39.17]
-    ]
+  type: 'video',
+  url: [
+    'https://www.mapbox.com/blog/assets/baltimore-smoke.mp4',
+    'https://www.mapbox.com/blog/assets/baltimore-smoke.webm'
+  ],
+  coordinates: [
+    [-76.54, 39.18],
+    [-76.52, 39.18],
+    [-76.52, 39.17],
+    [-76.54, 39.17]
+  ]
 });
 
-// 更新 videoSource
+// 更新videoSource
 const mySource = map.getSource('sourceId');
 mySource.setCoordinates([
-    [-76.54335737228394, 39.18579907229748],
-    [-76.52803659439087, 39.1838364847587],
-    [-76.5295386314392, 39.17683392507606],
-    [-76.54520273208618, 39.17876344106642]
+  [-76.54335737228394, 39.18579907229748],
+  [-76.52803659439087, 39.1838364847587],
+  [-76.5295386314392, 39.17683392507606],
+  [-76.54520273208618, 39.17876344106642]
 ]);
 
-// 移除 videoSource
+// 移除videoSource
 map.removeSource('sourceId');
 ```
 
----
 
-<br />
 
-### layers
+## layers
 
 图层集合（必填，包含一系列图层 layer，这些图层指定了如何渲染数据源提供的数据）。
 
@@ -271,32 +285,34 @@ layers: [];
 
 每个图层 layer 都有一个 id （具有唯一性）和 type 属性，其中 type 属性指定了其具体的渲染类型：
 
-- fill：填充
-- line：线
-- circle：圆点
-- symbol：符号
-- raster：栅格
-- heatmap：热力图
-- hillshade：坡面阴影
-- fill-extrusion：三维填充
-- background：背景
+|      类型      |   描述   |
+| :------------: | :------: |
+|      fill      |   填充   |
+|      line      |    线    |
+|     circle     |   圆点   |
+|     symbol     |   符号   |
+|     raster     |   栅格   |
+|    heatmap     |  热力图  |
+|   hillshade    | 坡面阴影 |
+| fill-extrusion | 三维填充 |
+|   background   |   背景   |
 
-::: tip
+::: success TIP
 
-注意：在 layer 中，`layout` 属性和 `paint` 属性有一个很重要的区别：
+在 layer 中，`layout` 属性和 `paint` 属性有一个很重要的区别：
 
-1. `paint` 属性，只要缩放级别发生变化，都会重新计算 `paint` 属性，即使是小数变化，比如在 4.1 - 4.6 之间；
-2. `layout` 属性只在整数缩放级别时计算，在 4.1 - 4.6 之间不会发生变化，只有在高于 5 或小于 4 时计算；
+1. `paint` 属性，只要缩放级别发生变化，都会重新计算 `paint` 属性，即使是小数变化，如4.1 - 4.6也会重新计算；
+2. `layout` 属性：只在整数缩放级别时计算，在 4.1 - 4.6 之间不会发生变化，只有在高于 5 或小于 4 时计算；
 
 :::
 
-<br />
 
-#### fill
 
-fill [样式图层 ](https://docs.mapbox.com/style-spec/reference/layers/#fill)可在地图上渲染一个或多个填充（以及可选的描边）面。您可以使用填充图层来配置面或多面要素的视觉外观。
+### fill
 
-要添加填充图层，您需要先添加包 含面数据的矢量 或 GeoJSON 源。然后，您可以使用 fill [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#fill)来自定义其外观（例如，颜色、不透明度或图案）。
+fill [样式图层 ](https://docs.mapbox.com/style-spec/reference/layers/#fill)可在地图上渲染一个或多个填充（以及可选的描边）面。
+
+要添加填充图层，您需要先添加包含面数据的矢量 或 GeoJSON 源。然后，可以使用 fill [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#fill)来自定义其外观（例如，颜色、不透明度或图案）。
 
 ```js
 {
@@ -306,20 +322,21 @@ fill [样式图层 ](https://docs.mapbox.com/style-spec/reference/layers/#fill)�
     "mapbox:name": "fill-test"
   },
   "source": "fill-source-name",
-  // 数据源的图层(只有数据源 source 的 type 为 vector 时，才能设置 source-layer，其它类型的不可以设置)
+  //数据源的图层(只有数据源source的type为vector时，才能设置source-layer，其它类型的不可以设置)
   "source-layer": "fill-source-layer-name",
-  "minzoom": 0,  // 最小层级(地图zoom小于minzoom时，layer将被隐藏)
-  "maxzoom": 24, // 最大层级(地图zoom大于maxzoom时，layer将被隐藏)
-  "filter": [],  // 过滤(用特定的表达式过滤指定的数据源的要素)
+  "minzoom": 0,  //地图zoom小于minzoom时，layer将被隐藏
+  "maxzoom": 24, //地图zoom大于maxzoom时，layer将被隐藏
+  "filter": [],  //过滤(用特定的表达式过滤指定的数据源的要素)
   "paint": {
-    "fill-antialias": true,         // 填充时是否反锯齿
-    "fill-opacity": 1,              // 填充的不透明度(0~1)
-    "fill-pattern": "",             // 填充用的图案(填写在雪碧图中的图标名称，为了图案能无缝填充，图标的宽高需要是2的                                        倍数)
-    "fill-color": "#fff",           // 填充颜色(设置了fill-pattern，则该属性无效)
-    "fill-outline-color": "#fff",   // 描边的颜色(默认和fill-color一致，如果设置了fill-pattern，则该属性无效。使                                        用该属性时，需设置fill-antialias为true)
-    "fill-translate": [0, 0],       // 填充的平移
-    "fill-translate-anchor": "map", // 平移的锚点，即相对的参考物(可选值:map/viewport)
-    'fill-opacity-transition': { duration: 500 }  // 填充透明的过渡效果(官网有示例)
+    "fill-antialias": true,  //填充时是否反锯齿
+    "fill-opacity": 1,       //填充的不透明度(0~1)
+    "fill-pattern": "",      //填充用的图案(填写在雪碧图中的图标名称，为了图案能无缝填充，图标的宽高需要是2的倍数)
+    "fill-color": "#fff",    //填充颜色(设置了fill-pattern，则该属性无效)
+    //描边的颜色(默认和fill-color一致，如果设置了fill-pattern，则该属性无效。使用该属性时，需设置fill-antialias为true)
+    "fill-outline-color": "#fff",
+    "fill-translate": [0, 0],//填充的平移
+    "fill-translate-anchor": "map", //平移的锚点，即相对的参考物(可选值:map/viewport)
+    'fill-opacity-transition': { duration: 500 }  //填充透明的过渡效果(官网有示例)
   },
   "layout": {
     "visibility": "visible"
@@ -327,11 +344,11 @@ fill [样式图层 ](https://docs.mapbox.com/style-spec/reference/layers/#fill)�
 }
 ```
 
-#### line
+### line
 
-line [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#line)可在地图上渲染一条或多条描边折线。您可以使用线图层来配置折线或多折线要素的可视外观。
+line [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#line)可在地图上渲染一条或多条描边折线。
 
-要添加线图层，您需要先添加包含线数据的矢量或 GeoJSON 源。然后，您可以使用 line [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#line)来自定义图层的外观（例如，颜色、宽度或虚线图案）。
+要添加线图层，您需要先添加包含线数据的矢量或 GeoJSON 源。然后，可以使用 line [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#line)来自定义图层的外观（例如，颜色、宽度或虚线图案）。
 
 ```js
 {
@@ -350,30 +367,31 @@ line [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#line)�
     "line-pattern": "",
     "line-color": "#fff",
     "line-width": 1,
-    "line-translate": [0, 0], 		// 线平移
-    "line-translate-anchor": "map", // 线平移的参考锚点(默认map，可选值:map/viewport)
-    "line-gap-width": 0, 			// 线的外部间距宽度
+    "line-translate": [0, 0],       //线平移
+    "line-translate-anchor": "map", //线平移的参考锚点(默认map，可选值:map/viewport)
+    "line-gap-width": 0,            //线的外部间距宽度
     "line-offset": 0,
     "line-blur": 0,
-    "line-dasharray": [0, 0], 		// 虚线的破折号和间隔的长度(设置了line-pattern，该属性将无效)
-    "line-gradient": "#fff", 		// 线的渐变色(设置了line-pattern或line-dasharray，则line-gradient将无效。只有									   数据源source的type为geojson ，且source的lineMetrics为true时，line-								               gradient才有效)
+    "line-dasharray": [0, 0],       //虚线的破折号和间隔的长度(设置了line-pattern，该属性将无效)
+    //线的渐变色(设置了line-pattern或line-dasharray，则line-gradient将无效。只有数据源source的type为geojson ，且source的lineMetrics为true时，line-gradient才有效)
+    "line-gradient": "#fff", 		    
   },
   "layout": {
     "visibility": "visible",
-    "line-cap": "butt", 			// 线末端的显示样式(可选值:butt/round/square)
-    "line-join": "miter", 			// 线交叉时的显示样式(可选值:bevel/round/miter)
-    "line-miter-limit": 2, 			// 最大斜接长度(用来将miter尖型焦点自动转为bevel方型交点，默认值为2，只有line-join										为miter时，才设置该属性)
-    "line-round-limit": 1.05   		// 最小圆角半径(用来将round尖型焦点自动转为bevel方型交点，默认值为1.05，只有line-									   join为round时，才设置该属性)
+    "line-cap": "butt",      //线末端的显示样式(可选值:butt/round/square)
+    "line-join": "miter",    //线交叉时的显示样式(可选值:bevel/round/miter)
+    "line-miter-limit": 2,   //最大斜接长度(用来将miter尖型焦点自动转为bevel方型交点，默认值为2，只有line-join为miter时，才设置该属性)
+    "line-round-limit": 1.05 //最小圆角半径(用来将round尖型焦点自动转为bevel方型交点，默认值为1.05，只有line-join为round时，才设置该属性)
   }
 }
 
 ```
 
-#### circle
+### circle
 
 circle [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#circle)可在地图上渲染一个或多个填充圆。
 
-要添加圆形图层，您需要先添加 包含点数据的矢量或 GeoJSON 源。然后，您可以使用 circle [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#circle)来自定义图层的外观（例如，半径、颜色或偏移）。
+要添加圆形图层，您需要先添加 包含点数据的矢量或 GeoJSON 源。然后，可以使用 circle [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#circle)来自定义图层的外观（例如，半径、颜色或偏移）。
 
 ```js
 {
@@ -394,10 +412,10 @@ circle [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#circl
     "circle-blur": 0,
     "circle-translate": [0, 0],
     "circle-translate-anchor": "map",
-    "circle-pitch-scale": "map", 		// 地图倾斜时圆点的缩放，当值为 viewport 时，圆点不会缩放
-    "circle-pitch-alignment": "map", 	// 地图倾斜时圆点的对齐方式
-    "circle-stroke-width": 0, 			// 圆点的描边宽度
-    "circle-stroke-color": "#fff", 		// 圆点的描边颜色
+    "circle-pitch-scale": "map",    //地图倾斜时圆点的缩放，当值为viewport时，圆点不会缩放
+    "circle-pitch-alignment": "map",//地图倾斜时圆点的对齐方式
+    "circle-stroke-width": 0,       //圆点的描边宽度
+    "circle-stroke-color": "#fff",  //圆点的描边颜色
     "circle-stroke-opacity": 1
   },
   "layout": {
@@ -406,11 +424,13 @@ circle [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#circl
 }
 ```
 
-#### symbol
+### symbol
 
-symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbol)在地图上的点或沿线处渲染图标和文本标签。您可以使用符号图层来配置矢量切片中要素标注的视觉外观。
+symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbol)在地图上的点或沿线处**渲染图标和文本标签**。
 
-要添加符号图层，您需要先添加 包含点数据的矢量 或 GeoJSON 源。如果要在此图层中使用图标，还需要在添加图层之前将 图像添加到样式中。然后，您可以使用 symbol [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#symbol)来自定义图层的外观。
+要添加符号图层，您需要先添加包含点数据的矢量或GeoJSON源。如果要在此图层中使用图标，还需要在添加图层之前将图像添加到样式中。
+
+然后，可以使用 symbol [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#symbol)来自定义图层的外观。
 
 **icon 图标：**
 
@@ -430,34 +450,34 @@ symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbo
     "icon-opacity": 1,
     "icon-color": "#fff",
     "icon-halo-color": "#fff",
-    "icon-halo-width": 0, 			// 光晕宽度
+    "icon-halo-width": 0,  //光晕宽度
     "icon-halo-blur": 0,
     "icon-translate": [0, 0],
-    "icon-translate-anchor": "map" 	// 图标的平移锚点，即相对的参考物(可选值:map/viewport)
+    "icon-translate-anchor": "map" //图标的平移锚点，即相对的参考物(可选值:map/viewport)
   },
   "layout": {
     "visibility": "visible",
-    "symbol-placement": "point", 	// 符号的位置(可选值:point/line/line-center)
-    "symbol-spacing": 250, 			// 符号之间的距离(只有symbol-placement为line时才有效)
-    "symbol-avoid-edges": false, 	// 是否避免边缘冲突，当为 true 时，符号不会超过切片的边缘
-    "symbol-sort-key": 1, 			// 排序的参考性，值越大，越在上方
-    "symbol-z-order": "auto", 		// z轴上的顺序控制(可选值:auto/viewport-y/source)
+    "symbol-placement": "point", //符号的位置(可选值:point/line/line-center)
+    "symbol-spacing": 250,       //符号之间的距离(只有symbol-placement为line时才有效)
+    "symbol-avoid-edges": false, //是否避免边缘冲突，当为 true 时，符号不会超过切片的边缘
+    "symbol-sort-key": 1,        //排序的参考性，值越大，越在上方
+    "symbol-z-order": "auto",    //z轴上的顺序控制(可选值:auto/viewport-y/source)
 
     "icon-image": "",
     "icon-size": 1,
-    "icon-padding": 2, 				// 图标的外边距
+    "icon-padding": 2, 				//图标的外边距
     "icon-offset": [0, 0],
-    "icon-anchor": "center", 		// 图标与锚点的位置关系(可选值:center/left/right/top/bottom/top-left/top-right/bottom-left/bottom-right)
+    "icon-anchor": "center", 		//图标与锚点的位置关系(可选值:center/left/right/top/bottom/top-left/top-right/bottom-left/bottom-right)
     "icon-rotate": 40,
-    "icon-overlap": "always",              // 图标会始终叠加显示，即使有重叠的部分
-    "icon-allow-overlap": false, 		   // 是否允许图标重叠
-    "icon-ignore-placement": false,        // 是否忽略图标位置，当值为 true 时，其他符号即使与此图标触碰也会显示
-    "icon-optional": false, 		       // 图标是否可不显示，当值为true时，如果图标与文本标签碰撞，则显示文本标签
-    "icon-text-fit": "none", 		       // 图标与文本的大小适应关系(可选值:none/width/height/both)
+    "icon-overlap": "always",       //图标会始终叠加显示，即使有重叠的部分
+    "icon-allow-overlap": false,    //是否允许图标重叠
+    "icon-ignore-placement": false, //是否忽略图标位置，当值为 true 时，其他符号即使与此图标触碰也会显示
+    "icon-optional": false,         // 图标是否可不显示，当值为true时，如果图标与文本标签碰撞，则显示文本标签
+    "icon-text-fit": "none",        // 图标与文本的大小适应关系(可选值:none/width/height/both)
     "icon-text-fit-padding": [0, 0, 0, 0], // 图标与文本的内边距
-    "icon-keep-upright": false, 		   // 当 icon-rotation-alignment 为 map，且 symbol-placement 为                                                 line 或者 line-center 时，设置为 true 的话，可以避免图标上下颠倒
-    "icon-rotation-alignment": "auto", 	   // 地图旋转时图标的对齐方式(可选:map/viewport/auto)
-    "icon-pitch-alignment": "auto" 		   // 地图倾斜时图标的对齐方式
+    "icon-keep-upright": false,     // 当 icon-rotation-alignment 为 map，且 symbol-placement 为                                                 line 或者 line-center 时，设置为 true 的话，可以避免图标上下颠倒
+    "icon-rotation-alignment": "auto", // 地图旋转时图标的对齐方式(可选:map/viewport/auto)
+    "icon-pitch-alignment": "auto"     // 地图倾斜时图标的对齐方式
   }
 }
 ```
@@ -493,7 +513,7 @@ symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbo
     "symbol-sort-key": 1,
     "symbol-z-order": "auto",
 
-    "text-rotation-alignment": "auto", 	// 与 icon-rotation-alignment 类似
+    "text-rotation-alignment": "auto", 	//与icon-rotation-alignment类似
     "text-pitch-alignment": "auto",
     "text-field": "hello, mapbox!!",
     "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
@@ -511,7 +531,7 @@ symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbo
     "text-transform": "none", 			// 文本大小写转换(可选值:none/uppercase/lowercase)
     "text-offset": [0, 0],
     "text-radial-offset": 0, 			// 文本的经向偏移量，优先级比 text-offset 高
-    "text-overlap": "always",          // 文字会始终叠加显示，即使有重叠的部分
+    "text-overlap": "always",           // 文字会始终叠加显示，即使有重叠的部分
     "text-allow-overlap": false, 		// 是否允许文本重叠
     "text-ignore-placement": false, 	// 是否忽略文本位置，当为true时，其他符号即使与此文本触碰也会显示
     "text-optional": false 				// 文本是否不可显示，当为true时，如果文本与图标碰撞，则显示图标
@@ -519,11 +539,11 @@ symbol [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#symbo
 }
 ```
 
-#### raster
+### raster
 
 raster [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#raster)用于在地图上渲染栅格切片。
 
-要添加栅格图层，需要先添加栅格源。然后，您可以使用 raster [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#raster)来自定义图层的外观。
+要添加栅格图层，需要先添加栅格源。然后，可以使用 raster [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#raster)来自定义图层的外观。
 
 ```js
 {
@@ -553,11 +573,11 @@ raster [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#raste
 }
 ```
 
-#### heatmap
+### heatmap
 
 heatmap [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#heatmap)会渲染一系列颜色来表示区域中点的密度。
 
-要添加热图图层，您需要首先添加 包含点数据的矢量或 GeoJSON 源。然后，您可以使用 heatmap [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#heatmap)来自定义图层的外观。
+要添加热图图层，您需要首先添加 包含点数据的矢量或 GeoJSON 源。然后，可以使用 heatmap [图层中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#heatmap)来自定义图层的外观。
 
 ```js
 {
@@ -594,7 +614,7 @@ heatmap [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#heat
 }
 ```
 
-#### hillshade
+### hillshade
 
 Hillshade [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#hillshade)用于在客户端渲染数字高程模型 （DEM） 数据。
 
@@ -626,11 +646,11 @@ Hillshade [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#hi
 }
 ```
 
-#### fill-extrusion
+### fill-extrusion
 
-fill-extrusion [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#fill-extrusion)可在地图上渲染一个或多个填充（和可选描边）拉伸 （3D） 面。
+fill-extrusion [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#fill-extrusion)可在地图上渲染一个或多个**填充拉伸 （3D） 面**。
 
-要添加填充拉伸图层，您需要先添加 包含面数据的矢量或 GeoJSON 源。通常，数据需要包含一个数据属性，可以使用该属性来确定每个特征的拉伸高度。这可能是以米为单位的物理高度，也可以是说明人口普查区块中人口等区域的非物理属性的一种方式。
+要添加填充拉伸图层，您需要先添加包含面数据的矢量或GeoJSON源。通常，数据需要包含一个数据属性，可以使用该属性来确定每个特征的拉伸高度。
 
 添加适当的源后，可以使用 fill-extrusion[图层类中的可用属性](https://docs.mapbox.com/style-spec/reference/layers/#fill-extrusion)来自定义图层的外观（例如，高度、不透明度或颜色）。
 
@@ -662,7 +682,7 @@ fill-extrusion [样式图层](https://docs.mapbox.com/style-spec/reference/layer
 }
 ```
 
-#### background
+### background
 
 background [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#background)，覆盖整个地图。
 
@@ -681,9 +701,9 @@ background [样式图层](https://docs.mapbox.com/style-spec/reference/layers/#b
   "maxzoom": 24,
   "filter": [],
   "paint": {
-    "background-color": "#000000",  // 背景颜色（如果设置了background-pattern，则background-color将无效）
-    "background-pattern": "", 		// 背景图案
-    "background-opacity": 1		    // 背景不透明度
+    "background-color": "#000000",// 背景颜色（如果设置了background-pattern，则background-color将无效）
+    "background-pattern": "",     // 背景图案
+    "background-opacity": 1       // 背景不透明度
   },
   "layout": {
     "visibility": "visible"

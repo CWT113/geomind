@@ -1,8 +1,10 @@
 # Antv L7
 
-> L7 官网：https://l7.antv.antgroup.com/tutorial/l7
+L7 官网：https://l7.antv.antgroup.com/tutorial/l7
 
 L7 是由蚂蚁集团 AntV 数据可视化团队推出的基于 WebGL 的开源大规模地理空间数据可视分析引擎。
+
+
 
 ## 安装
 
@@ -23,6 +25,8 @@ import { Scene } from "@antv/l7";
 import { Mapbox } from "@antv/l7-maps";
 ```
 
+
+
 ## 柱状图
 
 初始化 L7 Sence：
@@ -32,12 +36,12 @@ onMounted(() => {
   const scene = new Scene({
     id: "map",
     map: new Mapbox({
-      style: "mapbox://styles/mapbox/light-v11", // 样式 url，可以使用 mapbox 的样式
+      style: "mapbox://styles/mapbox/light-v11", // 地图样式url，可以使用mapbox的样式
       center: [118.78355380411114, 37.50484242549551],
       pitch: 0,
       zoom: 12,
       token:
-        "pk.eyJ1IjoiNzc5MjIiLCJhIjoiY2x1NGFtd2lqMDEwNTJrbnZ2dmhyY2l6MCJ9.ocEZHZuz7WwQWKTvGpQZqA"
+      "pk.eyJ1IjoiNzc5MjIiLCJhIjoiY2x1NGFtd2lqMDEwNTJrbnZ2dmhyY2l6MCJ9.ocEZHZuz7WwQWKTvGpQZqA"
     })
   });
 
@@ -52,7 +56,7 @@ function initMap(scene: any) {
   fetch("https://gw.alipayobjects.com/os/rmsportal/oVTMqfzuuRFKiDwhPSFL.json")
     .then(res => res.json())
     .then(data => {
-      const pointLayer = new PointLayer({})
+    	const pointLayer = new PointLayer({})
         .source(data.list, {
           parser: {
             type: "json",
@@ -79,8 +83,9 @@ function initMap(scene: any) {
         .style({
           opacity: 1.0
         });
-      scene.addLayer(pointLayer);
-    });
+    
+    scene.addLayer(pointLayer);
+  });
 }
 ```
 
@@ -110,6 +115,8 @@ function initMap(scene: any) {
 }
 ```
 
+
+
 ## 水波图
 
 ```js
@@ -119,23 +126,25 @@ function initMap(scene: any) {
   )
     .then(res => res.text())
     .then(data => {
-      const pointLayer = new PointLayer({})
-        .source(data, {
-          parser: {
-            type: "csv",
-            x: "Longitude",
-            y: "Latitude"
-          }
-        })
-        .shape("circle")
-        .animate(true)
-        .size(100)
-        .color("#d00");
+    const pointLayer = new PointLayer({})
+      .source(data, {
+        parser: {
+          type: "csv",
+          x: "Longitude",
+          y: "Latitude"
+        }
+      })
+      .shape("circle")
+      .animate(true)
+      .size(100)
+      .color("#d00");
 
-      scene.addLayer(pointLayer);
-    });
+    scene.addLayer(pointLayer);
+  });
 }
 ```
+
+
 
 ## 添加 TMS 栅格瓦片
 
@@ -155,12 +164,13 @@ function initMap(scene: any) {
 }
 ```
 
+
+
 ## 添加 WMTS 栅格瓦片
 
 ```js
 function initMap(scene: any) {
-  const url =
-    "https://t0.tianditu.gov.cn/img_w/wmts?tk=b72aa81ac2b3cae941d1eb213499e15e&";
+  const url = ol"https://t0.tianditu.gov.cn/img_w/wmts?tk=b72aa81ac2b3cae941d1eb213499e15e&";
   const layer = new RasterLayer().source(url, {
     parser: {
       type: "rasterTile",

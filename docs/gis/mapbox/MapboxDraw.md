@@ -8,7 +8,7 @@ API 地址：https://github.com/mapbox/mapbox-gl-draw/blob/main/docs/API.md
 
 ## 基本使用
 
-安装 @mapbox/mapbox-gl-draw ：
+安装 NPM 包 ：
 
 ```shell
 pnpm install @mapbox/mapbox-gl-draw
@@ -111,6 +111,8 @@ const draw = new MapboxDraw({});
 ```
 
 添加了 MapboxDraw 以后，draw 属性上就会携带一下的所有方法。
+
+
 
 #### add()
 

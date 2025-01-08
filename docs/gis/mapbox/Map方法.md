@@ -1,6 +1,6 @@
-# Map方法
+# Map的常用方法
 
-## layers
+## layers相关
 
 ### getLayer
 
@@ -16,7 +16,7 @@ const layer = map.getLayer('custom-layer');
 
 ```js
 map.on("load", () => {
-    map.addLayer(layerOptions, beforeId?);
+  map.addLayer(layerOptions, beforeId?);
 });
 ```
 
@@ -25,31 +25,37 @@ map.on("load", () => {
 移除图层
 
 ```js
-if (map.getLayer("custom-layer")) map.removeLayer("custom-layer");
+if (map.getLayer("custom-layer")) {
+  map.removeLayer("custom-layer");
+}
 ```
+
+
 
 ### moveLayer
 
-调整图层的层级关系
+调整图层的层级关系。
 
 ```js
-// 将 custom-layer 移动到 beforeId 的上方。
+// 将custom-layer移动到beforeId的上方
 map.moveLayer('custom-layer', 'beforeId');
 ```
 
 ::: info
 
-下面的两个方法没有效果，不知道是否真实存在：
+下面的两个方法没有效果，不知道该怎么使用：
 
 ```js
-// 将 custom-layer 移动到所有图层的最底部
+// 将custom-layer移动到所有图层的最底部
 map.moveLayer('custom-layer', null);
 
-// 将 custom-layer 移动到所有图层的最顶部
+// 将custom-layer移动到所有图层的最顶部
 map.moveLayer('custom-layer', undefined);
 ```
 
 :::
+
+
 
 ### getFilter
 
@@ -67,6 +73,8 @@ const filter = map.getFilter('custom-layer');
 map.setFilter('custom-layer', ['>=', ['get', 'available-spots'], 5]);
 ```
 
+
+
 ### getPaintProperty
 
 获取图层 paint 属性
@@ -81,8 +89,10 @@ const paintProperty = map.getPaintProperty('custom-layer', 'fill-color');
 
 ```js
 if (paintProperty) 
-    map.setPaintProperty('custom-layer', 'fill-color', '#faafee');
+    map.setPaintProperty('custom-layer', 'fill-color', '#ffffff');
 ```
+
+
 
 ### getLayoutProperty
 
@@ -97,56 +107,65 @@ const visibility = map.getLayoutProperty("custom-layer", "visibility");
 设置图层 layout 属性
 
 ```js
-if (visibility === "visible")
-    map.setLayoutProperty("custom-layer", "visibility", "visible");
+if (visibility === "visible") {
+  map.setLayoutProperty("custom-layer", "visibility", "visible");
+}
 ```
 
 
 
-## 加载 image
+## image相关
 
 ### loadImage
 
 ```js
 // 添加在线图标
 map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/cat.png', (error, image) => {
-    if (error) throw error;
-    if (!map.hasImage('cat')) map.addImage('cat', image);
+  if (error) throw error;
+  if (!map.hasImage('cat')) {
+    map.addImage('cat', image);
+  }
 });
 
-// 添加本地图标（最好把图片放在 public 目录下）
+// 添加本地图标（最好把图片放在public目录下）
 map.loadImage('/model/airport.png', (error, image) => {
-    if (error) throw error;
-    if (!map.hasImage('airport')) map.addImage('airport', image);
+  if (error) throw error;
+  if (!map.hasImage('airport')) {
+    map.addImage('airport', image);
+  }
 });
 ```
 
-示例：[添加 icon 到地图](https://docs.mapbox.com/mapbox-gl-js/example/add-image/) 
+官网示例：[添加 icon 到地图](https://docs.mapbox.com/mapbox-gl-js/example/add-image/) 
 
 
 
-## flyTo 和 jumpTo
+## 视角飞行
 
 从某地视角变成另外一个地方的视角，`flyTo` 带有动画，`jumpTo` 没有动画。
 
+### flyTo
+
 ```js
 map.flyTo({
-    center: [0, 0],
-    zoom: 9,
-    speed: 0.2,
-    curve: 1,
-    easing(t) {
-        return t;
-    }
+  center: [0, 0],
+  zoom: 9,
+  speed: 0.2,
+  curve: 1,
+  easing(t) {
+    return t;
+  }
 }); 
 ```
 
+### jumpTo
+
 ```js
 map.jumpTo({
-    center: [0, 0],
-    zoom: 8,
-    pitch: 45,
-    bearing: 90
+  center: [0, 0],
+  zoom: 8,
+  pitch: 45,
+  bearing: 90
 });
 ```
 
@@ -209,5 +228,4 @@ map.zoomIn({ duration: 1000 });
 // 缩小1个级别
 map.zoomOut({ offset: [80, 60] });
 ```
-
 

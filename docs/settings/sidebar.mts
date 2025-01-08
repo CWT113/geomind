@@ -474,10 +474,10 @@ export const sidebar = {
       text: "Mapbox",
       items: [
         { text: "快速入门", link: "/gis/mapbox/快速入门.md" },
-        { text: "Style 样式", link: "/gis/mapbox/Style样式.md" },
-        { text: "Map 方法", link: "/gis/mapbox/Map方法.md" },
-        { text: "Map 事件", link: "/gis/mapbox/Map事件.md" },
-        { text: "表达式", link: "/gis/mapbox/表达式.md" },
+        { text: "Style属性", link: "/gis/mapbox/Style样式.md" },
+        { text: "Map的常用方法", link: "/gis/mapbox/Map方法.md" },
+        { text: "Map的常用事件", link: "/gis/mapbox/Map事件.md" },
+        { text: "图层表达式", link: "/gis/mapbox/表达式.md" },
         { text: "练习案例", link: "/gis/mapbox/练习案例.md" }
       ]
     },
