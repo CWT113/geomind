@@ -2,10 +2,10 @@
 
 ## Object.assign()
 
-::: tip 注意
+::: warning 注意
 
-1. `Object.assign()` 方法中，后面对象的属性会覆盖前面对象的属性；
-2. `Object.assign()` 方法 是**浅拷贝**，不是深拷贝；
+1. `Object.assign()` 方法中，如果有重复的属性，则后面对象会覆盖掉前面对象的重复属性；
+2. `Object.assign()` 方法是**浅拷贝**，不是深拷贝；
 
 :::
 
@@ -20,7 +20,7 @@
    ```js
    const obj1 = { a: 1, b: { c: 2 } };
    
-   // 浅拷贝
+   //浅拷贝
    const obj2 = Object.assign({}, obj1);
    obj2.b.c = 4;
    

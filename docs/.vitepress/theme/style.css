@@ -15,6 +15,7 @@
   /* 代码块背景色 */
   --vp-code-block-bg: #e6e9ef;
   /* --vp-code-block-bg: rgb(125 125 125 / 0.04); */
+  --vp-c-divider: #bcc0cc;
 
   --vp-c-gutter: var(--vp-c-divider);
   --vp-code-tab-divider: var(--vp-c-divider);
@@ -51,6 +52,7 @@
   /* --vp-code-block-bg: rgb(0 0 0 / 0.2); */
   --vp-c-text-code: #c0cec0;
 
+  --vp-c-divider: #45475a;
   --vp-custom-block-success-border: #293231;
   --vp-custom-block-success-text: rgba(255, 255, 245, 0.86);
   --vp-custom-block-success-bg: #293231;
