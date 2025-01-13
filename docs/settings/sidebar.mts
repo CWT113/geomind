@@ -28,6 +28,15 @@ export const sidebar = {
     {
       text: "第三方库",
       items: [{ text: "Lodash", link: "/frontend/javascript/lodash.md" }]
+    },
+    {
+      text: "文件上传",
+      items: [
+        {
+          text: "大文件分片上传",
+          link: "/frontend/javascript/大文件分片上传.md"
+        }
+      ]
     }
   ],
 
@@ -614,4 +623,4 @@ export const sidebar = {
       ]
     }
   ]
-};
+}
