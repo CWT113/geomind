@@ -1,4 +1,4 @@
-# Entity 实体
+# Entity实体
 
 cesium 中空间数据可视化 API 共分为 2 部分：
 
