@@ -67,7 +67,7 @@ features:
 
   - icon: 🗺️
     title: GIS
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: “将地理信息融入人工智能！”
     link: /gis/mapbox/快速入门.md
     linkText: "Mapbox"
 ---

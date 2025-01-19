@@ -536,10 +536,18 @@ export const sidebar = {
           ]
         },
         {
+          text: "组件重写",
+          link: "/gis/cesium/组件重写.md"
+        },
+        { text: "事件应用", link: "/gis/cesium/鼠标事件.md" },
+        {
+          text: "量测工具和调试面板",
+          link: "/gis/cesium/量测工具和调试面板.md"
+        },
+        {
           text: "CallBackProperty",
           link: "/gis/cesium/CallBackProperty.md"
         },
-        { text: "鼠标事件", link: "/gis/cesium/鼠标事件.md" },
         { text: "粒子系统", link: "/gis/cesium/粒子系统.md" }
       ]
     }
