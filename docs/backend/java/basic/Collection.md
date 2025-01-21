@@ -1,21 +1,21 @@
 # Collection
 
-`Collection` 接口并不直接创建实例，而是由其子接口（如 `List`、`Set`、`Queue` 等）和实现类（如 `ArrayList`、`HashSet`、`LinkedList` 等）提供具体的实现。
+Collection接口并不直接创建实例，而是由其子接口（如List、Set、Queue等）和实现类（如ArrayList、HashSet、LinkedList等）提供具体的实现。
 
 
 
 ## 常用方法
 
-| 方法                                 | 作用                             |
-| :----------------------------------- | :------------------------------- |
-| add(Object o)                        | 添加单个元素到集合中             |
-| addAll(Collection col)               | 添加 B集合到 A集合中（集合合并） |
-| clear()                              | 清空集合                         |
-| remove(Object o) / remove(int index) | 移除指定元素                     |
-| contains(Object o)                   | 判断集合是否包含指定元素         |
-| isEmpty()                            | 判断集合是否为空                 |
-| size()                               | 获取集合元素数量                 |
-| toArray()                            | 把集合转换为数组                 |
+|            方法             | 作用                             |
+| :-------------------------: | :------------------------------- |
+|          add(obj)           | 添加单个元素到集合中             |
+|   addAll(Collection col)    | 添加 B集合到 A集合中（集合合并） |
+|           clear()           | 清空集合                         |
+| remove(obj) / remove(index) | 移除指定元素                     |
+|        contains(obj)        | 判断集合是否包含指定元素         |
+|          isEmpty()          | 判断集合是否为空                 |
+|           size()            | 获取集合元素数量                 |
+|          toArray()          | 把集合转换为数组                 |
 
 ::: code-group
 
@@ -117,15 +117,13 @@ public void junitTest() {
 
 迭代器（Iterator）提供了一种 **顺序访问集合元素** 的方式，而不需要了解集合的底层实现细节。
 
-```java {10,11,12}
+```java {8-10}
 @Test
 public void junitTest4() {
   ArrayList<String> arrayList = new ArrayList<String>();
   arrayList.add("张三");
   arrayList.add("李四");
   arrayList.add("王五");
-  arrayList.add("赵六");
-  arrayList.add("王一博");
 
   Iterator<String> iterator = arrayList.iterator();
   while (iterator.hasNext()) {
@@ -153,8 +151,9 @@ public void junitTest4() {
   while (iterator.hasNext()) {
     String element = iterator.next();
     System.out.println(element);
+    
     //如果是集合是偶数个元素，不会报错，奇数个元素时，next()获取不到元素了，就会报错
-    String element1 = iterator.next();
+    String element1 = iterator.next(); // [!code --]
     System.out.println(element1);
   }
 }
@@ -164,11 +163,11 @@ public void junitTest4() {
 
 
 
-### 并发修改异常
+## 并发修改异常
 
-当使用迭代器 / 增强For循环 遍历集合的过程中，尽量不要随意修改集合的内容，例如增加、删除等！
+当使用 迭代器/增强For 遍历集合的过程中，尽量**不要随意修改集合的内容，例如增加、删除等**！
 
-下面的示例，就会引发 并发修改异常：
+下面的示例，就会引发并发修改异常：
 
 ```java
 @Test
@@ -195,7 +194,7 @@ public void junitTest5() {
 
 解决方法：
 
-```java {9,10,11,13}
+```java {9}
 @Test
 public void junitTest5() {
   ArrayList<String> arrayList = new ArrayList<String>();
@@ -204,7 +203,7 @@ public void junitTest5() {
   arrayList.add("王五");
 
   //使用 ArrayList 父类中的 listIterator() 迭代器进行遍历
-  ListIterator<String> listIterator = arrayList.listIterator();
+  ListIterator<String> listIterator = arrayList.listIterator(); // [!code ++]
   while (listIterator.hasNext()) {
     String element = listIterator.next();
     if ("李四".equals(element)) {
@@ -219,11 +218,11 @@ public void junitTest5() {
 
 ## 扩展方法
 
-| 方法                           | 作用                                          |
-| ------------------------------ | --------------------------------------------- |
+|              方法              | 作用                                          |
+| :----------------------------: | --------------------------------------------- |
 | addAll(Collection c, T... ele) | 向集合批量添加元素                            |
-| shuffle(List list)             | 将集合中的元素顺序打乱                        |
-| sort(List list)                | 将集合中的元素进行排序（默认使用 ASCII 码值） |
+|         shuffle(list)          | 将集合中的元素顺序打乱                        |
+|           sort(list)           | 将集合中的元素进行排序（默认使用 ASCII 码值） |
 | sort(List list, Comparator c)  | 将集合中的元素按自定义的排序方式排序          |
 
 ```java {4,7}
