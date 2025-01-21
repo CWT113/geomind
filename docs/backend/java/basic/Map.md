@@ -30,7 +30,7 @@
 
 ## HashMap
 
-::: success HashMap解剖
+::: success HashMap原理
 
 - 数据结构：基于 **数组 + 链表 + 红黑树** 实现。
 - 原理：
@@ -73,10 +73,11 @@ public static void main(String[] args) {
 
 ## LinkedHashMap
 
-::: success LinkedHashMap解剖
+::: success LinkedHashMap原理
 
-- 数据结构：**继承自 HashMap**，并在其基础上添加了 **双向链表** 以维护插入顺序；
-- 特点：即具备 HashMap 的快速访问性能，又能按照插入顺序访问遍历；
+数据结构：**继承自 HashMap**，在其基础上添加了 **双向链表** 以维护插入顺序；
+
+特点：即具备 HashMap 的快速访问性能，又能按照插入顺序访问遍历；
 
 :::
 
@@ -102,12 +103,13 @@ public static void main(String[] args) {
 
 ## TreeMap
 
-::: success TreeMap剖析
+::: success TreeMap原理
 
-- 数据结构：基于 **红黑树**（自平衡二叉搜索树）实现；
-- 特点：
-  - 键按自然顺序或指定的比较器顺序排序；
-  - 插入、删除和查询操作的时间复杂度为 O(log n)；
+数据结构：基于 **红黑树**（自平衡二叉搜索树）实现；
+
+特点：
+- 键按自然顺序或指定的比较器顺序排序；
+- 插入、删除和查询操作的时间复杂度为 O(log n)；
 
 :::
 
@@ -207,5 +209,106 @@ public class Person implements Comparable<Person>{
 
 
 
+## Hashtable
+
+Hashtable 从 Java1.0 就存在，它实现了 Map 接口，是一个线程安全的集合类，用于存储键值对。
+
+::: success Hashtable原理
+
+数据结构：底层基于 **哈希表** 实现，通过键的 hashCode() 确定键值对的存储位置。
+
+特点：
+
+- **线程安全**：所有方法都是同步的，因此性能比较低，但适用于多线程环境；
+- **元素无序**：键值对没有特定的顺序存储；
+- **键和值不允许为null**：不允许存储 null键和 null值，<span style="text-decoration:underline;">但 HashMap 允许哦</span>；
+
+:::
 
 
+
+常用方法：
+
+| 方法               | 作用                                         |
+| :----------------- | -------------------------------------------- |
+| put(key, value)    | 将指定的键值对插入到 Hashtable 中            |
+| get(key)           | 根据键获取对应的值，如果键不存在，则返回null |
+| remove(key)        | 按键删除键值对                               |
+| containsKey(key)   | 检查是否包含指定的键                         |
+| containsValue(val) | 检查是否包含指定的值                         |
+| size()             | 返回键值对的数量                             |
+| isEmpty()          | 检查 Hashtable 是否为空                      |
+| keys()             | 返回包含所有键的枚举                         |
+| elements()         | 返回包含所有值的枚举                         |
+| keySet()           | 返回所有的键到 Set 集合中                    |
+
+```java
+public static void main(String[] args) {
+  Hashtable<String, String> table = new Hashtable<>();
+
+  table.put("name", "王一博");
+  table.put("city", "北京市");
+  table.put("job", "演员&歌手");
+
+  table.put("name", "陈伟霆"); //会覆盖前面 name 属性的值
+  table.put(null, null);      //NullPointerException
+  System.out.println(table);
+
+  String name = table.get("name"); //王一博
+
+  for (String s : table.keySet()) {
+    System.out.println(s + ": " + table.get(s));
+  }
+}
+```
+
+Hashtable 与 HashMap 的对比：
+
+|           特性           | Hashtable |          HashMap           |
+| :----------------------: | :-------: | :------------------------: |
+|         是否无序         |    是     |             是             |
+|         有无索引         |    无     |             无             |
+|       线程是否安全       |    是     |             否             |
+| 是否允许存储 null 键值对 |  不允许   | 只允许一个 null键和 null值 |
+|           性能           |   较低    |            较高            |
+|         引入时间         |  JDK 1.0  |          JDK 1.2           |
+
+
+
+## Properties
+
+Properties 是 Hashtable 的一个子类，专门用于存储 String 类型的键值对。主要用于文件 IO流和配置文件读取写入。
+
+::: success Properties原理
+
+数据结构：哈希表
+
+特点：
+
+- **键值对存储**：键和值都是 String 类型；
+- **继承自 Hashtable**：因为继承自 Hashtable，所以线程安全，方法默认都是同步的；
+- **常用于配置文件**：常常与 `.properties` 配置文件一起使用；
+
+:::
+
+常用方法：
+
+| 方法                    | 作用                                               |
+| ----------------------- | -------------------------------------------------- |
+| setProperty(key, value) | 设置属性键值对                                     |
+| getProperty(key)        | 获取指定键的属性值，如果键不存在返回 null          |
+| load(inStream)          | 从输入流中加载属性数据                             |
+| stringPropertyNames()   | 获取所有的 key，保存到 set 集合中，相当于 keySet() |
+
+```java
+public static void main(String[] args) {
+  Properties prop = new Properties();
+  prop.setProperty("username", "admin");
+  prop.setProperty("password", "123456");
+  System.out.println(prop);
+
+  for (String name : prop.stringPropertyNames()) {
+    System.out.println(prop.getProperty(name));
+  }
+}
+```

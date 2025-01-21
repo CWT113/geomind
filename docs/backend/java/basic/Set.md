@@ -2,32 +2,28 @@
 
 `Set<T>` 表示一组 **不允许包含重复元素** 的集合。
 
-
-
 特点：
 
-1. **元素无序**：元素插入和读取的顺序不一定保持一致，具体取决于底层实现；
-2. **不允许重复**：已经存在的元素，不会再次存储；
-3. **允许包含一个 null 元素**：只允许包含一个；
-
-
+- **元素无序**：元素插入和读取的顺序不一定保持一致，具体取决于底层实现；
+- **不允许重复**：已经存在的元素，不会再次存储；
+- **允许包含一个 null 元素**：只允许包含一个；
 
 常用方法：
 
-| 方法             | 作用                                           |
-| ---------------- | ---------------------------------------------- |
-| add(e)           | 将指定元素添加到集合中，若元素存在则返回 false |
-| remove(o)        | 从集合中移除指定元素                           |
-| first()          | TreeSet特有，返回集合中的第一个元素            |
-| last()           | TreeSet特有，返回集合中的最后一个元素          |
-| lower(e)         | 返回小于指定元素的最大元素                     |
-| floor(e)         | 返回小于等于指定元素的最大元素                 |
-| higher(e)        | 返回大于指定元素的最小元素                     |
-| ceiling(e)       | 返回大于等于指定元素的最小元素                 |
+|       方法       | 作用                                           |
+| :--------------: | ---------------------------------------------- |
+|      add(e)      | 将指定元素添加到集合中，若元素存在则返回 false |
+|    remove(o)     | 从集合中移除指定元素                           |
+|     first()      | TreeSet特有，返回集合中的第一个元素            |
+|      last()      | TreeSet特有，返回集合中的最后一个元素          |
+|     lower(e)     | 返回小于指定元素的最大元素                     |
+|     floor(e)     | 返回小于等于指定元素的最大元素                 |
+|    higher(e)     | 返回大于指定元素的最小元素                     |
+|    ceiling(e)    | 返回大于等于指定元素的最小元素                 |
 | subSet(from, to) | 返回从 from（包含）到 to（不包含）的子集       |
-| headSet(to)      | 返回小于 to 的所有元素的子集                   |
-| tailSet(from)    | 返回大于等于 from 的所有元素的子集             |
-| iterator()       | 返回一个用于遍历元素的迭代器                   |
+|   headSet(to)    | 返回小于 to 的所有元素的子集                   |
+|  tailSet(from)   | 返回大于等于 from 的所有元素的子集             |
+|    iterator()    | 返回一个用于遍历元素的迭代器                   |
 
 
 
@@ -35,34 +31,34 @@
 
 `HashSet<T>` 是 Set 接口的一个实现类，底层使用 `HashMap` 实现。
 
-::: success HashSet剖析
+::: success HashSet原理
 
-- 数据结构：HashMap
+数据结构：HashMap
 
-- 特点：
+特点：
 
-  - **元素无序**：插入和取出的顺序可能不同，如果相同，纯属巧合；
-  - **哈希表存储**：查找和插入的操作效率较高；
-  - **无索引**：由于底层是哈希表存储，所以没有索引；
-  - **线程不安全**：插入和查询速度快；
+- **元素无序**：插入和取出的顺序可能不同，如果相同，纯属巧合；
+- **哈希表存储**：查找和插入的操作效率较高；
+- **无索引**：由于底层是哈希表存储，所以没有索引；
+- **线程不安全**：插入和查询速度快；
 
-- 原理：
+原理：
 
-  - 基于 HashMap 实现，HashSet 内部实际使用一个 HashMap 存储元素；
+- 基于 HashMap 实现，HashSet 内部实际使用一个 HashMap 存储元素；
 
-  - HashSet 的元素作为 HashMap 的 Key，而 Value 统一是一个固定的对象 PRESENT（一个静态常量）；
+- HashSet 的元素作为 HashMap 的 Key，而 Value 统一是一个固定的对象 PRESENT（一个静态常量）；
 
-    ```java
-    static final Object PRESENT = new Object();
-    
-    public boolean add(E e) {
-      return map.put(e, PRESENT)==null;
-    }
-    ```
+  ```java
+  static final Object PRESENT = new Object();
+  
+  public boolean add(E e) {
+    return map.put(e, PRESENT)==null;
+  }
+  ```
 
 :::
 
-HashSet 拥有上面的方法，同样也拥有和 Collection 集合的一样的方法：
+HashSet 拥有上面的方法，同样也拥有和 Collection集合的一样的方法：
 
 ```java
 public static void main(String[] args) {
@@ -94,11 +90,10 @@ public static void main(String[] args) {
 
 ## HashSet去重
 
-`HashSet` 想要进行元素去重，必须重写 `hashCode()` 和 `equals()` 两个方法。
+HashSet 想要进行元素去重，必须重写 `hashCode()` 和 `equals()` 两个方法。
 
-> 为什么 String 方法不用重写呢？
+> String 类型已经重写过这两个方法了
 >
-> 因为 String 类型已经重写过这两个方法了。
 
 ::: info 原理
 
@@ -172,7 +167,7 @@ public class Person {
 
 `LinkedHashSet<T>` 继承自 HashSet，但使用了一个 **双向链表** 维护元素的插入顺序。
 
-:::success LinkedHashSet剖析
+:::success LinkedHashSet原理
 
 - 数据结构：继承自 HashSet，增加 **双向链表** 维护元素顺序；
 
@@ -186,7 +181,7 @@ public class Person {
 
 
 
-LinkedHashSet 的常用方法和 HashSet 的用法一样：
+LinkedHashSet 的常用方法和 HashSet 的用法一模一样：
 
 ```java
 public static void main(String[] args) {
