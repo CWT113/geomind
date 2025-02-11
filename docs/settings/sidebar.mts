@@ -154,7 +154,8 @@ export const sidebar = {
       items: [
         { text: "基本使用", link: "/database/postgres/基本使用.md" },
         { text: "分区表", link: "/database/postgres/分区表.md" },
-        { text: "TimescaleDB", link: "/database/postgres/TimescaleDB.md" }
+        { text: "TimescaleDB", link: "/database/postgres/TimescaleDB.md" },
+        { text: "WKB格式转为WKT", link: "/database/postgres/WKB格式转为WKT.md" }
       ]
     },
     { text: "PostgreSQL进阶", items: [] }
