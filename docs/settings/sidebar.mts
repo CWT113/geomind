@@ -479,24 +479,29 @@ export const sidebar = {
       ]
     },
     {
-      text:"File和IO流",
+      text: "File和IO流",
       collapsed: false,
-      items:[]
+      items: [
+        {
+          text: "File类",
+          link: "/backend/java/basic/File类.md"
+        }
+      ]
     },
     {
-      text:"网络编程",
+      text: "网络编程",
       collapsed: false,
-      items:[]
+      items: []
     },
     {
-      text:"反射",
+      text: "反射",
       collapsed: false,
-      items:[]
+      items: []
     },
     {
-      text:"JDK8-17新特性",
+      text: "JDK8-17新特性",
       collapsed: false,
-      items:[]
+      items: []
     }
   ],
 
@@ -532,45 +537,75 @@ export const sidebar = {
 
   "/gis/cesium/": [
     {
-      text: "Cesium",
+      text: "Cesium基础",
       items: [
-        { text: "快速入门", link: "/gis/cesium/快速入门.md" },
-        { text: "坐标系", link: "/gis/cesium/坐标系.md" },
-        { text: "相机视角", link: "/gis/cesium/相机视角.md" },
+        { text: "快速入门", link: "/gis/cesium/cesium-primary/快速入门.md" },
+        { text: "坐标系", link: "/gis/cesium/cesium-primary/坐标系.md" },
+        { text: "相机视角", link: "/gis/cesium/cesium-primary/相机视角.md" },
         {
           text: "Entity 实体",
-          link: "/gis/cesium/Entity实体.md",
+          link: "/gis/cesium/cesium-primary/Entity实体.md",
           items: [
-            { text: "Entity 管理", link: "/gis/cesium/Entity 管理.md" },
-            { text: "Entity 拾取", link: "/gis/cesium/Entity 拾取.md" }
+            {
+              text: "Entity 管理",
+              link: "/gis/cesium/cesium-primary/Entity 管理.md"
+            },
+            {
+              text: "Entity 拾取",
+              link: "/gis/cesium/cesium-primary/Entity 拾取.md"
+            }
           ]
         },
-        { text: "Primitive 图元", link: "/gis/cesium/Primitive图元.md" },
+        {
+          text: "Primitive 图元",
+          link: "/gis/cesium/cesium-primary/Primitive图元.md"
+        },
         {
           text: "加载三维数据",
           link: "/gis/cesium/加载三维数据.md",
           items: [
-            { text: "影像数据", link: "/gis/cesium/影像地图.md" },
-            { text: "地形数据", link: "/gis/cesium/地形数据.md" },
-            { text: "矢量数据", link: "/gis/cesium/矢量数据.md" },
-            { text: "三维模型", link: "/gis/cesium/三维模型.md" },
-            { text: "三维瓦片", link: "/gis/cesium/三维瓦片.md" }
+            {
+              text: "影像数据",
+              link: "/gis/cesium/cesium-primary/影像地图.md"
+            },
+            {
+              text: "地形数据",
+              link: "/gis/cesium/cesium-primary/地形数据.md"
+            },
+            {
+              text: "矢量数据",
+              link: "/gis/cesium/cesium-primary/矢量数据.md"
+            },
+            {
+              text: "三维模型",
+              link: "/gis/cesium/cesium-primary/三维模型.md"
+            },
+            { text: "三维瓦片", link: "/gis/cesium/cesium-primary/三维瓦片.md" }
           ]
         },
         {
           text: "组件重写",
-          link: "/gis/cesium/组件重写.md"
+          link: "/gis/cesium/cesium-primary/组件重写.md"
         },
-        { text: "事件应用", link: "/gis/cesium/鼠标事件.md" },
+        { text: "事件应用", link: "/gis/cesium/cesium-primary/鼠标事件.md" },
         {
           text: "量测工具和调试面板",
-          link: "/gis/cesium/量测工具和调试面板.md"
+          link: "/gis/cesium/cesium-primary/量测工具和调试面板.md"
         },
         {
           text: "CallBackProperty",
-          link: "/gis/cesium/CallBackProperty.md"
+          link: "/gis/cesium/cesium-primary/CallBackProperty.md"
         },
-        { text: "粒子系统", link: "/gis/cesium/粒子系统.md" }
+        { text: "粒子系统", link: "/gis/cesium/cesium-primary/粒子系统.md" }
+      ]
+    },
+    {
+      text: "Cesium高级",
+      items: [
+        {
+          text: "常见渲染引擎",
+          link: "/gis/cesium/cesium-senior/常见渲染引擎.md"
+        }
       ]
     }
   ],
