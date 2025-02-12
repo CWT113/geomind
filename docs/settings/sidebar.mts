@@ -82,7 +82,8 @@ export const sidebar = {
     {
       text: "Vue3",
       items: [
-        { text: "基本使用", link: "/frontend/vue/vue3.md" },
+        { text: "基本使用", link: "/frontend/vue/基本使用.md" },
+        { text: "计算属性", link: "/frontend/vue/计算属性.md" },
         { text: "h 函数", link: "/frontend/vue/h渲染函数.md" },
         { text: "jsx 语法", link: "/frontend/vue/JSX语法.md" },
         { text: "ref 全家桶", link: "/frontend/vue/ref函数.md" },
