@@ -21,7 +21,7 @@ export const nav = [
       { text: "TypeScript", link: "/frontend/typescript/TypeScript.md" },
       {
         text: "vue",
-        items: [{ text: "Vue3", link: "/frontend/vue/基本使用.md" }]
+        items: [{ text: "Vue3", link: "/frontend/vue/vue-basic/基本使用.md" }]
       }
     ]
   },
