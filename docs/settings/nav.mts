@@ -75,7 +75,7 @@ export const nav = [
         text: "三维地图",
         items: [
           { text: "WebGL", link: "/gis/webgl/基础入门.md" },
-          { text: "Cesium", link: "/gis/cesium/快速入门.md" },
+          { text: "Cesium", link: "/gis/cesium/cesium-primary/快速入门.md" },
           { text: "Three.js", link: "/gis/three/基础入门.md" }
         ]
       },

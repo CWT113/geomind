@@ -83,6 +83,8 @@ export const sidebar = {
       text: "Vue3",
       items: [
         { text: "基本使用", link: "/frontend/vue/vue-basic/基本使用.md" },
+        { text: "宏", link: "/frontend/vue/vue-basic/宏.md" },
+        { text: "组件传值", link: "/frontend/vue/vue-basic/组件传值.md" },
         { text: "计算属性", link: "/frontend/vue/vue-basic/计算属性.md" },
         { text: "h 函数", link: "/frontend/vue/vue-basic/h渲染函数.md" },
         { text: "jsx 语法", link: "/frontend/vue/vue-basic/JSX语法.md" },
@@ -485,6 +487,10 @@ export const sidebar = {
         {
           text: "File类",
           link: "/backend/java/basic/File类.md"
+        },
+        {
+          text: "IO流",
+          link: "/backend/java/basic/IO流.md"
         }
       ]
     },
