@@ -87,6 +87,7 @@ export const sidebar = {
         { text: "组件传值", link: "/frontend/vue/vue-basic/组件传值.md" },
         { text: "计算属性", link: "/frontend/vue/vue-basic/计算属性.md" },
         { text: "侦听器", link: "/frontend/vue/vue-basic/侦听器.md" },
+        { text: "插槽", link: "/frontend/vue/vue-basic/插槽.md" },
         { text: "模板引用", link: "/frontend/vue/vue-basic/模板引用.md" },
         { text: "h 函数", link: "/frontend/vue/vue-basic/h渲染函数.md" },
         { text: "jsx 语法", link: "/frontend/vue/vue-basic/JSX语法.md" },
