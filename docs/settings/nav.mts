@@ -7,7 +7,7 @@ export const nav = [
   {
     text: "前端",
     items: [
-      { text: "CSS", link: "/frontend/css/css.md" },
+      { text: "CSS", link: "/frontend/css/css-basic/css.md" },
       { text: "Javascript", link: "/frontend/javascript/Javascript.md" },
       { text: "Git", link: "/frontend/git/分支分类.md" },
       { text: "Node.js", link: "/frontend/node/包管理工具.md" },

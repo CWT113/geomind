@@ -5,7 +5,11 @@ export const sidebar = {
   "/frontend/css/": [
     {
       text: "CSS",
-      items: [{ text: "CSS", link: "/frontend/css/css.md" }]
+      items: [{ text: "CSS", link: "/frontend/css/css-basic/css.md" }]
+    },
+    {
+      text: "第三方库",
+      items: [{ text: "UnoCSS", link: "/frontend/css/css-package/UnoCSS.md" }]
     }
   ],
 
@@ -83,15 +87,18 @@ export const sidebar = {
       text: "Vue3",
       items: [
         { text: "基本使用", link: "/frontend/vue/vue-basic/基本使用.md" },
-        { text: "宏", link: "/frontend/vue/vue-basic/宏.md" },
+        { text: "ref家族", link: "/frontend/vue/vue-basic/ref函数.md" },
+        { text: "编译器宏", link: "/frontend/vue/vue-basic/宏.md" },
         { text: "组件传值", link: "/frontend/vue/vue-basic/组件传值.md" },
         { text: "计算属性", link: "/frontend/vue/vue-basic/计算属性.md" },
         { text: "侦听器", link: "/frontend/vue/vue-basic/侦听器.md" },
         { text: "插槽", link: "/frontend/vue/vue-basic/插槽.md" },
+        { text: "组合式函数", link: "/frontend/vue/vue-basic/组合式函数.md" },
+        { text: "自定义指令", link: "/frontend/vue/vue-basic/自定义指令.md" },
+        { text: "异步组件", link: "/frontend/vue/vue-basic/异步组件.md" },
         { text: "模板引用", link: "/frontend/vue/vue-basic/模板引用.md" },
-        { text: "h 函数", link: "/frontend/vue/vue-basic/h渲染函数.md" },
-        { text: "jsx 语法", link: "/frontend/vue/vue-basic/JSX语法.md" },
-        { text: "ref 全家桶", link: "/frontend/vue/vue-basic/ref函数.md" },
+        { text: "h函数", link: "/frontend/vue/vue-basic/h渲染函数.md" },
+        { text: "jsx语法", link: "/frontend/vue/vue-basic/JSX语法.md" },
         { text: "路由传参", link: "/frontend/vue/vue-basic/路由传参.md" }
       ]
     },
@@ -429,7 +436,10 @@ export const sidebar = {
       collapsed: true,
       items: [
         { text: "String类", link: "/backend/java/java-basic/String.md" },
-        { text: "String处理类", link: "/backend/java/java-basic/String处理类.md" },
+        {
+          text: "String处理类",
+          link: "/backend/java/java-basic/String处理类.md"
+        },
         {
           text: "日期时间类",
           items: [
@@ -457,7 +467,10 @@ export const sidebar = {
       items: [
         { text: "进程与线程", link: "/backend/java/java-basic/多线程基础.md" },
         { text: "多线程调用", link: "/backend/java/java-basic/多线程调用.md" },
-        { text: "线程生命周期", link: "/backend/java/java-basic/线程生命周期.md" },
+        {
+          text: "线程生命周期",
+          link: "/backend/java/java-basic/线程生命周期.md"
+        },
         { text: "线程同步", link: "/backend/java/java-basic/线程同步.md" },
         { text: "线程通信", link: "/backend/java/java-basic/线程通信.md" },
         { text: "线程池", link: "/backend/java/java-basic/线程池.md" },
@@ -496,9 +509,9 @@ export const sidebar = {
           text: "IO流",
           link: "/backend/java/java-basic/IO流.md",
           items: [
-            {text:"缓冲流", link:"/backend/java/java-basic/缓冲流.md"},
-            {text:"转换流", link:"/backend/java/java-basic/转换流.md"},
-            {text:"打印流", link:"/backend/java/java-basic/打印流.md"},
+            { text: "缓冲流", link: "/backend/java/java-basic/缓冲流.md" },
+            { text: "转换流", link: "/backend/java/java-basic/转换流.md" },
+            { text: "打印流", link: "/backend/java/java-basic/打印流.md" }
           ]
         }
       ]
@@ -703,4 +716,4 @@ export const sidebar = {
       ]
     }
   ]
-};
+}
