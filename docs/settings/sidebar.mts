@@ -396,104 +396,110 @@ export const sidebar = {
     }
   ],
 
-  "/backend/java/basic/": [
+  "/backend/java/java-basic/": [
     {
       text: "Java基础",
       collapsed: true,
       items: [
-        { text: "数据类型", link: "/backend/java/basic/数据类型.md" },
-        { text: "数组", link: "/backend/java/basic/数组.md" },
+        { text: "数据类型", link: "/backend/java/java-basic/数据类型.md" },
+        { text: "数组", link: "/backend/java/java-basic/数组.md" },
         {
           text: "面向对象",
-          link: "/backend/java/basic/面向对象.md",
+          link: "/backend/java/java-basic/面向对象.md",
           items: [
-            { text: "继承", link: "/backend/java/basic/继承.md" },
-            { text: "封装", link: "/backend/java/basic/封装.md" },
-            { text: "多态", link: "/backend/java/basic/多态.md" }
+            { text: "继承", link: "/backend/java/java-basic/继承.md" },
+            { text: "封装", link: "/backend/java/java-basic/封装.md" },
+            { text: "多态", link: "/backend/java/java-basic/多态.md" }
           ]
         },
-        { text: "重写与重载", link: "/backend/java/basic/重写和重载.md" },
-        { text: "静态类", link: "/backend/java/basic/静态类.md" },
-        { text: "抽象类", link: "/backend/java/basic/抽象类.md" },
-        { text: "接口", link: "/backend/java/basic/接口.md" },
-        { text: "内部类", link: "/backend/java/basic/内部类.md" },
-        { text: "枚举", link: "/backend/java/basic/枚举.md" },
-        { text: "注解", link: "/backend/java/basic/注解.md" },
-        { text: "单元测试", link: "/backend/java/basic/Junit单元测试.md" },
-        { text: "包装类", link: "/backend/java/basic/包装类.md" }
+        { text: "重写与重载", link: "/backend/java/java-basic/重写和重载.md" },
+        { text: "静态类", link: "/backend/java/java-basic/静态类.md" },
+        { text: "抽象类", link: "/backend/java/java-basic/抽象类.md" },
+        { text: "接口", link: "/backend/java/java-basic/接口.md" },
+        { text: "泛型", link: "/backend/java/java-basic/泛型.md" },
+        { text: "内部类", link: "/backend/java/java-basic/内部类.md" },
+        { text: "枚举", link: "/backend/java/java-basic/枚举.md" },
+        { text: "注解", link: "/backend/java/java-basic/注解.md" },
+        { text: "单元测试", link: "/backend/java/java-basic/Junit单元测试.md" },
+        { text: "包装类", link: "/backend/java/java-basic/包装类.md" }
       ]
     },
     {
       text: "常用类和核心API",
       collapsed: true,
       items: [
-        { text: "String类", link: "/backend/java/basic/String.md" },
-        { text: "String处理类", link: "/backend/java/basic/String处理类.md" },
+        { text: "String类", link: "/backend/java/java-basic/String.md" },
+        { text: "String处理类", link: "/backend/java/java-basic/String处理类.md" },
         {
           text: "日期时间类",
           items: [
-            { text: "JDK8之前", link: "/backend/java/basic/JDK8之前.md" },
-            { text: "JDK8之后", link: "/backend/java/basic/JDK8之后.md" }
+            { text: "JDK8之前", link: "/backend/java/java-basic/JDK8之前.md" },
+            { text: "JDK8之后", link: "/backend/java/java-basic/JDK8之后.md" }
           ]
         },
-        { text: "排序类", link: "/backend/java/basic/排序类.md" },
-        { text: "record类", link: "/backend/java/basic/record.md" },
-        { text: "常用工具类", link: "/backend/java/basic/常用工具类.md" }
+        { text: "排序类", link: "/backend/java/java-basic/排序类.md" },
+        { text: "record类", link: "/backend/java/java-basic/record.md" },
+        { text: "常用工具类", link: "/backend/java/java-basic/常用工具类.md" }
       ]
     },
     {
       text: "异常处理",
       collapsed: true,
       items: [
-        { text: "异常简介", link: "/backend/java/basic/异常简介.md" },
-        { text: "异常捕获", link: "/backend/java/basic/异常捕获.md" },
-        { text: "日志系统", link: "/backend/java/basic/日志系统.md" }
+        { text: "异常简介", link: "/backend/java/java-basic/异常简介.md" },
+        { text: "异常捕获", link: "/backend/java/java-basic/异常捕获.md" },
+        { text: "日志系统", link: "/backend/java/java-basic/日志系统.md" }
       ]
     },
     {
       text: "多线程",
       collapsed: true,
       items: [
-        { text: "进程与线程", link: "/backend/java/basic/多线程基础.md" },
-        { text: "多线程调用", link: "/backend/java/basic/多线程调用.md" },
-        { text: "线程生命周期", link: "/backend/java/basic/线程生命周期.md" },
-        { text: "线程同步", link: "/backend/java/basic/线程同步.md" },
-        { text: "线程通信", link: "/backend/java/basic/线程通信.md" },
-        { text: "线程池", link: "/backend/java/basic/线程池.md" },
-        { text: "线程中断", link: "/backend/java/basic/线程中断.md" },
-        { text: "线程守护", link: "/backend/java/basic/线程守护.md" }
+        { text: "进程与线程", link: "/backend/java/java-basic/多线程基础.md" },
+        { text: "多线程调用", link: "/backend/java/java-basic/多线程调用.md" },
+        { text: "线程生命周期", link: "/backend/java/java-basic/线程生命周期.md" },
+        { text: "线程同步", link: "/backend/java/java-basic/线程同步.md" },
+        { text: "线程通信", link: "/backend/java/java-basic/线程通信.md" },
+        { text: "线程池", link: "/backend/java/java-basic/线程池.md" },
+        { text: "线程中断", link: "/backend/java/java-basic/线程中断.md" },
+        { text: "线程守护", link: "/backend/java/java-basic/线程守护.md" }
       ]
     },
     {
       text: "集合类",
-      collapsed: false,
+      collapsed: true,
       items: [
-        { text: "集合简介", link: "/backend/java/basic/集合框架.md" },
+        { text: "集合简介", link: "/backend/java/java-basic/集合框架.md" },
         {
           text: "Collection",
-          link: "/backend/java/basic/Collection.md",
+          link: "/backend/java/java-basic/Collection.md",
           items: [
-            { text: "List 接口", link: "/backend/java/basic/List.md" },
-            { text: "Set 接口", link: "/backend/java/basic/Set.md" }
+            { text: "List 接口", link: "/backend/java/java-basic/List.md" },
+            { text: "Set 接口", link: "/backend/java/java-basic/Set.md" }
           ]
         },
         {
           text: "Map",
-          link: "/backend/java/basic/Map.md"
+          link: "/backend/java/java-basic/Map.md"
         }
       ]
     },
     {
       text: "File和IO流",
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           text: "File类",
-          link: "/backend/java/basic/File类.md"
+          link: "/backend/java/java-basic/File类.md"
         },
         {
           text: "IO流",
-          link: "/backend/java/basic/IO流.md"
+          link: "/backend/java/java-basic/IO流.md",
+          items: [
+            {text:"缓冲流", link:"/backend/java/java-basic/缓冲流.md"},
+            {text:"转换流", link:"/backend/java/java-basic/转换流.md"},
+            {text:"打印流", link:"/backend/java/java-basic/打印流.md"},
+          ]
         }
       ]
     },
