@@ -103,20 +103,6 @@ export const sidebar = {
       ]
     },
     {
-      text: "Pinia",
-      items: [
-        { text: "基本使用", link: "/frontend/vue/pinia/基础使用.md" },
-        {
-          text: "persistedstate",
-          link: "/frontend/vue/pinia/persistedstate.md"
-        },
-        {
-          text: "useLocalStorage",
-          link: "/frontend/vue/pinia/useLocalStorage.md"
-        }
-      ]
-    },
-    {
       text: "第三方库",
       items: [
         { text: "Ant-Design-Vue", link: "" },
@@ -138,6 +124,23 @@ export const sidebar = {
         }
       ]
     }
+  ],
+
+  '/frontend/pinia/': [
+    {
+      text: "Pinia",
+      items: [
+        { text: "基本使用", link: "/frontend/pinia/基础使用.md" },
+        {
+          text: "persistedstate",
+          link: "/frontend/pinia/persistedstate.md"
+        },
+        {
+          text: "useLocalStorage",
+          link: "/frontend/pinia/useLocalStorage.md"
+        }
+      ]
+    },
   ],
 
   "/database/mysql/": [

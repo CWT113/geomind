@@ -18,10 +18,22 @@ export const nav = [
   {
     text: "Vue",
     items: [
-      { text: "TypeScript", link: "/frontend/typescript/TypeScript.md" },
+      {
+        text: "TypeScript",
+        items: [
+          { text: "TypeScript", link: "/frontend/typescript/TypeScript.md" }
+        ]
+      },
       {
         text: "vue",
-        items: [{ text: "Vue3", link: "/frontend/vue/vue-basic/基本使用.md" }]
+        items: [
+          { text: "Vue3", link: "/frontend/vue/vue-basic/基本使用.md" },
+          { text: "Pinia", link: "/frontend/pinia/基础使用.md" }
+        ]
+      },
+      {
+        text: "Vite",
+        items: [{ text: "基本使用", link: "/frontend/vite/index.md" }]
       }
     ]
   },
@@ -54,7 +66,9 @@ export const nav = [
     items: [
       {
         text: "基础内容",
-        items: [{ text: "Java基础", link: "/backend/java/java-basic/数据类型.md" }]
+        items: [
+          { text: "Java基础", link: "/backend/java/java-basic/数据类型.md" }
+        ]
       }
     ]
   },
@@ -85,4 +99,4 @@ export const nav = [
       }
     ]
   }
-];
+]
