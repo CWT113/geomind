@@ -15,7 +15,9 @@ export const nav = [
       },
       {
         text: "图形可视化",
-        items: [{ text: "ECharts", link: "/frontend/visual/Echarts/基础使用.md" }]
+        items: [
+          { text: "ECharts", link: "/frontend/visual/Echarts/基础使用.md" }
+        ]
       },
       { text: "Git", link: "/frontend/git/分支分类.md" },
       { text: "其他", link: "/frontend/other/Postman全局配置token.md" }
@@ -39,8 +41,19 @@ export const nav = [
           { text: "Vite", link: "/frontend/vite/index.md" },
           { text: "Rollup", link: "/frontend/vite/rollup.md" }
         ]
+      },
+      {
+        text: "小程序",
+        items: [
+          { text: "微信小程序", link: "/frontend/wxprogram/基础使用.md" },
+        ]
       }
     ]
+  },
+
+  {
+    text: "React",
+    items: [{ text: "React", link: "/frontend/react/react-basic/基础使用.md" }]
   },
 
   {

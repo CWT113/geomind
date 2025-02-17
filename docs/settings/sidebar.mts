@@ -91,6 +91,13 @@ export const sidebar = {
       items: [{ text: "基础使用", link: "/frontend/node/基础使用.md" }]
     },
     {
+      text: "网络通信",
+      items: [
+        { text: "Axios", link: "/frontend/node/Axios.md" },
+        { text: "HTTP", link: "/frontend/node/HTTP.md" }
+      ]
+    },
+    {
       text: "包管理工具",
       items: [
         { text: "pnpm", link: "" },
@@ -192,6 +199,22 @@ export const sidebar = {
     {
       text: "vuex",
       items: [{ text: "基础使用", link: "/frontend/store/vuex/基础使用.md" }]
+    }
+  ],
+
+  "/frontend/wxprogram/": [
+    {
+      text: "基础使用",
+      items: [{ text: "基础使用", link: "/frontend/wxprogram/基础使用.md" }]
+    }
+  ],
+
+  "/frontend/react/": [
+    {
+      text: "基础使用",
+      items: [
+        { text: "基础使用", link: "/frontend/react/react-basic/基础使用.md" }
+      ]
     }
   ],
 
