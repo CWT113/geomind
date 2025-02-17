@@ -4,20 +4,38 @@
 export const sidebar = {
   "/frontend/css/": [
     {
-      text: "CSS",
-      items: [{ text: "CSS", link: "/frontend/css/css-basic/css.md" }]
+      text: "基础使用",
+      items: [
+        { text: "基础使用", link: "/frontend/css/css-basic/基础使用.md" },
+        { text: "flex布局", link: "/frontend/css/css-basic/flex布局.md" },
+        { text: "grid布局", link: "/frontend/css/css-basic/grid布局.md" }
+      ]
+    },
+    {
+      text: "预处理器",
+      items: [
+        { text: "Less", link: "/frontend/css/css-preprocessor/Less.md" },
+        { text: "Sass", link: "/frontend/css/css-preprocessor/Sass.md" },
+        { text: "Stylus", link: "/frontend/css/css-preprocessor/Stylus.md" }
+      ]
     },
     {
       text: "第三方库",
-      items: [{ text: "UnoCSS", link: "/frontend/css/css-package/UnoCSS.md" }]
+      items: [
+        { text: "UnoCSS", link: "/frontend/css/css-package/UnoCSS.md" },
+        {
+          text: "TailwindCSS",
+          link: "/frontend/css/css-package/TailwindCSS.md"
+        }
+      ]
     }
   ],
 
   "/frontend/javascript/": [
     {
-      text: "Javascript",
+      text: "基础使用",
       items: [
-        { text: "经验记录", link: "/frontend/javascript/Javascript.md" },
+        { text: "基础使用", link: "/frontend/javascript/Javascript.md" },
         { text: "Lodash", link: "/frontend/javascript/lodash.md" },
         { text: "数组", link: "/frontend/javascript/数组.md" },
         { text: "垃圾回收机制", link: "/frontend/javascript/垃圾回收机制.md" },
@@ -31,11 +49,18 @@ export const sidebar = {
     },
     {
       text: "第三方库",
-      items: [{ text: "Lodash", link: "/frontend/javascript/lodash.md" }]
+      items: [
+        { text: "Lodash", link: "/frontend/javascript/lodash.md" },
+        { text: "Radash", link: "" }
+      ]
     },
     {
       text: "文件上传",
       items: [
+        {
+          text: "单文件上次",
+          link: ""
+        },
         {
           text: "大文件分片上传",
           link: "/frontend/javascript/大文件分片上传.md"
@@ -59,13 +84,16 @@ export const sidebar = {
     {
       text: "工具",
       items: [
-        { text: "包管理器", link: "/frontend/node/包管理器.md" },
+        { text: "pnpm", link: "" },
         { text: "Monorepo", link: "/frontend/node/Monorepo.md" }
       ]
     },
     {
       text: "其他",
-      items: [{ text: "NVM的使用", link: "/frontend/node/nvm.md" }]
+      items: [
+        { text: "包管理器", link: "/frontend/node/包管理器.md" },
+        { text: "NVM的使用", link: "/frontend/node/nvm.md" }
+      ]
     }
   ],
 
@@ -126,7 +154,7 @@ export const sidebar = {
     }
   ],
 
-  '/frontend/pinia/': [
+  "/frontend/pinia/": [
     {
       text: "Pinia",
       items: [
@@ -140,7 +168,7 @@ export const sidebar = {
           link: "/frontend/pinia/useLocalStorage.md"
         }
       ]
-    },
+    }
   ],
 
   "/database/mysql/": [
@@ -719,4 +747,4 @@ export const sidebar = {
       ]
     }
   ]
-}
+};
