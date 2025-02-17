@@ -151,6 +151,7 @@ export const sidebar = {
         { text: "组合式函数", link: "/frontend/vue/vue-basic/组合式函数.md" },
         { text: "自定义指令", link: "/frontend/vue/vue-basic/自定义指令.md" },
         { text: "异步组件", link: "/frontend/vue/vue-basic/异步组件.md" },
+        { text: "KeepAlive", link: "/frontend/vue/vue-basic/KeepAlive.md" },
         { text: "模板引用", link: "/frontend/vue/vue-basic/模板引用.md" },
         { text: "h函数", link: "/frontend/vue/vue-basic/h渲染函数.md" },
         { text: "jsx语法", link: "/frontend/vue/vue-basic/JSX语法.md" },
