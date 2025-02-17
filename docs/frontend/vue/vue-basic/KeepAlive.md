@@ -152,7 +152,7 @@
 </script>
 ```
 
-::: warning注意
+::: warning 注意
 
 1. `onActivated` 在组件挂载时会被调用，`onDeactivated` 在组件卸载时也会被调用；
 

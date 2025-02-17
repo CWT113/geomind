@@ -590,6 +590,7 @@ export const sidebar = {
           items: [
             { text: "缓冲流", link: "/backend/java/java-basic/缓冲流.md" },
             { text: "转换流", link: "/backend/java/java-basic/转换流.md" },
+            { text: "序列化流", link: "/backend/java/java-basic/序列化流.md" },
             { text: "打印流", link: "/backend/java/java-basic/打印流.md" }
           ]
         }
