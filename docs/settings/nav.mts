@@ -7,10 +7,17 @@ export const nav = [
   {
     text: "前端",
     items: [
-      { text: "CSS", link: "/frontend/css/css-basic/css.md" },
+      { text: "CSS", link: "/frontend/css/css-basic/基础使用.md" },
       { text: "Javascript", link: "/frontend/javascript/Javascript.md" },
+      {
+        text: "Node",
+        items: [{ text: "Node.js", link: "/frontend/node/基础使用.md" }]
+      },
+      {
+        text: "图形可视化",
+        items: [{ text: "ECharts", link: "/frontend/visual/Echarts/基础使用.md" }]
+      },
       { text: "Git", link: "/frontend/git/分支分类.md" },
-      { text: "Node.js", link: "/frontend/node/包管理工具.md" },
       { text: "其他", link: "/frontend/other/Postman全局配置token.md" }
     ]
   },
@@ -19,21 +26,19 @@ export const nav = [
     text: "Vue",
     items: [
       {
-        text: "TypeScript",
-        items: [
-          { text: "TypeScript", link: "/frontend/typescript/TypeScript.md" }
-        ]
-      },
-      {
         text: "vue",
         items: [
           { text: "Vue3", link: "/frontend/vue/vue-basic/基本使用.md" },
-          { text: "Pinia", link: "/frontend/pinia/基础使用.md" }
+          { text: "Pinia", link: "/frontend/store/pinia/基础使用.md" },
+          { text: "Vuex", link: "/frontend/store/vuex/基础使用.md" }
         ]
       },
       {
-        text: "Vite",
-        items: [{ text: "基本使用", link: "/frontend/vite/index.md" }]
+        text: "构建工具",
+        items: [
+          { text: "Vite", link: "/frontend/vite/index.md" },
+          { text: "Rollup", link: "/frontend/vite/rollup.md" }
+        ]
       }
     ]
   },
@@ -99,4 +104,4 @@ export const nav = [
       }
     ]
   }
-]
+];

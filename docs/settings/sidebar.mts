@@ -23,6 +23,7 @@ export const sidebar = {
       text: "第三方库",
       items: [
         { text: "UnoCSS", link: "/frontend/css/css-package/UnoCSS.md" },
+        { text: "WindiCSS", link: "/frontend/css/css-package/WindiCSS.md" },
         {
           text: "TailwindCSS",
           link: "/frontend/css/css-package/TailwindCSS.md"
@@ -46,6 +47,10 @@ export const sidebar = {
           link: "/frontend/javascript/ResizeObserver.md"
         }
       ]
+    },
+    {
+      text: "ES6",
+      items: []
     },
     {
       text: "第三方库",
@@ -82,7 +87,11 @@ export const sidebar = {
 
   "/frontend/node/": [
     {
-      text: "工具",
+      text: "Node.js",
+      items: [{ text: "基础使用", link: "/frontend/node/基础使用.md" }]
+    },
+    {
+      text: "包管理工具",
       items: [
         { text: "pnpm", link: "" },
         { text: "Monorepo", link: "/frontend/node/Monorepo.md" }
@@ -97,24 +106,35 @@ export const sidebar = {
     }
   ],
 
+  "/frontend/visual/": [
+    {
+      text: "ECharts",
+      items: [
+        { text: "基础使用", link: "/frontend/visual/Echarts/基础使用.md" }
+      ]
+    }
+  ],
+
   "/frontend/other/": [
     { text: "Postman", link: "/frontend/other/Postman全局配置token.md" },
     { text: "Typora", link: "/frontend/other/Typora.md" }
   ],
 
-  "/frontend/typescript/": [
-    { text: "TypeScript", link: "/frontend/typescript/TypeScript.md" },
-    {
-      text: "TypeScript技巧",
-      link: "/frontend/typescript/TypeScript技巧.md"
-    }
-  ],
-
   "/frontend/vue/": [
+    {
+      text: "TypeScript",
+      items: [
+        { text: "基础使用", link: "/frontend/vue/typescript/基础使用.md" },
+        {
+          text: "一些技巧",
+          link: "/frontend/vue/typescript/一些技巧.md"
+        }
+      ]
+    },
     {
       text: "Vue3",
       items: [
-        { text: "基本使用", link: "/frontend/vue/vue-basic/基本使用.md" },
+        { text: "基础使用", link: "/frontend/vue/vue-basic/基本使用.md" },
         { text: "ref家族", link: "/frontend/vue/vue-basic/ref函数.md" },
         { text: "编译器宏", link: "/frontend/vue/vue-basic/宏.md" },
         { text: "组件传值", link: "/frontend/vue/vue-basic/组件传值.md" },
@@ -154,11 +174,11 @@ export const sidebar = {
     }
   ],
 
-  "/frontend/pinia/": [
+  "/frontend/store/": [
     {
-      text: "Pinia",
+      text: "pinia",
       items: [
-        { text: "基本使用", link: "/frontend/pinia/基础使用.md" },
+        { text: "基础使用", link: "/frontend/pinia/基础使用.md" },
         {
           text: "persistedstate",
           link: "/frontend/pinia/persistedstate.md"
@@ -168,6 +188,10 @@ export const sidebar = {
           link: "/frontend/pinia/useLocalStorage.md"
         }
       ]
+    },
+    {
+      text: "vuex",
+      items: [{ text: "基础使用", link: "/frontend/store/vuex/基础使用.md" }]
     }
   ],
 
