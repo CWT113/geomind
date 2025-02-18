@@ -710,8 +710,13 @@ export const sidebar = {
           link: "/gis/cesium/cesium-primary/CallBackProperty.md"
         },
         { text: "粒子系统", link: "/gis/cesium/cesium-primary/粒子系统.md" },
-        { text: "模型动画效果", link: "/gis/cesium/cesium-primary/模型动画效果.md" },
-        { text: "地图导出", link: "/gis/cesium/cesium-primary/地图导出.md" },
+        {
+          text: "模型动画效果",
+          link: "/gis/cesium/cesium-primary/模型动画效果.md"
+        },
+        { text: "热力图", link: "/gis/cesium/cesium-primary/热力图.md" },
+        { text: "风力图", link: "/gis/cesium/cesium-primary/风力图.md" },
+        { text: "地图导出", link: "/gis/cesium/cesium-primary/地图导出.md" }
       ]
     },
     {
@@ -803,4 +808,4 @@ export const sidebar = {
       ]
     }
   ]
-};
+}
