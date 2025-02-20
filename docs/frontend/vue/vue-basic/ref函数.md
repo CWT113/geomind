@@ -4,7 +4,7 @@
 
 在 Vue3 中，`ref` 是一个用于**创建响应式数据**的函数，该对象具有 `.value` 属性，任何对 `.value` 的修改都会触发响应式更新。
 
-```Vue {9,11}
+```Vue {10,12,14}
 <template>
   <h2>{{ name }}</h2>
   <button @click="changeName">按钮</button>
@@ -12,8 +12,11 @@
 
 <script setup lang="ts">
   import { ref } from "vue";
+  import type { Ref } from 'vue'
 
   const name = ref<string>("tom");
+  // 或者，可以这样类型标注
+  const name: Ref<string> = ref("tom");
 
   const changeName = () => name.value = "job";
 </script>
