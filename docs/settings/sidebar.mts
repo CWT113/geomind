@@ -148,6 +148,7 @@ export const sidebar = {
       items: [
         { text: "基础使用", link: "/frontend/vue/vue-basic/基本使用.md" },
         { text: "ref家族", link: "/frontend/vue/vue-basic/ref函数.md" },
+        { text: "reactive", link: "/frontend/vue/vue-basic/reactive.md" },
         { text: "编译器宏", link: "/frontend/vue/vue-basic/编译器宏.md" },
         { text: "组件传值", link: "/frontend/vue/vue-basic/组件传值.md" },
         { text: "计算属性", link: "/frontend/vue/vue-basic/计算属性.md" },
@@ -808,4 +809,4 @@ export const sidebar = {
       ]
     }
   ]
-};
+}
