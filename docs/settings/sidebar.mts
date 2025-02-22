@@ -599,6 +599,14 @@ export const sidebar = {
             { text: "序列化流", link: "/backend/java/java-basic/序列化流.md" },
             { text: "打印流", link: "/backend/java/java-basic/打印流.md" }
           ]
+        },
+        {
+          text: "Properties",
+          link: "/backend/java/java-basic/Properties.md"
+        },
+        {
+          text: "Common IO工具类",
+          link: "/backend/java/java-basic/CommonIO工具类.md"
         }
       ]
     },

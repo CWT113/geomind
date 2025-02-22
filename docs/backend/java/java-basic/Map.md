@@ -277,7 +277,7 @@ Hashtable 与 HashMap 的对比：
 
 ## Properties
 
-Properties 是 Hashtable 的一个子类，专门用于存储 String 类型的键值对。主要用于文件 IO流和配置文件读取写入。
+Properties 是 Hashtable 的一个子类，专门用于存储 String 类型的键值对。主要用于文件IO流和配置文件读取写入。
 
 ::: success Properties原理
 
@@ -293,22 +293,22 @@ Properties 是 Hashtable 的一个子类，专门用于存储 String 类型的�
 
 常用方法：
 
-| 方法                    | 作用                                               |
-| ----------------------- | -------------------------------------------------- |
-| setProperty(key, value) | 设置属性键值对                                     |
-| getProperty(key)        | 获取指定键的属性值，如果键不存在返回 null          |
-| load(inStream)          | 从输入流中加载属性数据                             |
-| stringPropertyNames()   | 获取所有的 key，保存到 set 集合中，相当于 keySet() |
+| 方法                    | 作用                                      |
+| ----------------------- | ----------------------------------------- |
+| setProperty(key, value) | 设置键值对，键已存在时，更新其值          |
+| getProperty(key)        | 根据键获取值，不存在返回 null             |
+| stringPropertyNames()   | 获取键值对集合，以 `Set<String>` 形式返回 |
 
 ```java
 public static void main(String[] args) {
   Properties prop = new Properties();
   prop.setProperty("username", "admin");
   prop.setProperty("password", "123456");
-  System.out.println(prop);
 
-  for (String name : prop.stringPropertyNames()) {
-    System.out.println(prop.getProperty(name));
+  Set<String> names = properties.stringPropertyNames();
+  for (String key : names) {
+    String value = properties.getProperty(key);
+    System.out.println(key + "=" + value);
   }
 }
 ```
