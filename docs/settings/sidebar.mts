@@ -161,7 +161,8 @@ export const sidebar = {
         { text: "模板引用", link: "/frontend/vue/vue-basic/模板引用.md" },
         { text: "h函数", link: "/frontend/vue/vue-basic/h渲染函数.md" },
         { text: "jsx语法", link: "/frontend/vue/vue-basic/JSX语法.md" },
-        { text: "路由传参", link: "/frontend/vue/vue-basic/路由传参.md" }
+        { text: "路由传参", link: "/frontend/vue/vue-basic/路由传参.md" },
+        { text: "组件权限校验", link: "/frontend/vue/vue-basic/组件权限校验.md" },
       ]
     },
     {
