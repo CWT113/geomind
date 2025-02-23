@@ -614,7 +614,12 @@ export const sidebar = {
     {
       text: "网络编程",
       collapsed: false,
-      items: []
+      items: [
+        {
+          text: "网络编程",
+          link: "/backend/java/java-basic/网络编程.md"
+        }
+      ]
     },
     {
       text: "反射",
