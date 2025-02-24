@@ -514,7 +514,8 @@ export const sidebar = {
         { text: "枚举", link: "/backend/java/java-basic/枚举.md" },
         { text: "注解", link: "/backend/java/java-basic/注解.md" },
         { text: "单元测试", link: "/backend/java/java-basic/Junit单元测试.md" },
-        { text: "包装类", link: "/backend/java/java-basic/包装类.md" }
+        { text: "包装类", link: "/backend/java/java-basic/包装类.md" },
+        { text: "正则表达式", link: "/backend/java/java-basic/正则表达式.md" },
       ]
     },
     {
@@ -618,6 +619,10 @@ export const sidebar = {
         {
           text: "网络编程",
           link: "/backend/java/java-basic/网络编程.md"
+        },
+        {
+          text: "Lombok",
+          link: "/backend/java/java-basic/Lombok.md"
         }
       ]
     },
