@@ -1,113 +1,90 @@
-# Javascript
+# 基础使用
 
 ## Object.assign()
 
-::: warning 注意
+::: success 提示
 
-1. `Object.assign()` 方法中，如果有重复的属性，则后面对象会覆盖掉前面对象的重复属性；
-2. `Object.assign()` 方法是**浅拷贝**，不是深拷贝；
+1. 如果有重复的属性，则后面对象会覆盖掉前面对象的属性；
+2. 原对象中的第一层属性不是浅拷贝，第二层嵌套的对象就是浅拷贝了；
 
 :::
-
-
-   ```js
-   const obj1 = { a: 1, b: "str", c: true };
-   const obj2 = { c: false, d: 6 };
-   
-   const result = Object.assign(obj1, obj2);  // { a: 1, b: "str", c: false, d: 6 }
-   ```
-
-   ```js
-   const obj1 = { a: 1, b: { c: 2 } };
-   
-   //浅拷贝
-   const obj2 = Object.assign({}, obj1);
-   obj2.b.c = 4;
-   
-   console.log(obj2); // { a: 1, b: { c: 4 } }
-   console.log(obj1); // { a: 1, b: { c: 4 } }
-   ```
-
-
-
-## if else优化
 
 ::: code-group
 
-```js [if else写法]
-const array = [
-  { title: "未启用", state: "未反馈" },
-  { title: "已启用", state: "已反馈" }
-];
 
-array.forEach(item => {
-  if (item.title == "未启用") {
-    item.title = "0";
-  } else if (item.title == "已启用") {
-    item.title = "1";
-  }
-  
-  if (item.state == "未反馈") {
-    item.state = "0";
-  } else if (item.state == "已反馈") {
-    item.state = "1";
-  }
-});
-```
+   ```javascript [属性覆盖] {11}
+   const obj = {
+     name: 'tom',
+     age: 20,
+   };
+   
+   const newObj = {
+     name: '王一博'
+   };
+   
+   // 会更改 obj 原对象，返回值是合并后的对象
+   const res = Object.assign(obj, newObj);
+   console.log(res); // {name: '王一博', age: 20, hobby: 'football'}
+   console.log(obj); // {name: '王一博', age: 20, hobby: 'football'}
+   ```
 
-```js [map写法]
-const accept = {
-  未启用: "0",
-  已启用: "1"
-};
-const appoint = {
-  未反馈: "0",
-  已反馈: "1"
-};
-
-array.forEach(item => {
-  item.title = accept[item.title];
-  item.state = appoint[item.state];
-});
-```
+   ```javascript [属性浅拷贝] {10,13,16}
+   const obj = {
+     name: 'tom',
+     age: 20,
+     hobby: {
+       a: 'music',
+       b: 'football'
+     }
+   };
+   
+   const newObj = Object.assign({}, obj);
+   console.log(newObj); // 原样复制一份
+   
+   newObj.name = '王一博';
+   console.log(obj); // newObj对象的第一层属性更新，不会影响obj对象
+   
+   newObj.hobby.a = 'basketball';
+   console.log(obj); // newObj对象中嵌套对象的值更新，obj的值也会跟着改变
+   ```
 
 :::
 
 
 
-## for..in..
+## for in循环
 
-- 遍历数组，返回 index 索引；
-- 遍历对象，返回元素的 key 。
+```javascript {5}
+const array = [1, 2, 3, 4, 5];
 
-```js
-const array = [10, 20, 30, 40, 50];
-
+// 遍历数组，返回 index 索引
 for (const index in array) {
-  console.log(index);       // 0 1 2 3 4
-  console.log(arr[index]);	// 10 20 30 40 50
+  const value = array[index];
+  console.log(value);
 }
 ```
 
-```js
-const obj = { name: "tom", age: 20 };
+```js {5}
+const obj = {name: '王一博', age: 20, hobby: 'football'};
 
+// 遍历对象，返回元素的 key
 for (const key in obj) {
-  console.log(key);       // name age
-  console.log(obj[key]);  // tom 20
+  const value = obj[key];
+  console.log(value);
 }
 ```
 
 
 
-## for..of..
+## for of循环
 
-遍历数组，直接返回元素的值，<span style="color: #e63e31">不能用来遍历对象</span>。
+for of循环 **不能用来遍历对象**，遍历数组时会直接返回元素值。
 
 ```js
-const array = [10, 20, 30, 40, 50];
+const array = [1, 2, 3, 4, 5];
 
-for (const value of array) {
-  console.log(value); // 10 20 30 40 50
+// 遍历数组，直接返回数组元素值
+for (const element of array) {
+  console.log(element);
 }
 ```
