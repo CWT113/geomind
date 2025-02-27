@@ -41,21 +41,21 @@ Primitive 可以使用 [PointPrimitive](https://cesium.com/learn/cesiumjs/ref-do
 
   ```js
   const points = viewer.scene.primitives.add(
-      // 创建PointPrimitiveCollection，返回点集合对象
-      new Cesium.PointPrimitiveCollection()
+    // 创建PointPrimitiveCollection，返回点集合对象
+    new Cesium.PointPrimitiveCollection()
   );
   
   // add 可以调用多次，向点集合添加多个点
   const p = points.add({
-      id: "point",
-      show: true,
-      position: Cesium.Cartesian3.fromDegrees(102, 38.5, 0),
-      // 点的像素大小
-      pixelSize: 20, 
-      color: new Cesium.Color(1.0, 1.0, 1.0, 0.5),
-      outlineWidth: 1,
-      // 按相机视角的距离设置近缩放或远缩放
-      scaleByDistance: new Cesium.NearFarScalar(1.5e2, 15, 8.0e6, 0.0) 
+    id: "point",
+    show: true,
+    position: Cesium.Cartesian3.fromDegrees(102, 38.5, 0),
+    // 点的像素大小
+    pixelSize: 20, 
+    color: new Cesium.Color(1.0, 1.0, 1.0, 0.5),
+    outlineWidth: 1,
+    // 按相机视角的距离设置近缩放或远缩放
+    scaleByDistance: new Cesium.NearFarScalar(1.5e2, 15, 8.0e6, 0.0) 
   });
   p.outlineColor = Cesium.Color.RED;
   ```

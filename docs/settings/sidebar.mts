@@ -676,16 +676,20 @@ export const sidebar = {
         { text: "坐标系", link: "/gis/cesium/cesium-primary/坐标系.md" },
         { text: "相机视角", link: "/gis/cesium/cesium-primary/相机视角.md" },
         {
-          text: "Entity 实体",
+          text: "Entity实体",
           link: "/gis/cesium/cesium-primary/Entity实体.md",
           items: [
             {
-              text: "Entity 管理",
-              link: "/gis/cesium/cesium-primary/Entity 管理.md"
+              text: "Entity管理",
+              link: "/gis/cesium/cesium-primary/Entity管理.md"
             },
             {
-              text: "Entity 拾取",
-              link: "/gis/cesium/cesium-primary/Entity 拾取.md"
+              text: "Entity拾取",
+              link: "/gis/cesium/cesium-primary/Entity拾取.md"
+            },
+            {
+               text: "Entity材质与轮廓",
+              link: "/gis/cesium/cesium-primary/Entity材质与轮廓.md"
             }
           ]
         },
