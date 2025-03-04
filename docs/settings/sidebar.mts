@@ -162,7 +162,10 @@ export const sidebar = {
         { text: "h函数", link: "/frontend/vue/vue-basic/h渲染函数.md" },
         { text: "jsx语法", link: "/frontend/vue/vue-basic/JSX语法.md" },
         { text: "路由传参", link: "/frontend/vue/vue-basic/路由传参.md" },
-        { text: "组件权限校验", link: "/frontend/vue/vue-basic/组件权限校验.md" },
+        {
+          text: "组件权限校验",
+          link: "/frontend/vue/vue-basic/组件权限校验.md"
+        }
       ]
     },
     {
@@ -515,7 +518,7 @@ export const sidebar = {
         { text: "注解", link: "/backend/java/java-basic/注解.md" },
         { text: "单元测试", link: "/backend/java/java-basic/Junit单元测试.md" },
         { text: "包装类", link: "/backend/java/java-basic/包装类.md" },
-        { text: "正则表达式", link: "/backend/java/java-basic/正则表达式.md" },
+        { text: "正则表达式", link: "/backend/java/java-basic/正则表达式.md" }
       ]
     },
     {
@@ -677,6 +680,7 @@ export const sidebar = {
         { text: "相机视角", link: "/gis/cesium/cesium-primary/相机视角.md" },
         {
           text: "Entity实体",
+          collapsed: true,
           link: "/gis/cesium/cesium-primary/Entity实体.md",
           items: [
             {
@@ -688,17 +692,18 @@ export const sidebar = {
               link: "/gis/cesium/cesium-primary/Entity拾取.md"
             },
             {
-               text: "Entity材质与轮廓",
+              text: "Entity材质与轮廓",
               link: "/gis/cesium/cesium-primary/Entity材质与轮廓.md"
             }
           ]
         },
         {
-          text: "Primitive 图元",
+          text: "Primitive图元",
           link: "/gis/cesium/cesium-primary/Primitive图元.md"
         },
         {
-          text: "加载三维数据",
+          text: "数据加载",
+          collapsed: true,
           link: "/gis/cesium/加载三维数据.md",
           items: [
             {
@@ -724,22 +729,7 @@ export const sidebar = {
           text: "组件重写",
           link: "/gis/cesium/cesium-primary/组件重写.md"
         },
-        { text: "事件应用", link: "/gis/cesium/cesium-primary/鼠标事件.md" },
-        {
-          text: "量测工具和调试面板",
-          link: "/gis/cesium/cesium-primary/量测工具和调试面板.md"
-        },
-        {
-          text: "CallBackProperty",
-          link: "/gis/cesium/cesium-primary/CallBackProperty.md"
-        },
-        { text: "粒子系统", link: "/gis/cesium/cesium-primary/粒子系统.md" },
-        {
-          text: "模型动画效果",
-          link: "/gis/cesium/cesium-primary/模型动画效果.md"
-        },
-        { text: "热力图", link: "/gis/cesium/cesium-primary/热力图.md" },
-        { text: "风力图", link: "/gis/cesium/cesium-primary/风力图.md" },
+        { text: "鼠标事件", link: "/gis/cesium/cesium-primary/鼠标事件.md" },
         { text: "地图导出", link: "/gis/cesium/cesium-primary/地图导出.md" }
       ]
     },
@@ -749,7 +739,22 @@ export const sidebar = {
         {
           text: "常见渲染引擎",
           link: "/gis/cesium/cesium-senior/常见渲染引擎.md"
-        }
+        },
+        {
+          text: "量测工具和调试面板",
+          link: "/gis/cesium/cesium-senior/量测工具和调试面板.md"
+        },
+        {
+          text: "CallBackProperty",
+          link: "/gis/cesium/cesium-senior/CallBackProperty.md"
+        },
+        { text: "粒子系统", link: "/gis/cesium/cesium-senior/粒子系统.md" },
+        {
+          text: "模型动画效果",
+          link: "/gis/cesium/cesium-senior/模型动画效果.md"
+        },
+        { text: "热力图", link: "/gis/cesium/cesium-senior/热力图.md" },
+        { text: "风力图", link: "/gis/cesium/cesium-senior/风力图.md" }
       ]
     }
   ],
