@@ -677,10 +677,10 @@ export const sidebar = {
       items: [
         { text: "快速入门", link: "/gis/cesium/cesium-primary/快速入门.md" },
         { text: "坐标系", link: "/gis/cesium/cesium-primary/坐标系.md" },
-        { text: "相机视角", link: "/gis/cesium/cesium-primary/相机视角.md" },
+        { text: "飞行视角", link: "/gis/cesium/cesium-primary/飞行视角.md" },
         {
-          text: "Entity实体",
-          collapsed: true,
+          text: "加载Entity实体",
+          collapsed: false,
           link: "/gis/cesium/cesium-primary/Entity实体.md",
           items: [
             {
@@ -704,7 +704,7 @@ export const sidebar = {
         {
           text: "数据加载",
           collapsed: true,
-          link: "/gis/cesium/加载三维数据.md",
+          link: "/gis/cesium-primary/加载三维数据.md",
           items: [
             {
               text: "影像数据",
@@ -754,7 +754,21 @@ export const sidebar = {
           link: "/gis/cesium/cesium-senior/模型动画效果.md"
         },
         { text: "热力图", link: "/gis/cesium/cesium-senior/热力图.md" },
-        { text: "风力图", link: "/gis/cesium/cesium-senior/风力图.md" }
+        { text: "风力图", link: "/gis/cesium/cesium-senior/风力图.md" },
+        { text: "指北针插件", link: "/gis/cesium/cesium-senior/指北针插件.md" },
+      ]
+    },
+    {
+      text: "Cesium API",
+      items: [
+        {
+          text: "Cesium类",
+          link: "/gis/cesium/cesium-api/Cesium类.md"
+        },
+        {
+          text: "Camera类",
+          link: "/gis/cesium/cesium-api/Camera类.md"
+        }
       ]
     }
   ],

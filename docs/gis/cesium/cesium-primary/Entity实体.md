@@ -1,9 +1,9 @@
-# Entity实体
+# 加载Entity实体
 
 cesium 中空间数据可视化 API 共分为 2 部分：
 
-- `Entity` 实体：由 Primitive 图元封装组成，调用方便，但是加载大量数据时效率没有 Primitive 高；
-- `Primitive` 图元：灵活性高，更接近 webGL 的底层，没有像 Entity 一样带有附加属性，加载大量数据时效率更高；
+- Entity实体：由 Primitive 图元封装组成，调用方便，但是加载大量数据时效率没有 Primitive 高；
+- Primitive图元：灵活性高，更接近 webGL 的底层，没有像 Entity 一样带有附加属性，加载大量数据时效率更高；
 
 > 参考文章：
 >

@@ -1,6 +1,6 @@
-# Entity 管理
+# Entity管理
 
-初始化 Viewer 类之后，会得到一个 viewer 对象，viewer 对象会包含一个属性 entities，它的类型是 [EntityCollection](https://cesium.com/learn/cesiumjs/ref-doc/EntityCollection.html?classFilter=EntityCollection) （Entity 集合），它包括了以下方法：
+初始化 Viewer 类之后，得到的 viewer 对象会包含一个属性 entities，它的类型是 [EntityCollection](https://cesium.com/learn/cesiumjs/ref-doc/EntityCollection.html?classFilter=EntityCollection) （Entity 集合），它包括了以下方法：
 
 |     方法     | 作用                         |
 | :----------: | ---------------------------- |
