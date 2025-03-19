@@ -44,17 +44,15 @@ export const nav = [
       },
       {
         text: "小程序",
-        items: [
-          { text: "微信小程序", link: "/frontend/wxprogram/基础使用.md" },
-        ]
+        items: [{ text: "微信小程序", link: "/frontend/wxprogram/基础使用.md" }]
       }
     ]
   },
 
-  {
-    text: "React",
-    items: [{ text: "React", link: "/frontend/react/react-basic/基础使用.md" }]
-  },
+  // {
+  //   text: "React",
+  //   items: [{ text: "React", link: "/frontend/react/react-basic/基础使用.md" }]
+  // },
 
   {
     text: "数据库",
@@ -70,14 +68,14 @@ export const nav = [
     link: "/operations/linux/软件安装.md"
   },
 
-  {
-    text: "C#",
-    items: [
-      { text: "C#基础", link: "/backend/net/CSharp/CSharpBasic/方法与数组.md" },
-      { text: "WebAPI", link: "/backend/net/webapi/雪花ID.md" },
-      { text: "微服务模块", link: "/backend/net/microservice/微服务概念.md" }
-    ]
-  },
+  // {
+  //   text: "C#",
+  //   items: [
+  //     { text: "C#基础", link: "/backend/net/CSharp/CSharpBasic/方法与数组.md" },
+  //     { text: "WebAPI", link: "/backend/net/webapi/雪花ID.md" },
+  //     { text: "微服务模块", link: "/backend/net/microservice/微服务概念.md" }
+  //   ]
+  // },
 
   {
     text: "Java",
@@ -85,7 +83,8 @@ export const nav = [
       {
         text: "基础内容",
         items: [
-          { text: "Java基础", link: "/backend/java/java-basic/数据类型.md" }
+          { text: "Java基础", link: "/backend/java/java-basic/数据类型.md" },
+          { text: "Maven", link: "/backend/java/maven/工程构建.md" }
         ]
       }
     ]
@@ -98,7 +97,7 @@ export const nav = [
         text: "二维地图",
         items: [
           { text: "Mapbox", link: "/gis/mapbox/快速入门.md" },
-          { text: "Leaflet", link: "/gis/leaflet/leaflet.md" },
+          // { text: "Leaflet", link: "/gis/leaflet/leaflet.md" },
           { text: "OpenLayers", link: "/gis/openlayers/快速入门.md" }
           // { text: "ArcGIS API", link: "" },
         ]
@@ -117,4 +116,4 @@ export const nav = [
       }
     ]
   }
-];
+]

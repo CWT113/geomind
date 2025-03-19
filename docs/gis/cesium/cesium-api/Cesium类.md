@@ -1,10 +1,84 @@
-# Cesium类
+# Cesium 类
+
+## Math
+
+| 方法                                | 描述                       |
+| ----------------------------------- | -------------------------- |
+| Cesium.Math.toDegrees(radians)      | 将弧度转换为角度           |
+| Cesium.Math.toRadians(degrees)      | 将角度转换为弧度           |
+| Cesium.Math.randomBetween(min, max) | 生成一个指定范围内的随机数 |
+| Cesium.Math.clamp(value, min, max)  | 将一个值限制在指定范围内   |
+| Cesium.Math.lerp(p, q, time)        | 计算两个值的线性插值       |
+
+::: code-group
+
+```js [toDegrees]
+// 弧度 -> 角度
+const degrees = Cesium.Math.toDegrees(Math.PI)
+console.log(degrees) // 180
+
+// 角度 -> 弧度
+const radians = Cesium.Math.toRadians(180)
+console.log(radians) // 3.14159265358979
+```
+
+```js [randomBetween]
+const random = Cesium.Math.randomBetween(1, 10)
+console.log(random)
+```
+
+```js [clamp]
+const value = 15
+const clamp = Cesium.Math.clamp(value, 0, 10)
+console.log("clamp", clamp) // 10
+```
+
+```js [lerp]
+const lerp = Cesium.Math.lerp(0, 2, 5)
+console.log(lerp) // 10
+```
+
+:::
 
 
 
-## 方法
+## Ellipsoid
 
-### sampleTerrain
+| 方法                                                       | 描述                             |
+| ---------------------------------------------------------- | -------------------------------- |
+| Cesium.Ellipsoid.WGS84                                     | 表示WGS84标准椭球体              |
+| Cesium.Ellipsoid.WGS84.cartesianToCartographic(cartesian3) | 将笛卡尔坐标转换为经纬度弧度坐标 |
+|                                                            |                                  |
+
+::: code-group
+
+```js [笛卡尔转经纬度弧度]
+// 经纬度 -> 笛卡尔
+const cartesian3 = Cesium.Cartesian3.fromDegrees(114, 30, 2000)
+// 笛卡尔 -> 经纬度（弧度）
+const cartographicPosition =
+      Cesium.Ellipsoid.WGS84.cartesianToCartographic(cartesian3)
+// 弧度 -> 角度
+const lon = Cesium.Math.toDegrees(cartographicPosition.longitude)
+const lat = Cesium.Math.toDegrees(cartographicPosition.latitude)
+const height = cartographicPosition.height
+console.log(lon) // 114.00000000000001
+console.log(lat) // 30.00000000000001
+console.log(height) // 2000.0000000002346
+```
+
+```js
+```
+
+
+
+:::
+
+
+
+
+
+## sampleTerrain
 
 [`sampleTerrain`](https://cesium.com/learn/cesiumjs/ref-doc/global.html?classFilter=sampleTerrain#sampleTerrain) 方法用于从 **地形数据中采样特定位置高度** 的方法。
 
@@ -18,7 +92,7 @@ Cesium.sampleTerrain(terrainProvider, level, positions, rejectOnTileFail)
 
 |       参数       | 描述                                                         |
 | :--------------: | :----------------------------------------------------------- |
-| terrainProvider  | 地图中使用的地形provider                                     |
+| terrainProvider  | 地图中使用的地形 provider                                     |
 |      level       | 查询地形的层次细节                                           |
 |    positions     | 要查询地形中高度的位置点坐标，可以数组存放多个               |
 | rejectOnTileFail | 默认为 false。为 true 时，若地形高度请求失败，则 Promise 直接抛出错误，为 false 时，则为 undefined |
@@ -44,9 +118,9 @@ console.log(`当前点的高度是 ${updatedPositions[0].height} 米`);
 
 
 
-### CustomDataSource
+## CustomDataSource
 
-`CustomDataSource`  是Cesium中的一个数据源类，允许你将**自定义的空间数据（例如点、线、面等）添加到场景中**。
+`CustomDataSource`  是 Cesium 中的一个数据源类，允许你将 **自定义的空间数据（例如点、线、面等）添加到场景中**。
 
 ```js {5}
 const viewer = new Cesium.Viewer("cesiumContainer", {

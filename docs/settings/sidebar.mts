@@ -641,6 +641,15 @@ export const sidebar = {
     }
   ],
 
+  "/backend/java/maven/": [
+    {
+      text: "Maven",
+      items: [
+        { text: "工程构建", link: "/backend/java/maven/Maven工程构建.md" }
+      ]
+    }
+  ],
+
   "/gis/mapbox/": [
     {
       text: "Mapbox",
@@ -755,7 +764,7 @@ export const sidebar = {
         },
         { text: "热力图", link: "/gis/cesium/cesium-senior/热力图.md" },
         { text: "风力图", link: "/gis/cesium/cesium-senior/风力图.md" },
-        { text: "指北针插件", link: "/gis/cesium/cesium-senior/指北针插件.md" },
+        { text: "指北针插件", link: "/gis/cesium/cesium-senior/指北针插件.md" }
       ]
     },
     {
