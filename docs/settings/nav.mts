@@ -84,7 +84,7 @@ export const nav = [
         text: "基础内容",
         items: [
           { text: "Java基础", link: "/backend/java/java-basic/数据类型.md" },
-          { text: "Maven", link: "/backend/java/maven/工程构建.md" }
+          { text: "Maven", link: "/backend/java/maven/项目结构.md" }
         ]
       }
     ]

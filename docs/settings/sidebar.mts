@@ -645,7 +645,13 @@ export const sidebar = {
     {
       text: "Maven",
       items: [
-        { text: "工程构建", link: "/backend/java/maven/Maven工程构建.md" }
+        { text: "项目结构", link: "/backend/java/maven/项目结构.md" },
+        { text: "依赖管理", link: "/backend/java/maven/依赖管理.md" },
+        {
+          text: "工程继承与聚合",
+          link: "/backend/java/maven/工程继承与聚合.md"
+        },
+        { text: "私服", link: "/backend/java/maven/私服.md" }
       ]
     }
   ],
