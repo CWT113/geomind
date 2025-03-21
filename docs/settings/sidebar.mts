@@ -655,11 +655,11 @@ export const sidebar = {
         { text: "依赖管理", link: "/backend/java/maven/依赖管理.md" },
         {
           text: "工程继承与聚合",
-          link: "/backend/java/maven/工程继承与聚合.md"
+          link: "/backend/java/maven/工程继承与聚合.md",
         },
-        { text: "私服", link: "/backend/java/maven/私服.md" }
-      ]
-    }
+        { text: "私服和Nexus", link: "/backend/java/maven/私服和Nexus.md" },
+      ],
+    },
   ],
 
   "/gis/mapbox/": [
@@ -780,7 +780,10 @@ export const sidebar = {
         { text: "热力图", link: "/gis/cesium/cesium-senior/热力图.md" },
         { text: "风力图", link: "/gis/cesium/cesium-senior/风力图.md" },
         { text: "指北针插件", link: "/gis/cesium/cesium-senior/指北针插件.md" },
-        { text: "Cesium加载MVT数据", link: "/gis/cesium/cesium-senior/Cesium加载MVT数据.md" },
+        {
+          text: "Cesium加载MVT数据",
+          link: "/gis/cesium/cesium-senior/Cesium加载MVT数据.md",
+        },
       ],
     },
     {
