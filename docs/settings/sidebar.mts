@@ -691,6 +691,26 @@ export const sidebar = {
     }
   ],
 
+  "/backend/java/javaweb/": [
+    {
+      text: "基础篇",
+      items: [
+        {
+          text: "基础使用",
+          link: "/backend/java/javaweb/基础使用.md"
+        },
+        {
+          text: "序列化与反序列化",
+          link: "/backend/java/javaweb/序列化和反序列化.md"
+        }
+      ]
+    },
+    {
+      text: "Tomcat工具",
+      items: []
+    }
+  ],
+
   "/gis/mapbox/": [
     {
       text: "Mapbox",
