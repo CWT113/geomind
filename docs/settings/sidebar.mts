@@ -151,8 +151,8 @@ export const sidebar = {
         { text: "reactive", link: "/frontend/vue/vue-basic/reactive.md" },
         { text: "编译器宏", link: "/frontend/vue/vue-basic/编译器宏.md" },
         { text: "组件传值", link: "/frontend/vue/vue-basic/组件传值.md" },
-        { text: "计算属性", link: "/frontend/vue/vue-basic/计算属性.md" },
-        { text: "侦听器", link: "/frontend/vue/vue-basic/侦听器.md" },
+        { text: "Computed", link: "/frontend/vue/vue-basic/计算属性.md" },
+        { text: "Watch", link: "/frontend/vue/vue-basic/侦听器.md" },
         { text: "插槽", link: "/frontend/vue/vue-basic/插槽.md" },
         { text: "组合式函数", link: "/frontend/vue/vue-basic/组合式函数.md" },
         { text: "自定义指令", link: "/frontend/vue/vue-basic/自定义指令.md" },
@@ -696,18 +696,31 @@ export const sidebar = {
       text: "基础篇",
       items: [
         {
-          text: "基础使用",
-          link: "/backend/java/javaweb/基础使用.md"
-        },
-        {
           text: "序列化与反序列化",
           link: "/backend/java/javaweb/序列化和反序列化.md"
+        },
+        {
+          text: "Tomcat部署Web项目",
+          link: "/backend/java/javaweb/Tomcat使用.md"
         }
       ]
     },
     {
-      text: "Tomcat工具",
-      items: []
+      text: "Servlet",
+      items: [
+        {
+          text: "Servlet简介",
+          link: "/backend/java/javaweb/Servlet简介.md"
+        },
+        {
+          text: "Servlet生命周期",
+          link: "/backend/java/javaweb/Servlet生命周期.md"
+        },
+        {
+          text: "Servlet配置参数",
+          link: "/backend/java/javaweb/Servlet配置参数.md"
+        }
+      ]
     }
   ],
 
