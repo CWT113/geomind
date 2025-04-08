@@ -1,4 +1,4 @@
-# ECharts
+# 图表自适应页面
 
 ## 初始化图表
 
@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
   import * as echarts from 'echarts';
-  
+
   const props = defineProps<{open: boolean;}>();
 
   let chart: echarts.ECharts | null;
@@ -27,7 +27,6 @@
     }
   });
 
-  /** 初始化统计图表 */
   function initializeEChart() {
     // nextTick等页面加载完成后，再获取div实例，避免实例获取为null
     nextTick(() => {
@@ -65,7 +64,7 @@
         chart?.setOption(chart?.getOption(), { notMerge: true, lazyUpdate: true });
       }
     });
-    
+
     resizeObserver.observe(tabHolder);
   });
 
@@ -78,15 +77,13 @@
 </script>
 ```
 
-::: info setOption 参数配置
+setOption参数配置
 
 |        参数        | 作用                                                         |
 | :----------------: | ------------------------------------------------------------ |
 | chart?.getOption() | 获取当前 ECharts 图表的所有配置项                            |
 |      notMerge      | 1. 新传入的配置是否完全覆盖旧的配置，true 覆盖，false 合并；<br />2. 使用场景：需要完全替换当前配置的情况，比如切换图表类型或重新加载数据时； |
 |     lazyUpdate     | 1. 设置为 true，ECharts 图表不会立即重新渲染图表，而是下一次需要渲染时再渲染；<br />2. 使用场景： 在频繁更新图表时使用，可以避免多次触发不必要的重绘，提升性能； |
-
-::: 
 
 
 

@@ -122,7 +122,7 @@ export const sidebar = {
     {
       text: "ECharts",
       items: [
-        { text: "基础使用", link: "/frontend/visual/Echarts/基础使用.md" }
+        { text: "图表自适应", link: "/frontend/visual/Echarts/ECharts.md" }
       ]
     }
   ],
@@ -132,21 +132,21 @@ export const sidebar = {
     { text: "Typora", link: "/frontend/other/Typora.md" }
   ],
 
-  "/frontend/vue/": [
+  "/frontend/typescript/": [
     {
       text: "TypeScript",
       items: [
-        { text: "基础使用", link: "/frontend/vue/typescript/基础使用.md" },
-        {
-          text: "一些技巧",
-          link: "/frontend/vue/typescript/一些技巧.md"
-        }
+        { text: "基础类型", link: "/frontend/typescript/基础类型.md" },
+        { text: "高级类型", link: "/frontend/typescript/高级类型.md" },
+        { text: "使用技巧", link: "/frontend/typescript/使用技巧.md" }
       ]
-    },
+    }
+  ],
+
+  "/frontend/vue/": [
     {
-      text: "Vue3",
+      text: "基础使用",
       items: [
-        { text: "基础使用", link: "/frontend/vue/vue-basic/基本使用.md" },
         { text: "ref家族", link: "/frontend/vue/vue-basic/ref函数.md" },
         { text: "reactive", link: "/frontend/vue/vue-basic/reactive.md" },
         { text: "编译器宏", link: "/frontend/vue/vue-basic/编译器宏.md" },
@@ -171,9 +171,7 @@ export const sidebar = {
     {
       text: "第三方库",
       items: [
-        { text: "Ant-Design-Vue", link: "" },
         { text: "dayjs", link: "/frontend/vue/vue-utils/dayjs.md" },
-        { text: "ECharts", link: "/frontend/vue/vue-utils/ECharts.md" },
         { text: "alasql", link: "/frontend/vue/vue-utils/alasql.md" },
         { text: "LZ-String", link: "/frontend/vue/vue-utils/LZ-String.md" },
         { text: "Pubsub-JS", link: "/frontend/vue/vue-utils/Pubsub-JS.md" },
@@ -715,11 +713,11 @@ export const sidebar = {
         {
           text: "Servlet生命周期",
           link: "/backend/java/javaweb/Servlet生命周期.md"
-        },
-        {
-          text: "Servlet配置参数",
-          link: "/backend/java/javaweb/Servlet配置参数.md"
         }
+        // {
+        //   text: "Servlet配置参数",
+        //   link: "/backend/java/javaweb/Servlet配置参数.md"
+        // }
       ]
     }
   ],

@@ -7,20 +7,27 @@ export const nav = [
   {
     text: "前端",
     items: [
-      { text: "CSS", link: "/frontend/css/css-basic/基础使用.md" },
-      { text: "Javascript", link: "/frontend/javascript/Javascript.md" },
+      {
+        text: "三剑客",
+        items: [
+          { text: "CSS", link: "/frontend/css/css-basic/基础使用.md" },
+          { text: "Javascript", link: "/frontend/javascript/Javascript.md" }
+        ]
+      },
       {
         text: "Node",
         items: [{ text: "Node.js", link: "/frontend/node/基础使用.md" }]
       },
       {
-        text: "图形可视化",
+        text: "可视化",
         items: [
-          { text: "ECharts", link: "/frontend/visual/Echarts/基础使用.md" }
+          { text: "ECharts", link: "/frontend/visual/Echarts/ECharts.md" }
         ]
       },
-      { text: "Git", link: "/frontend/git/分支分类.md" },
-      { text: "其他", link: "/frontend/other/Postman全局配置token.md" }
+      {
+        text: "Git",
+        items: [{ text: "Git分支", link: "/frontend/git/分支分类.md" }]
+      }
     ]
   },
 
@@ -28,9 +35,18 @@ export const nav = [
     text: "Vue",
     items: [
       {
-        text: "vue",
+        text: "TypeScript",
         items: [
-          { text: "Vue3", link: "/frontend/vue/vue-basic/基本使用.md" },
+          {
+            text: "TypeScript",
+            link: "/frontend/typescript/基础类型.md"
+          }
+        ]
+      },
+      {
+        text: "Vue",
+        items: [
+          { text: "Vue3", link: "/frontend/vue/vue-basic/ref函数.md" },
           { text: "Pinia", link: "/frontend/store/pinia/基础使用.md" },
           { text: "Vuex", link: "/frontend/store/vuex/基础使用.md" }
         ]
@@ -41,11 +57,11 @@ export const nav = [
           { text: "Vite", link: "/frontend/vite/index.md" },
           { text: "Rollup", link: "/frontend/vite/rollup.md" }
         ]
-      },
-      {
-        text: "小程序",
-        items: [{ text: "微信小程序", link: "/frontend/wxprogram/基础使用.md" }]
       }
+      // {
+      //   text: "小程序",
+      //   items: [{ text: "微信小程序", link: "/frontend/wxprogram/基础使用.md" }]
+      // }
     ]
   },
 
