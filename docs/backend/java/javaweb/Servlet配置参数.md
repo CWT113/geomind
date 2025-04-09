@@ -112,15 +112,15 @@ public class NewsServlet extends HttpServlet {
 
 ## ServletContext
 
+`ServletContext` 可以配置 Servlet 的初始化配置参数，但是它也还有其他功能，如 获取资源的真实路径、获取项目的上下文路径等。
+
+### 配置初始化参数
+
 `ServletContext` 配置参数在全局只有一份，所有的 Servlet 都可以获取它配置的共享参数。
-
-
-
-### 配置参数
 
 ::: code-group
 
-```java
+```java [NewsServlet]
 @WebServlet(
   value = "/newsServlet",
   initParams = {@WebInitParam(name = "username", value = "admin"), @WebInitParam(name = "pageSize", value = "10")}
@@ -128,29 +128,12 @@ public class NewsServlet extends HttpServlet {
 public class NewsServlet extends HttpServlet {
   @Override
   protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    // 三种方式都可以获取 ServletContext 配置对象，并且三种方式获取到的是同一个对象
-    ServletContext servletContext1 = servletConfig.getServletContext();
-    ServletContext servletContext2 = req.getServletContext();
-    ServletContext servletContext3 = super.getServletContext();
-
-    // 获取单个参数
-    String encoding = servletContext1.getInitParameter("encoding");
-    String author = servletContext1.getInitParameter("author");
-    System.out.println("encoding = " + encoding);
-    System.out.println("author = " + author);
-
-    // 获取多个参数
-    Enumeration<String> initParameterNames1 = servletContext2.getInitParameterNames();
-    while (initParameterNames1.hasMoreElements()) {
-      String name = initParameterNames1.nextElement();
-      String value = servletContext2.getInitParameter(name);
-      System.out.println(name + "=" + value);
-    }
+   	// ...
   }
 }
 ```
 
-```java
+```xml [web.xml]
 <?xml version="1.0" encoding="UTF-8"?>
   <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -172,47 +155,100 @@ public class NewsServlet extends HttpServlet {
 
 
 
+### 获取资源的真实路径
+
+`ServletContext` 可以获取资源的真实路径，这里的真实路径是文件打包后的路径。
+
+>例如，在 WEB-INFO 文件夹下，新建 `upload/text.txt` 文件，想要获取它打包后的路径，就是在获取资源的真实路径
+
+```java {8}
+@WebServlet("/contextServlet")
+public class ContextServlet extends HttpServlet {
+  @Override
+  protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext servletContext = super.getServletContext();
+
+    // 获取资源的真实路径
+    String realPath = servletContext.getRealPath("upload/text.txt");
+    System.out.println("realPath = " + realPath);
+    // E:\StudyCode\Java-Web\out\artifacts\Demo_Web03_war_exploded\\upload\text.txt
+  }
+}
+```
 
 
 
+### 获取项目的上下文配置路径
+
+`ServletContext` 也可以获取项目的上下文配置路径，上下文配置路径就是在配置 Tomcat 时 Deployment 中的 Application context 中配置的路径。
+
+```java {8}
+@WebServlet("/contextServlet")
+public class ContextServlet extends HttpServlet {
+  @Override
+  protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext servletContext = super.getServletContext();
+
+    // 获取项目的上下文配置路径
+    String contextPath = servletContext.getContextPath();
+    System.out.println("contextPath = " + contextPath); // Demo03
+  }
+}
+```
 
 
 
+### 域对象
 
+`ServletContext` 对象除了上面的两个作用，它还可以作为当前项目的**域对象**来进行使用。`ServletContext` 代表应用，所以也叫做应用域，是 webapp 中最大的域，可以在本应用内实现数据的传递。
 
+webapp 中一共有三大域对象，分别是 应用域、会话域、请求域。
 
+::: success 什么是域对象？
 
+域对象 是用于存储数据和传递数据的对象，传递数据不同的范围，我们称之为不同的域，不同的域之间共享的数据也不同。
 
+:::
 
+常用的方法：
 
+|                 方法                 | 作用                    |
+| :----------------------------------: | ----------------------- |
+| setAttribute(String key, Object val) | 向应用域中存储/修改数据 |
+|       getAttribute(String key)       | 从应用域中获取数据      |
+|     removeAttribute(String key)      | 从应用域中移除数据      |
 
+::: code-group
 
+```java [NewsServlet存储]
+@WebServlet("/newsServlet")
+public class NewsServlet extends HttpServlet {
+  @Override
+  protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext servletContext1 = servletConfig.getServletContext();
+    // 向应用域中存储数据
+    servletContext1.setAttribute("password", "123456");
+    // 多次存储，key相同时，后面的值会覆盖掉前面的值
+    servletContext1.setAttribute("password", "888999");
+  }
+}
+```
 
+```java [ContextServlet读取]
+@WebServlet("/contextServlet")
+public class ContextServlet extends HttpServlet {
+  @Override
+  protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext servletContext = super.getServletContext();
 
+    // 从应用域中获取数据
+    Object password = servletContext.getAttribute("password");
+    System.out.println(password);
 
+    // 从应用域中移除数据
+    servletContext.removeAttribute("password");
+  }
+}
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+:::

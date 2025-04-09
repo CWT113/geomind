@@ -713,11 +713,39 @@ export const sidebar = {
         {
           text: "Servlet生命周期",
           link: "/backend/java/javaweb/Servlet生命周期.md"
+        },
+        {
+          text: "Servlet配置参数",
+          link: "/backend/java/javaweb/Servlet配置参数.md"
+        },
+        {
+          text: "HttpServletRequest",
+          link: "/backend/java/javaweb/HttpServletRequest.md"
+        },
+        {
+          text: "HttpServletResponse",
+          link: "/backend/java/javaweb/HttpServletResponse.md"
+        },
+        {
+          text: "请求转发和响应重定向",
+          link: "/backend/java/javaweb/请求转发和响应重定向.md"
+        },
+        {
+          text: "乱码问题和路径问题",
+          link: "/backend/java/javaweb/乱码问题和路径问题.md"
+        },
+        {
+          text: "会话管理",
+          link: "/backend/java/javaweb/会话管理.md"
+        },
+        {
+          text: "Filter过滤器",
+          link: "/backend/java/javaweb/Filter过滤器.md"
+        },
+        {
+          text: "Listener监听器",
+          link: "/backend/java/javaweb/Listener监听器.md"
         }
-        // {
-        //   text: "Servlet配置参数",
-        //   link: "/backend/java/javaweb/Servlet配置参数.md"
-        // }
       ]
     }
   ],
