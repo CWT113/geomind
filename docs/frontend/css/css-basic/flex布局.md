@@ -22,7 +22,7 @@
 
 `flex-direction` 属性 **决定项目的排列方向**。
 
-![image-20250410002855371](E:\Github.Projects\Alikaid\docs\frontend\css\css-basic\assets\image-20250410002855371.png)
+![flex-direction](.\assets\flex-direction.png)
 
 ```css
 .container {
