@@ -76,7 +76,7 @@ public class NewsServlet extends HttpServlet {
 
 
 
-### @WebServlet配置
+### 注解配置
 
 把上面 web.xml 中配置的内容，修改为注解的方式。
 
