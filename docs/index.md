@@ -1,73 +1,55 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-title: "Butterfly"
+title: "Geomind"
 
 hero:
-  name: "Butterfly"
+  name: "Geomind"
   text: "Salvation lies within."
   tagline: “救赎之道，就在其中。”
   image:
     src: /background.png
-    alt: Butterfly
+    alt: Geomind
   actions:
-    # - theme: brand
-    #   text: 前端
-    #   link: /fontend/typescript/TypeScript.md
-    #   target: _blank
-    # - theme: alt
-    #   text: C#
-    #   link: /csharp/basicCsharp/面向过程.md
-    # - theme: alt
-    #   text: 数据库
-    #   link: /sql/mysql/基本SQL语句.md
-    # - theme: alt
-    #   text: .NET微服务
-    #   link: /net/orm/EFCore.md
-    # - theme: alt
-    #   text: GIS
-    #   link: /gis/mapbox/快速入门.md
-    # - theme: alt
-    #   text: 我的随笔
-    #   link: /essays/QingDao.md
-    # - theme: alt
-    #   text: 相关链接
-    #   link:
+    - theme: brand
+      text: 前端
+      link:
+      target: _blank
 
 features:
   - icon: 🤹
     title: JavaScript
     details: “想只有困难，做才有答案”
-    link: /javascript/Javascript.md
+    link:
     linkText: "JavaScript"
 
   - icon: 🎨
-    title: Vue3
-    details: “小事就像救命稻草一样抓着，有天一看，嚯，他抱着的已经是苍天大树！”
-    link: /vue3/vue3.md
-    linkText: "Vue3"
+    title: Vue
+    details: “想只有困难，做才有答案”
+    link:
+    linkText: "Vue"
 
   - icon: 🚀
-    title: SQL
-    details: “只愿君心似我心，定不负相思意”
-    link: /sql/mysql/基本SQL语句.md
+    title: 数据库
+    details: “想只有困难，做才有答案”
+    link:
     linkText: "MySQL"
 
-  - icon: ⚡️
-    title: .NET
-    details: “频频回头的人，注定走不了远路”
-    link: /net/CSharp/CSharpBasic/方法与数组.md
-    linkText: "NET"
+  # - icon: ⚡️
+  #   title: .NET
+  #   details: “频频回头的人，注定走不了远路”
+  #   link: /net/CSharp/CSharpBasic/方法与数组.md
+  #   linkText: "NET"
 
   - icon: 🤖
     title: Java
-    details: “无数个 Moment 拼起来就是 Forever”
-    link: /java/basic/数据类型.md
+    details: “想只有困难，做才有答案”
+    link:
     linkText: "Java"
 
   - icon: 🗺️
     title: GIS
-    details: “将地理信息融入人工智能！”
-    link: /gis/mapbox/快速入门.md
-    linkText: "Mapbox"
+    details: “将人工智能融入地理信息！”
+    link:
+    linkText: "Cesium"
 ---

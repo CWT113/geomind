@@ -1,30 +1,30 @@
 import { defineConfig } from "vitepress";
 import { nav } from "../settings/nav.mts";
+import { footer } from "../settings/search.mts";
+import { search } from "../settings/search.mts";
 import { sidebar } from "../settings/sidebar.mts";
 import { socialLink } from "../settings/socialLinks.mts";
-import { search } from "../settings/search.mts";
-import { footer } from "../settings/search.mts";
 
 export default defineConfig({
-  title: "Butterfly",
+  title: "Geomind",
   description: "Salvation lies within.",
-  base: "/Alikaid/",
-  head: [["link", { rel: "icon", href: "/Alikaid/butterfly-logo.png" }]],
+  base: "/geomind/",
+  head: [["link", { rel: "icon", href: "/geomind/butterfly-logo.png" }]],
   lastUpdated: true,
   ignoreDeadLinks: true,
   lang: "zh-CN",
   markdown: {
     theme: {
       light: "github-light",
-      dark: "vitesse-dark"
+      dark: "vitesse-dark",
     },
     image: {
-      lazyLoading: true
+      lazyLoading: true,
     },
     lineNumbers: true,
     config: async md => {
       const markdownItContainer = (await import("markdown-it-container"))
-        .default;
+          .default;
       md.use(markdownItContainer, "success", {
         render(tokens, idx) {
           const token = tokens[idx];
@@ -36,9 +36,9 @@ export default defineConfig({
           } else {
             return `</div>\n`;
           }
-        }
+        },
       });
-    }
+    },
   },
 
   themeConfig: {
@@ -47,7 +47,7 @@ export default defineConfig({
     outline: [2, 6],
     docFooter: {
       prev: "上一篇",
-      next: "下一篇"
+      next: "下一篇",
     },
     returnToTopLabel: "返回顶部",
 
@@ -63,22 +63,22 @@ export default defineConfig({
 
     editLink: {
       pattern: "https://github.com",
-      text: "Edit this page on GitHub"
-    }
+      text: "Edit this page on GitHub",
+    },
   },
 
   vite: {
     optimizeDeps: {
       exclude: [
         "@nolebase/vitepress-plugin-enhanced-readabilities/client",
-        "vitepress"
-      ]
+        "vitepress",
+      ],
     },
     ssr: {
       noExternal: [
         // 如果还有别的依赖需要添加的话，并排填写和配置到这里即可
-        "@nolebase/vitepress-plugin-enhanced-readabilities"
-      ]
-    }
-  }
+        "@nolebase/vitepress-plugin-enhanced-readabilities",
+      ],
+    },
+  },
 });

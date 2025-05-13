@@ -1,8 +1,4 @@
 {
-  "devDependencies": {
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.4.0",
-    "vitepress": "1.0.0-rc.36"
-  },
   "scripts": {
     "dev": "vitepress dev docs --port 5000",
     "docs:dev": "vitepress dev docs",
@@ -10,6 +6,11 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "element-plus": "^2.9.9",
     "markdown-it-container": "^4.0.0"
+  },
+  "devDependencies": {
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.4.0",
+    "vitepress": "1.0.0-rc.36"
   }
 }

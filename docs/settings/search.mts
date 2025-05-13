@@ -26,5 +26,5 @@ export const search = {
  */
 export const footer = {
   message: "Released under the MIT License.",
-  copyright: "Copyright © 2024-present Yibo wang"
+  copyright: "Copyright © 2025-present Yibo wang"
 }
