@@ -22,12 +22,17 @@ export const nav = [
         link: "/backend/java/jdbc/基础使用.md",
       },
       {
-        text: "Spring",
-        link: "/backend/java/spring/Spring简介.md",
-      },
-      {
-        text: "Spring MVC",
-        link: "/backend/java/springMVC/MVC理论基础.md",
+        text: "SSM",
+        items: [
+          {
+            text: "Spring6",
+            link: "/backend/java/spring/Spring简介.md",
+          },
+          {
+            text: "Spring MVC",
+            link: "/backend/java/springMVC/MVC理论基础.md",
+          },
+        ],
       },
     ],
   },

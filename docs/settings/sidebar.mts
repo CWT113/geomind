@@ -20,6 +20,10 @@ export const sidebar = {
         {
           text: "项目搭建和环境配置",
           link: "/backend/java/springMVC/项目搭建和环境配置.md"
+        },
+        {
+          text: "Controller控制器",
+          link: "/backend/java/springMVC/Controller控制器.md"
         }
       ]
     }
