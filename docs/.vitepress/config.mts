@@ -8,8 +8,8 @@ import { socialLink } from "../settings/socialLinks.mts";
 export default defineConfig({
   title: "Geomind",
   description: "Salvation lies within.",
-  base: "/geomind/",
-  head: [["link", { rel: "icon", href: "/geomind/butterfly-logo.png" }]],
+  base: "/Geomind/",
+  head: [["link", { rel: "icon", href: "/Geomind/butterfly-logo.png" }]],
   lastUpdated: true,
   ignoreDeadLinks: true,
   lang: "zh-CN",
