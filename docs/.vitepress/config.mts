@@ -16,15 +16,15 @@ export default defineConfig({
   markdown: {
     theme: {
       light: "github-light",
-      dark: "vitesse-dark",
+      dark: "one-dark-pro",
     },
     image: {
       lazyLoading: true,
     },
     lineNumbers: true,
-    config: async md => {
+    config: async (md) => {
       const markdownItContainer = (await import("markdown-it-container"))
-          .default;
+        .default;
       md.use(markdownItContainer, "success", {
         render(tokens, idx) {
           const token = tokens[idx];

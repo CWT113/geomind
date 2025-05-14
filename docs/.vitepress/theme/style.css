@@ -185,12 +185,12 @@
 
 /* 亮色模式 */
 :root ::selection {
-  background: #d9f5d6;
+  background: #ffb9b9;
   color: #ffffff;
 }
 
 /* 暗色模式 */
 .dark ::selection {
-  background: #d9f5d6;
+  background: #ffb9b9;
   color: #ffffff;
 }
