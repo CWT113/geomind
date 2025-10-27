@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "AlibabaPuHuiTi-Regular";
+  src: url("/font/AlibabaPuHuiTi-3-55-Regular.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AlibabaPuHuiTi-Light";
+  src: url("/font/AlibabaPuHuiTi-3-45-Light.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "苹方黑体-准-简";
+  src: url("/font/苹方黑体-准-简.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+#app {
+  font-family: "AlibabaPuHuiTi-Regular", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+}
