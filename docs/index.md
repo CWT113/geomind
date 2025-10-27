@@ -13,7 +13,7 @@ hero:
       text: 配置
       link: /reference/config
   image:
-    src: /teek-logo-large.png
+    src: /background.png
     alt: Teek
 
 features:

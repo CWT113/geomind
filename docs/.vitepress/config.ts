@@ -16,7 +16,7 @@ export default defineConfig({
   lastUpdated: true,
   lang: "zh-CN",
   head: [
-    ["link", { rel: "icon", type: "image/png", href: "/badminton-logo.png" }],
+    ["link", { rel: "icon", type: "image/png", href: "/geomind/badminton-logo.png" }],
   ],
   markdown: {
     lineNumbers: true,
