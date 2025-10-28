@@ -83,7 +83,7 @@ export const nav = [
           },
           {
             text: "数据结构和算法",
-            link: "/backend/Java/DataStructure/初识算法.md",
+            link: "/backend/java/data-structure/basic-structure/1.算法复杂度分析.md",
           },
           {
             text: "JDBC",
