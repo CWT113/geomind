@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: Geomind
-  text: VitePress 主题
-  tagline: ✨一个轻量、简洁高效、灵活配置，易于扩展的 VitePress 主题
+  text: Salvation lies within.
+  tagline: ✨ “救赎之道，就在其中。”
   actions:
     - theme: brand
       text: 开始
@@ -14,7 +14,7 @@ hero:
       link: /reference/config
   image:
     src: /background.png
-    alt: Teek
+    alt: Geomind
 
 features:
   - icon: 📖
