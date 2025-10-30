@@ -8,7 +8,7 @@ export const nav = [
       },
       {
         text: "JavaScript",
-        link: "/frontend/Javascript/基础使用.md",
+        link: "/frontend/javascript/1.嫌隙小记.md",
       },
       {
         text: "TypeScript",

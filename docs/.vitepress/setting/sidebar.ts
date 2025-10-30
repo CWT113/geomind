@@ -1,4 +1,16 @@
 export const sidebar = {
+  // JavaScript
+  "/frontend/javascript/": [
+    {
+      text: "基础知识",
+      items: [
+        {
+          text: "嫌隙小记",
+          link: "/frontend/javascript/1.嫌隙小记.md",
+        },
+      ],
+    },
+  ],
 
   // Java - 数据结构与算法
   "/backend/java/data-structure/": [

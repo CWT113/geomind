@@ -116,7 +116,7 @@ export const teekConfig = defineTeekConfig({
     name: "🎉 welcome 王一博的博客",
     bgStyle: "fullImg",
     pureBgColor: "#28282d",
-    imgSrc: ["/img/bg1.png", "/img/bg2.png", "/img/bg3.png", "/img/bg4.png"],
+    imgSrc: createImgSrc(11),
     imgInterval: 10000,
     imgShuffle: true,
     imgWaves: true,
@@ -252,3 +252,11 @@ export const teekConfig = defineTeekConfig({
     pageSpeed: 4000,
   },
 });
+
+function createImgSrc(total: number) {
+  const imgArr = [];
+  for (let i = 1; i <= total; i++) {
+    imgArr.push(`/img/bg${i}.png`);
+  }
+  return imgArr;
+}
