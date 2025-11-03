@@ -19,6 +19,7 @@ export default defineConfig({
     ["link", { rel: "icon", type: "image/png", href: "/geomind/badminton-logo.png" }],
   ],
   markdown: {
+    math: true,
     lineNumbers: true,
     image: {
       lazyLoading: true,
