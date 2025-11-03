@@ -1,8 +1,7 @@
 {
   "private": true,
-  "name": "geomindv3.0.0",
+  "name": "geomind",
   "version": "3.0.0",
-  "description": "基于 vitepress-theme-teek 搭建的个人博客文档",
   "type": "module",
   "scripts": {
     "docs:pinstall": "pnpm install",
@@ -18,7 +17,7 @@
     "vitepress-plugin-llms": "^1.7.3"
   },
   "dependencies": {
-    "vitepress-theme-teek": "^1.5.1",
+    "vitepress-theme-teek": "^1.5.2",
     "vue": "^3.5.16"
   }
 }
