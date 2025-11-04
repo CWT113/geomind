@@ -22,7 +22,7 @@ export default defineConfig({
     math: true,
     lineNumbers: true,
     image: {
-      lazyLoading: true,
+      lazyLoading: false,
     },
     container: {
       tipLabel: "提示",
