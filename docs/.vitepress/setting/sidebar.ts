@@ -1,5 +1,4 @@
 export const sidebar = {
-  // JavaScript
   "/frontend/javascript/": [
     {
       text: "基础知识",
@@ -12,7 +11,19 @@ export const sidebar = {
     },
   ],
 
-  // Java - 数据结构与算法
+  "/frontend/vue/": [
+    {
+      text: "基础知识",
+      collapsed: false,
+      items: [
+        {
+          text: "组件传值",
+          link: "/frontend/Vue/1.组件传值.md",
+        },
+      ],
+    },
+  ],
+
   "/backend/java/data-structure/": [
     {
       text: "基础数据结构篇",

@@ -25,7 +25,7 @@ export const nav = [
         items: [
           {
             text: "Vue3",
-            link: "/frontend/Vue/1.类型标注.md",
+            link: "/frontend/vue/1.组件传值.md",
           },
           {
             text: "Pinia",
