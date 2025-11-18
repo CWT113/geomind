@@ -231,6 +231,15 @@ export const nav = [
           },
         ],
       },
+      {
+        text: "GIS工具库",
+        items: [
+          {
+            text: "GeoTools",
+            link: "/a.md",
+          },
+        ],
+      },
     ],
   },
 
