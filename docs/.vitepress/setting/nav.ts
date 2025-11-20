@@ -214,7 +214,7 @@ export const nav = [
         items: [
           {
             text: "WebGL",
-            link: "/gis/WebGL/1.WebGL概述.md",
+            link: "/gis/webgl/1.WebGL概述.md",
           },
           {
             text: "ThreeJS",

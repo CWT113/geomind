@@ -186,9 +186,9 @@ export const teekConfig = defineTeekConfig({
   blogger: {
     name: "王一博",
     slogan: "救赎之道，就在其中。",
-    avatar: "https://testingcf.jsdelivr.net/gh/Kele-Bingtang/static/user/avatar1.png",
+    avatar: "/avatar.jpg",
     shape: "circle-rotate",
-    circleBgImg: "/blog/bg4.webp",
+    circleBgImg: "/blog/bg1.webp",
     circleBgMask: true,
     circleSize: 100,
     color: "#ffffff",

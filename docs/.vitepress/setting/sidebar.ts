@@ -7,6 +7,47 @@ export const sidebar = {
           text: "嫌隙小记",
           link: "/frontend/javascript/1.嫌隙小记.md",
         },
+        {
+          text: "数组",
+          link: "/frontend/javascript/2.数组.md",
+        },
+        {
+          text: "对象",
+          link: "/frontend/javascript/3.对象.md",
+        },
+        {
+          text: "闭包",
+          link: "/frontend/javascript/4.闭包.md",
+        },
+        {
+          text: "Proxy",
+          link: "/frontend/javascript/10.Proxy.md",
+        },
+        {
+          text: "Reflect",
+          link: "/frontend/javascript/11.Reflect.md",
+        },
+        {
+          text: "Promise",
+          link: "/frontend/javascript/6.Promise.md",
+        },
+        {
+          text: "事件循环",
+          link: "/frontend/javascript/5.事件循环.md",
+        },
+        {
+          text: "防抖与节流",
+          link: "/frontend/javascript/7.防抖与节流.md",
+        },
+        {
+          text: "正则表达式",
+          link: "/frontend/javascript/8.正则表达式.md",
+        },
+        {
+          text: "Set和Map数据结构",
+          link: "/frontend/javascript/9.Set和Map数据结构.md",
+        },
+
       ],
     },
   ],
@@ -19,6 +60,18 @@ export const sidebar = {
         {
           text: "组件传值",
           link: "/frontend/Vue/1.组件传值.md",
+        },
+        {
+          text: "类型标注",
+          link: "/frontend/Vue/2.类型标注.md",
+        },
+        {
+          text: "自定义指令",
+          link: "/frontend/Vue/3.自定义指令.md",
+        },
+        {
+          text: "自定义插件",
+          link: "/frontend/Vue/4.自定义插件.md",
         },
       ],
     },
@@ -177,6 +230,49 @@ export const sidebar = {
               link: "",
             },
           ],
+        },
+      ],
+    },
+  ],
+
+  "/gis/webgl/": [
+    {
+      text: "基础知识",
+      collapsed: false,
+      items: [
+        {
+          text: "WebGL概述",
+          link: "/gis/webgl/1.WebGL概述.md",
+        },
+        {
+          text: "坐标系",
+          link: "/gis/webgl/2.坐标系.md",
+        },
+        {
+          text: "着色器",
+          link: "/gis/webgl/3.着色器.md",
+          items: [
+            {
+              text: "为attribute变量赋值",
+              link: "/gis/webgl/3.1.为attribute变量赋值.md",
+            },
+            {
+              text: "为uniform变量赋值",
+              link: "/gis/webgl/3.2.为uniform变量赋值.md",
+            },
+          ],
+        },
+        {
+          text: "缓冲区对象",
+          link: "/gis/webgl/4.缓冲区对象.md",
+        },
+        {
+          text: "移动、旋转和缩放",
+          link: "/gis/webgl/5.移动、旋转和缩放.md",
+        },
+        {
+          text: "高级变换和动画效果",
+          link: "/gis/webgl/6.高级变换和动画效果.md",
         },
       ],
     },

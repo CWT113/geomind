@@ -20,6 +20,7 @@ import "./styles/code-bg.scss";
 import "./styles/iframe.scss";
 import "./styles/nav-blur.scss";
 import "./styles/index.scss";
+import "./styles/marker.css";
 
 export default {
   extends: Teek,
