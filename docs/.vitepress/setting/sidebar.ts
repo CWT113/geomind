@@ -104,7 +104,22 @@ export const sidebar = {
         },
         {
           text: "队列",
+          collapsed: true,
           link: "/backend/java/data-structure/basic-structure/6.队列.md",
+          items: [
+            {
+              text: "双端队列",
+              link: "/backend/java/data-structure/basic-structure/10.双端队列.md",
+            },
+            {
+              text: "优先级队列",
+              link: "/backend/java/data-structure/basic-structure/11.优先级队列.md",
+            },
+            {
+              text: "阻塞队列",
+              link: "/backend/java/data-structure/basic-structure/13.阻塞队列.md",
+            },
+          ],
         },
         {
           text: "栈",
