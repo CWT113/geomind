@@ -95,8 +95,8 @@ export const sidebar = {
           link: "/frontend/pinia/3.State.md",
         },
         {
-          text: "Getters",
-          link: "/frontend/pinia/4.Getters.md",
+          text: "Getter",
+          link: "/frontend/pinia/4.Getter.md",
         },
         {
           text: "Actions",
