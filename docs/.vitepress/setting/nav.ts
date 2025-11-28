@@ -29,7 +29,7 @@ export const nav = [
           },
           {
             text: "Pinia",
-            link: "/a.md",
+            link: "/frontend/pinia/1.简介.md",
           },
           {
             text: "Vue Router",

@@ -77,6 +77,35 @@ export const sidebar = {
     },
   ],
 
+  "/frontend/pinia/": [
+    {
+      text: "基础知识",
+      collapsed: false,
+      items: [
+        {
+          text: "简介",
+          link: "/frontend/pinia/1.简介.md",
+        },
+        {
+          text: "定义Store",
+          link: "/frontend/pinia/2.定义Store.md",
+        },
+        {
+          text: "State",
+          link: "/frontend/pinia/3.State.md",
+        },
+        {
+          text: "Getters",
+          link: "/frontend/pinia/4.Getters.md",
+        },
+        {
+          text: "Actions",
+          link: "/frontend/pinia/5.Actions.md",
+        },
+      ],
+    },
+  ],
+
   "/backend/java/data-structure/": [
     {
       text: "基础数据结构篇",
