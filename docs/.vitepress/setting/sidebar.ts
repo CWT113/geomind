@@ -146,7 +146,7 @@ export const sidebar = {
             },
             {
               text: "阻塞队列",
-              link: "/backend/java/data-structure/basic-structure/13.阻塞队列.md",
+              link: "/backend/java/data-structure/basic-structure/12.阻塞队列.md",
             },
           ],
         },
