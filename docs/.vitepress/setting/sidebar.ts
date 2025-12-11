@@ -1,4 +1,16 @@
 export const sidebar = {
+  "/frontend/css/": [
+    {
+      text: "旁门小记",
+      items: [
+        {
+          text: "字体设置",
+          link: "/frontend/css/字体设置.md",
+        },
+      ],
+    },
+  ],
+
   "/frontend/javascript/": [
     {
       text: "基础知识",

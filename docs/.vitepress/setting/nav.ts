@@ -4,7 +4,7 @@ export const nav = [
     items: [
       {
         text: "CSS",
-        link: "/frontend/CSS/基础使用.md",
+        link: "/frontend/css/字体设置.md",
       },
       {
         text: "JavaScript",
