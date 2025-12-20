@@ -152,6 +152,10 @@ export const nav = [
             text: "Redis",
             link: "/a.md",
           },
+          {
+            text: "服务注册",
+            link: "/backend/java/discovery/consul/1.注册中心.md",
+          },
         ],
       },
     ],

@@ -145,7 +145,6 @@ export const sidebar = {
         },
         {
           text: "队列",
-          collapsed: true,
           link: "/backend/java/data-structure/basic-structure/6.队列.md",
           items: [
             {
@@ -286,6 +285,29 @@ export const sidebar = {
               link: "",
             },
           ],
+        },
+      ],
+    },
+  ],
+
+  "/backend/java/discovery/": [
+    {
+      text: "Consul",
+      collapsed: false,
+      items: [
+        {
+          text: "安装",
+          link: "/backend/java/discovery/consul/1.注册中心.md",
+        },
+      ],
+    },
+    {
+      text: "Nacos",
+      collapsed: false,
+      items: [
+        {
+          text: "安装",
+          link: "/backend/java/discovery/nacos/1.注册中心.md",
         },
       ],
     },
