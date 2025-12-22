@@ -53,19 +53,19 @@ void testAveraging() {
 @Test
 @DisplayName("summing()")
 void testSumming() {
-		List<Integer> list = List.of(1, 2, 3, 4);
+  List<Integer> list = List.of(1, 2, 3, 4);
 
-		Integer collect1 = list.stream().collect(Collectors.summingInt(d -> d));
-		Integer collect1 = list.stream().mapToInt(d -> d).sum(); // 简化代码 // [!code ++]
-		System.out.println(collect1); // 10
+  Integer collect1 = list.stream().collect(Collectors.summingInt(d -> d));
+  Integer collect1 = list.stream().mapToInt(d -> d).sum(); // 简化代码 // [!code ++]
+  System.out.println(collect1); // 10
 
-		Double collect2 = list.stream().collect(Collectors.summingDouble(d -> d));
-		Double collect2 = list.stream().mapToDouble(d -> d).sum(); // 简化代码 // [!code ++]
-		System.out.println(collect2); // 10.0
+  Double collect2 = list.stream().collect(Collectors.summingDouble(d -> d));
+  Double collect2 = list.stream().mapToDouble(d -> d).sum(); // 简化代码 // [!code ++]
+  System.out.println(collect2); // 10.0
 
-		Long collect3 = list.stream().collect(Collectors.summingLong(d -> d));
-		Long collect3 = list.stream().mapToLong(d -> d).sum(); // 简化代码 // [!code ++]
-		System.out.println(collect3); // 10
+  Long collect3 = list.stream().collect(Collectors.summingLong(d -> d));
+  Long collect3 = list.stream().mapToLong(d -> d).sum(); // 简化代码 // [!code ++]
+  System.out.println(collect3); // 10
 }
 ```
 
@@ -78,7 +78,7 @@ void testSumming() {
 @DisplayName("collectingAndThen()")
 void testCollectingAndThen() {
   List<Integer> list = List.of(1, 2, 3, 4);
-  
+
   // 先对每个元素先执行 s -> s * 2 操作，然后再执行 Collectors.averagingDouble(d -> d) 计算平均值
   Double collect = list
     .stream()
@@ -96,7 +96,7 @@ void testCollectingAndThen() {
 @DisplayName("counting()")
 void testCounting() {
   List<Integer> list = List.of(1, 2, 3, 4);
-  
+
   Long count1 = list.stream().collect(Collectors.counting());  
   Long count2 = list.stream().count(); // 简化方式 // [!code ++]
   System.out.println(count1); // 4
@@ -150,7 +150,7 @@ void testMaxBy() {
   list.stream()
     .collect(Collectors.minBy(new IntegerComp()))
     .ifPresent(i -> System.out.println(i));
-  
+
   list.stream()
     .max(new IntegerComp()) // 代码简化 // [!code ++]
     .ifPresent(System.out::println);
@@ -174,15 +174,15 @@ static class IntegerComp implements Comparator<Integer> {
 `Collectors.toList()` 方法用于将流中的所有元素导出到一个 List 集合中。
 
 ```java {4}
-	@Test
-	@DisplayName("toList()")
-	void testToList() {
-		List<String> lists = Stream.of("A", "B", "C").collect(Collectors.toList());
-		List<String> lists = Stream.of("A", "B", "C").toList(); // 简化代码 // [!code ++]
-		for (String list : lists) {
-			System.out.println(list);
-		}
-	}
+@Test
+@DisplayName("toList()")
+void testToList() {
+  List<String> lists = Stream.of("A", "B", "C").collect(Collectors.toList());
+  List<String> lists = Stream.of("A", "B", "C").toList(); // 简化代码 // [!code ++]
+  for (String list : lists) {
+    System.out.println(list);
+  }
+}
 ```
 
 ## toSet()
