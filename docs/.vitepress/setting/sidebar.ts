@@ -124,8 +124,8 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{
-		  text: "收集器",
-		  link: "/backend/java/java-feature/java8/收集器.md",
+		  text: "Collectors（收集器）",
+		  link: "/backend/java/java-feature/java8/Collectors收集器.md",
 		},
 	  ],
 	},
