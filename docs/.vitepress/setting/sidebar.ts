@@ -127,6 +127,14 @@ export const sidebar = {
 		  text: "Collectors（收集器）",
 		  link: "/backend/java/java-feature/java8/1.Collectors收集器.md",
 		},
+		{
+		  text: "Base64 编码解码",
+		  link: "/backend/java/java-feature/java8/2.Base64编码解码.md",
+		},
+		{
+		  text: "Lambda 表达式",
+		  link: "/backend/java/java-feature/java8/3.Lambda表达式.md",
+		},
 	  ],
 	},
 	{
