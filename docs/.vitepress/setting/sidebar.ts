@@ -125,7 +125,7 @@ export const sidebar = {
 	  items: [
 		{
 		  text: "Collectors（收集器）",
-		  link: "/backend/java/java-feature/java8/Collectors收集器.md",
+		  link: "/backend/java/java-feature/java8/1.Collectors收集器.md",
 		},
 	  ],
 	},
