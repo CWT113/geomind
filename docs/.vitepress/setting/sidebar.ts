@@ -239,20 +239,6 @@ export const sidebar = {
 		{
 		  text: "二叉树",
 		  link: "/backend/java/data-structure/basic-structure/9.二叉树.md",
-		  items: [
-			{
-			  text: "二叉搜索树",
-			  link: "/backend/java/data-structure/basic-structure/13.二叉搜索树.md",
-			},
-			{
-			  text: "avl树",
-			  link: "/backend/java/data-structure/basic-structure/14.avl树.md",
-			},
-			{
-			  text: "红黑树",
-			  link: "/backend/java/data-structure/basic-structure/15.红黑树.md",
-			},
-		  ],
 		},
 	  ],
 	},
