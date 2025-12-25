@@ -244,7 +244,7 @@ export const sidebar = {
 	},
 	{
 	  text: "基础算法篇",
-	  collapsed: true,
+	  collapsed: false,
 	  items: [
 		{
 		  text: "查找算法",
@@ -254,15 +254,15 @@ export const sidebar = {
 			  link: "/backend/java/data-structure/basic-algorithm/1.二叉搜索树.md",
 			},
 			{
-			  text: "平衡二叉搜索树",
-			  link: "/backend/java/data-structure/basic-algorithm/2.平衡二叉搜索树.md",
+			  text: "AVL 树",
+			  link: "/backend/java/data-structure/basic-algorithm/2.AVL树.md",
 			},
 			{
 			  text: "红黑树",
 			  link: "/backend/java/data-structure/basic-algorithm/3.红黑树.md",
 			},
 			{
-			  text: "B树",
+			  text: "B 树",
 			  link: "/backend/java/data-structure/basic-algorithm/4.B树.md",
 			},
 			{
