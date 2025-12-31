@@ -144,6 +144,10 @@ export const sidebar = {
 		  text: "方法引用",
 		  link: "/backend/java/java-feature/java8/4.方法引用.md",
 		},
+		{
+		  text: "Optional",
+		  link: "/backend/java/java-feature/java8/5.Optional.md",
+		},
 	  ],
 	},
 	{
