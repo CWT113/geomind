@@ -389,6 +389,20 @@ export const sidebar = {
 	},
   ],
 
+  // GIS模块-Mars3D
+  "/gis/mars3d/": [
+	{
+	  text: "基础知识",
+	  collapsed: false,
+	  items: [
+		{
+		  text: "基础入门",
+		  link: "/gis/mars3d/1.基础入门.md",
+		},
+	  ],
+	},
+  ],
+
   // GIS模块 - WebGL
   "/gis/webgl/": [
 	{

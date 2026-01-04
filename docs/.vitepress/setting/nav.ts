@@ -213,7 +213,7 @@ export const nav = [
 		  },
 		  {
 			text: "Mars3d",
-			link: "/a.md",
+			link: "/gis/mars3d/1.基础入门.md",
 		  },
 		],
 	  },
