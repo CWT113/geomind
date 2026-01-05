@@ -148,6 +148,10 @@ export const sidebar = {
 		  text: "Optional",
 		  link: "/backend/java/java-feature/java8/5.Optional.md",
 		},
+		{
+		  text: "时间日期类",
+		  link: "/backend/java/java-feature/java8/6.时间日期类.md",
+		},
 	  ],
 	},
 	{
