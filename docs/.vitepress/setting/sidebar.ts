@@ -129,15 +129,15 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{
-		  text: "Collectors（收集器）",
+		  text: "Collectors 收集器",
 		  link: "/backend/java/java-feature/java8/1.Collectors收集器.md",
 		},
 		{
-		  text: "Base64编解码",
+		  text: "Base64 编解码",
 		  link: "/backend/java/java-feature/java8/2.Base64编码解码.md",
 		},
 		{
-		  text: "Lambda表达式",
+		  text: "Lambda 表达式",
 		  link: "/backend/java/java-feature/java8/3.Lambda表达式.md",
 		},
 		{
@@ -145,12 +145,16 @@ export const sidebar = {
 		  link: "/backend/java/java-feature/java8/4.方法引用.md",
 		},
 		{
-		  text: "Optional",
+		  text: "Optional 类",
 		  link: "/backend/java/java-feature/java8/5.Optional.md",
 		},
 		{
 		  text: "时间日期类",
 		  link: "/backend/java/java-feature/java8/6.时间日期类.md",
+		},
+		{
+		  text: "Stream 流",
+		  link: "/backend/java/java-feature/java8/7.Stream流.md",
 		},
 	  ],
 	},
