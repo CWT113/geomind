@@ -83,7 +83,7 @@ export const nav = [
 		  },
 		  {
 			text: "Java新特性",
-			link: "/backend/java/java-feature/java11/1.HttpClient.md",
+			link: "/backend/java/java-feature/java17/1.密封类.md",
 		  },
 		  {
 			text: "JDBC",

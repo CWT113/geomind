@@ -126,7 +126,7 @@ export const sidebar = {
   "/backend/java/java-feature": [
 	{
 	  text: "Java8 新特性",
-	  collapsed: true,
+	  collapsed: false,
 	  items: [
 		{
 		  text: "Collectors 收集器",
@@ -167,18 +167,18 @@ export const sidebar = {
 		  link: "/backend/java/java-feature/java11/1.HttpClient.md",
 		},
 		{
-		  text: "String",
+		  text: "String 扩展方法",
 		  link: "/backend/java/java-feature/java11/2.String.md",
 		},
 	  ],
 	},
 	{
 	  text: "Java17 新特性",
-	  collapsed: true,
+	  collapsed: false,
 	  items: [
 		{
-		  text: "测试",
-		  link: "/a.md",
+		  text: "密封类",
+		  link: "/backend/java/java-feature/java17/1.密封类.md",
 		},
 	  ],
 	},
