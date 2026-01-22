@@ -430,6 +430,10 @@ export const sidebar = {
 		  text: "加载地形图层",
 		  link: "/gis/cesium/6.加载地形图层.md",
 		},
+		{
+		  text: "加载矢量数据",
+		  link: "/gis/cesium/7.加载矢量数据.md",
+		},
 	  ],
 	},
   ],
