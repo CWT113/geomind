@@ -434,6 +434,55 @@ export const sidebar = {
 		  text: "加载矢量数据",
 		  link: "/gis/cesium/7.加载矢量数据.md",
 		},
+		{
+		  text: "加载三维模型",
+		  link: "/gis/cesium/8.加载三维模型.md",
+		},
+		{
+		  text: "加载三维瓦片",
+		  link: "/gis/cesium/9.加载三维瓦片.md",
+		},
+		{
+		  text: "绘制 Entity 实体",
+		  link: "/gis/cesium/10.绘制Entity实体.md",
+		},
+		{
+		  text: "绘制 Primitive 图元",
+		  link: "/gis/cesium/11.绘制Primitive图元.md",
+		},
+	  ],
+	},
+	{
+	  text: "进阶案例",
+	  items: [
+		{
+		  text: "导航插件",
+		  link: "/gis/cesium/17.导航插件.md",
+		},
+		{
+		  text: "飞行漫游",
+		  link: "/gis/cesium/12.飞行漫游.md",
+		},
+		{
+		  text: "自然天气",
+		  link: "/gis/cesium/13.自然天气.md",
+		},
+		{
+		  text: "粒子系统",
+		  link: "/gis/cesium/14.粒子系统.md",
+		},
+		{
+		  text: "热力图",
+		  link: "/gis/cesium/15.热力图.md",
+		},
+		{
+		  text: "风场图",
+		  link: "/gis/cesium/16.风场图.md",
+		},
+		{
+		  text: "场景截图和录屏",
+		  link: "/gis/cesium/18.场景截图和录屏.md",
+		},
 	  ],
 	},
   ],
