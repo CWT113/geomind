@@ -209,7 +209,7 @@ export const nav = [
 		items: [
 		  {
 			text: "Cesium",
-			link: "/gis/Cesium/1.基础使用.md",
+			link: "/gis/cesium/1.基础使用.md",
 		  },
 		  {
 			text: "Mars3d",
