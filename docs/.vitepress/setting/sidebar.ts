@@ -10,11 +10,11 @@ export const sidebar = {
           link: "/frontend/css/1.基础使用.md",
         },
         {
-          text: "flex布局",
+          text: "Flex布局",
           link: "/frontend/css/2.flex布局.md",
         },
         {
-          text: "grid布局",
+          text: "Grid布局",
           link: "/frontend/css/3.grid布局.md",
         },
       ],
@@ -545,6 +545,10 @@ export const sidebar = {
         {
           text: "飞行视角",
           link: "/gis/mars3d/3.飞行视角.md",
+        },
+        {
+          text: "三维地形",
+          link: "/gis/mars3d/4.三维地形.md",
         },
       ],
     },
