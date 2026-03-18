@@ -50,7 +50,7 @@ export const nav = [
 		items: [
 		  {
 			text: "Element Plus",
-			link: "/a.md",
+			link: "/frontend/element-plus/1.魔改 Table.md",
 		  },
 		],
 	  },
