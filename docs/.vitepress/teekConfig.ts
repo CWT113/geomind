@@ -116,7 +116,7 @@ export const teekConfig = defineTeekConfig({
 	name: "🎉 welcome 王一博的博客",
 	bgStyle: "fullImg",
 	pureBgColor: "#28282d",
-	imgSrc: createImgSrc(20),
+	imgSrc: createImgSrc(27),
 	imgInterval: 10000,
 	imgShuffle: true,
 	imgWaves: true,
