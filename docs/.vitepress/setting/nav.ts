@@ -46,6 +46,15 @@ export const nav = [
 		],
 	  },
 	  {
+		text: "项目协作",
+		items: [
+		  {
+			text: "Monorepo",
+			link: "/frontend/monorepo/1.monorepo介绍.md",
+		  },
+		],
+	  },
+	  {
 		text: "组件库",
 		items: [
 		  {
