@@ -159,45 +159,38 @@ export const sidebar = {
 	},
   ],
 
-  // 前端模块 - Element Plus
-  "/frontend/element-plus/": [
-	{
-	  text: "魔改样式",
-	  items: [
-		{
-		  text: "魔改 Table",
-		  link: "/frontend/element-plus/1.魔改 Table.md",
-		},
-		{
-		  text: "魔改 Dialog",
-		  link: "/frontend/element-plus/2.魔改 Dialog.md",
-		},
-	  ],
-	},
-  ],
-
   // 前端模块 - Vue
   "/frontend/vue/": [
 	{
-	  text: "基础知识",
+	  text: "基础使用",
 	  collapsed: false,
 	  items: [
-		{
-		  text: "组件传值",
-		  link: "/frontend/Vue/1.组件传值.md",
-		},
-		{
-		  text: "类型标注",
-		  link: "/frontend/Vue/2.类型标注.md",
-		},
-		{
-		  text: "自定义指令",
-		  link: "/frontend/Vue/3.自定义指令.md",
-		},
-		{
-		  text: "自定义插件",
-		  link: "/frontend/Vue/4.自定义插件.md",
-		},
+		{ text: "ref家族", link: "/frontend/Vue/ref家族.md" },
+		{ text: "组件传值", link: "/frontend/Vue/组件传值.md" },
+		{ text: "属性透传", link: "/frontend/vue/属性透传.md" },
+		{ text: "类型标注", link: "/frontend/Vue/类型标注.md" },
+		{ text: "插槽", link: "/frontend/vue/插槽.md" },
+		{ text: "侦听器", link: "/frontend/vue/侦听器.md" },
+		{ text: "计算属性", link: "/frontend/vue/计算属性.md" },
+		{ text: "h函数", link: "/frontend/vue/h函数.md" },
+		{ text: "render函数", link: "/frontend/vue/render函数.md" },
+		{ text: "Hooks函数", link: "/frontend/vue/Hooks函数.md" },
+		{ text: "JSX语法", link: "/frontend/vue/JSX语法.md" },
+		{ text: "函数式组件", link: "/frontend/vue/函数式组件.md" },
+		{ text: "异步组件", link: "/frontend/vue/异步组件.md" },
+		{ text: "动态组件", link: "/frontend/vue/动态组件.md" },
+		{ text: "自定义指令", link: "/frontend/Vue/自定义指令.md" },
+		{ text: "自定义插件", link: "/frontend/Vue/自定义插件.md" },
+		{ text: "KeepAlive", link: "/frontend/vue/KeepAlive.md" },
+		{ text: "Transition", link: "/frontend/vue/Transition.md" },
+	  ],
+	},
+	{
+	  text: "高级进阶",
+	  collapsed: false,
+	  items: [
+		{ text: "响应式原理", link: "/frontend/vue/响应式原理.md" },
+		{ text: "虚拟DOM与Diff算法", link: "/frontend/vue/虚拟DOM与Diff算法.md" },
 	  ],
 	},
   ],
@@ -240,8 +233,23 @@ export const sidebar = {
 	  items: [
 		{
 		  text: "Monorepo介绍",
-		  link: "/frontend/monorepo/1.monorepo介绍.md",
+		  link: "/frontend/monorepo/基础简介.md",
 		},
+	  ],
+	},
+  ],
+
+  // 前端模块 - 微前端
+  "/frontend/micro-frontend/": [
+	{
+	  text: "基础知识",
+	  collapsed: false,
+	  items: [
+		{ text: "iframe", link: "/frontend/micro-frontend/iframe.md" },
+		{ text: "single-spa", link: "/frontend/micro-frontend/single-spa.md" },
+		{ text: "无界", link: "/frontend/micro-frontend/无界.md" },
+		{ text: "qiankun", link: "/frontend/micro-frontend/qiankun.md" },
+		{ text: "garfish", link: "/frontend/micro-frontend/garfish.md" },
 	  ],
 	},
   ],
@@ -521,6 +529,17 @@ export const sidebar = {
 		  text: "安装",
 		  link: "/backend/java/discovery/nacos/1.注册中心.md",
 		},
+	  ],
+	},
+  ],
+
+  // GIS模块 - 基础知识
+  "/gis/knowledge/": [
+	{
+	  text: "基础知识",
+	  items: [
+		{ text: "地理坐标系", link: "/gis/knowledge/地理坐标系.md" },
+		{ text: "投影坐标系", link: "/gis/knowledge/投影坐标系.md" },
 	  ],
 	},
   ],

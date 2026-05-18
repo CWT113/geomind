@@ -25,7 +25,7 @@ export const nav = [
 		items: [
 		  {
 			text: "Vue3",
-			link: "/frontend/vue/1.组件传值.md",
+			link: "/frontend/Vue/ref家族.md",
 		  },
 		  {
 			text: "Pinia",
@@ -46,29 +46,15 @@ export const nav = [
 		],
 	  },
 	  {
-		text: "项目协作",
+		text: "项目架构",
 		items: [
 		  {
 			text: "Monorepo",
-			link: "/frontend/monorepo/1.monorepo介绍.md",
+			link: "/frontend/monorepo/基础简介.md",
 		  },
-		],
-	  },
-	  {
-		text: "组件库",
-		items: [
-		  {
-			text: "Element Plus",
-			link: "/frontend/element-plus/1.魔改 Table.md",
-		  },
-		],
-	  },
-	  {
-		text: "微前端",
-		items: [
 		  {
 			text: "微前端",
-			link: "/frontend/MicroFrontend/qiankun.md",
+			link: "/frontend/micro-frontend/iframe.md",
 		  },
 		],
 	  },
@@ -196,7 +182,7 @@ export const nav = [
 		items: [
 		  {
 			text: "基础理论",
-			link: "/a.md",
+			link: "/gis/knowledge/地理坐标系.md",
 		  },
 		],
 	  },
