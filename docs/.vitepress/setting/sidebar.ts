@@ -56,7 +56,7 @@ export const sidebar = {
   // 前端模块 - JavaScript
   "/frontend/javascript/": [
 	{
-	  text: "基础知识",
+	  text: "基础使用",
 	  items: [
 		{
 		  text: "嫌隙小记",
@@ -103,6 +103,53 @@ export const sidebar = {
 		  link: "/frontend/javascript/9.Set和Map数据结构.md",
 		},
 
+	  ],
+	},
+  ],
+
+  // 前端模块 - TypeScript
+  "/frontend/typescript/": [
+	{
+	  text: "基础使用",
+	  items: [
+		{ text: "基本类型", link: "/frontend/typescript/基本类型.md" },
+		{ text: "字面量类型", link: "/frontend/typescript/字面量类型.md" },
+		{ text: "数组与元组", link: "/frontend/typescript/数组与元组.md" },
+		{ text: "枚举", link: "/frontend/typescript/枚举.md" },
+		{ text: "类型别名", link: "/frontend/typescript/类型别名.md" },
+		{ text: "接口", link: "/frontend/typescript/接口.md" },
+		{ text: "泛型", link: "/frontend/typescript/泛型.md" },
+	  ],
+	},
+	{
+	  text: "进阶使用",
+	  items: [
+		{ text: "类型断言", link: "/frontend/typescript/类型断言.md" },
+		{ text: "类型守卫", link: "/frontend/typescript/类型守卫.md" },
+		{ text: "类型收窄", link: "/frontend/typescript/类型收窄.md" },
+		{ text: "类型映射", link: "/frontend/typescript/类型映射.md" },
+		{ text: "类型运算符", link: "/frontend/typescript/类型运算符.md" },
+		{ text: "特殊类型", link: "/frontend/typescript/特殊类型.md" },
+		{ text: "联合类型", link: "/frontend/typescript/联合类型.md" },
+		{ text: "交叉类型", link: "/frontend/typescript/交叉类型.md" },
+		{ text: "条件类型", link: "/frontend/typescript/条件类型.md" },
+		{ text: "索引类型", link: "/frontend/typescript/索引类型.md" },
+		{ text: "递归类型", link: "/frontend/typescript/递归类型.md" },
+		{ text: "类的类型", link: "/frontend/typescript/类的类型.md" },
+		{ text: "工具类型", link: "/frontend/typescript/工具类型.md" },
+		{ text: "协变与逆变", link: "/frontend/typescript/协变与逆变.md" },
+		{ text: "模块", link: "/frontend/typescript/模块.md" },
+		{ text: "装饰器", link: "/frontend/typescript/装饰器.md" },
+		{ text: "命名空间", link: "/frontend/typescript/命名空间.md" },
+		{ text: "infer关键字", link: "/frontend/typescript/infer关键字.md" },
+		{ text: "注释指令", link: "/frontend/typescript/注释指令.md" },
+	  ],
+	},
+	{
+	  text: "工程化",
+	  items: [
+		{ text: "tsconfig.json", link: "/frontend/typescript/tsconfig.json.md" },
+		{ text: "类型声明文件", link: "/frontend/typescript/类型声明文件.md" },
 	  ],
 	},
   ],

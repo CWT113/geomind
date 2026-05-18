@@ -12,7 +12,7 @@ export const nav = [
 	  },
 	  {
 		text: "TypeScript",
-		link: "/a.md",
+		link: "/frontend/typescript/基本类型.md",
 	  },
 	],
   },
