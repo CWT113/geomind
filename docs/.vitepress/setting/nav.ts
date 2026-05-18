@@ -1,6 +1,6 @@
 export const nav = [
   {
-	text: "前端",
+	text: "前端基础",
 	items: [
 	  {
 		text: "CSS",
@@ -8,7 +8,7 @@ export const nav = [
 	  },
 	  {
 		text: "JavaScript",
-		link: "/frontend/javascript/1.嫌隙小记.md",
+		link: "/frontend/javascript/基本数据类型.md",
 	  },
 	  {
 		text: "TypeScript",

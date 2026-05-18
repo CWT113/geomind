@@ -57,52 +57,54 @@ export const sidebar = {
   "/frontend/javascript/": [
 	{
 	  text: "基础使用",
+	  collapsed: false,
 	  items: [
-		{
-		  text: "嫌隙小记",
-		  link: "/frontend/javascript/1.嫌隙小记.md",
-		},
-		{
-		  text: "数组",
-		  link: "/frontend/javascript/2.数组.md",
-		},
-		{
-		  text: "对象",
-		  link: "/frontend/javascript/3.对象.md",
-		},
-		{
-		  text: "闭包",
-		  link: "/frontend/javascript/4.闭包.md",
-		},
-		{
-		  text: "Proxy",
-		  link: "/frontend/javascript/10.Proxy.md",
-		},
-		{
-		  text: "Reflect",
-		  link: "/frontend/javascript/11.Reflect.md",
-		},
-		{
-		  text: "Promise",
-		  link: "/frontend/javascript/6.Promise.md",
-		},
-		{
-		  text: "事件循环",
-		  link: "/frontend/javascript/5.事件循环.md",
-		},
-		{
-		  text: "防抖与节流",
-		  link: "/frontend/javascript/7.防抖与节流.md",
-		},
-		{
-		  text: "正则表达式",
-		  link: "/frontend/javascript/8.正则表达式.md",
-		},
-		{
-		  text: "Set和Map数据结构",
-		  link: "/frontend/javascript/9.Set和Map数据结构.md",
-		},
-
+		{ text: "基本数据类型", link: "/frontend/javascript/基本数据类型.md" },
+		{ text: "数组", link: "/frontend/javascript/数组.md" },
+		{ text: "对象", link: "/frontend/javascript/对象.md" },
+		{ text: "闭包", link: "/frontend/javascript/闭包.md" },
+		{ text: "ES6新特性", link: "/frontend/javascript/ES6新特性.md" },
+		{ text: "this关键字", link: "/frontend/javascript/this关键字.md" },
+		{ text: "防抖与节流", link: "/frontend/javascript/防抖与节流.md" },
+		{ text: "回流与重绘", link: "/frontend/javascript/回流与重绘.md" },
+		{ text: "原型与原型链", link: "/frontend/javascript/原型与原型链.md" },
+		{ text: "Map结构", link: "/frontend/javascript/Map结构.md" },
+		{ text: "Set结构", link: "/frontend/javascript/Set结构.md" },
+		{ text: "Proxy", link: "/frontend/javascript/Proxy.md" },
+		{ text: "Reflect", link: "/frontend/javascript/Reflect.md" },
+		{ text: "Promise", link: "/frontend/javascript/Promise.md" },
+		{ text: "正则表达式", link: "/frontend/javascript/正则表达式.md" },
+		{ text: "模块化原理", link: "/frontend/javascript/模块化原理.md" },
+		{ text: "发布订阅模式", link: "/frontend/javascript/发布订阅模式.md" },
+		{ text: "浅拷贝与深拷贝", link: "/frontend/javascript/浅拷贝与深拷贝.md" },
+		{ text: "JWT", link: "/frontend/javascript/JWT.md" },
+	  ],
+	},
+	{
+	  text: "浏览器模型",
+	  collapsed: false,
+	  items: [
+		{ text: "window对象", link: "/frontend/javascript/window对象.md" },
+		{ text: "URL对象", link: "/frontend/javascript/URL对象.md" },
+		{ text: "事件对象", link: "/frontend/javascript/事件对象.md" },
+		{ text: "字节流对象", link: "/frontend/javascript/字节流对象.md" },
+		{ text: "FormData对象", link: "/frontend/javascript/FormData对象.md" },
+		{ text: "同源策略与CORS跨域", link: "/frontend/javascript/同源策略与CORS跨域.md" },
+		{ text: "IndexedDB", link: "/frontend/javascript/IndexedDB.md" },
+		{ text: "Web Worker", link: "/frontend/javascript/Web Worker.md" },
+	  ],
+	},
+	{
+	  text: "高级进阶",
+	  collapsed: false,
+	  items: [
+		{ text: "事件循环", link: "/frontend/javascript/事件循环.md" },
+		{ text: "高阶函数", link: "/frontend/javascript/高阶函数.md" },
+		{ text: "函数柯里化", link: "/frontend/javascript/函数柯里化.md" },
+		{ text: "函数记忆化", link: "/frontend/javascript/函数记忆化.md" },
+		{ text: "线程与进程", link: "/frontend/javascript/线程与进程.md" },
+		{ text: "WebAssembly", link: "/frontend/javascript/WebAssembly.md" },
+		{ text: "V8渲染引擎原理", link: "/frontend/javascript/V8渲染引擎原理.md" },
 	  ],
 	},
   ],
@@ -111,6 +113,7 @@ export const sidebar = {
   "/frontend/typescript/": [
 	{
 	  text: "基础使用",
+	  collapsed: false,
 	  items: [
 		{ text: "基本类型", link: "/frontend/typescript/基本类型.md" },
 		{ text: "字面量类型", link: "/frontend/typescript/字面量类型.md" },
@@ -123,6 +126,7 @@ export const sidebar = {
 	},
 	{
 	  text: "进阶使用",
+	  collapsed: false,
 	  items: [
 		{ text: "类型断言", link: "/frontend/typescript/类型断言.md" },
 		{ text: "类型守卫", link: "/frontend/typescript/类型守卫.md" },
@@ -147,6 +151,7 @@ export const sidebar = {
 	},
 	{
 	  text: "工程化",
+	  collapsed: false,
 	  items: [
 		{ text: "tsconfig.json", link: "/frontend/typescript/tsconfig.json.md" },
 		{ text: "类型声明文件", link: "/frontend/typescript/类型声明文件.md" },
