@@ -204,7 +204,7 @@ export const nav = [
 		items: [
 		  {
 			text: "Cesium",
-			link: "/gis/cesium/1.基础使用.md",
+			link: "/gis/cesium/基础使用.md",
 		  },
 		  {
 			text: "Mars3d",
@@ -216,12 +216,16 @@ export const nav = [
 		text: "图形化渲染",
 		items: [
 		  {
-			text: "WebGL",
-			link: "/gis/webgl/1.WebGL概述.md",
+			text: "GLSL",
+			link: "/gis/glsl/基础使用.md",
 		  },
 		  {
 			text: "ThreeJS",
 			link: "/a.md",
+		  },
+		  {
+			text: "WebGL",
+			link: "/gis/webgl/1.WebGL概述.md",
 		  },
 		],
 	  },
