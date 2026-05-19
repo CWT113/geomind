@@ -25,7 +25,7 @@ export const nav = [
 		items: [
 		  {
 			text: "Vue3",
-			link: "/frontend/Vue/ref家族.md",
+			link: "/frontend/vue/ref家族.md",
 		  },
 		  {
 			text: "Pinia",
