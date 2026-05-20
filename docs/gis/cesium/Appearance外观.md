@@ -152,7 +152,7 @@ Entity 的 material 和 Primitive 的 appearance 对比：
 
 ## PolylineColorAppearance
 
-`PolylineColorAppearance` 是专门为 **线几何体**（PolylineGeometry）设计的一种外观类。它的核心作用是 **支持线段的顶点着色**。
+`PolylineColorAppearance` 是专门为 **线几何体**（PolylineGeometry）设计的一种外观类。它仅支持颜色及其渐变。
 
 假设你希望一条线的颜色从起点到终点有渐变效果，或者一个 Primitive 中的多条线各自拥有不同的颜色，该属性是最高效的选择。
 
@@ -163,17 +163,27 @@ Entity 的 material 和 Primitive 的 appearance 对比：
 | fragmentShaderSource | String  | 可选。自定义片元着色器代码，会覆盖默认的着色器      |
 |     renderState      | Object  | 可选。底层深度测试、混合模式等渲染状态的配置        |
 
-
-
-
-
-
-
-
+```ts
+```
 
 
 
 ## PolylineMaterialAppearance
+
+`PolylineMaterialAppearance` 是专门为 **线几何体**（PolylineGeometry）设计的完整的材质外观类。这意味着可以给线条添加纹理、流动特效、发光效果或复杂的着色器逻辑。
+
+| 参数名               | 类型     | 作用说明                                                     |
+| -------------------- | -------- | ------------------------------------------------------------ |
+| material             | Material | 定义线条的材质（如 PolylineGlow 发光、PolylineOutline 轮廓、PolylineArrow 箭头等）。默认为白色颜色材质 |
+| translucent          | Boolean  | 是否支持半透明，如果材质包含透明度，需要设置为 true          |
+| vertexShaderSource   | String   | 可选。自定义顶点着色器代码，会覆盖默认的着色器               |
+| fragmentShaderSource | String   | 可选。自定义片元着色器代码，会覆盖默认的着色器               |
+| renderState          | Object   | 可选。底层深度测试、混合模式等渲染状态的配置                 |
+
+```ts
+```
+
+
 
 
 
