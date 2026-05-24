@@ -15,10 +15,10 @@
     "markdown-it-mathjax3": "^4.3.2",
     "sass": "^1.93.3",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-llms": "^1.8.1"
+    "vitepress-plugin-llms": "^1.12.2"
   },
   "dependencies": {
-    "vitepress-theme-teek": "^1.5.4",
+    "vitepress-theme-teek": "^1.6.0",
     "vue": "^3.5.29"
   }
 }
