@@ -794,4 +794,14 @@ export const sidebar = {
 	  ],
 	},
   ],
+
+  // AI智能体 - LangChain
+  "/ai/langChain/": [
+	{
+	  text: "基础知识",
+	  items: [
+		{ text: "基础使用", link: "/ai/langChain/基础使用.md" },
+	  ],
+	},
+  ],
 };

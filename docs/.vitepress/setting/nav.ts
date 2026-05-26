@@ -268,5 +268,12 @@ export const nav = [
 	],
   },
 
+  {
+	text: "AI智能体",
+	items: [
+	  { text: "LangChain", link: "/ai/langChain/基础使用.md" },
+	],
+  },
+
   { text: "听首歌", link: "http://music.alger.fun", noIcon: false },
 ];
