@@ -206,10 +206,6 @@ export const nav = [
 			text: "Cesium",
 			link: "/gis/cesium/基础使用.md",
 		  },
-		  {
-			text: "Mars3d",
-			link: "/gis/mars3d/1.基础入门.md",
-		  },
 		],
 	  },
 	  {
@@ -226,6 +222,10 @@ export const nav = [
 		  {
 			text: "WebGL",
 			link: "/gis/webgl/1.WebGL概述.md",
+		  },
+		  {
+			text: "WebGPU",
+			link: "/gis/webgpu/基本使用.md",
 		  },
 		],
 	  },
@@ -263,6 +263,10 @@ export const nav = [
 	  },
 	  {
 		text: "Docker",
+		link: "/devops/docker/1.镜像与容器.md",
+	  },
+	  {
+		text: "K8s",
 		link: "/devops/docker/1.镜像与容器.md",
 	  },
 	],
