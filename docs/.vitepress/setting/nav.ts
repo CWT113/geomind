@@ -61,12 +61,12 @@ export const nav = [
 	],
   },
 
-  {
+  /*{
 	text: "React",
 	link: "/a.md",
-  },
+  },*/
 
-  {
+  /*{
 	text: "Java",
 	items: [
 	  {
@@ -158,9 +158,9 @@ export const nav = [
 		],
 	  },
 	],
-  },
+  },*/
 
-  {
+  /*{
 	text: "数据库",
 	items: [
 	  {
@@ -172,12 +172,12 @@ export const nav = [
 		link: "/a.md",
 	  },
 	],
-  },
+  },*/
 
   {
 	text: "GIS",
 	items: [
-	  {
+	  /*{
 		text: "理论知识",
 		items: [
 		  {
@@ -198,7 +198,7 @@ export const nav = [
 			link: "/a.md",
 		  },
 		],
-	  },
+	  },*/
 	  {
 		text: "三维地图",
 		items: [
@@ -215,7 +215,7 @@ export const nav = [
 			text: "GLSL",
 			link: "/gis/glsl/基础使用.md",
 		  },
-		  {
+		  /*{
 			text: "ThreeJS",
 			link: "/a.md",
 		  },
@@ -226,10 +226,10 @@ export const nav = [
 		  {
 			text: "WebGPU",
 			link: "/gis/webgpu/基本使用.md",
-		  },
+		  },*/
 		],
 	  },
-	  {
+	  /*{
 		text: "服务托管",
 		items: [
 		  {
@@ -246,11 +246,11 @@ export const nav = [
 			link: "/a.md",
 		  },
 		],
-	  },
+	  },*/
 	],
   },
 
-  {
+  /*{
 	text: "服务端",
 	items: [
 	  {
@@ -270,14 +270,14 @@ export const nav = [
 		link: "/devops/docker/1.镜像与容器.md",
 	  },
 	],
-  },
+  },*/
 
-  {
+  /*{
 	text: "AI智能体",
 	items: [
 	  { text: "LangChain", link: "/ai/langChain/基础使用.md" },
 	],
-  },
+  },*/
 
   { text: "听首歌", link: "http://music.alger.fun", noIcon: false },
 ];
