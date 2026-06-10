@@ -250,6 +250,18 @@ export const nav = [
 	],
   },
 
+  {
+	text: "Python",
+	items: [
+	  {
+		text: "基础知识",
+		items: [
+		  { text: "Py基础", link: "/backend/python/basic/基础入门.md" },
+		],
+	  },
+	],
+  },
+
   /*{
 	text: "服务端",
 	items: [

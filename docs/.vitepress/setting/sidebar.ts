@@ -713,6 +713,15 @@ export const sidebar = {
 	},
   ],
 
+  "/backend/python/basic/": [
+	{
+	  text: "基础知识",
+	  items: [
+		{ text: "基础入门", link: "/backend/python/basic/基础入门.md" },
+	  ],
+	},
+  ],
+
   // 服务端模块 - Docker
   "/devops/docker/": [
 	{
