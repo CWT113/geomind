@@ -213,7 +213,7 @@ export const nav = [
 		items: [
 		  {
 			text: "GLSL",
-			link: "/gis/glsl/基础使用.md",
+			link: "/gis/glsl/基础变量.md",
 		  },
 		  /*{
 			text: "ThreeJS",

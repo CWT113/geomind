@@ -662,8 +662,8 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{
-		  text: "基础使用",
-		  link: "/gis/glsl/基础使用.md",
+		  text: "基础变量",
+		  link: "/gis/glsl/基础变量.md",
 		},
 	  ],
 	},
