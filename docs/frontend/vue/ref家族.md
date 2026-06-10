@@ -39,7 +39,7 @@ date: 2026-05-18 16:44:12
 
 `shallowRef` 专门用于 **浅层响应式引用**，只监听整个对象 `.value` 本身的变化，不会深度代理对象内部的属性。
 
-```vue {24,27,29}
+```vue {24,27}
 <template>
   <h2>{{ state.zs.username }}</h2>
   <h2>{{ person.ls.username }}</h2>
@@ -68,7 +68,7 @@ date: 2026-05-18 16:44:12
     // shallowRef浅层次引用，这样赋值不会触发界面更新
     state.value.zs.username = "张三丰";
     // 如果需要，可以使用 triggerRef 强制触发界面更新
-    // triggerRef(state);
+    // triggerRef(state); // [!code ++]
   }
 </script>
 ```
@@ -172,7 +172,7 @@ customRef 用于显式地 **控制依赖追踪**（track）和 **触发响应**�
     name: "Alice",
     age: 25,
   });
-  // 直接解构 name 只是个普通字符串，失去了响应式
+  // 直接解构的 name 只是个普通字符串，已经失去响应式了
   const { name } = user; // [!code --]
 
   // 使用 toRef 解构对象中的单个属性，解构之后仍保持响应式
@@ -205,6 +205,8 @@ customRef 用于显式地 **控制依赖追踪**（track）和 **触发响应**�
   function useSquare(num: number | Ref<number>) {
     // 这里只是演示 isRef 的作用，unref 内部已经解构出原始值了，不需要多此一举判断
     const rawValue = isRef(num) ? unref(num) : num;
+    // 直接使用 unref 即可
+    const rawValue = unref(num); // [!code ++]
     return rawValue * rawValue;
   }
 </script>
