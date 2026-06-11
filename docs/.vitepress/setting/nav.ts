@@ -61,10 +61,10 @@ export const nav = [
 	],
   },
 
-  {
-	text: "React",
-	link: "/a.md",
-  },
+  /* {
+	 text: "React",
+	 link: "/a.md",
+   },*/
 
   {
 	text: "Java",
@@ -74,7 +74,7 @@ export const nav = [
 		items: [
 		  {
 			text: "Java SE",
-			link: "/a.md",
+			link: "/backend/java/javaee/变量和数据类型.md",
 		  },
 		  {
 			text: "Java新特性",
@@ -160,7 +160,7 @@ export const nav = [
 	],
   },
 
-  {
+  /*{
 	text: "数据库",
 	items: [
 	  {
@@ -172,7 +172,7 @@ export const nav = [
 		link: "/a.md",
 	  },
 	],
-  },
+  },*/
 
   {
 	text: "GIS",
@@ -291,5 +291,5 @@ export const nav = [
 	],
   },*/
 
-  { text: "听首歌", link: "http://music.alger.fun", noIcon: false },
+  // { text: "听首歌", link: "http://music.alger.fun", noIcon: false },
 ];

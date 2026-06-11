@@ -254,6 +254,17 @@ export const sidebar = {
 	},
   ],
 
+  "/backend/java/javaee/": [
+	{
+	  text: "基础知识",
+	  items: [
+		{ text: "变量和数据类型", link: "/backend/java/javaee/变量和数据类型.md" },
+		{ text: "流程控制", link: "/backend/java/javaee/流程控制.md" },
+		{ text: "数组操作", link: "/backend/java/javaee/数组操作.md" },
+	  ],
+	},
+  ],
+
   // Java模块 - Java8新特性
   "/backend/java/java-feature": [
 	{
