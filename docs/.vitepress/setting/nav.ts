@@ -1,6 +1,6 @@
 export const nav = [
   {
-	text: "前端基础",
+	text: "前端",
 	items: [
 	  {
 		text: "CSS",
@@ -61,19 +61,19 @@ export const nav = [
 	],
   },
 
-  /*{
+  {
 	text: "React",
 	link: "/a.md",
-  },*/
+  },
 
-  /*{
+  {
 	text: "Java",
 	items: [
 	  {
-		text: "基础知识",
+		text: "核心基础",
 		items: [
 		  {
-			text: "Java基础",
+			text: "Java SE",
 			link: "/a.md",
 		  },
 		  {
@@ -158,9 +158,9 @@ export const nav = [
 		],
 	  },
 	],
-  },*/
+  },
 
-  /*{
+  {
 	text: "数据库",
 	items: [
 	  {
@@ -172,7 +172,7 @@ export const nav = [
 		link: "/a.md",
 	  },
 	],
-  },*/
+  },
 
   {
 	text: "GIS",
@@ -250,7 +250,7 @@ export const nav = [
 	],
   },
 
-  {
+  /*{
 	text: "Python",
 	items: [
 	  {
@@ -260,7 +260,7 @@ export const nav = [
 		],
 	  },
 	],
-  },
+  },*/
 
   /*{
 	text: "服务端",
