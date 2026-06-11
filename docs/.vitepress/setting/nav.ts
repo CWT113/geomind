@@ -74,7 +74,7 @@ export const nav = [
 		items: [
 		  {
 			text: "Java SE",
-			link: "/backend/java/javaee/变量和数据类型.md",
+			link: "/backend/java/javaee/数据类型.md",
 		  },
 		  {
 			text: "Java新特性",
