@@ -253,6 +253,7 @@ export const sidebar = {
 	},
   ],
 
+  // Java模块 - JavaEE
   "/backend/java/javaee/": [
 	{
 	  text: "基础知识",
@@ -261,6 +262,9 @@ export const sidebar = {
 		{ text: "数据类型", link: "/backend/java/javaee/数据类型.md" },
 		{ text: "流程控制", link: "/backend/java/javaee/流程控制.md" },
 		{ text: "数组", link: "/backend/java/javaee/数组.md" },
+		{ text: "包装类", link: "/backend/java/javaee/包装类.md" },
+		{ text: "String 类", link: "/backend/java/javaee/String类.md" },
+		{ text: "日期时间", link: "/backend/java/javaee/日期时间.md" },
 	  ],
 	},
 	{
