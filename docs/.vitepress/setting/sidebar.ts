@@ -289,8 +289,8 @@ export const sidebar = {
 	  collapsed: true,
 	  items: [
 		{ text: "集合简介", link: "/backend/java/javaee/集合简介.md" },
-		{ text: "Iterator（可迭代接口）", link: "/backend/java/javaee/Iterator.md" },
-		{ text: "Collection（集合根接口）", link: "/backend/java/javaee/Collection.md" },
+		{ text: "Iterator 迭代器接口", link: "/backend/java/javaee/Iterator.md" },
+		{ text: "Collection 集合根接口", link: "/backend/java/javaee/Collection.md" },
 		{ text: "List 集合", link: "/backend/java/javaee/List.md" },
 		{ text: "Set 集合", link: "/backend/java/javaee/Set.md" },
 		{ text: "Queue 队列", link: "/backend/java/javaee/Queue.md" },

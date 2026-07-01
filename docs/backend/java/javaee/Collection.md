@@ -2,7 +2,7 @@
 date: 2026-01-08 11:02:29
 ---
 
-# Collection
+# Collection 集合根接口
 
 Java21 引入的“顺序集合”（Sequenced Collections）是一套全新的集合接口，它 **统一了集合访问首尾元素和反向遍历的操作方式**。
 
@@ -15,6 +15,8 @@ Java21 引入的“顺序集合”（Sequenced Collections）是一套全新的�
 | `SequencedCollection<E>` | 代表一个有明确顺序的元素序列，它提供了访问、添加和移除首尾元素的标准方法              | ArrayList、LinkedList、Deque      |
 |    `SequencedSet<E>`     | 继承了 `SequencedCollection` 和 `Set`，代表一个有序且元素不重复的集合 | LinkedHashSet、SortedSet、TreeSet |
 |   `SequencedMap<K,V>`    | 代表一个键值对拥有明确遍历顺序的映射                                | LinkedHashMap、SortedMap、TreeMap |
+
+
 
 ## SequencedCollection
 
@@ -89,6 +91,8 @@ public static void main(String[] args) {
 `SequencedSet` 的用法和 `SequencedCollection` 基本一致，只是多了一些 `Set` 的方法。
 
 :::
+
+
 
 ## SequencedMap
 
