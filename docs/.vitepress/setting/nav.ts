@@ -73,12 +73,12 @@ export const nav = [
 		text: "核心基础",
 		items: [
 		  {
-			text: "Java SE",
+			text: "Java EE",
 			link: "/backend/java/javaee/数据类型.md",
 		  },
 		  {
 			text: "Java新特性",
-			link: "/backend/java/java-feature/java17/1.密封类.md",
+			link: "/backend/java/java-feature/java8/Collectors收集器.md",
 		  },
 		  {
 			text: "JDBC",

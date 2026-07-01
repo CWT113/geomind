@@ -267,6 +267,8 @@ export const sidebar = {
 		{ text: "日期时间", link: "/backend/java/javaee/日期时间.md" },
 		{ text: "异常处理", link: "/backend/java/javaee/异常处理.md" },
 		{ text: "正则表达式", link: "/backend/java/javaee/正则表达式.md" },
+		{ text: "Lambda表达式", link: "/backend/java/javaee/Lambda表达式.md" },
+		{ text: "方法引用", link: "/backend/java/javaee/方法引用.md" },
 	  ],
 	},
 	{
@@ -280,25 +282,32 @@ export const sidebar = {
 		{ text: "泛型", link: "/backend/java/javaee/泛型.md" },
 		{ text: "接口", link: "/backend/java/javaee/接口.md" },
 		{ text: "枚举", link: "/backend/java/javaee/枚举.md" },
-		{ text: "反射", link: "/backend/java/javaee/反射.md" },
 	  ],
 	},
 	{
 	  text: "集合框架",
 	  collapsed: true,
 	  items: [
-		{ text: "ArrayList", link: "/backend/java/javaee/ArrayList.md" },
+		{ text: "集合简介", link: "/backend/java/javaee/集合简介.md" },
+		{ text: "Iterator（可迭代接口）", link: "/backend/java/javaee/Iterator.md" },
+		{ text: "Collection（集合根接口）", link: "/backend/java/javaee/Collection.md" },
+		{ text: "List 集合", link: "/backend/java/javaee/List.md" },
+		{ text: "Set 集合", link: "/backend/java/javaee/Set.md" },
+		{ text: "Queue 队列", link: "/backend/java/javaee/Queue.md" },
+		{ text: "Map 映射", link: "/backend/java/javaee/Map.md" },
+		{ text: "集合工具类", link: "/backend/java/javaee/集合工具类.md" },
 	  ],
 	},
 	{
 	  text: "高级进阶",
 	  collapsed: true,
 	  items: [
-		{ text: "Stream流", link: "/backend/java/javaee/Stream流.md" },
-		{ text: "File", link: "/backend/java/javaee/File.md" },
-		{ text: "IO流", link: "/backend/java/javaee/IO流.md" },
+		{ text: "Stream 流", link: "/backend/java/javaee/Stream流.md" },
+		{ text: "File 文件类", link: "/backend/java/javaee/File.md" },
+		{ text: "IO 流", link: "/backend/java/javaee/IO流.md" },
 		{ text: "多线程", link: "/backend/java/javaee/多线程.md" },
 		{ text: "网络编程", link: "/backend/java/javaee/网络编程.md" },
+		{ text: "反射", link: "/backend/java/javaee/反射.md" },
 	  ],
 	},
   ],
@@ -310,52 +319,44 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{
-		  text: "Collectors 收集器",
-		  link: "/backend/java/java-feature/java8/1.Collectors收集器.md",
+		  text: "Collectors收集器",
+		  link: "/backend/java/java-feature/java8/Collectors收集器.md",
 		},
 		{
-		  text: "Base64 编解码",
-		  link: "/backend/java/java-feature/java8/2.Base64编码解码.md",
+		  text: "Base64编解码",
+		  link: "/backend/java/java-feature/java8/Base64编解码.md",
 		},
 		{
-		  text: "Lambda 表达式",
-		  link: "/backend/java/java-feature/java8/3.Lambda表达式.md",
+		  text: "Optional工具类",
+		  link: "/backend/java/java-feature/java8/Optional.md",
 		},
 		{
-		  text: "方法引用",
-		  link: "/backend/java/java-feature/java8/4.方法引用.md",
-		},
-		{
-		  text: "Optional 类",
-		  link: "/backend/java/java-feature/java8/5.Optional.md",
-		},
-		{
-		  text: "时间日期类",
+		  text: "时间日期类流",
 		  link: "/backend/java/java-feature/java8/6.时间日期类.md",
 		},
 		{
-		  text: "Stream 流",
+		  text: "Stream流",
 		  link: "/backend/java/java-feature/java8/7.Stream流.md",
 		},
 	  ],
 	},
 	{
 	  text: "Java11 新特性",
-	  collapsed: false,
+	  collapsed: true,
 	  items: [
 		{
 		  text: "HttpClient",
 		  link: "/backend/java/java-feature/java11/1.HttpClient.md",
 		},
 		{
-		  text: "String 扩展方法",
+		  text: "String扩展",
 		  link: "/backend/java/java-feature/java11/2.String.md",
 		},
 	  ],
 	},
 	{
 	  text: "Java17 新特性",
-	  collapsed: false,
+	  collapsed: true,
 	  items: [
 		{
 		  text: "密封类",
@@ -368,8 +369,8 @@ export const sidebar = {
 	  collapsed: true,
 	  items: [
 		{
-		  text: "顺序集合",
-		  link: "/backend/java/java-feature/java21/顺序集合.md",
+		  text: "测试",
+		  link: "/a.md",
 		},
 	  ],
 	},
