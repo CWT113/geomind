@@ -21,7 +21,7 @@ date: 2026-06-17 21:52:17
 >
 > ✅ 优势：
 >
-> - **查询速度极快**：通过索引（index）访问元素效率极高，时间复杂度为 $O(1)$；
+> - **随机查询速度极快**：通过索引（index）访问元素效率极高，时间复杂度为 $O(1)$；
 > - **尾部操作高效**：在数组末尾添加元素非常快，时间复杂度也为 $O(1)$；
 > - **空间连续性**：在内存中占用连续的存储空间，对 CPU 缓存友好；
 >
@@ -175,7 +175,7 @@ public static void main(String[] args) {
 
 ### 误区四
 
-在 for循环 或 for-each循环 遍历 ArrayList 时，如果直接调用 `list.remove()`，此时程序会抛出 ConcurrentModificationException 异常。
+在 for 循环 或 for-each 循环 遍历 ArrayList 时，如果直接调用 `list.remove()`，此时程序会抛出 ConcurrentModificationException 异常。
 
 正确的做法是使用迭代器（Iterator）的 `remove()` 方法，或者使用 Java8+ 的 `list.removeIf()`。
 
@@ -222,3 +222,147 @@ public static void main(String[] args) {
 
 
 ## LinkedList
+
+LinkedList 是另一个核心集合类，它的底层是基于 **双向链表** 实现的。
+
+相比于基于数组的 ArrayList 不同，LinkedList 的每一个元素都是一个独立的对象（称为节点 Node），每个节点除了存储实际的数据外，还包含两个指针：一个指向前一个节点（`prev`），一个指向后一个节点（`next`）。
+
+> [!NOTE] 核心特点
+>
+> - **底层基于链表**：内存空间不需要连续，元素通过指针相互连接；
+> - **双向遍历**：因为是双向链表，既可以从头到尾遍历，也可以从尾向头遍历；
+> - **实现了多个接口**：它不仅实现了 List 接口，还实现了 Deque（双端队列）和 Queue（队列）接口，因此它可以当作队列或栈来使用；
+> - **非线程安全**：与 ArrayList 一样，它在多线程并发修改时是不安全的；
+
+> [!TIP] 优势和缺点
+>
+> ✅ 优势：
+>
+> - **增删效率高**：插入或删除元素时，只需要修改指针指向，因此时间复杂度是 $O(1)$，不需要像数组那样大量移动元素；
+> - **没有容量限制**：它是动态增长的，不需要像 ArrayList 那样进行整体的数组扩容和数据赋值；
+>
+> ❌ 缺点：
+>
+> - **随机访问慢**：不支持通过索引随机访问，如果要获取第 n 个元素，必须从头顺着指针一个一个往后找，时间复杂度为 $O(n)$；
+> - **内存占用大**：除了存储数据本身，每个节点还要额外存储两个指针；
+
+::: info 适用场景
+
+- **频繁在首尾进行增删操作**：比如实现 FIFO（先进先出）的队列，或者 LIFO（后进先出）的栈；
+- **不需要或很少需要随机访问**：主要是通过迭代器按顺序遍历数据，而不是通过下标随机查找；
+
+:::
+
+
+
+### 常用方法
+
+由于 LinkedList 实现了 List 和 Deque 接口，它的方法非常丰富：
+
+| 分类         | 方法               | 描述                  |
+| :----------: | ------------------ | --------------------- |
+| List 基础操作 | add(e) / remove(e) | 尾部添加/删除指定元素 |
+| 头部/尾部特有 | addFirst(e) / addLast(e) | 最前面/最后面添加元素 |
+|              | getFirst() / getLast() | 获取第一个/最后一个元素 |
+| | removeFirst() / removeLast() | 移除并返回第一个/最后一个元素 |
+| 队列 | offer(e) / poll() | 进队（尾部）/ 出队（头部） |
+| 栈 | push(e) / pop() | 压栈（头部）/ 弹栈（头部） |
+
+::: code-group
+
+```java {5,9,11,14,16,18,22} [普通List]
+public static void main(String[] args) {
+  LinkedList<String> linkedList = new LinkedList<>();
+  linkedList.add("BBB");
+  linkedList.add("CCC");
+  linkedList.addFirst("AAA");
+  linkedList.addLast("DDD");
+  System.out.println(linkedList); // [AAA, BBB, CCC, DDD]
+
+  String res1 = linkedList.get(1);
+  System.out.println(res1); // BBB
+  String res2 = linkedList.getLast();
+  System.out.println(res2); // DDD
+
+  linkedList.remove(1);
+  System.out.println(linkedList); // [AAA, CCC, DDD]
+  linkedList.remove("AAA");
+  System.out.println(linkedList); // [CCC, DDD]
+  linkedList.removeFirst();
+  System.out.println(linkedList); // [CCC, DDD]
+
+  // 使用 listIterator 逆序遍历
+  ListIterator<String> it = linkedList.listIterator(linkedList.size());
+  while (it.hasPrevious()) {
+    System.out.println(it.previous());
+  }
+}
+```
+
+```java [队列]
+public static void main(String[] args) {
+  LinkedList<String> queue = new LinkedList<>();
+  queue.offer("排队顾客A");
+  queue.offer("排队顾客B");
+  queue.offer("排队顾客C");
+
+  // 获取队列顶部元素
+  System.out.println(queue.peek()); // 排队顾客A
+
+  while (!queue.isEmpty()) {
+    // 弹出元素
+    System.out.println("移除元素：" + queue.poll());
+  }
+  System.out.println(queue); // []
+}
+```
+
+```java [栈]
+public static void main(String[] args) {
+  LinkedList<String> stack = new LinkedList<>();
+  stack.push("百度");
+  stack.push("Github");
+  stack.push("掘金");
+
+  // 获取栈顶元素
+  System.out.println(stack.peek()); // 掘金
+
+  while (!stack.isEmpty()) {
+    // 弹出元素
+    System.out.println(stack.pop());
+  }
+  System.out.println(stack);
+}
+```
+
+:::
+
+
+
+### 误区一
+
+避免使用普通的 for 循环遍历 LinkedList，因为每次调用 `get(i)` 都会从头开始重新查找，导致整个遍历的时间复杂度飙升到 $O(n^2)$。
+
+正确做法是使用 `for-each` 循环、`Inteator` 迭代器或 Java8+ 的 `forEach()`。
+
+```java
+public static void main(String[] args) {
+  LinkedList<String> linkedList = new LinkedList<>();
+  linkedList.add("BBB");
+  linkedList.add("CCC");
+  linkedList.addFirst("AAA");
+  linkedList.addLast("DDD");
+  System.out.println(linkedList);
+
+  // ❌ 错误写法：每次从头遍历，时间复杂度为O(n²)
+  for (int i = 0; i < linkedList.size(); i++) {
+    String s = linkedList.get(i);
+    System.out.println(s);
+  }
+
+  // ✅ 正确写法：使用增强for循环遍历（推荐）
+  for (String s : linkedList) {
+    System.out.println(s);
+  }
+}
+```
