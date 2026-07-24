@@ -360,7 +360,7 @@ export const sidebar = {
 	  items: [
 		{
 		  text: "密封类",
-		  link: "/backend/java/java-feature/java17/1.密封类.md",
+		  link: "/backend/java/java-feature/java17/密封类.md",
 		},
 	  ],
 	},
@@ -369,8 +369,12 @@ export const sidebar = {
 	  collapsed: true,
 	  items: [
 		{
-		  text: "测试",
-		  link: "/a.md",
+		  text: "Record模式",
+		  link: "/backend/java/java-feature/java21/Record模式.md",
+		},
+		{
+		  text: "Switch模式匹配",
+		  link: "/backend/java/java-feature/java21/Switch模式匹配.md",
 		},
 	  ],
 	},
