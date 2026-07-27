@@ -303,7 +303,7 @@ export const sidebar = {
 	  collapsed: true,
 	  items: [
 		{ text: "Stream 流", link: "/backend/java/javaee/Stream流.md" },
-		{ text: "File 文件类", link: "/backend/java/javaee/File.md" },
+		{ text: "文件路径操作", link: "/backend/java/javaee/文件路径操作.md" },
 		{ text: "IO 流", link: "/backend/java/javaee/IO流.md" },
 		{ text: "多线程", link: "/backend/java/javaee/多线程.md" },
 		{ text: "网络编程", link: "/backend/java/javaee/网络编程.md" },
