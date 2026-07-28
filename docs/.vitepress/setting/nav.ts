@@ -73,11 +73,11 @@ export const nav = [
 		text: "核心基础",
 		items: [
 		  {
-			text: "Java EE",
+			text: "Java 基础",
 			link: "/backend/java/javaee/数据类型.md",
 		  },
 		  {
-			text: "Java新特性",
+			text: "Java 新特性",
 			link: "/backend/java/java-feature/java8/Collectors收集器.md",
 		  },
 		  {
@@ -115,11 +115,7 @@ export const nav = [
 		  },
 		  {
 			text: "MyBatis",
-			link: "/backend/Java/Mybatis/基础使用.md",
-		  },
-		  {
-			text: "MyBatis Plus",
-			link: "/backend/Java/MybatisPlus/基础使用.md",
+			link: "/backend/java/mybatis/core/基础使用.md",
 		  },
 		],
 	  },

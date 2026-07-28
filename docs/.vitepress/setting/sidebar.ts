@@ -563,6 +563,29 @@ export const sidebar = {
 	},
   ],
 
+  "/backend/java/mybatis/": [
+	{
+	  text: "MyBatis",
+	  collapsed: false,
+	  items: [
+		{
+		  text: "基础使用",
+		  link: "/backend/java/mybatis/core/基础使用.md",
+		},
+	  ],
+	},
+	{
+	  text: "MyBatis Plus",
+	  collapsed: false,
+	  items: [
+		{
+		  text: "基础使用",
+		  link: "/backend/java/mybatis/plus/基础使用.md",
+		},
+	  ],
+	},
+  ],
+
   // Java模块 - 服务注册与发现
   "/backend/java/discovery/": [
 	{
