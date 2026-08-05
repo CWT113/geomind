@@ -75,6 +75,110 @@ public static void main(String[] args) {
 
 
 
+### BufferedInputStream
+
+BufferedInputStream（缓冲输入流）也是 InputStream 的子类，它本身并不直接与底层数据（如磁盘文件、网络套接字）建立连接，而是 **包裹另一个 InputStream，在内存中维护一个内部字节缓冲区**。
+
+> [!NOTE] 工作原理
+>
+> - **传统的 `FileInputStream`**：每次读取 1 个字节，就要向操作系统发起一次磁盘 IO 请求，频繁的系统调用会导致效率极低；
+> - **`BufferedInputStream`**：当请求读取字节时，它会一次性从底层流中预 **读出一大块数据**（默认 8KB）填充到内存缓冲区中，后续的读取操作直接从内存缓冲区中拿数据，当缓冲区空了才会再次发起磁盘 IO；
+
+> [!TIP] 适用场景
+>
+> - **频繁读取小量数据**：例如逐字节读取文件内容，解析特定的二进制协议格式等；
+> - **需要支持重置**：FileInputStream 不支持指针回退，而 BufferedInputStream 支持 `mark()` 和 `reset()` 操作，可以在读取过程中标记当前位置，并稍后跳回；
+> - **提升低级流的读取效率**：包装网络流货基础文件流，减少实际的网络/磁盘交互次数；
+
+| 构造方法                                      | 描述                       |
+| --------------------------------------------- | -------------------------- |
+| BufferedInputStream(InputStream in)           | 使用默认缓冲区包装指定流   |
+| BufferedInputStream(InputStream in, int size) | 指定自定义缓冲区包装指定流 |
+
+::: code-group
+
+```java {5} [基础使用]
+public static void main(String[] args) {
+  String filePath = "text.txt";
+
+  // 使用 BufferedInputStream 把 FileInputStream 包装起来
+  try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filePath))) {
+    byte[] buffer = new byte[1024];
+    int len;
+    while ((len = bis.read(buffer)) != -1) {
+      String content = new String(buffer, 0, len, StandardCharsets.UTF_8);
+      System.out.println(content);
+    }
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
+
+```java {5,11,13,21} [回退读取]
+public static void main(String[] args) {
+  byte[] data = "ABCDEFGH".getBytes();
+
+  try (ByteArrayInputStream bais = new ByteArrayInputStream(data);
+       BufferedInputStream bis = new BufferedInputStream(bais)) {
+    // 读取前两个字节
+    System.out.println((char) bis.read()); // A
+    System.out.println((char) bis.read()); // B
+
+    // 检查是否支持 mark() / reset()
+    if (bis.markSupported()) {
+      // 标记当前位置（指向'C'），设置最多再读10个字节内标记有效
+      bis.mark(10);
+    }
+
+    // 继续读取两个字节
+    System.out.println((char) bis.read()); // C
+    System.out.println((char) bis.read()); // D
+
+    // 回退
+    bis.reset();
+
+    // 继续读取两个字节
+    System.out.println((char) bis.read()); // C
+    System.out.println((char) bis.read()); // D
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 字节输出流
@@ -157,6 +261,104 @@ public static void main(String[] args) {
 ```
 
 :::
+
+
+
+### BufferedOutputStream
+
+BufferedOutputStream（缓冲字节输出流）是 OutputStream 的子类，它自己并不负责把数据真正写入到磁盘，而是用于 **包装另一个 OutputStream**，它在内存中维护了一个 内部字节缓冲区。
+
+> [!NOTE] 工作原理
+>
+> - **传统 `FileOutputStream`**：每次调用 `write(int)` 写入 1 个字节，操作系统就需要进行一次 IO 操作，效率极低；
+> - **`BufferedOutputStream`**：当调用 `write()` 写入字节时，数据会先存在它的 **内存缓冲区** 中。只有当发生以下三种情况时，才会批量一次性写入底层的输入流：
+>   - 内存缓冲区满了（默认大小为 8KB）；
+>   - 显示调用了 `flush()` 方法；
+>   - 流被关闭（调用了 `close()` 方法）；
+
+> [!TIP] 适用场景
+>
+> - **频繁写入少量数据**：如在一个大循环里逐个字节、逐行地写文件，或者频繁向网络 Socket 写入小数据包；
+> - **需要批量写入磁盘以提升性能**：包装 FileOutputStream，极大减少磁盘IO操作；
+
+| 构造方法                                         | 描述                                      |
+| ------------------------------------------------ | ----------------------------------------- |
+| BufferedOutputStream(OutputStream out)           | 使用默认的缓冲区包装底层输出流（默认8KB） |
+| BufferedOutputStream(OutputStream out, int size) | 使用自定义的缓冲区包装底层输出流          |
+
+::: code-group
+
+```java {5,6,15} [基础写入]
+public static void main(String[] args) {
+  String filePath = "text.txt";
+
+  // close() 内部会自动触发 flush() 刷盘，然后再关闭底层 FileOutputStream
+  try (FileOutputStream fos = new FileOutputStream(filePath);
+       BufferedOutputStream bos = new BufferedOutputStream(fos)) {
+    // 模拟频繁写入小数据
+    for (int i = 0; i < 1000; i++) {
+      String line = "这是第 " + i + " 行数据。\n";
+      byte[] bytes = line.getBytes(StandardCharsets.UTF_8);
+      // 优先写入 8KB 的内存缓冲区
+      bos.write(bytes);
+    }
+    // 如果有些关键数据需要立刻写入，可以手动flush()
+    bos.flush();
+    System.out.println("数据写入完毕！");
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
+
+```java {6,7} [复制文件]
+public static void main(String[] args) {
+  String sourcePath = "example.mp4";
+  String newPath = "example_copy.mp4";
+
+  long start = System.currentTimeMillis();
+  try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(sourcePath));
+       BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(newPath))) {
+    byte[] buffer = new byte[8192];
+    int len;
+    while ((len = bis.read(buffer)) != -1) {
+      bos.write(buffer, 0, len);
+    }
+    long end = System.currentTimeMillis();
+    System.out.println("文件复制完毕，耗时：" + (end - start) + "ms");
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
+
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

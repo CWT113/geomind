@@ -481,9 +481,29 @@ public static void main(String[] args) {
 
 
 
-
-
 ## TreeMap
+
+
+
+
+
+
+
+## Hashtable
+
+Hashtable 是集合框架中非常古老的一个实现类（诞生于 JDK1.0），它实现了 Map 接口，用于存储键值对映射。
+
+在现代 Java 开发中，Hashtable 基本已经被视为遗留类，大多数情况下已被 HashMap 或 ConcurrentHashMap 替代。
+
+
+
+
+
+
+
+
+
+
 
 
 
