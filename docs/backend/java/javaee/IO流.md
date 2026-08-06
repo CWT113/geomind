@@ -38,7 +38,7 @@ Java 中的 IO 流主要分为 2 大类，区分的关键在于 **处理数据�
 
 ::: code-group
 
-```java {3,6} [基础写入]
+```java {3,6} [基础读取]
 public static void main(String[] args) {
   File file = new File("example.txt");
   try (FileInputStream fis = new FileInputStream(file)) {
@@ -53,7 +53,7 @@ public static void main(String[] args) {
 }
 ```
 
-```java {3,5,7,9} [缓冲区写入（推荐）]
+```java {3,5,7,9} [缓冲区读取（推荐）]
 public static void main(String[] args) {
   String filePath = "example.txt";
   try (FileInputStream fis = new FileInputStream(filePath)) {
@@ -97,7 +97,7 @@ BufferedInputStream（缓冲输入流）也是 InputStream 的子类，它本身
 
 ::: code-group
 
-```java {5} [基础使用]
+```java {5} [基础读取]
 public static void main(String[] args) {
   String filePath = "text.txt";
 
@@ -148,36 +148,6 @@ public static void main(String[] args) {
 ```
 
 :::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -279,11 +249,11 @@ BufferedOutputStream（缓冲字节输出流）是 OutputStream 的子类，它�
 > [!TIP] 适用场景
 >
 > - **频繁写入少量数据**：如在一个大循环里逐个字节、逐行地写文件，或者频繁向网络 Socket 写入小数据包；
-> - **需要批量写入磁盘以提升性能**：包装 FileOutputStream，极大减少磁盘IO操作；
+> - **需要批量写入磁盘以提升性能**：包装 FileOutputStream，极大减少磁盘 IO 操作；
 
 | 构造方法                                         | 描述                                      |
 | ------------------------------------------------ | ----------------------------------------- |
-| BufferedOutputStream(OutputStream out)           | 使用默认的缓冲区包装底层输出流（默认8KB） |
+| BufferedOutputStream(OutputStream out)           | 使用默认的缓冲区包装底层输出流（默认 8KB） |
 | BufferedOutputStream(OutputStream out, int size) | 使用自定义的缓冲区包装底层输出流          |
 
 ::: code-group
@@ -336,57 +306,240 @@ public static void main(String[] args) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 字符输入流
 
+### FileReader
+
+FileReader（文件字符输入流）是专门用于 **从文件中读取字符数据** 的便捷类。它是 `InputStreamReader` 的子类，属于字符流。与字节流按字节读取不同，FileReader 会自动根据指定的字符集将字节解码为字符，因此非常适合直接读取文本文件。
+
+| 构造方法                                     | 描述                             |
+| -------------------------------------------- | -------------------------------- |
+| FileReader(String fileName)                  | 通过文件路径字符串构建字符输入流 |
+| FileReader(File file)                        | 通过 File 对象创建字符输入流     |
+| FileReader(String fileName, Charset charset) | 指定字符集读取文件（推荐）       |
+
+```java {3}
+public static void main(String[] args) {
+  File file = new File("example.txt");
+  try (FileReader reader = new FileReader(file, StandardCharsets.UTF_8)) {
+    char[] buffer = new char[8192];
+    int len;
+    while ((len = reader.read(buffer)) != -1) {
+      String content = new String(buffer, 0, len);
+      System.out.println(content);
+    }
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
 
 
 
+### BufferedReader
+
+BufferedReader 是 IO 流中专门用来从字符输入流中高效读取文本的缓冲字符输入流，它本身不直接读取底层文件，而是 **包装另一个字符输入流**（如 FileReader），并在内存中维护一个字符缓冲区。
+
+> [!NOTE] 工作原理
+>
+> - **传统 FileReader**：每次调用 `read()` 读取字符时，都可能触发一次针对底层文件或系统的读取操作，频繁读写磁盘效率较低；
+> - **BufferedReader**：一次性从底层数据源预读一大块字符数据存入内存缓冲区，当后续调用 `read()` 或 `readLine()` 时，优先直接从内存中拿数据，只有缓冲区空了才会再次触发底层的真实读取；
+
+| 构造方法                          | 描述                                           |
+| --------------------------------- | ---------------------------------------------- |
+| BufferedReader(Reader in)         | 使用默认缓冲区大小（8192 字符）包装指定的字符流 |
+| BufferedReader(Reader in, int sz) | 使用自定义缓冲区大小包装指定的字符流           |
+
+```java {4,14}
+public static void main(String[] args) {
+  String filePath = "example.txt";
+
+  try (BufferedReader br = new BufferedReader(new FileReader(filePath, StandardCharsets.UTF_8))) {
+    char[] buffer = new char[8192];
+    int len;
+    while ((len = br.read(buffer)) != -1) {
+      String content = new String(buffer, 0, len);
+      System.out.println(content);
+    }
+
+    // 或者使用 readLine() 逐行读取，到达末尾返回 null
+    String line;
+    while ((line = br.readLine()) != null) {
+      System.out.println(line);
+    }
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
 
 
 
+### InputStreamReader
 
+InputStreamReader 是 IO 流中非常核心的 **转换流**，它是 **从字节流到字符流的桥梁**。它继承自 Reader（字符输入流），能够读取字节并使用指定的字符集将其解码为字符。
 
+> [!NOTE] 适用场景
+>
+> - **解决乱码问题（核心）**：当文件的编码格式（如 GBK）与系统默认编码不一致时，使用 InputStreamReader 可以显式指定字符集进行读取；
+> - **将字节流转换为字符流**：比如把控制台标准输入或网络 Socket 接收到的字节流转换为字符流，以便使用 BufferedReader 逐行读取；
 
+| 构造方法                                          | 描述                                   |
+| ------------------------------------------------- | -------------------------------------- |
+| InputStreamReader(InputStream in)                 | 使用系统默认字符集包装指定的字节输入流 |
+| InputStreamReader(InputStream in, String charset) | 指定字符集编码名称包装字节流           |
+| InputStreamReader(InputStream in, Charset cs)     | 指定字符集编码名称包装字节流           |
 
+::: code-group
 
+```java [读取文件内容] {6}
+public static void main(String[] args) {
+  // 文件的编码格式是 GBK
+  String filePath = "example.txt";
 
+  // 显式指定使用 GBK 格式编码读取，默认 UTF 格式会导致乱码
+  try (InputStreamReader isr = new InputStreamReader(new FileInputStream(filePath), Charset.forName("GBK"))) {
+    System.out.println("当前使用的编码格式是：" + isr.getEncoding());
 
+    char[] buffer = new char[8192];
+    int len;
+    while ((len = isr.read(buffer)) != -1) {
+      String content = new String(buffer, 0, len);
+      System.out.println(content);
+    }
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
 
+```java [读取控制台内容] {4}
+public static void main(String[] args) {
+  System.out.println("请输入内容（输入 exit 退出）：");
 
+  try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8))) {
+    String input;
+    while ((input = br.readLine()) != null) {
+      if ("exit".equals(input)) {
+        System.out.println("程序退出");
+        break;
+      }
+      System.out.println(input);
+    }
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
+
+:::
 
 
 
 ## 字符输出流
 
+### FileWriter
+
+FileWriter 是 IO 流中专门用来 **将字符数据写入文件** 的便捷类。它是 OutputStreamWriter 的子类，属于字符流。与字节流不同，FileWriter 可以直接接收 char 或 String 类型的数据，并自动将其编码为字节后写入文件，非常适合处理文本文件。
+
+| 构造方法                                                     | 描述                                           |
+| ------------------------------------------------------------ | ---------------------------------------------- |
+| FileWriter(String fileName)                                  | 覆盖写入指定路径的文件                         |
+| FileWriter(File file)                                        | 覆盖写入指定的 File 对象                       |
+| FileWriter(String fileName, boolean append)                  | append 为 true，表示追加模式，不会清空原有文件 |
+| FileWriter(String fileName, Charset charset)                 | 指定字符集写入文件（推荐使用）                 |
+| FileWriter(String fileName, Charset charset, boolean append) | 指定字符集加追加模式                           |
+
+```java {10}
+public static void main(String[] args) {
+  File file = new File("example.txt");
+
+  // 确保父目录存在
+  File parentDir = file.getParentFile();
+  if (parentDir != null && !parentDir.exists()) {
+    parentDir.mkdirs();
+  }
+
+  try (FileWriter writer = new FileWriter(file, StandardCharsets.UTF_8)) {
+    writer.write("Hello World");
+    writer.write(System.lineSeparator()); // 系统标准的换行符
+    writer.write("这是第二行写入的中文内容。\n");
+
+    System.out.println("写入文件成功！");
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
+
+
+
+### BufferedWriter
+
+BufferedWriter 是 IO 流中专门用来高效写入字符数据的缓冲字符输出流，它本身不直接负责将字符写入文件，而是包装另一个字符输出流，并在内部中维护一个字符缓冲区。
+
+| 构造方法                           | 描述                                               |
+| ---------------------------------- | -------------------------------------------------- |
+| BufferedWriter(Writer out)         | 使用默认缓冲区大小（8192 字符）包装指定的字符输出流 |
+| BufferedWriter(Writer out, int sz) | 自定义字符缓冲区的大小                             |
+
+```java {11}
+public static void main(String[] args) {
+  File file = new File("example.txt");
+
+  // 确保父目录存在
+  File parentDir = file.getParentFile();
+  if (parentDir != null && !parentDir.exists()) {
+    parentDir.mkdirs();
+  }
+
+  // 指定字符集编码并追加写入文件
+  try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, StandardCharsets.UTF_8, true))) {
+    bw.write("Hello World");
+    bw.write(System.lineSeparator()); // 系统标准的换行符
+    bw.write("这是第二行写入的中文内容。\n");
+
+    System.out.println("写入文件成功！");
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
 
 
 
 
 
+### OutputStreamWriter
 
+OutputStreanWriter 是 IO 流中的转换流。它是从 **字符流到字节流转换的桥梁**。它继承自 Writer（字符输出流），能够接收字符，并根据指定的字符集将其编码为字节，然后写入底层的字节输出流。
+
+> [!NOTE] 适用场景
+>
+> - **解决跨平台写入乱码问题**：当你需要明确指定文件的保存编码格式时使用；
+> - **将字符流转换为字节流**：将 BufferedWriter 产生的字符文本转换后写入网络 Socket 的字节输出流中；
+
+| 构造函数                                             | 描述                                   |
+| ---------------------------------------------------- | -------------------------------------- |
+| OutputStreamWriter(OutputStream out)                 | 使用系统默认字符集包装指定的字节输出流 |
+| OutputStreamWriter(OutputStream out, String charset) | 指定字符编码包装字节流                 |
+| OutputStreamWriter(OutputStream out, Charset cs)     | 指定 Charset 对象包装字节流            |
+
+```java
+public static void main(String[] args) {
+  String filePath = "example.txt";
+
+  try (OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(filePath), Charset.forName("GBK"))) {
+    System.out.println("当前写入使用的编码是：" + osw.getEncoding());
+
+    osw.write("hello world \n");
+    osw.write("这是一行中文文本");
+
+    osw.flush();
+    System.out.println("写入文本成功！");
+
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+```
