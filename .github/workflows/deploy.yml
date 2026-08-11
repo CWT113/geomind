@@ -1,56 +1,80 @@
 name: Deploy VitePress site to Pages
 
+# 触发条件
 on:
+  # 推送事件
   push:
+    # 当推送到 main 分支时自动触发工作流，如果主分支是 master，则将此处修改为 master
     branches: [ main ]
 
+# 设置 Github Token 权限
 permissions:
+  # 读取仓库代码的权限
   contents: read
+  # 写入/部署到 GitHub Pages 的权限
   pages: write
+  # 用于 OIDC 身份认证的权限
   id-token: write
 
+# 并发控制策略，防止多个构建任务同时运行导致冲突
 concurrency:
+  # 将这些任务归为 pages 组
   group: pages
+  # 如果有新的提交，不会中断正在进行的部署
   cancel-in-progress: false
 
 jobs:
   # 构建工作
   build:
+    # 使用最新的 Ubuntu 虚拟环境下运行
     runs-on: ubuntu-latest
     steps:
+      # 1.拉取仓库中的代码
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
+          # 拉去完整的 Git 历史，vitePress 需要计算文档的最后更新时间
           fetch-depth: 0
+      # 2.安装 pnpm 包管理器
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
         with:
           version: 11
+      # 3.配置 Node.js 运行环境
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
+      # 4.初始化和配置 Github Pages 环境
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
+      # 5.安装项目依赖
       - name: Install dependencies
         run: pnpm install
+      # 6.构建 VitePress 项目
       - name: Build with VitePress
         run: pnpm docs:build
+      # 7.打包并将构建的产物上传至 Github 暂存区
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: docs/.vitepress/dist
-
   # 部署工作
   deploy:
+    # 设置 Github 的 Environment 部署环境名称和生成的网址
     environment:
       name: github-pages
+      # 自动捕获部署完成后生成的链接
       url: ${{ steps.deployment.outputs.page_url }}
+    # 依赖控制：必须等待 build 任务完成后才开始部署
     needs: build
+    # 在最新的 Ubuntu 虚拟环境下运行
     runs-on: ubuntu-latest
+    # 显示的任务步骤名称
     name: Deploy
     steps:
+      # 将打包好的产物正式发布到 Github Pages 站点
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
