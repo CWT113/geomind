@@ -78,7 +78,7 @@ export const nav = [
 		  },
 		  {
 			text: "Java 新特性",
-			link: "/backend/java/java-feature/java8/Collectors收集器.md",
+			link: "/backend/java/java-feature/java8/1.Collectors收集器.md",
 		  },
 		  {
 			text: "JDBC",

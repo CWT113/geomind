@@ -319,24 +319,16 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{
-		  text: "Collectors收集器",
-		  link: "/backend/java/java-feature/java8/Collectors收集器.md",
+		  text: "Collectors 收集器",
+		  link: "/backend/java/java-feature/java8/1.Collectors收集器.md",
 		},
 		{
-		  text: "Base64编解码",
-		  link: "/backend/java/java-feature/java8/Base64编解码.md",
+		  text: "Base64 编码解码",
+		  link: "/backend/java/java-feature/java8/2.Base64编码解码.md",
 		},
 		{
-		  text: "Optional工具类",
-		  link: "/backend/java/java-feature/java8/Optional.md",
-		},
-		{
-		  text: "时间日期类流",
-		  link: "/backend/java/java-feature/java8/6.时间日期类.md",
-		},
-		{
-		  text: "Stream流",
-		  link: "/backend/java/java-feature/java8/7.Stream流.md",
+		  text: "Optional 工具类",
+		  link: "/backend/java/java-feature/java8/3.Optional工具类.md",
 		},
 	  ],
 	},
@@ -350,7 +342,7 @@ export const sidebar = {
 		},
 		{
 		  text: "String扩展",
-		  link: "/backend/java/java-feature/java11/2.String.md",
+		  link: "/backend/java/java-feature/java11/2.String扩展.md",
 		},
 	  ],
 	},
