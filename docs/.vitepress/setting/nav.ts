@@ -85,11 +85,11 @@ export const nav = [
 			link: "/a.md",
 		  },
 		  {
-			text: "Maven",
+			text: "Java Web",
 			link: "/a.md",
 		  },
 		  {
-			text: "Java Web",
+			text: "Maven",
 			link: "/a.md",
 		  },
 		  {
@@ -99,23 +99,28 @@ export const nav = [
 		],
 	  },
 	  {
-		text: "Spring全家桶",
+		text: "Spring 全家桶",
 		items: [
 		  {
 			text: "Spring6",
-			link: "/backend/Java/Spring/Spring简介.md",
+			link: "/a.md",
 		  },
 		  {
 			text: "Spring MVC",
-			link: "/backend/Java/SpringMVC/MVC理论基础.md",
+			link: "/a.md",
 		  },
 		  {
 			text: "Spring Boot",
-			link: "/backend/Java/SpringBoot/基础使用.md",
+			link: "/a.md",
 		  },
+		],
+	  },
+	  {
+		text: "ORM 框架",
+		items: [
 		  {
 			text: "MyBatis",
-			link: "/backend/java/mybatis/core/基础使用.md",
+			link: "/a.md",
 		  },
 		],
 	  },
@@ -133,23 +138,62 @@ export const nav = [
 		],
 	  },
 	  {
-		text: "中间件",
+		text: "安全控制",
+		items: [
+		  {
+			text: "SpringSecurity",
+			link: "/a.md",
+		  },
+		],
+	  },
+	  {
+		text: "通用中间件",
 		items: [
 		  {
 			text: "Redis",
 			link: "/a.md",
 		  },
 		  {
-			text: "Kafka",
+			text: "MinIO",
 			link: "/a.md",
 		  },
 		  {
-			text: "RabbitMQ",
+			text: "Quartz",
 			link: "/a.md",
 		  },
 		  {
-			text: "Nacos",
-			link: "/backend/java/discovery/nacos/1.注册中心.md",
+			text: "消息队列",
+			link: "/a.md",
+		  },
+		  {
+			text: "Gateway",
+			link: "/a.md",
+		  },
+		],
+	  },
+	  {
+		text: "微服务与分布式",
+		items: [
+		  {
+			text: "服务注册",
+			link: "/a.md",
+		  },
+		  {
+			text: "RPC与微服务",
+			link: "/a.md",
+		  },
+		],
+	  },
+	  {
+		text: "日志分析",
+		items: [
+		  {
+			text: "ELK",
+			link: "/a.md",
+		  },
+		  {
+			text: "Prometheus",
+			link: "/a.md",
 		  },
 		],
 	  },
