@@ -302,27 +302,41 @@ export const nav = [
 	],
   },*/
 
-  /*{
-	text: "服务端",
+  {
+	text: "服务运维",
 	items: [
 	  {
-		text: "Nginx",
+		text: "网络基础",
 		link: "/a.md",
 	  },
 	  {
-		text: "Linux",
-		link: "/devops/linux/系统命令.md",
+		text: "Web代理",
+		items: [
+		  {
+			text: "Nginx",
+			link: "/a.md",
+		  },
+		],
 	  },
 	  {
-		text: "Docker",
-		link: "/devops/docker/1.镜像与容器.md",
-	  },
-	  {
-		text: "K8s",
-		link: "/devops/docker/1.镜像与容器.md",
+		text: "容器化与云原生",
+		items: [
+		  {
+			text: "Linux",
+			link: "/devops/linux/系统命令.md",
+		  },
+		  {
+			text: "Docker",
+			link: "/devops/docker/1.镜像与容器.md",
+		  },
+		  {
+			text: "Kubernetes",
+			link: "/devops/docker/1.镜像与容器.md",
+		  },
+		],
 	  },
 	],
-  },*/
+  },
 
   /*{
 	text: "AI智能体",
