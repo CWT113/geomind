@@ -86,7 +86,7 @@ export const nav = [
 		  },
 		  {
 			text: "Java Web",
-			link: "/a.md",
+			link: "/backend/java/java-web/1.生命周期.md",
 		  },
 		  {
 			text: "Maven",

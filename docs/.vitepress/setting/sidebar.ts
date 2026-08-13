@@ -382,6 +382,80 @@ export const sidebar = {
 	},
   ],
 
+  // Java模块 - JavaWeb
+  "/backend/java/java-web/": [
+	{
+	  text: "Java Web",
+	  collapsed: false,
+	  items: [
+		{
+		  text: "生命周期",
+		  link: "/backend/java/java-web/1.生命周期.md",
+		},
+		{
+		  text: "环境配置",
+		  link: "/backend/java/java-web/2.环境配置.md",
+		},
+		{
+		  text: "表单数据",
+		  link: "/backend/java/java-web/3.表单数据.md",
+		},
+		{
+		  text: "客户端HTTP请求",
+		  link: "/backend/java/java-web/4.客户端HTTP请求.md",
+		},
+		{
+		  text: "服务的HTTP响应",
+		  link: "/backend/java/java-web/5.服务的HTTP响应.md",
+		},
+		{
+		  text: "过滤器",
+		  link: "/backend/java/java-web/6.过滤器.md",
+		},
+		{
+		  text: "异常处理",
+		  link: "/backend/java/java-web/7.异常处理.md",
+		},
+		{
+		  text: "Cookie处理",
+		  link: "/backend/java/java-web/8.Cookie处理.md",
+		},
+		{
+		  text: "Session追踪",
+		  link: "/backend/java/java-web/9.Session追踪.md",
+		},
+		{
+		  text: "访问数据库",
+		  link: "/backend/java/java-web/10.访问数据库.md",
+		},
+		{
+		  text: "文件上传",
+		  link: "/backend/java/java-web/11.文件上传.md",
+		},
+		{
+		  text: "处理时间",
+		  link: "/backend/java/java-web/12.处理时间.md",
+		},
+		{
+		  text: "网页重定向",
+		  link: "/backend/java/java-web/13.网页重定向.md",
+		},
+		{
+		  text: "点击计数器",
+		  link: "/backend/java/java-web/14.点击计数器.md",
+		},
+		{
+		  text: "自动刷新页面",
+		  link: "/backend/java/java-web/15.自动刷新页面.md",
+		},
+		{
+		  text: "国际化",
+		  link: "/backend/java/java-web/16.国际化.md",
+		},
+	  ],
+	},
+  ],
+
   // Java模块 - 数据解构和算法
   "/backend/java/data-structure/": [
 	{
