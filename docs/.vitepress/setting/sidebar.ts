@@ -425,10 +425,6 @@ export const sidebar = {
 		  link: "/backend/java/java-web/9.Session追踪.md",
 		},
 		{
-		  text: "访问数据库",
-		  link: "/backend/java/java-web/10.访问数据库.md",
-		},
-		{
 		  text: "文件上传",
 		  link: "/backend/java/java-web/11.文件上传.md",
 		},
