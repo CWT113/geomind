@@ -82,7 +82,7 @@ export const nav = [
 		  },
 		  {
 			text: "JDBC",
-			link: "/a.md",
+			link: "/backend/java/jdbc/1.基础入门.md",
 		  },
 		  {
 			text: "Java Web",
