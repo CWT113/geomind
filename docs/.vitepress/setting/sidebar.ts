@@ -672,6 +672,55 @@ export const sidebar = {
 	},
   ],
 
+  // Java模块 - Spring6
+  "/backend/java/spring/": [
+	{
+	  text: "Spring6",
+	  collapsed: false,
+	  items: [
+		{ text: "基础概述", link: "/backend/java/spring/1.基础概述.md" },
+		{ text: "工程配置", link: "/backend/java/spring/2.工程配置.md" },
+		{
+		  text: "IOC容器",
+		  link: "/backend/java/spring/3.IOC容器.md",
+		  items: [
+			{ text: "基于XML管理Bean", link: "/backend/java/spring/3.1.基于XML管理Bean.md" },
+			{ text: "基于注解管理Bean", link: "/backend/java/spring/3.2.基于注解管理Bean.md" },
+		  ],
+		},
+		{ text: "手写容器", link: "/backend/java/spring/4.手写容器.md" },
+		{ text: "AOP面向切片", link: "/backend/java/spring/5.AOP面向切片.md" },
+		{ text: "Junit", link: "/backend/java/spring/6.Junit.md" },
+		{ text: "事务", link: "/backend/java/spring/7.事务.md" },
+		{ text: "Resource", link: "/backend/java/spring/8.Resource.md" },
+		{ text: "国际化", link: "/backend/java/spring/9.国际化.md" },
+		{ text: "数据校验", link: "/backend/java/spring/10.数据校验.md" },
+		{ text: "Cache", link: "/backend/java/spring/11.Cache.md" },
+	  ],
+	},
+  ],
+
+  // Java模块 - SpringMVC
+  "/backend/java/spring-mvc/": [
+	{
+	  text: "SpringMVC",
+	  collapsed: false,
+	  items: [
+		{ text: "基础概述", link: "/backend/java/spring-mvc/1.基础概述.md" },
+		{ text: "请求注解", link: "/backend/java/spring-mvc/2.请求注解.md" },
+		{ text: "获取请求参数", link: "/backend/java/spring-mvc/3.获取请求参数.md" },
+		{ text: "域对象共享数据", link: "/backend/java/spring-mvc/4.域对象共享数据.md" },
+		{ text: "MVC视图", link: "/backend/java/spring-mvc/5.MVC视图.md" },
+		{ text: "RESTful", link: "/backend/java/spring-mvc/6.RESTful.md" },
+		{ text: "HttpMessageConverter", link: "/backend/java/spring-mvc/7.HttpMessageConverter.md" },
+		{ text: "拦截器和异常处理", link: "/backend/java/spring-mvc/8.拦截器和异常处理.md" },
+		{ text: "完全注解开发", link: "/backend/java/spring-mvc/9.完全注解开发.md" },
+		{ text: "MVC执行流程", link: "/backend/java/spring-mvc/10.MVC执行流程.md" },
+	  ],
+	},
+  ],
+
+  // Java模块 - MyBatis
   "/backend/java/mybatis/": [
 	{
 	  text: "MyBatis",

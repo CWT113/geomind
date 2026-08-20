@@ -8,7 +8,7 @@ export const nav = [
 	  },
 	  {
 		text: "JavaScript",
-		link: "/frontend/javascript/基本数据类型.md",
+		link: "/frontend/javascript/1.基本数据类型.md",
 	  },
 	  {
 		text: "TypeScript",
@@ -103,11 +103,11 @@ export const nav = [
 		items: [
 		  {
 			text: "Spring6",
-			link: "/a.md",
+			link: "/backend/java/spring/1.基础概述.md",
 		  },
 		  {
 			text: "Spring MVC",
-			link: "/a.md",
+			link: "/backend/java/spring-mvc/1.基础概述.md",
 		  },
 		  {
 			text: "Spring Boot",
