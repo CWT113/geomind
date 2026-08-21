@@ -682,6 +682,7 @@ export const sidebar = {
 		{ text: "工程配置", link: "/backend/java/spring/2.工程配置.md" },
 		{
 		  text: "IOC容器",
+		  collapsed: false,
 		  link: "/backend/java/spring/3.IOC容器.md",
 		  items: [
 			{ text: "基于XML管理Bean", link: "/backend/java/spring/3.1.基于XML管理Bean.md" },
