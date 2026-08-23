@@ -90,7 +90,7 @@ export const nav = [
 		  },
 		  {
 			text: "Maven",
-			link: "/a.md",
+			link: "/backend/java/maven/1.环境配置.md",
 		  },
 		  {
 			text: "数据结构和算法",
