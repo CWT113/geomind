@@ -499,19 +499,17 @@ export const sidebar = {
     },
   ],
 
+  // Java模块 - Maven
   "/backend/java/maven/": [
     {
       text: "Maven",
       collapsed: false,
       items: [
-        {
-          text: "环境配置",
-          link: "/backend/java/maven/1.环境配置.md",
-        },
-        {
-          text: "构建命令",
-          link: "/backend/java/maven/2.构建命令.md",
-        },
+        { text: "环境配置", link: "/backend/java/maven/1.环境配置.md", },
+        { text: "构建命令", link: "/backend/java/maven/2.构建命令.md", },
+        { text: "依赖管理", link: "/backend/java/maven/3.依赖管理.md", },
+        { text: "模块聚合", link: "/backend/java/maven/4.模块聚合.md", },
+        { text: "模块继承", link: "/backend/java/maven/5.模块继承.md", },
       ],
     },
   ],
