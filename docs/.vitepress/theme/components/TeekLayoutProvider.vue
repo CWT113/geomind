@@ -7,13 +7,13 @@ import NotFound from "./404.vue";
 
 <template>
   <Teek.Layout>
-    <template #teek-archives-top-before>
-      <ContributeChart />
-    </template>
+	<template #teek-archives-top-before>
+	  <ContributeChart/>
+	</template>
 
-    <template #not-found>
-      <NotFound />
-    </template>
+	<template #not-found>
+	  <NotFound/>
+	</template>
   </Teek.Layout>
 </template>
 
@@ -22,7 +22,7 @@ import NotFound from "./404.vue";
   margin-bottom: 20px;
 
   .tk-my__avatar.circle-rotate {
-    margin-top: 200px;
+	margin-top: 200px;
   }
 }
 </style>
