@@ -966,7 +966,7 @@ export const sidebar = {
 	{
 	  text: "基础知识",
 	  items: [
-		{ text: "基础入门", link: "/backend/python/basic/基础入门.md" },
+		{ text: "数据类型", link: "/backend/python/basic/1.数据类型.md" },
 	  ],
 	},
   ],
