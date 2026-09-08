@@ -721,7 +721,7 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{ text: "基础概述", link: "/backend/java/spring-mvc/1.基础概述.md" },
-		{ text: "请求注解", link: "/backend/java/spring-mvc/2.请求注解.md" },
+		{ text: "RequestMapping注解", link: "/backend/java/spring-mvc/2.RequestMapping注解.md" },
 		{ text: "获取请求参数", link: "/backend/java/spring-mvc/3.获取请求参数.md" },
 		{ text: "域对象共享数据", link: "/backend/java/spring-mvc/4.域对象共享数据.md" },
 		{ text: "MVC视图", link: "/backend/java/spring-mvc/5.MVC视图.md" },
