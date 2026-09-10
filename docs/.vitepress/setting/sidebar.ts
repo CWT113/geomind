@@ -722,10 +722,10 @@ export const sidebar = {
 	  items: [
 		{ text: "基础概述", link: "/backend/java/spring-mvc/1.基础概述.md" },
 		{ text: "RequestMapping注解", link: "/backend/java/spring-mvc/2.RequestMapping注解.md" },
+		{ text: "HttpMessageConverter", link: "/backend/java/spring-mvc/7.HttpMessageConverter.md" },
 		{ text: "获取请求参数", link: "/backend/java/spring-mvc/3.获取请求参数.md" },
 		{ text: "域对象共享数据", link: "/backend/java/spring-mvc/4.域对象共享数据.md" },
-		{ text: "RESTful", link: "/backend/java/spring-mvc/6.RESTful.md" },
-		{ text: "HttpMessageConverter", link: "/backend/java/spring-mvc/7.HttpMessageConverter.md" },
+		{ text: "RESTful请求风格", link: "/backend/java/spring-mvc/6.RESTful.md" },
 		{ text: "文件上传下载", link: "/backend/java/spring-mvc/8.文件上传下载.md" },
 		{ text: "拦截器和异常处理", link: "/backend/java/spring-mvc/9.拦截器和异常处理.md" },
 		{ text: "全注解开发", link: "/backend/java/spring-mvc/10.全注解开发.md" },
