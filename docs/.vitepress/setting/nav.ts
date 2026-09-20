@@ -111,7 +111,7 @@ export const nav = [
 		  },
 		  {
 			text: "Spring Boot",
-			link: "/a.md",
+			link: "/backend/java/spring-boot/1.配置文件.md",
 		  },
 		],
 	  },
