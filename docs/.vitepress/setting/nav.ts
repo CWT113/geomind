@@ -124,79 +124,6 @@ export const nav = [
 		  },
 		],
 	  },
-	  {
-		text: "高级调优",
-		items: [
-		  {
-			text: "JVM",
-			link: "/a.md",
-		  },
-		  {
-			text: "JUC",
-			link: "/a.md",
-		  },
-		],
-	  },
-	  {
-		text: "安全控制",
-		items: [
-		  {
-			text: "SpringSecurity",
-			link: "/a.md",
-		  },
-		],
-	  },
-	  {
-		text: "通用中间件",
-		items: [
-		  {
-			text: "Redis",
-			link: "/a.md",
-		  },
-		  {
-			text: "MinIO",
-			link: "/a.md",
-		  },
-		  {
-			text: "Quartz",
-			link: "/a.md",
-		  },
-		  {
-			text: "消息队列",
-			link: "/a.md",
-		  },
-		  {
-			text: "Gateway",
-			link: "/a.md",
-		  },
-		],
-	  },
-	  {
-		text: "微服务与分布式",
-		items: [
-		  {
-			text: "服务注册",
-			link: "/a.md",
-		  },
-		  {
-			text: "RPC与微服务",
-			link: "/a.md",
-		  },
-		],
-	  },
-	  {
-		text: "日志分析",
-		items: [
-		  {
-			text: "ELK",
-			link: "/a.md",
-		  },
-		  {
-			text: "Prometheus",
-			link: "/a.md",
-		  },
-		],
-	  },
 	],
   },
 
@@ -319,7 +246,7 @@ export const nav = [
 		],
 	  },
 	  {
-		text: "容器化与云原生",
+		text: "容器化",
 		items: [
 		  {
 			text: "Linux",
@@ -329,21 +256,10 @@ export const nav = [
 			text: "Docker",
 			link: "/devops/docker/1.镜像与容器.md",
 		  },
-		  {
-			text: "Kubernetes",
-			link: "/devops/docker/1.镜像与容器.md",
-		  },
 		],
 	  },
 	],
   },
 
-  /*{
-	text: "AI智能体",
-	items: [
-	  { text: "LangChain", link: "/ai/langChain/基础使用.md" },
-	],
-  },*/
-
-  // { text: "听首歌", link: "http://music.alger.fun", noIcon: false },
+  { text: "听首歌", link: "http://music.alger.fun", noIcon: false },
 ];

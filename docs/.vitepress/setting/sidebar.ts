@@ -371,16 +371,6 @@ export const sidebar = {
         },
       ],
     },
-    {
-      text: "Java25 新特性",
-      collapsed: true,
-      items: [
-        {
-          text: "测试",
-          link: "/a.md",
-        },
-      ],
-    },
   ],
 
   // Java模块 - JavaWeb
@@ -739,6 +729,8 @@ export const sidebar = {
       collapsed: false,
       items: [
         { text: "配置文件", link: "/backend/java/spring-boot/1.配置文件.md" },
+        { text: "日志框架", link: "/backend/java/spring-boot/2.日志框架.md" },
+        { text: "条件注解", link: "/backend/java/spring-boot/3.条件注解.md" },
       ],
     },
   ],
@@ -971,6 +963,7 @@ export const sidebar = {
     },
   ],
 
+  // Python模块 - 基础知识
   "/backend/python/basic/": [
     {
       text: "基础知识",
@@ -1058,16 +1051,6 @@ export const sidebar = {
           text: "安装 kkFileView",
           link: "/devops/docker/17.安装kkFileView.md",
         },
-      ],
-    },
-  ],
-
-  // AI智能体 - LangChain
-  "/ai/langChain/": [
-    {
-      text: "基础知识",
-      items: [
-        { text: "基础使用", link: "/ai/langChain/基础使用.md" },
       ],
     },
   ],
