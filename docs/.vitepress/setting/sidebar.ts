@@ -732,6 +732,7 @@ export const sidebar = {
 		{ text: "日志框架", link: "/backend/java/spring-boot/2.日志框架.md" },
 		{ text: "条件注解", link: "/backend/java/spring-boot/3.条件注解.md" },
 		{ text: "请求参数获取", link: "/backend/java/spring-boot/4.请求参数接收.md" },
+		{ text: "定时任务", link: "/backend/java/spring-boot/5.定时任务.md" },
 	  ],
 	},
   ],
