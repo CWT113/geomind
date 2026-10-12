@@ -745,6 +745,12 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{ text: "核心配置文件", link: "/backend/java/mybatis/core/1.核心配置文件.md" },
+		{ text: "日志配置", link: "/backend/java/mybatis/core/2.日志配置.md" },
+		{ text: "分页操作", link: "/backend/java/mybatis/core/3.分页操作.md" },
+		{ text: "全注解开发", link: "/backend/java/mybatis/core/4.全注解开发.md" },
+		{ text: "高级处理", link: "/backend/java/mybatis/core/5.高级处理.md" },
+		{ text: "动态SQL", link: "/backend/java/mybatis/core/6.动态SQL.md" },
+		{ text: "缓存", link: "/backend/java/mybatis/core/7.缓存.md" },
 	  ],
 	},
 	{
