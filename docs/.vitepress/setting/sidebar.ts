@@ -744,10 +744,7 @@ export const sidebar = {
 	  text: "MyBatis",
 	  collapsed: false,
 	  items: [
-		{
-		  text: "基础使用",
-		  link: "/backend/java/mybatis/core/基础使用.md",
-		},
+		{ text: "核心配置文件", link: "/backend/java/mybatis/core/1.核心配置文件.md" },
 	  ],
 	},
 	{
