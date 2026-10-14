@@ -120,7 +120,7 @@ export const nav = [
 		items: [
 		  {
 			text: "MyBatis",
-			link: "/backend/java/mybatis/core/1.核心配置文件.md",
+			link: "/backend/java/mybatis/core/1.增删改查.md",
 		  },
 		],
 	  },
