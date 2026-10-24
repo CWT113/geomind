@@ -753,10 +753,6 @@ export const sidebar = {
 		{ text: "缓存", link: "/backend/java/mybatis/core/7.缓存.md" },
 		{ text: "批量操作", link: "/backend/java/mybatis/core/8.批量操作.md" },
 		{ text: "全注解开发", link: "/backend/java/mybatis/core/9.全注解开发.md" },
-		{ text: "类型处理器（选学）", link: "/backend/java/mybatis/core/10.类型处理器.md" },
-		{ text: "动态代理探究（选学）", link: "/backend/java/mybatis/core/11.动态代理探究.md" },
-		{ text: "自定义拦截器（选学）", link: "/backend/java/mybatis/core/12.自定义拦截器.md" },
-		{ text: "自定义缓存（选学）", link: "/backend/java/mybatis/core/13.自定义缓存.md" },
 	  ],
 	},
 	{
