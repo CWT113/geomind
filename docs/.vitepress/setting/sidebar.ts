@@ -180,9 +180,6 @@ export const sidebar = {
 		{ text: "异步组件", link: "/frontend/vue/异步组件.md" },
 		{ text: "动态组件", link: "/frontend/vue/动态组件.md" },
 		{ text: "自定义指令", link: "/frontend/Vue/自定义指令.md" },
-		{ text: "自定义插件", link: "/frontend/Vue/自定义插件.md" },
-		{ text: "KeepAlive", link: "/frontend/vue/KeepAlive.md" },
-		{ text: "Transition", link: "/frontend/vue/Transition.md" },
 	  ],
 	},
 	{
@@ -190,7 +187,7 @@ export const sidebar = {
 	  collapsed: false,
 	  items: [
 		{ text: "响应式原理", link: "/frontend/vue/响应式原理.md" },
-		{ text: "虚拟DOM与Diff算法", link: "/frontend/vue/虚拟DOM与Diff算法.md" },
+		{ text: "Diff算法", link: "/frontend/vue/Diff算法.md" },
 	  ],
 	},
   ],
